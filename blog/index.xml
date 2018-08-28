@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on たーみなる</title>
+    <link>https://www.trhrkmk.com/blog/</link>
+    <description>Recent content in Blogs on たーみなる</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Mon, 27 Aug 2018 17:42:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</title>
+      <link>https://www.trhrkmk.com/blog/macos-command-arpscan-find-raspberrypi/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/blog/macos-command-arpscan-find-raspberrypi/</guid>
+      <description>Linuxではデフォルトでインストールされているarp-scanコマンド。
+macOSで利用する場合は、Homebrewでインストールしましょう。
+brew install arp-scan  インストールできました。
+ラズパイにsshする時に必要になるipアドレスを調べてみましょう。
+sudo arp-scan -l Password: Interface: en0, datalink type: EN10MB (Ethernet) Starting arp-scan 1.9.5 with 256 hosts (https://github.com/royhills/arp-scan) 192.168.100.1 00:a0:de:6a:ac:51 YAMAHA CORPORATION 192.168.100.2 f0:99:bf:04:35:98 Apple, Inc. 192.168.100.3 f0:99:bf:04:35:98 Apple, Inc. 192.168.100.4 00:b3:62:dc:f9:91 (Unknown) 192.168.100.20 00:22:cf:fa:57:b3 PLANEX COMMUNICATIONS INC. 192.168.100.6 dc:ef:ca:89:91:d6 (Unknown) 192.168.100.9 d8:00:4d:ee:5c:7d Apple, Inc. 192.168.100.12 60:f8:1d:be:e2:ac Apple, Inc. 192.168.100.15 78:88:6d:c3:86:58 (Unknown) 518 packets received by filter, 0 packets dropped by kernel Ending arp-scan 1.</description>
+    </item>
+    
+    <item>
+      <title>Hugoでブログを作りたくなったので始めました</title>
+      <link>https://www.trhrkmk.com/blog/blog-hugo-start/</link>
+      <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/blog/blog-hugo-start/</guid>
+      <description>Go言語の勉強をスタートしてから数週間が経ちました。
+まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。
+Go楽しい
+FileMaker Goではないですよ…
+HugoはGoで作らているってのが、主な動機です。
+少しづつ記事を書いていきまーす！</description>
+    </item>
+    
+  </channel>
+</rss>
