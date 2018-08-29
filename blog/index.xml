@@ -30,6 +30,22 @@ Downloads $ sudo cp -r firefox /opt/ [sudo] password for user  optを見てみ�
     </item>
     
     <item>
+      <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</title>
+      <link>https://www.trhrkmk.com/blog/filemaker-server-migration-file/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/blog/filemaker-server-migration-file/</guid>
+      <description>開発環境から、商用環境へリリースする際に、ローカル環境でFMDataMigrationや、独自のマイグレーションツールを実行し、データ移行すると思います。
+データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。
+ファイルパーミッションについては、ググってください。
+ファイルパーミッション
+以下は、自分用のメモ。
+ssh sshで接続します。
+~ $ ssh user@macmini.local  Databases フォルダーのファイルパーミッションを確認する デフォルトのディレクトリです。
+macmini:Databases user$ pwd /Library/FileMaker Server/Data/Databases  macmini:Databases user$ ls -la total xx drwxrwxr-x 7 fmserver fmsadmin 224B Jul 14 13:15:27 2018 . drwxrwxr-x 11 fmserver fmsadmin 352B Aug 16 20:11:38 2018 .. drwxrwxr-x 4 fmserver fmsadmin 128B Jul 12 23:46:52 2018 Removed_by_FMS drwxrwxr-x@ 5 fmserver fmsadmin 160B Jul 14 13:17:43 2018 dir1 drwxrwxr-x@ 5 fmserver fmsadmin 160B Jul 14 13:17:43 2018 dir2 drwxrwxr-x@ 79 fmserver fmsadmin 2.</description>
+    </item>
+    
+    <item>
       <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</title>
       <link>https://www.trhrkmk.com/blog/macos-command-arpscan-find-raspberrypi/</link>
       <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
