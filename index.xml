@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Mon, 27 Aug 2018 17:42:49 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Aug 2018 20:24:36 -0400</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Debian Stretch(GNOME)に最新のFilefoxをインストールしてアイコンも作成する</title>
+      <link>https://www.trhrkmk.com/blog/debian-stretch-install-firefox-latest/</link>
+      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
+      
+      <guid>https://www.trhrkmk.com/blog/debian-stretch-install-firefox-latest/</guid>
+      <description>ご存知の通りDebian Stretch(GNOME)には、Firefox ESRが入っています。
+最新のFirefoxをインストールするときのメモ。
+ダウンロード Firefoxからダウンロードします。
+任意の場所に保存してください。 今回はDownloadsとして進めます。
+Downloadsにfirefox-61.0.2.tar.bz2(バージョン番号は気にせず…)がダウンロードされると思います。
+展開 展開します。
+cd ~/Downloads Downloads $ tar xf firefox-61.0.2.tar.bz2  展開すると、こんな感じだと思います。
+Downloads $ ls -la total 57788 drwxr-xr-x 3 teruhirokomaki teruhirokomaki 4096 Aug 28 20:10 . drwxr-xr-x 28 teruhirokomaki teruhirokomaki 4096 Aug 28 20:32 .. drwxr-xr-x 9 teruhirokomaki teruhirokomaki 4096 Aug 28 11:20 firefox -rw-r--r-- 1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2  optに移動 firefoxをoptに移動します。
+Downloads $ sudo cp -r firefox /opt/ [sudo] password for user  optを見てみます。</description>
+    </item>
     
     <item>
       <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</title>
