@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on HHKBを使っている人に悪い人はいない</title>
+    <title>Categories on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/categories/</link>
-    <description>Recent content in Categories on HHKBを使っている人に悪い人はいない</description>
+    <description>Recent content in Categories on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Mon, 27 Aug 2018 17:42:49 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arp Scan</title>
+      <link>https://www.trhrkmk.com/categories/arp-scan/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/arp-scan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>https://www.trhrkmk.com/categories/command/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/command/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>File Permission</title>
@@ -23,9 +42,27 @@
     <item>
       <title>Filemaker</title>
       <link>https://www.trhrkmk.com/categories/filemaker/</link>
-      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/categories/filemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fmperception</title>
+      <link>https://www.trhrkmk.com/categories/fmperception/</link>
+      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/fmperception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://www.trhrkmk.com/categories/hugo/</link>
+      <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/hugo/</guid>
       <description></description>
     </item>
     

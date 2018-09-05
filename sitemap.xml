@@ -33,7 +33,20 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/categories/arp-scan/</loc>
+    <lastmod>2018-08-27T17:42:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/</loc>
+    <lastmod>2018-08-27T17:42:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/command/</loc>
+    <lastmod>2018-08-27T17:42:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -45,19 +58,37 @@
   
   <url>
     <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
-    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
-    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/fmperception/</loc>
+    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
     <lastmod>2018-09-05T15:59:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/hugo/</loc>
+    <lastmod>2018-08-26T00:11:48+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/hugo/</loc>
+    <lastmod>2018-08-26T00:11:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -74,8 +105,14 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/raspberry-pi/</loc>
+    <lastmod>2018-08-27T17:42:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/</loc>
-    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   

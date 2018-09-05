@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macos on HHKBを使っている人に悪い人はいない</title>
+    <title>Macos on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/categories/macos/</link>
-    <description>Recent content in Macos on HHKBを使っている人に悪い人はいない</description>
+    <description>Recent content in Macos on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
@@ -68,6 +68,26 @@ drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
 -rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
 -rw-r--r--   1 otherOwn        otherGrp    98M Aug 28 22:40:46 2018 fileC.fmp12
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</title>
+      <link>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</guid>
+      <description>&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;
+
+&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install arp-scan
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;インストールできました。&lt;/p&gt;
+
+&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

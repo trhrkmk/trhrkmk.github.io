@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on HHKBを使っている人に悪い人はいない</title>
+    <title>Tags on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/tags/</link>
-    <description>Recent content in Tags on HHKBを使っている人に悪い人はいない</description>
+    <description>Recent content in Tags on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Wed, 29 Aug 2018 01:13:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Sep 2018 17:22:32 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>Filemaker</title>
       <link>https://www.trhrkmk.com/tags/filemaker/</link>
-      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/filemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://www.trhrkmk.com/tags/hugo/</link>
+      <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://www.trhrkmk.com/tags/raspberry-pi/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     

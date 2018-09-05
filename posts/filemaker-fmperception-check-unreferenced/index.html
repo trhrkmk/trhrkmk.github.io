@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.47.1" />
+<meta name="generator" content="Hugo 0.48-DEV" />
 
 
 
@@ -14,22 +14,22 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない</title>
+    <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部</title>
     
 <meta name="description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 
-<meta property="og:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない">
+<meta property="og:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
-<meta property="og:site_name" content="HHKBを使っている人に悪い人はいない">
+<meta property="og:site_name" content="HHKBは体の一部">
 <meta property="og:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="HHKBを使っている人に悪い人はいない">
+<meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
-<meta name="twitter:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない">
+<meta name="twitter:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部">
 <meta name="twitter:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
 
@@ -42,7 +42,7 @@
       "@type": "WebPage",
       "@id":"https://www.trhrkmk.com/"
     },
-    "headline": "FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない",
+    "headline": "FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部",
     "image": {
       "@type": "ImageObject",
       "url": "https://www.trhrkmk.com/images/default.png",
@@ -53,11 +53,11 @@
     "dateModified": "2018-09-02T17:22:32JST",
     "author": {
       "@type": "Person",
-      "name": "HHKBを使っている人に悪い人はいない"
+      "name": "HHKBは体の一部"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HHKBを使っている人に悪い人はいない",
+      "name": "HHKBは体の一部",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.trhrkmk.com/images/logo.png",
@@ -127,7 +127,7 @@ if (!doNotTrack) {
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBを使っている人に悪い人はいない</a>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBは体の一部</a>
           </div>
 
           
@@ -261,7 +261,35 @@ if (!doNotTrack) {
     
     
     
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/filemaker/">FileMaker</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/categories/fmperception/">FMPerception</a></li>
+          
+        </ul>
+      </div>
+    </section>
     
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/filemaker/">FileMaker</a></li>
+          
+        </ul>
+      </div>
+    </section>
     
     
   </footer>
@@ -302,11 +330,19 @@ if (!doNotTrack) {
     </div>
     <div class="list-group">
       
-      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
-      
       <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
       
       <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+      <a href="https://www.trhrkmk.com/categories/arp-scan" class="list-group-item">arp-scan</a>
+      
+      <a href="https://www.trhrkmk.com/categories/command" class="list-group-item">command</a>
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/fmperception" class="list-group-item">fmperception</a>
+      
+      <a href="https://www.trhrkmk.com/categories/hugo" class="list-group-item">hugo</a>
       
     </div>
   </section>
@@ -318,6 +354,10 @@ if (!doNotTrack) {
     <div class="list-group">
       
       <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/tags/hugo" class="list-group-item">hugo</a>
+      
+      <a href="https://www.trhrkmk.com/tags/raspberry-pi" class="list-group-item">raspberry-pi</a>
       
     </div>
   </section>

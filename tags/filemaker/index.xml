@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Filemaker on HHKBを使っている人に悪い人はいない</title>
+    <title>Filemaker on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/tags/filemaker/</link>
-    <description>Recent content in Filemaker on HHKBを使っている人に悪い人はいない</description>
+    <description>Recent content in Filemaker on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Wed, 29 Aug 2018 01:13:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Sep 2018 17:22:32 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/filemaker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</title>
+      <link>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</link>
+      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</guid>
+      <description>&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;
+
+&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;
+
+&lt;p&gt;なんてことはありませんか？&lt;/p&gt;
+
+&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;
+
+&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;
+
+&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;
+
+&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;
+
+&lt;p&gt;有名なツールを以下に。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</title>

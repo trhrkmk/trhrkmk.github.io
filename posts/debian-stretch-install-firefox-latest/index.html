@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.47.1" />
+<meta name="generator" content="Hugo 0.48-DEV" />
 
 
 
@@ -14,22 +14,22 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない</title>
+    <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部</title>
     
 <meta name="description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 
-<meta property="og:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない">
+<meta property="og:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
-<meta property="og:site_name" content="HHKBを使っている人に悪い人はいない">
+<meta property="og:site_name" content="HHKBは体の一部">
 <meta property="og:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="HHKBを使っている人に悪い人はいない">
+<meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
-<meta name="twitter:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない">
+<meta name="twitter:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部">
 <meta name="twitter:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
 
@@ -42,7 +42,7 @@
       "@type": "WebPage",
       "@id":"https://www.trhrkmk.com/"
     },
-    "headline": "Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない",
+    "headline": "Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部",
     "image": {
       "@type": "ImageObject",
       "url": "https://www.trhrkmk.com/images/default.png",
@@ -53,11 +53,11 @@
     "dateModified": "2018-08-28T20:24:36JST",
     "author": {
       "@type": "Person",
-      "name": "HHKBを使っている人に悪い人はいない"
+      "name": "HHKBは体の一部"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HHKBを使っている人に悪い人はいない",
+      "name": "HHKBは体の一部",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.trhrkmk.com/images/logo.png",
@@ -136,7 +136,7 @@ if (!doNotTrack) {
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBを使っている人に悪い人はいない</a>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBは体の一部</a>
           </div>
 
           
@@ -495,11 +495,19 @@ StartupNotify=true
     </div>
     <div class="list-group">
       
-      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
-      
       <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
       
       <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+      <a href="https://www.trhrkmk.com/categories/arp-scan" class="list-group-item">arp-scan</a>
+      
+      <a href="https://www.trhrkmk.com/categories/command" class="list-group-item">command</a>
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/fmperception" class="list-group-item">fmperception</a>
+      
+      <a href="https://www.trhrkmk.com/categories/hugo" class="list-group-item">hugo</a>
       
     </div>
   </section>
@@ -511,6 +519,10 @@ StartupNotify=true
     <div class="list-group">
       
       <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/tags/hugo" class="list-group-item">hugo</a>
+      
+      <a href="https://www.trhrkmk.com/tags/raspberry-pi" class="list-group-item">raspberry-pi</a>
       
     </div>
   </section>
