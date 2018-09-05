@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.48-DEV" />
+<meta name="generator" content="Hugo 0.47.1" />
 
 
 
@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部</title>
     
-<meta name="description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 
 <meta property="og:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
 <meta name="twitter:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBは体の一部">
-<meta name="twitter:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
 
 
@@ -73,7 +73,7 @@
 
 <p><a href="https://www.mozilla.org/ja/firefox/">Firefox</a>からダウンロードします。</p>
 
-<p><img src="firefox-latest-1.png" alt="image" /></p>
+<p><img src="/images/debian-stretch-install-firefox-latest/firefox-latest-1.png" alt="image" /></p>
 
 <p>任意の場所に保存してください。
 今回は<code>Downloads</code>として進めます。</p>
@@ -194,7 +194,7 @@ if (!doNotTrack) {
 
 <p><a href="https://www.mozilla.org/ja/firefox/">Firefox</a>からダウンロードします。</p>
 
-<p><img src="firefox-latest-1.png" alt="image" /></p>
+<p><img src="/images/debian-stretch-install-firefox-latest/firefox-latest-1.png" alt="image" /></p>
 
 <p>任意の場所に保存してください。
 今回は<code>Downloads</code>として進めます。</p>
@@ -444,11 +444,11 @@ StartupNotify=true
 
 <p>これで普通に使えると思います。</p>
 
-<p><img src="firefox-latest-2.png" alt="image" /></p>
+<p><img src="/images/debian-stretch-install-firefox-latest/firefox-latest-2.png" alt="image" /></p>
 
 <p>起動しましょう。</p>
 
-<p><img src="firefox-latest-3.png" alt="image" /></p></div>
+<p><img src="/images/debian-stretch-install-firefox-latest/firefox-latest-3.png" alt="image" /></p></div>
 
   <footer class="article-footer">
     
