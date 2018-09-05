@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない</title>
+    
+<meta name="description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBを使っている人に悪い人はいない">
+<meta property="og:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBを使っている人に悪い人はいない">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/">
+<meta name="twitter:title" content="Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない">
+<meta name="twitter:description" content="&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;p&gt;任意の場所に保存してください。今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;&lt;p&gt;展開します。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd ~/DownloadsDownloads $ tar xf firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Downloads $ ls -latotal 57788drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する - HHKBを使っている人に悪い人はいない",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-08-28T20:24:36JST",
+    "dateModified": "2018-08-28T20:24:36JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBを使っている人に悪い人はいない"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBを使っている人に悪い人はいない",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>ご存知の通りDebian Stretch(GNOME)には、<code>Firefox ESR</code>が入っています。</p>
+
+<p>今回は、<strong>Firefox ESR</strong>ではなく、最新の<strong>Firefox</strong>をインストールするときのメモ。</p>
+
+<h2 id="ダウンロード">ダウンロード</h2>
+
+<p><a href="https://www.mozilla.org/ja/firefox/">Firefox</a>からダウンロードします。</p>
+
+<p><img src="firefox-latest-1.png" alt="image" /></p>
+
+<p>任意の場所に保存してください。
+今回は<code>Downloads</code>として進めます。</p>
+
+<p>Downloadsに<code>firefox-61.0.2.tar.bz2</code>(バージョン番号は気にせず…)がダウンロードされると思います。</p>
+
+<h2 id="展開">展開</h2>
+
+<p>展開します。</p>
+
+<pre><code>cd ~/Downloads
+Downloads $ tar xf firefox-61.0.2.tar.bz2
+</code></pre>
+
+<p>展開すると、こんな感じだと思います。</p>
+
+<pre><code>Downloads $ ls -la
+total 57788
+drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
+drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
+drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
+-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
+</code></pre>
+
+<p></p>"
+  }
+</script>
+
+
+    <link href="https://www.trhrkmk.com/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-90586336-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBを使っている人に悪い人はいない</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li class="active">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-28T20:24:36JST">2018-08-28</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+
+    <h1 class="title">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</h1>
+  </header>
+
+  
+
+  <div class="article-body"><p>ご存知の通りDebian Stretch(GNOME)には、<code>Firefox ESR</code>が入っています。</p>
+
+<p>今回は、<strong>Firefox ESR</strong>ではなく、最新の<strong>Firefox</strong>をインストールするときのメモ。</p>
+
+<h2 id="ダウンロード">ダウンロード</h2>
+
+<p><a href="https://www.mozilla.org/ja/firefox/">Firefox</a>からダウンロードします。</p>
+
+<p><img src="firefox-latest-1.png" alt="image" /></p>
+
+<p>任意の場所に保存してください。
+今回は<code>Downloads</code>として進めます。</p>
+
+<p>Downloadsに<code>firefox-61.0.2.tar.bz2</code>(バージョン番号は気にせず…)がダウンロードされると思います。</p>
+
+<h2 id="展開">展開</h2>
+
+<p>展開します。</p>
+
+<pre><code>cd ~/Downloads
+Downloads $ tar xf firefox-61.0.2.tar.bz2
+</code></pre>
+
+<p>展開すると、こんな感じだと思います。</p>
+
+<pre><code>Downloads $ ls -la
+total 57788
+drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
+drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
+drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
+-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
+</code></pre>
+
+<p></p>
+
+<h2 id="optに移動">optに移動</h2>
+
+<p><code>firefox</code>を<code>opt</code>に移動します。</p>
+
+<pre><code>Downloads $ sudo cp -r firefox /opt/
+[sudo] password for user
+</code></pre>
+
+<p><code>opt</code>を見てみます。</p>
+
+<pre><code>Downloads $ ls -la /opt/
+total 16
+drwxr-xr-x  4 root root 4096 Aug 28 20:37 .
+drwxr-xr-x 23 root root 4096 Aug 28 10:14 ..
+drwxr-xr-x  9 root root 4096 Aug 28 20:37 firefox
+drwxr-xr-x  3 root root 4096 Aug 28 10:45 google
+</code></pre>
+
+<h2 id="デスクトップアイコンの作成">デスクトップアイコンの作成</h2>
+
+<p>デスクトップアイコンを作成します。</p>
+
+<p>いちから作成するのは面倒くさいので、既存の<code>Firefox ESR</code>を複製して使います。</p>
+
+<p>デスクトップアイコンは、以下にあります。</p>
+
+<pre><code>applications $ pwd
+/usr/share/applications
+applications $ ls
+bluetooth-sendto.desktop         gnome-chess.desktop                   gnome-user-accounts-panel.desktop  openjdk-8-policytool.desktop           quadrapassel.desktop
+brasero.desktop                  gnome-color-panel.desktop             gnome-user-share-webdav.desktop    org.gnome.baobab.desktop               rhythmbox.desktop
+brasero-nautilus.desktop         gnome-control-center.desktop          gnome-wacom-panel.desktop          org.gnome.Books.desktop                rhythmbox-device.desktop
+ca.desrt.dconf-editor.desktop    gnome-datetime-panel.desktop          goldendict.desktop                 org.gnome.Calendar.desktop             rygel.desktop
+caffeine.desktop                 gnome-disk-image-mounter.desktop      google-chrome.desktop              org.gnome.Characters.desktop           scim-setup.desktop
+caffeine-indicator.desktop       gnome-disk-image-writer.desktop       gvim.desktop                       org.gnome.Cheese.desktop               seahorse.desktop
+debian-reference-common.desktop  gnome-display-panel.desktop           iagno.desktop                      org.gnome.ChromeGnomeShell.desktop     setup-mozc.desktop
+debian-uxterm.desktop            gnome-info-panel.desktop              ibus-setup.desktop                 org.gnome.clocks.desktop               shotwell.desktop
+debian-xterm.desktop             gnome-keyboard-panel.desktop          ibus-setup-hangul.desktop          org.gnome.ColorProfileViewer.desktop   shotwell-viewer.desktop
+display-im6.q16.desktop          gnome-klotski.desktop                 icedove.desktop                    org.gnome.Contacts.desktop             simple-scan.desktop
+eog.desktop                      gnome-mahjongg.desktop                icedtea-netx-javaws.desktop        org.gnome.Dictionary.desktop           simplescreenrecorder.desktop
+evince.desktop                   gnome-mimeapps.list                   im-config.desktop                  org.gnome.DiskUtility.desktop          slack.desktop
+evince-previewer.desktop         gnome-mines.desktop                   inkscape.desktop                   org.gnome.Documents.desktop            software-properties-drivers.desktop
+evolution-calendar.desktop       gnome-mouse-panel.desktop             itweb-settings.desktop             org.gnome.FileRoller.desktop           software-properties-gnome.desktop
+evolution.desktop                gnome-music.desktop                   kasumi.desktop                     org.gnome.font-viewer.desktop          software-properties-gtk.desktop
+fcitx-config-gtk3.desktop        gnome-network-panel.desktop           khmerconverter.desktop             org.gnome.gedit.desktop                swell-foop.desktop
+fcitx-configtool.desktop         gnome-notifications-panel.desktop     libreoffice-base.desktop           org.gnome.Hitori.desktop               synaptic.desktop
+fcitx.desktop                    gnome-online-accounts-panel.desktop   libreoffice-calc.desktop           org.gnome.Logs.desktop                 tali.desktop
+fcitx-skin-installer.desktop     gnome-power-panel.desktop             libreoffice-draw.desktop           org.gnome.Maps.desktop                 thunderbird.desktop
+firefox-esr.desktop              gnome-printers-panel.desktop          libreoffice-impress.desktop        org.gnome.Nautilus.desktop             tracker-needle.desktop
+five-or-more.desktop             gnome-privacy-panel.desktop           libreoffice-math.desktop           org.gnome.Nibbles.desktop              tracker-preferences.desktop
+four-in-a-row.desktop            gnome-region-panel.desktop            libreoffice-startcenter.desktop    org.gnome.Polari.desktop               transmission-gtk.desktop
+gcm-calibrate.desktop            gnome-robots.desktop                  libreoffice-writer.desktop         org.gnome.Screenshot.desktop           uim.desktop
+gcm-import.desktop               gnome-search-panel.desktop            libreoffice-xsltfilter.desktop     org.gnome.Shell.desktop                vim.desktop
+gcm-picker.desktop               gnome-sharing-panel.desktop           lightsoff.desktop                  org.gnome.Shell.PortalHelper.desktop   vinagre.desktop
+gcr-prompter.desktop             gnome-shell-extension-prefs.desktop   mimeinfo.cache                     org.gnome.Software.desktop             vinagre-file.desktop
+gcr-viewer.desktop               gnome-software-local-file.desktop     mlterm.desktop                     org.gnome.SoundRecorder.desktop        vino-server.desktop
+geoclue-where-am-i.desktop       gnome-sound-panel.desktop             mutt.desktop                       org.gnome.taquin.desktop               xiterm+thai.desktop
+ghcal.desktop                    gnome-sudoku.desktop                  mutter.desktop                     org.gnome.Terminal.desktop             yelp.desktop
+gimp.desktop                     gnome-system-monitor.desktop          nautilus-autorun-software.desktop  org.gnome.Totem.desktop                zeal.desktop
+gkbd-keyboard-display.desktop    gnome-system-monitor-kde.desktop      nautilus-classic.desktop           org.gnome.Weather.Application.desktop
+gnome-background-panel.desktop   gnome-tetravex.desktop                nm-applet.desktop                  org.keepassxc.KeePassXC.desktop
+gnome-bluetooth-panel.desktop    gnome-tweak-tool.desktop              nm-connection-editor.desktop       python2.7.desktop
+gnome-calculator.desktop         gnome-universal-access-panel.desktop  notification-daemon.desktop        python3.5.desktop
+</code></pre>
+
+<p>複製します。</p>
+
+<pre><code>applications $ sudo cp firefox-esr.desktop firefox.desktop
+</code></pre>
+
+<pre><code>applications $ sudo vim firefox.desktop
+</code></pre>
+
+<p>この中を適当に修正します。</p>
+
+<p><code>Exec=/usr/lib/firefox-esr/firefox-esr %u</code>のパスを修正すればよいだけだと思います。</p>
+
+<pre><code>[Desktop Entry]
+Name=Firefox ESR
+Name[bg]=Firefox ESR
+Name[ca]=Firefox ESR
+Name[cs]=Firefox ESR
+Name[el]=Firefox ESR
+Name[es]=Firefox ESR
+Name[fa]=Firefox ESR
+Name[fi]=Firefox ESR
+Name[fr]=Firefox ESR
+Name[hu]=Firefox ESR
+Name[it]=Firefox ESR
+Name[ja]=Firefox ESR
+Name[ko]=Firefox ESR
+Name[nb]=Firefox ESR
+Name[nl]=Firefox ESR
+Name[nn]=Firefox ESR
+Name[no]=Firefox ESR
+Name[pl]=Firefox ESR
+Name[pt]=Firefox ESR
+Name[pt_BR]=Firefox ESR
+Name[ru]=Firefox ESR
+Name[sk]=Firefox ESR
+Name[sv]=Firefox ESR
+Comment=Browse the World Wide Web
+Comment[bg]=Сърфиране в Мрежата
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[el]=Περιηγηθείτε στον παγκόσμιο ιστό
+Comment[es]=Navegue por la web
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment[pl]=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[ru]=Обозреватель Всемирной Паутины
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[bg]=Интернет браузър
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[de]=Webbrowser
+GenericName[el]=Περιηγητής ιστού
+GenericName[es]=Navegador web
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName[pl]=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[ru]=Интернет-браузер
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+X-GNOME-FullName=Firefox ESR Web Browser
+X-GNOME-FullName[bg]=Интернет браузър (Firefox ESR)
+X-GNOME-FullName[ca]=Navegador web Firefox ESR
+X-GNOME-FullName[cs]=Firefox ESR Webový prohlížeč
+X-GNOME-FullName[el]=Περιηγήτης Ιστού Firefox ESR
+X-GNOME-FullName[es]=Navegador web Firefox ESR
+X-GNOME-FullName[fa]=مرورگر اینترنتی Firefox ESR
+X-GNOME-FullName[fi]=Firefox ESR-selain
+X-GNOME-FullName[fr]=Navigateur Web Firefox ESR
+X-GNOME-FullName[hu]=Firefox ESR webböngésző
+X-GNOME-FullName[it]=Firefox ESR Browser Web
+X-GNOME-FullName[ja]=Firefox ESR ウェブ・ブラウザ
+X-GNOME-FullName[ko]=Firefox ESR 웹 브라우저
+X-GNOME-FullName[nb]=Firefox ESR Nettleser
+X-GNOME-FullName[nl]=Firefox ESR webbrowser
+X-GNOME-FullName[nn]=Firefox ESR Nettlesar
+X-GNOME-FullName[no]=Firefox ESR Nettleser
+X-GNOME-FullName[pl]=Przeglądarka WWW Firefox ESR
+X-GNOME-FullName[pt]=Firefox ESR Navegador Web
+X-GNOME-FullName[pt_BR]=Navegador Web Firefox ESR
+X-GNOME-FullName[ru]=Интернет-браузер Firefox ESR
+X-GNOME-FullName[sk]=Internetový prehliadač Firefox ESR
+X-GNOME-FullName[sv]=Webbläsaren Firefox ESR
+Exec=/usr/lib/firefox-esr/firefox-esr %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox-esr
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox-esr
+StartupNotify=true
+</code></pre>
+
+<p>編集しましたので、diffを。</p>
+
+<pre><code>applications $ colordiff -u firefox-esr.desktop firefox.desktop
+--- firefox-esr.desktop 2018-06-26 18:33:25.000000000 -0400
++++ firefox.desktop     2018-08-28 20:47:09.339156963 -0400
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Name=Firefox ESR
++Name=Firefox
+ Name[bg]=Firefox ESR
+ Name[ca]=Firefox ESR
+ Name[cs]=Firefox ESR
+@@ -10,7 +10,7 @@
+ Name[fr]=Firefox ESR
+ Name[hu]=Firefox ESR
+ Name[it]=Firefox ESR
+-Name[ja]=Firefox ESR
++Name[ja]=Firefox
+ Name[ko]=Firefox ESR
+ Name[nb]=Firefox ESR
+ Name[nl]=Firefox ESR
+@@ -93,12 +93,12 @@
+ X-GNOME-FullName[ru]=Интернет-браузер Firefox ESR
+ X-GNOME-FullName[sk]=Internetový prehliadač Firefox ESR
+ X-GNOME-FullName[sv]=Webbläsaren Firefox ESR
+-Exec=/usr/lib/firefox-esr/firefox-esr %u
++Exec=/opt/firefox/firefox %u
+ Terminal=false
+ X-MultipleArgs=false
+ Type=Application
+ Icon=firefox-esr
+ Categories=Network;WebBrowser;
+ MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+-StartupWMClass=Firefox-esr
++StartupWMClass=Firefox
+ StartupNotify=true
+</code></pre>
+
+<p>これで普通に使えると思います。</p>
+
+<p><img src="firefox-latest-2.png" alt="image" /></p>
+
+<p>起動しましょう。</p>
+
+<p><img src="firefox-latest-3.png" alt="image" /></p></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/" class="list-group-item">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</a>
+      
+      <a href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/" class="list-group-item">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/" class="list-group-item">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</a>
+      
+      <a href="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/" class="list-group-item">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</a>
+      
+      <a href="https://www.trhrkmk.com/posts/blog-hugo-start/" class="list-group-item">Hugoでブログを作りたくなったので始めました</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

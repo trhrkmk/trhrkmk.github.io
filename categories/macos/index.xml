@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macos on HHKBを使っている人に悪い人はいない</title>
+    <link>https://www.trhrkmk.com/categories/macos/</link>
+    <description>Recent content in Macos on HHKBを使っている人に悪い人はいない</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Wed, 29 Aug 2018 01:13:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</title>
+      <link>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
+      <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
+
+&lt;p&gt;データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ファイルパーミッション&lt;/strong&gt;については、ググってください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3&#34;&gt;ファイルパーミッション&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;以下は、自分用のメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;ssh&#34;&gt;ssh&lt;/h2&gt;
+
+&lt;p&gt;sshで接続します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ $ ssh user@macmini.local
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;databases-フォルダーのファイルパーミッションを確認する&#34;&gt;Databases フォルダーのファイルパーミッションを確認する&lt;/h2&gt;
+
+&lt;p&gt;デフォルトのディレクトリです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;macmini:Databases user$ pwd
+/Library/FileMaker Server/Data/Databases
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;macmini:Databases user$ ls -la
+total xx
+drwxrwxr-x   7 fmserver  fmsadmin   224B Jul 14 13:15:27 2018 .
+drwxrwxr-x  11 fmserver  fmsadmin   352B Aug 16 20:11:38 2018 ..
+drwxrwxr-x   4 fmserver  fmsadmin   128B Jul 12 23:46:52 2018 Removed_by_FMS
+drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir1
+drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir2
+drwxrwxr-x@ 79 fmserver  fmsadmin   2.5K Aug 29 01:02:53 2018 dir3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Databases&lt;/code&gt;配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。&lt;/p&gt;
+
+&lt;h2 id=&#34;違う場合&#34;&gt;違う場合&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;fileC.fmp12&lt;/code&gt;は、ファイルパーミッションが正しくないため、変更する必要があります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;macmini:dir3 user$ ls -la
+total 47588320
+drwxrwxr-x@ 79 fmserver        fmsadmin   2.5K Aug 29 01:02:53 2018 .
+drwxrwxr-x   7 fmserver        fmsadmin   224B Jul 14 13:15:27 2018 ..
+drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
+-rwxrwxr-x   1 fmserver        fmsadmin   204K Aug 16 18:12:40 2018 fileA.fmp12
+-rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
+-rw-r--r--   1 otherOwn        otherGrp    98M Aug 28 22:40:46 2018 fileC.fmp12
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

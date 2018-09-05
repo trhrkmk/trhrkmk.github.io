@@ -3,34 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.trhrkmk.com/blog/filemaker-fmperception-check-unreferenced/</loc>
+    <loc>https://www.trhrkmk.com/about/</loc>
+    <lastmod>2018-09-05T15:59:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</loc>
     <lastmod>2018-09-02T17:22:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/blog/debian-stretch-install-firefox-latest/</loc>
+    <loc>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</loc>
     <lastmod>2018-08-28T20:24:36-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/blog/filemaker-server-release-file-permission/</loc>
+    <loc>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</loc>
     <lastmod>2018-08-29T01:13:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/blog/macos-command-arpscan-find-raspberrypi/</loc>
+    <loc>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</loc>
     <lastmod>2018-08-27T17:42:49+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/blog/blog-hugo-start/</loc>
+    <loc>https://www.trhrkmk.com/posts/blog-hugo-start/</loc>
     <lastmod>2018-08-26T00:11:48+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.trhrkmk.com/blog/</loc>
-    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -39,13 +38,44 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/categories/file-permission/</loc>
+    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
+    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
+    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/</loc>
+    <lastmod>2018-09-05T15:59:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/macos/</loc>
+    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/posts/</loc>
     <lastmod>2018-09-02T17:22:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/</loc>
+    <lastmod>2018-08-29T01:13:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

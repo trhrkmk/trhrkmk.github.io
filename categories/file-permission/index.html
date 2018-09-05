@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.47.1" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.trhrkmk.com/categories/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.trhrkmk.com/categories/file-permission/index.xml">
 
-<link rel="canonical" href="https://www.trhrkmk.com/categories/">
+<link rel="canonical" href="https://www.trhrkmk.com/categories/file-permission/">
 
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Categories - HHKBを使っている人に悪い人はいない</title>
+    <title>File Permission - HHKBを使っている人に悪い人はいない</title>
     
     <link href="https://www.trhrkmk.com/css/styles.css" rel="stylesheet">
     
@@ -76,24 +76,92 @@ if (!doNotTrack) {
 <div class="row">
   <div class="col-md-8">
 
+    
     <header class="page-header">
-      <h1>Categories</h1>
+      <h1>File Permission</h1>
     </header>
+    
 
-    <section class="panel panel-default">
-      <div class="list-group">
-        
-        
-        <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission <span class="badge">1</span></a>
-        
-        <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker <span class="badge">1</span></a>
-        
-        <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos <span class="badge">1</span></a>
-        
-      </div>
-    </section>
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-29T01:13:00JST">2018-08-29</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</a></h2>
+  </header>
+
+  
+  <div class="summary"><p>開発環境から、商用環境へリリースする際に、ローカル環境で<code>FMDataMigration</code>や、独自のマイグレーションツールを実行し、データ移行すると思います。</p>
+
+<p>データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。</p>
+
+<p><strong>ファイルパーミッション</strong>については、ググってください。</p>
+
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファイルパーミッション</a></p>
+
+<p>以下は、自分用のメモ。</p>
+
+<h2 id="ssh">ssh</h2>
+
+<p>sshで接続します。</p>
+
+<pre><code>~ $ ssh user@macmini.local
+</code></pre>
+
+<h2 id="databases-フォルダーのファイルパーミッションを確認する">Databases フォルダーのファイルパーミッションを確認する</h2>
+
+<p>デフォルトのディレクトリです。</p>
+
+<pre><code>macmini:Databases user$ pwd
+/Library/FileMaker Server/Data/Databases
+</code></pre>
+
+<pre><code>macmini:Databases user$ ls -la
+total xx
+drwxrwxr-x   7 fmserver  fmsadmin   224B Jul 14 13:15:27 2018 .
+drwxrwxr-x  11 fmserver  fmsadmin   352B Aug 16 20:11:38 2018 ..
+drwxrwxr-x   4 fmserver  fmsadmin   128B Jul 12 23:46:52 2018 Removed_by_FMS
+drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir1
+drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir2
+drwxrwxr-x@ 79 fmserver  fmsadmin   2.5K Aug 29 01:02:53 2018 dir3
+</code></pre>
+
+<p><code>Databases</code>配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。</p>
+
+<h2 id="違う場合">違う場合</h2>
+
+<p><code>fileC.fmp12</code>は、ファイルパーミッションが正しくないため、変更する必要があります。</p>
+
+<pre><code>macmini:dir3 user$ ls -la
+total 47588320
+drwxrwxr-x@ 79 fmserver        fmsadmin   2.5K Aug 29 01:02:53 2018 .
+drwxrwxr-x   7 fmserver        fmsadmin   224B Jul 14 13:15:27 2018 ..
+drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
+-rwxrwxr-x   1 fmserver        fmsadmin   204K Aug 16 18:12:40 2018 fileA.fmp12
+-rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
+-rw-r--r--   1 otherOwn        otherGrp    98M Aug 28 22:40:46 2018 fileC.fmp12
+</code></pre>
+
+<p></p></div>
+
+  
+  <footer>
+    <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/" title="リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話">Read More…</a>
+  </footer>
+  
+</article>
+</li>
+      
+    </ul>
+
+    
+
+
   </div>
-
   <div class="col-md-4">
     
 <aside class="l-sidebar">

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない</title>
+    
+<meta name="description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBを使っている人に悪い人はいない">
+<meta property="og:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBを使っている人に悪い人はいない">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
+<meta name="twitter:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない">
+<meta name="twitter:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBを使っている人に悪い人はいない",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-09-02T17:22:32JST",
+    "dateModified": "2018-09-02T17:22:32JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBを使っている人に悪い人はいない"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBを使っている人に悪い人はいない",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>FileMakerで開発をしていて…</p>
+
+<p>「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」</p>
+
+<p>なんてことはありませんか？</p>
+
+<p>そうですよね。ありますよね。</p>
+
+<p>そんな時、あなたはどうしてますか？</p>
+
+<p>一般的な<strong>FileMaker開発者</strong>でしたら、<strong>DDR(データベースデザインレポート)</strong>をエクスポートして、分析ツールを使っていますよね。</p>
+
+<h2 id="サードパーティの分析ツール">サードパーティの分析ツール</h2>
+
+<p>有名なツールを以下に。</p>
+
+<ul>
+<li><a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a></li>
+<li><a href="http://www.baseelements.com/">BaseElements</a></li>
+<li><a href="https://www.beezwax.net/products/inspector-pro/">InspectorPro</a></li>
+</ul>
+
+<p>ちなみに、私は<a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a>と、<a href="http://www.baseelements.com/">BaseElements</a>を使っています。</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <link href="https://www.trhrkmk.com/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-90586336-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBを使っている人に悪い人はいない</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li class="active">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-02T17:22:32JST">2018-09-02</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+
+    <h1 class="title">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</h1>
+  </header>
+
+  
+
+  <div class="article-body"><p>FileMakerで開発をしていて…</p>
+
+<p>「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」</p>
+
+<p>なんてことはありませんか？</p>
+
+<p>そうですよね。ありますよね。</p>
+
+<p>そんな時、あなたはどうしてますか？</p>
+
+<p>一般的な<strong>FileMaker開発者</strong>でしたら、<strong>DDR(データベースデザインレポート)</strong>をエクスポートして、分析ツールを使っていますよね。</p>
+
+<h2 id="サードパーティの分析ツール">サードパーティの分析ツール</h2>
+
+<p>有名なツールを以下に。</p>
+
+<ul>
+<li><a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a></li>
+<li><a href="http://www.baseelements.com/">BaseElements</a></li>
+<li><a href="https://www.beezwax.net/products/inspector-pro/">InspectorPro</a></li>
+</ul>
+
+<p>ちなみに、私は<a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a>と、<a href="http://www.baseelements.com/">BaseElements</a>を使っています。</p>
+
+<p></p>
+
+<h2 id="分析ツールを使ってできること">分析ツールを使ってできること</h2>
+
+<ul>
+<li>(名前の通り)ファイルの分析</li>
+<li>分析ツールに取り込んだスクリプトやフィールドを、ファイルメーカーにコピペできる</li>
+<li>ファイル間の差分を確認できる</li>
+</ul>
+
+<p>個人的には、分析とファイルの差分が大きいと思っています。</p>
+
+<p>ファイルの差分を知るためにも、頻繁にDDRをエクスポートしています。</p>
+
+<h2 id="ファイルの差分を確認するためのツールを作りました">ファイルの差分を確認するためのツールを作りました</h2>
+
+<p><a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a>を使っているので、自分のために差分を見やすくするためのツールを作りました。</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eyfsoSQD7eQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p><a href="https://github.com/frudens/fmperception-diff-viewer">fmperception-diff-viewer</a></p>
+
+<p>よければ、つかってください。</p>
+
+<h2 id="削除する時に注意すること">削除する時に注意すること</h2>
+
+<p>さて、本題です…</p>
+
+<p>FMPerceptionは優秀なので、どこからも使われていない(未参照)レイアウトやフィールドは<code>Unreferenced Objects</code>を見ればわかります。</p>
+
+<p><img src="fmperception-unreferenced-1.png" alt="fmperception-unreferenced-1" /></p>
+
+<p>ここの画面で確認し「参照されていないから、削除だ！」とやってしまうと、以下のようなケースでエラーが発生する可能性があります。</p>
+
+<h2 id="エラーになるケース">エラーになるケース</h2>
+
+<ul>
+<li>名前を指定して実行する系のスクリプトステップを、ハードコードしている場合</li>
+<li>ファイルをまたいで参照されているが、参照しているファイルのDDRをエクスポートしていない場合</li>
+</ul>
+
+<p>ここも一般的な開発者であれば<code>カスタム関数</code>をつかったり、<code>GetFieldName ( fieldName )</code>などを使うと思いますが…</p>
+
+<p>ということで…</p>
+
+<p>削除する際には、</p>
+
+<ul>
+<li><strong>関連するファイルのDDRをすべてエクスポートすること</strong></li>
+<li><strong>削除するオブジェクトの名称で、全文検索すること</strong></li>
+</ul>
+
+<p>をしてから、削除することをおすすめします。</p>
+
+<p><img src="fmperception-unreferenced-2.png" alt="fmperception-unreferenced-2" /></p></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/" class="list-group-item">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</a>
+      
+      <a href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/" class="list-group-item">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/" class="list-group-item">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</a>
+      
+      <a href="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/" class="list-group-item">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</a>
+      
+      <a href="https://www.trhrkmk.com/posts/blog-hugo-start/" class="list-group-item">Hugoでブログを作りたくなったので始めました</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

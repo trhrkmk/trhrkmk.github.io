@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on HHKBは体の一部である</title>
+    <title>Categories on HHKBを使っている人に悪い人はいない</title>
     <link>https://www.trhrkmk.com/categories/</link>
-    <description>Recent content in Categories on HHKBは体の一部である</description>
+    <description>Recent content in Categories on HHKBを使っている人に悪い人はいない</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     
 	<atom:link href="https://www.trhrkmk.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>File Permission</title>
+      <link>https://www.trhrkmk.com/categories/file-permission/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/file-permission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filemaker</title>
+      <link>https://www.trhrkmk.com/categories/filemaker/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/filemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>https://www.trhrkmk.com/categories/macos/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/macos/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
