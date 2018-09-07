@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.48-DEV" />
+<meta name="generator" content="Hugo 0.47.1" />
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.trhrkmk.com/index.xml">
 
@@ -79,6 +79,72 @@ if (!doNotTrack) {
     
 
     <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-06T00:41:40JST">2018-09-06</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</a></h2>
+  </header>
+
+  
+  <div class="summary"><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
+
+<p>macのスニペットツールでググると</p>
+
+<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
+
+<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
+
+<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
+
+<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
+
+<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
+
+<p>おそらく、以下が定番なんでしょう。</p>
+
+<ul>
+<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
+<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
+<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
+<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
+</ul>
+
+<h2 id="色々と試してみた">色々と試してみた</h2>
+
+<ul>
+<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
+
+<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
+</ul>
+
+<pre><code># As of version 2.20100623, you can do this simpler version of above:
+xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
+</code></pre>
+
+<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
+
+<p>xdotoolは、Texpander内でも利用されています。</p>
+
+<ul>
+<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
+</ul>
+
+<p>というころで、今回は、Texpanderを使うことにしました！</p>
+
+<p></p></div>
+
+  
+  <footer>
+    <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/" title="Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた">Read More…</a>
+  </footer>
+  
+</article>
+</li>
       
       <li><article class="li">
   <header>
@@ -322,6 +388,8 @@ FileMaker Goではないですよ…
     </div>
     <div class="list-group">
       
+      <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/" class="list-group-item">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</a>
+      
       <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/" class="list-group-item">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</a>
       
       <a href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/" class="list-group-item">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</a>
@@ -350,6 +418,8 @@ FileMaker Goではないですよ…
       
       <a href="https://www.trhrkmk.com/categories/command" class="list-group-item">command</a>
       
+      <a href="https://www.trhrkmk.com/categories/debian" class="list-group-item">debian</a>
+      
       <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
       
       <a href="https://www.trhrkmk.com/categories/fmperception" class="list-group-item">fmperception</a>
@@ -367,9 +437,17 @@ FileMaker Goではないですよ…
       
       <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
       
+      <a href="https://www.trhrkmk.com/tags/debian" class="list-group-item">debian</a>
+      
       <a href="https://www.trhrkmk.com/tags/hugo" class="list-group-item">hugo</a>
       
+      <a href="https://www.trhrkmk.com/tags/linux" class="list-group-item">linux</a>
+      
       <a href="https://www.trhrkmk.com/tags/raspberry-pi" class="list-group-item">raspberry-pi</a>
+      
+      <a href="https://www.trhrkmk.com/tags/texpander" class="list-group-item">texpander</a>
+      
+      <a href="https://www.trhrkmk.com/tags/textexpander" class="list-group-item">textexpander</a>
       
     </div>
   </section>

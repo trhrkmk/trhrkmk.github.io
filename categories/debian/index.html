@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.trhrkmk.com/categories/debian/index.xml">
+
+<link rel="canonical" href="https://www.trhrkmk.com/categories/debian/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Debian - HHKBは体の一部</title>
+    
+    <link href="https://www.trhrkmk.com/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-90586336-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    
+    <header class="page-header">
+      <h1>Debian</h1>
+    </header>
+    
+
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-06T00:41:40JST">2018-09-06</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</a></h2>
+  </header>
+
+  
+  <div class="summary"><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
+
+<p>macのスニペットツールでググると</p>
+
+<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
+
+<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
+
+<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
+
+<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
+
+<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
+
+<p>おそらく、以下が定番なんでしょう。</p>
+
+<ul>
+<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
+<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
+<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
+<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
+</ul>
+
+<h2 id="色々と試してみた">色々と試してみた</h2>
+
+<ul>
+<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
+
+<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
+</ul>
+
+<pre><code># As of version 2.20100623, you can do this simpler version of above:
+xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
+</code></pre>
+
+<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
+
+<p>xdotoolは、Texpander内でも利用されています。</p>
+
+<ul>
+<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
+</ul>
+
+<p>というころで、今回は、Texpanderを使うことにしました！</p>
+
+<p></p></div>
+
+  
+  <footer>
+    <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/" title="Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた">Read More…</a>
+  </footer>
+  
+</article>
+</li>
+      
+    </ul>
+
+    
+
+
+  </div>
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/" class="list-group-item">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/" class="list-group-item">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</a>
+      
+      <a href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/" class="list-group-item">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/" class="list-group-item">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</a>
+      
+      <a href="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/" class="list-group-item">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</a>
+      
+      <a href="https://www.trhrkmk.com/posts/blog-hugo-start/" class="list-group-item">Hugoでブログを作りたくなったので始めました</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+      <a href="https://www.trhrkmk.com/categories/arp-scan" class="list-group-item">arp-scan</a>
+      
+      <a href="https://www.trhrkmk.com/categories/command" class="list-group-item">command</a>
+      
+      <a href="https://www.trhrkmk.com/categories/debian" class="list-group-item">debian</a>
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/fmperception" class="list-group-item">fmperception</a>
+      
+      <a href="https://www.trhrkmk.com/categories/hugo" class="list-group-item">hugo</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="https://www.trhrkmk.com/tags/hugo" class="list-group-item">hugo</a>
+      
+      <a href="https://www.trhrkmk.com/tags/linux" class="list-group-item">linux</a>
+      
+      <a href="https://www.trhrkmk.com/tags/raspberry-pi" class="list-group-item">raspberry-pi</a>
+      
+      <a href="https://www.trhrkmk.com/tags/texpander" class="list-group-item">texpander</a>
+      
+      <a href="https://www.trhrkmk.com/tags/textexpander" class="list-group-item">textexpander</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた - HHKBは体の一部</title>
+    
+<meta name="description" content="&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;&lt;p&gt;macのスニペットツールでググると&lt;/p&gt;&lt;p&gt;&lt;strong&gt;TextExpander&lt;/strong&gt;、&lt;strong&gt;Alfred&lt;/strong&gt;、&lt;strong&gt;Dash&lt;/strong&gt;、など、いろいろなアプリがありますよね。&lt;/p&gt;&lt;p&gt;macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。&lt;/p&gt;&lt;p&gt;勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。&lt;/p&gt;&lt;h2 id=&#34;linuxのスニペットツール&#34;&gt;Linuxのスニペットツール&lt;/h2&gt;&lt;p&gt;TextExpanderの代わりになるアプリをググると、&lt;a href=&#34;https://alternativeto.net/software/textexpander/?platform=linux&#34;&gt;alternativeTo&lt;/a&gt;というサイトがよくでてきます。&lt;/p&gt;&lt;p&gt;おそらく、以下が定番なんでしょう。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;OldAutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;AutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.semicomplete.com/projects/xdotool/&#34;&gt;xdotool&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://leehblue.com/ubuntu-text-expander/&#34;&gt;Texpander&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&#34;色々と試してみた&#34;&gt;色々と試してみた&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;AutoKey&lt;/strong&gt;は、Pythonで書かれているので、Pythonができる方はおすすめ。&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;xdotool&lt;/strong&gt;は、X11の操作をコマンドで操作できるコマンドのようです。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code&gt;# As of version 2.20100623, you can do this simpler version of above:xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --clearmodifiers ctrl&#43;l&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドを実行すると&lt;code&gt;Firefoxをアクティブにして、ctrl&#43;lを入力する&lt;/code&gt;状態にできます。&lt;/p&gt;&lt;p&gt;xdotoolは、Texpander内でも利用されています。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Texpander&lt;/strong&gt;は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;というころで、今回は、Texpanderを使うことにしました！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた - HHKBは体の一部">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBは体の一部">
+<meta property="og:description" content="&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;&lt;p&gt;macのスニペットツールでググると&lt;/p&gt;&lt;p&gt;&lt;strong&gt;TextExpander&lt;/strong&gt;、&lt;strong&gt;Alfred&lt;/strong&gt;、&lt;strong&gt;Dash&lt;/strong&gt;、など、いろいろなアプリがありますよね。&lt;/p&gt;&lt;p&gt;macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。&lt;/p&gt;&lt;p&gt;勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。&lt;/p&gt;&lt;h2 id=&#34;linuxのスニペットツール&#34;&gt;Linuxのスニペットツール&lt;/h2&gt;&lt;p&gt;TextExpanderの代わりになるアプリをググると、&lt;a href=&#34;https://alternativeto.net/software/textexpander/?platform=linux&#34;&gt;alternativeTo&lt;/a&gt;というサイトがよくでてきます。&lt;/p&gt;&lt;p&gt;おそらく、以下が定番なんでしょう。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;OldAutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;AutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.semicomplete.com/projects/xdotool/&#34;&gt;xdotool&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://leehblue.com/ubuntu-text-expander/&#34;&gt;Texpander&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&#34;色々と試してみた&#34;&gt;色々と試してみた&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;AutoKey&lt;/strong&gt;は、Pythonで書かれているので、Pythonができる方はおすすめ。&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;xdotool&lt;/strong&gt;は、X11の操作をコマンドで操作できるコマンドのようです。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code&gt;# As of version 2.20100623, you can do this simpler version of above:xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --clearmodifiers ctrl&#43;l&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドを実行すると&lt;code&gt;Firefoxをアクティブにして、ctrl&#43;lを入力する&lt;/code&gt;状態にできます。&lt;/p&gt;&lt;p&gt;xdotoolは、Texpander内でも利用されています。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Texpander&lt;/strong&gt;は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;というころで、今回は、Texpanderを使うことにしました！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBは体の一部">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">
+<meta name="twitter:title" content="Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた - HHKBは体の一部">
+<meta name="twitter:description" content="&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;&lt;p&gt;macのスニペットツールでググると&lt;/p&gt;&lt;p&gt;&lt;strong&gt;TextExpander&lt;/strong&gt;、&lt;strong&gt;Alfred&lt;/strong&gt;、&lt;strong&gt;Dash&lt;/strong&gt;、など、いろいろなアプリがありますよね。&lt;/p&gt;&lt;p&gt;macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。&lt;/p&gt;&lt;p&gt;勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。&lt;/p&gt;&lt;h2 id=&#34;linuxのスニペットツール&#34;&gt;Linuxのスニペットツール&lt;/h2&gt;&lt;p&gt;TextExpanderの代わりになるアプリをググると、&lt;a href=&#34;https://alternativeto.net/software/textexpander/?platform=linux&#34;&gt;alternativeTo&lt;/a&gt;というサイトがよくでてきます。&lt;/p&gt;&lt;p&gt;おそらく、以下が定番なんでしょう。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;OldAutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;AutoKey&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.semicomplete.com/projects/xdotool/&#34;&gt;xdotool&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://leehblue.com/ubuntu-text-expander/&#34;&gt;Texpander&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&#34;色々と試してみた&#34;&gt;色々と試してみた&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;AutoKey&lt;/strong&gt;は、Pythonで書かれているので、Pythonができる方はおすすめ。&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;xdotool&lt;/strong&gt;は、X11の操作をコマンドで操作できるコマンドのようです。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code&gt;# As of version 2.20100623, you can do this simpler version of above:xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --clearmodifiers ctrl&#43;l&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドを実行すると&lt;code&gt;Firefoxをアクティブにして、ctrl&#43;lを入力する&lt;/code&gt;状態にできます。&lt;/p&gt;&lt;p&gt;xdotoolは、Texpander内でも利用されています。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Texpander&lt;/strong&gt;は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;というころで、今回は、Texpanderを使うことにしました！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた - HHKBは体の一部",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-09-06T00:41:40JST",
+    "dateModified": "2018-09-06T00:41:40JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBは体の一部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBは体の一部",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
+
+<p>macのスニペットツールでググると</p>
+
+<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
+
+<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
+
+<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
+
+<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
+
+<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
+
+<p>おそらく、以下が定番なんでしょう。</p>
+
+<ul>
+<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
+<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
+<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
+<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
+</ul>
+
+<h2 id="色々と試してみた">色々と試してみた</h2>
+
+<ul>
+<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
+
+<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
+</ul>
+
+<pre><code># As of version 2.20100623, you can do this simpler version of above:
+xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
+</code></pre>
+
+<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
+
+<p>xdotoolは、Texpander内でも利用されています。</p>
+
+<ul>
+<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
+</ul>
+
+<p>というころで、今回は、Texpanderを使うことにしました！</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <link href="https://www.trhrkmk.com/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-90586336-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li class="active">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-06T00:41:40JST">2018-09-06</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">posts</a></li>
+      
+    </ul>
+
+    <h1 class="title">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</h1>
+  </header>
+
+  
+
+  <div class="article-body"><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
+
+<p>macのスニペットツールでググると</p>
+
+<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
+
+<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
+
+<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
+
+<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
+
+<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
+
+<p>おそらく、以下が定番なんでしょう。</p>
+
+<ul>
+<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
+<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
+<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
+<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
+</ul>
+
+<h2 id="色々と試してみた">色々と試してみた</h2>
+
+<ul>
+<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
+
+<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
+</ul>
+
+<pre><code># As of version 2.20100623, you can do this simpler version of above:
+xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
+</code></pre>
+
+<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
+
+<p>xdotoolは、Texpander内でも利用されています。</p>
+
+<ul>
+<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
+</ul>
+
+<p>というころで、今回は、Texpanderを使うことにしました！</p>
+
+<p></p>
+
+<h2 id="texpanderを使ってみる">Texpanderを使ってみる</h2>
+
+<p>作者の方のブログを読めば分かりますが、一応…</p>
+
+<p><a href="https://leehblue.com/ubuntu-text-expander/">https://leehblue.com/ubuntu-text-expander/</a></p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-1.png" alt="texpander" /></p>
+
+<h3 id="必要なコマンドをインストールする">必要なコマンドをインストールする</h3>
+
+<pre><code>sudo apt install xsel 
+sudo apt install xdotool 
+sudo apt install zenity
+</code></pre>
+
+<h3 id="clone">clone</h3>
+
+<p>Downloadsにcloneしてみます。</p>
+
+<pre><code>~ $ cd Downloads/
+Downloads $ git clone git@github.com:leehblue/texpander.git
+Downloads $ cd texpander/
+texpander $ ls -la
+total 64
+drwxr-xr-x 3 teruhirokomaki teruhirokomaki  4096 Sep  7 21:37 .
+drwxr-xr-x 5 teruhirokomaki teruhirokomaki  4096 Sep  7 21:36 ..
+drwxr-xr-x 8 teruhirokomaki teruhirokomaki  4096 Sep  7 21:37 .git
+-rw-r--r-- 1 teruhirokomaki teruhirokomaki     6 Sep  7 21:37 .gitignore
+-rw-r--r-- 1 teruhirokomaki teruhirokomaki 35142 Sep  7 21:37 LICENSE.md
+-rw-r--r-- 1 teruhirokomaki teruhirokomaki  5169 Sep  7 21:37 README.md
+-rwxr-xr-x 1 teruhirokomaki teruhirokomaki  2080 Sep  7 21:37 texpander.sh
+</code></pre>
+
+<h3 id="texpander-shをすきな場所におく">texpander.shをすきな場所におく</h3>
+
+<p><code>home/user/bin/</code>に<code>texpander.sh</code>をおく。</p>
+
+<p><code>~/bin</code>がなければ作成してください。</p>
+
+<pre><code>Downloads $ cp texpander/texpander.sh ~/bin/
+</code></pre>
+
+<h3 id="texpanderを作成しテストファイルをおく">.texpanderを作成しテストファイルをおく</h3>
+
+<pre><code class="language-bash">Downloads $ cd
+~ $ mkdir .texpander
+~ $ echo 'test' &gt; .texpander/test.txt
+</code></pre>
+
+<h3 id="ショートカットを設定する">ショートカットを設定する</h3>
+
+<p>作者の方と同じようにショートカットを設定します。</p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-2.png" alt="texpander-2" /></p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-3.png" alt="texpander-3" /></p>
+
+<h3 id="一部修正した">一部修正した</h3>
+
+<p><code>$HOME</code>の部分を修正した。</p>
+
+<pre><code class="language-bash"># If ~/.texpander directory does not exist, create it
+if [ ! -d ${$HOME}/.texpander ]; then
+    mkdir ${$HOME}/.texpander
+fi
+</code></pre>
+
+<p>修正後</p>
+
+<pre><code class="language-bash"># If ~/.texpander directory does not exist, create it
+if [ ! -d ${HOME}/.texpander ]; then
+    mkdir ${HOME}/.texpander
+fi
+</code></pre>
+
+<h3 id="シェルスクリプトを見てみる">シェルスクリプトを見てみる</h3>
+
+<p>一部を抜粋してますが…</p>
+
+<p>以下のスクリプトを見てわかるとおり、かなりシンプルなため…</p>
+
+<pre><code class="language-bash">name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
+
+path=&quot;${base_dir}/${name}&quot;
+
+if [ -f &quot;${base_dir}/${name}&quot; ]
+then
+  if [ -e &quot;$path&quot; ]
+  then
+    # Preserve the current value of the clipboard
+    clipboard=$(xsel -b -o)
+
+    # Put text in primary buffer for Shift+Insert pasting
+    echo -n &quot;$(cat &quot;$path&quot;)&quot; | xsel -p -i
+
+    # Put text in clipboard selection for apps like Firefox that 
+    # insist on using the clipboard for all pasting
+    echo -n &quot;$(cat &quot;$path&quot;)&quot; | xsel -b -i
+
+    # Paste text into current active window
+    sleep 0.3
+    xdotool key shift+Insert
+
+</code></pre>
+
+<p>ファイルが<code>.sh</code>と<code>.go</code>の場合の条件を追加してみた</p>
+
+<pre><code class="language-bash">name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
+
+path=&quot;${base_dir}/${name}&quot;
+
+if [ -f &quot;${base_dir}/${name}&quot; ]
+then
+  if [ -e &quot;$path&quot; ]
+  then
+    # Preserve the current value of the clipboard
+    clipboard=$(xsel -b -o)
+
+    # get ext from path
+    ext=$(echo $path | sed 's/^.*\.\([^\.]*\)$/\1/')
+
+    # check ext
+    if [ $ext = &quot;sh&quot; ]; then
+      bash $(echo $path) | xsel -p -i
+      bash $(echo $path) | xsel -b -i
+
+    elif [ $ext = &quot;go&quot; ]; then
+      go run $(echo $path) | xsel -p -i
+      go run $(echo $path) | xsel -b -i
+
+    else
+      # Put text in primary buffer for Shift+Insert pasting
+      echo -n &quot;$(cat &quot;$path&quot;)&quot; | xsel -p -i
+
+      # Put text in clipboard selection for apps like Firefox that 
+      # insist on using the clipboard for all pasting
+      echo -n &quot;$(cat &quot;$path&quot;)&quot; | xsel -b -i
+
+    fi
+
+    # Paste text into current active window
+    sleep 0.3
+    xdotool key shift+Insert
+</code></pre>
+
+<h3 id="使ってみる">使ってみる</h3>
+
+<p>こんな感じで使えます。</p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-demo.gif" alt="texpander-demo" /></p>
+
+<h2 id="zenityコマンドを見てみる">zenityコマンドを見てみる</h2>
+
+<p>Texpnaderで使われている<code>zenity</code>というコマンドは、どんなものか見てみました。</p>
+
+<p>manをみる</p>
+
+<pre><code class="language-bash">man zenity
+</code></pre>
+
+<pre><code class="language-bash">ZENITY(1)                                                                                  General Commands Manual                                                                                  ZENITY(1)
+
+NAME
+       zenity - display GTK+ dialogs
+
+SYNOPSIS
+       zenity [options]
+
+DESCRIPTION
+       zenity  is  a  program  that will display GTK+ dialogs, and return (either in the return code, or on standard output) the users input. This allows you to present information, and ask for information
+       from the user, from all manner of shell scripts.
+
+       For example, zenity --question will return either 0, 1 or 5, depending on whether the user pressed OK, Cancel or timeout has been reached. zenity --entry will output on standard output what the user
+       typed into the text entry field.
+
+       Comprehensive documentation is available in the GNOME Help Browser.
+
+OPTIONS
+       This program follows the usual GNU command line syntax, with long options starting with two dashes (`-').
+
+       Dialog options
+
+       --calendar
+              Display calendar dialog
+
+       --entry
+              Display text entry dialog
+
+       --error
+              Display error dialog
+
+       --file-selection
+              Display file selection dialog
+
+       --info Display info dialog
+
+       --list Display list dialog
+
+       --notification
+              Display notification
+
+       --progress
+              Display progress indication dialog
+
+       --question
+              Display question dialog
+
+       --text-info
+              Display text information dialog
+
+       --warning
+              Display warning dialog
+
+       --scale
+              Display scale dialog
+
+       --color-selection
+              Display color selection dialog
+
+       --password
+              Display password dialog
+
+       --forms
+              Display forms dialog
+
+       General options
+
+       --title=TITLE
+              Set the dialog title
+
+       --window-icon=ICONPATH
+              Set the window icon with the path to an image. Alternatively, one of the four stock icons can be used: 'error', 'info', 'question' or 'warning'
+
+       --width=WIDTH
+              Set the dialog width
+
+       --height=HEIGHT
+              Set the dialog height
+
+       --timeout=TIMEOUT
+              Set the dialog timeout in seconds
+
+       Calendar options
+
+       --text=STRING
+              Set the dialog text
+
+       --day=INT
+              Set the calendar day
+
+       --month=INT
+              Set the calendar month
+
+       --year=INT
+              Set the calendar year
+
+       --date-format=PATTERN
+              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
+
+       Text entry options
+
+       --text=STRING
+              Set the dialog text
+
+       --entry-text=STRING
+              Set the entry text
+
+       --hide-text
+              Hide the entry text
+
+       Error options
+
+       --text=STRING
+              Set the dialog text
+
+       --no-wrap
+              Do not enable text wrapping
+
+       --no-markup
+              Do not enable pango markup
+
+       File selection options
+
+       --filename=FILENAME
+              Set the file or directory to be selected by default
+
+       --multiple
+              Allow selection of multiple filenames in file selection dialog
+
+       --directory
+              Activate directory-only selection
+
+       --save Activate save mode
+
+       --separator=SEPARATOR
+              Specify separator character when returning multiple filenames
+
+       --confirm-overwrite
+              Confirm file selection if filename already exists
+
+       --file-filter=NAME | PATTERN1 PATTERN2
+              Sets a filename filter
+
+       Info options
+
+       --text=STRING
+              Set the dialog text
+
+       --no-wrap
+              Do not enable text wrapping
+
+       --no-markup
+              Do not enable pango markup
+
+       List options
+
+       --text=STRING
+              Set the dialog text
+
+       --column=STRING
+              Set the column header
+
+       --checklist
+              Use check boxes for first column
+
+       --radiolist
+              Use radio buttons for first column
+
+       --separator=STRING
+              Set output separator character
+
+       --multiple
+              Allow multiple rows to be selected
+
+       --editable
+              Allow changes to text
+
+       --print-column=NUMBER
+              Specify what column to print to standard output. The default is to return the first column. 'ALL' may be used to print all columns.
+
+       --hide-column=NUMBER
+              Hide a specific column
+
+       --hide-header
+              Hides the column headers
+
+       Notification options
+
+       --text=STRING
+              Set the notification text
+
+       --listen
+              Listen  for  commands  on  stdin.  Commands  include  'message',  'tooltip',  'icon',  and  'visible'  separated  by  a colon. For example, 'message: Hello world', 'visible: false', or 'icon:
+              /path/to/icon'. The icon command also accepts the four stock icon: 'error', 'info', 'question', and 'warning'
+
+       Progress options
+
+       --text=STRING
+              Set the dialog text
+
+       --percentage=INT
+              Set initial percentage
+
+       --auto-close
+              Close dialog when 100% has been reached
+
+       --auto-kill
+              Kill parent process if cancel button is pressed
+
+       --pulsate
+              Pulsate progress bar
+
+       --no-cancel
+              Hides the cancel button
+
+       Question options
+
+       --text=STRING
+              Set the dialog text
+
+       --no-wrap
+              Do not enable text wrapping
+
+       --no-markup
+              Do not enable pango markup
+
+       --ok-label
+              Set the text of the OK button
+
+       --cancel-label
+              Set the text of the cancel button
+
+       Text options
+
+       --filename=FILENAME
+              Open file
+
+       --editable
+              Allow changes to text
+
+       --checkbox=TEXT
+              Enable a checkbox for use like a 'I read and accept the terms.'
+
+       --ok-label
+              Set the text of the OK button
+
+       --cancel-label
+              Set the text of the cancel button
+
+       Warning options
+
+       --text=STRING
+              Set the dialog text
+
+       --no-wrap
+              Do not enable text wrapping
+
+       --no-markup
+              Do not enable pango markup
+
+       Scale options
+
+       --text=STRING
+              Set the dialog text
+
+       --value=VALUE
+              Set initial value
+
+       --min-value=VALUE
+              Set minimum value
+
+       --max-value=VALUE
+              Set maximum value
+
+       --step=VALUE
+              Set step size
+
+       --print-partial
+              Print partial values
+
+       --hide-value
+              Hide value
+
+       Color selection options
+
+       --color=VALUE
+              Set the initial color
+
+       --show-palette
+              Show the palette
+
+       Password dialog options
+
+       --username
+              Display the username field
+
+       Forms dialog options
+
+       --add-entry=FIELDNAME
+              Add a new Entry in forms dialog
+
+       --add-password=FIELDNAME
+              Add a new Password Entry in forms dialog
+
+       --add-calendar=FIELDNAME
+              Add a new Calendar in forms dialog
+
+       --text=STRING
+              Set the dialog text
+
+       --separator=STRING
+              Set output separator character
+
+       --forms-date-format=PATTERN
+              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
+
+       Miscellaneous options
+
+       -?, --help
+              Show summary of options.
+
+       --about
+              Display an about dialog.
+
+       --version
+              Show version of program.
+
+       Also the standard GTK+ options are accepted. For more information about the GTK+ options, execute following command.
+
+              zenity --help-gtk
+
+ENVIRONMENT
+       Normally, zenity detects the terminal window from which it was launched and keeps itself above that window.  This behavior can be disabled by unsetting the WINDOWID environment variable.
+
+EXAMPLES
+       Display a file selector with the title Select a file to remove. The file selected is returned on standard output.
+
+              zenity  --title=&quot;Select a file to remove&quot; --file-selection
+
+       Display a text entry dialog with the title Select Host and the text Select the host you would like to flood-ping. The entered text is returned on standard output.
+
+              zenity  --title &quot;Select Host&quot; --entry --text &quot;Select the host you would like to flood-ping&quot;
+
+       Display a dialog, asking Microsoft Windows has been found! Would you like to remove it?. The return code will be 0 (true in shell) if OK is selected, and 1 (false) if Cancel is selected.
+
+              zenity  --question --title &quot;Alert&quot;  --text &quot;Microsoft Windows has been found! Would you like to remove it?&quot;
+
+       Show the search results in a list dialog with the title Search Results and the text Finding all header files....
+
+              find . -name '*.h' | zenity --list --title &quot;Search Results&quot; --text &quot;Finding all header files..&quot; --column &quot;Files&quot;
+
+       Show a notification in the message tray
+
+              zenity --notification --window-icon=update.png --text &quot;System update necessary!&quot;
+
+       Display a weekly shopping list in a check list dialog with Apples and Oranges pre selected
+
+              zenity --list --checklist --column &quot;Buy&quot; --column &quot;Item&quot; TRUE Apples TRUE Oranges FALSE Pears FALSE Toothpaste
+
+       Display a progress dialog while searching for all the postscript files in your home directory
+
+       find $HOME -name '*.ps' | zenity --progress --pulsate
+
+AUTHOR
+       Zenity was written by Glynn Foster &lt;glynn.foster@sun.com&gt;.
+
+       This manual page was written by Ross Burton &lt;ross@burtonini.com&gt;.
+
+SEE ALSO
+       gdialog(1), dialog(1)
+</code></pre>
+
+<h3 id="色々と叩いてみる">色々と叩いてみる</h3>
+
+<p><code>--list</code>のオプションを指定してみる。</p>
+
+<pre><code class="language-bash">~ $ zenity --list --title=Texpander --width=275 --height=400 --column=&quot;no&quot; --column=&quot;Abbreviations&quot; --separator=&quot;|&quot; --text=STRING --multiple --print-column=ALL 1 &quot;aaa&quot; 2 &quot;bbb&quot;
+</code></pre>
+
+<p>どうでしょうか。</p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-4.png" alt="texpander-4" /></p>
+
+<p>ダイアログはこんな感じです。</p>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-5.png" alt="texpander-5" /></p>
+
+<p><code>--separator=&quot;|&quot;</code>と<code>--multiple</code>を指定して、2つを選択してるためか、出力はこんな感じです。</p>
+
+<pre><code class="language-bash">~ $ 1|aaa|2|bbb
+</code></pre>
+
+<p>別のオプションを指定してみる。</p>
+
+<p><code>--editable</code>と<code>--column=&quot;param&quot;</code>を追加してみました。</p>
+
+<pre><code class="language-bash">~ $ zenity --list --title=Texpander --width=275 --height=400 --column=&quot;no&quot; --column=&quot;Abbreviations&quot; --column=&quot;param&quot; --editable --separator=&quot;|&quot; --text=STRING --multiple --print-column=ALL 1 &quot;aaa&quot;  &quot;&quot; 2 &quot;bbb&quot; &quot;&quot;
+</code></pre>
+
+<p><img src="/images/linux-textexpander-typinator-similar-app-introduction/texpander-6.png" alt="texpander-6" /></p>
+
+<pre><code class="language-bash">~ $ 1|aaa|引数を
+</code></pre>
+
+<p>やろうと思えば、任意の文字列を渡せそうです。</p>
+
+<p>zenityは、list以外にも色々とあるので、いじってみます。</p></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/debian/">Debian</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/linux/">Linux</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/debian/">Debian</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/textexpander/">TextExpander</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/texpander/">Texpander</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/" class="list-group-item">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/" class="list-group-item">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</a>
+      
+      <a href="https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/" class="list-group-item">Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</a>
+      
+      <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/" class="list-group-item">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</a>
+      
+      <a href="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/" class="list-group-item">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</a>
+      
+      <a href="https://www.trhrkmk.com/posts/blog-hugo-start/" class="list-group-item">Hugoでブログを作りたくなったので始めました</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/categories/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/categories/macos" class="list-group-item">macos</a>
+      
+      <a href="https://www.trhrkmk.com/categories/arp-scan" class="list-group-item">arp-scan</a>
+      
+      <a href="https://www.trhrkmk.com/categories/command" class="list-group-item">command</a>
+      
+      <a href="https://www.trhrkmk.com/categories/debian" class="list-group-item">debian</a>
+      
+      <a href="https://www.trhrkmk.com/categories/file-permission" class="list-group-item">file-permission</a>
+      
+      <a href="https://www.trhrkmk.com/categories/fmperception" class="list-group-item">fmperception</a>
+      
+      <a href="https://www.trhrkmk.com/categories/hugo" class="list-group-item">hugo</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.trhrkmk.com/tags/filemaker" class="list-group-item">filemaker</a>
+      
+      <a href="https://www.trhrkmk.com/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="https://www.trhrkmk.com/tags/hugo" class="list-group-item">hugo</a>
+      
+      <a href="https://www.trhrkmk.com/tags/linux" class="list-group-item">linux</a>
+      
+      <a href="https://www.trhrkmk.com/tags/raspberry-pi" class="list-group-item">raspberry-pi</a>
+      
+      <a href="https://www.trhrkmk.com/tags/texpander" class="list-group-item">texpander</a>
+      
+      <a href="https://www.trhrkmk.com/tags/textexpander" class="list-group-item">textexpander</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

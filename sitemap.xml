@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</loc>
     <lastmod>2018-09-02T17:22:32+09:00</lastmod>
   </url>
@@ -47,6 +52,18 @@
   <url>
     <loc>https://www.trhrkmk.com/categories/command/</loc>
     <lastmod>2018-08-27T17:42:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/debian/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/debian/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -93,6 +110,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/linux/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/macos/</loc>
     <lastmod>2018-08-29T01:13:00+09:00</lastmod>
     <priority>0</priority>
@@ -100,7 +123,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -112,7 +135,19 @@
   
   <url>
     <loc>https://www.trhrkmk.com/tags/</loc>
-    <lastmod>2018-09-02T17:22:32+09:00</lastmod>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/texpander/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/textexpander/</loc>
+    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
