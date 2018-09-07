@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Wed, 05 Sep 2018 15:59:19 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Sep 2018 17:22:32 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://www.trhrkmk.com/about/</link>
-      <pubDate>Wed, 05 Sep 2018 15:59:19 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/about/</guid>
-      <description>@trhrkmk</description>
-    </item>
     
     <item>
       <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</title>
