@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Sun, 02 Sep 2018 17:22:32 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 15:59:19 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://www.trhrkmk.com/about/</link>
+      <pubDate>Thu, 06 Sep 2018 15:59:19 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/about/</guid>
+      <description>ブログについて メモ程度のブログです。
+ブログのタイトル通りHHKBが大好きです！
+作ったツール  sheetskv goFMDataMigration  好き  Golang HHKB Vim Raspberry Pi(ラズパイ) Linux Debian ターミナル CLIツール 工作 FileMaker AWS GCP GAE/GO 自作キーボード  SNS Twitterがメインです。
+Tweets by trhrkmk 
+仕事 FileMakerプラットフォームを使った業務システムの受託開発をしています。
+お仕事については株式会社フルーデンスへお問い合わせください。</description>
+    </item>
     
     <item>
       <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</title>
