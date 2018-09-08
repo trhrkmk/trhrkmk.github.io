@@ -6,6 +6,8 @@
     <description>Recent content in File Permission on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+    <managingEditor>teruhirokomaki@gmail.com (Teruhiro Komaki)</managingEditor>
+    <webMaster>teruhirokomaki@gmail.com (Teruhiro Komaki)</webMaster>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Wed, 29 Aug 2018 01:13:00 +0900</lastBuildDate>
     
@@ -16,7 +18,7 @@
       <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</title>
       <link>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</link>
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
       <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
 

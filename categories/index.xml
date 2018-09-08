@@ -6,6 +6,8 @@
     <description>Recent content in Categories on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+    <managingEditor>teruhirokomaki@gmail.com (Teruhiro Komaki)</managingEditor>
+    <webMaster>teruhirokomaki@gmail.com (Teruhiro Komaki)</webMaster>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Mon, 27 Aug 2018 17:42:49 +0900</lastBuildDate>
     
@@ -16,7 +18,7 @@
       <title>Arp Scan</title>
       <link>https://www.trhrkmk.com/categories/arp-scan/</link>
       <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/arp-scan/</guid>
       <description></description>
     </item>
@@ -25,7 +27,7 @@
       <title>Command</title>
       <link>https://www.trhrkmk.com/categories/command/</link>
       <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/command/</guid>
       <description></description>
     </item>
@@ -34,7 +36,7 @@
       <title>Debian</title>
       <link>https://www.trhrkmk.com/categories/debian/</link>
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/debian/</guid>
       <description></description>
     </item>
@@ -43,7 +45,7 @@
       <title>File Permission</title>
       <link>https://www.trhrkmk.com/categories/file-permission/</link>
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/file-permission/</guid>
       <description></description>
     </item>
@@ -52,7 +54,7 @@
       <title>Filemaker</title>
       <link>https://www.trhrkmk.com/categories/filemaker/</link>
       <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/filemaker/</guid>
       <description></description>
     </item>
@@ -61,7 +63,7 @@
       <title>Fmperception</title>
       <link>https://www.trhrkmk.com/categories/fmperception/</link>
       <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/fmperception/</guid>
       <description></description>
     </item>
@@ -70,7 +72,7 @@
       <title>Hugo</title>
       <link>https://www.trhrkmk.com/categories/hugo/</link>
       <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/hugo/</guid>
       <description></description>
     </item>
@@ -79,7 +81,7 @@
       <title>Macos</title>
       <link>https://www.trhrkmk.com/categories/macos/</link>
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      
+      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
       <guid>https://www.trhrkmk.com/categories/macos/</guid>
       <description></description>
     </item>
