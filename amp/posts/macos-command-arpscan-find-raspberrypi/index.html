@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+<link rel="apple-touch-icon" href="https://www.trhrkmk.com/images/logo.png">
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる - HHKBは体の一部</title>
+    
+<meta name="description" content="&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;brew install arp-scan&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;インストールできました。&lt;/p&gt;&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる - HHKBは体の一部">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBは体の一部">
+<meta property="og:description" content="&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;brew install arp-scan&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;インストールできました。&lt;/p&gt;&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBは体の一部">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/">
+<meta name="twitter:title" content="macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる - HHKBは体の一部">
+<meta name="twitter:description" content="&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;brew install arp-scan&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;インストールできました。&lt;/p&gt;&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる - HHKBは体の一部",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-08-27T17:42:49JST",
+    "dateModified": "2018-08-27T17:42:49JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBは体の一部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBは体の一部",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>Linuxではデフォルトでインストールされている<code>arp-scan</code>コマンド。</p>
+
+<p>macOSで利用する場合は、Homebrewでインストールしましょう。</p>
+
+<pre><code>brew install arp-scan
+</code></pre>
+
+<p>インストールできました。</p>
+
+<p>ラズパイにsshする時に必要になるipアドレスを調べてみましょう。</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://www.trhrkmk.com/images/default.jpg); background-size: cover; background-position: center;}.thumb-595902e3f91a7903b2e09e54e9d6166a { background-image: url(https://www.trhrkmk.com/images/blog-hugo-start/hugo-1.png);}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-90586336-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-1238f6d76dc9276eb7c6d47b4fe2c088"></div>
+
+  <header class="article-header">
+    <h1 class="title">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-27T17:42:49JST">2018-08-27</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">POSTS</a></li>
+      
+    </ul>
+
+    <div class="addthis_inline_share_toolbox"></div>
+  </header>
+
+  
+
+  <div class="article-body"><p>Linuxではデフォルトでインストールされている<code>arp-scan</code>コマンド。</p>
+
+<p>macOSで利用する場合は、Homebrewでインストールしましょう。</p>
+
+<pre><code>brew install arp-scan
+</code></pre>
+
+<p>インストールできました。</p>
+
+<p>ラズパイにsshする時に必要になるipアドレスを調べてみましょう。</p>
+
+<p></p>
+
+<pre><code>sudo arp-scan -l
+Password:
+Interface: en0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.9.5 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.100.1   00:a0:de:6a:ac:51       YAMAHA CORPORATION
+192.168.100.2   f0:99:bf:04:35:98       Apple, Inc.
+192.168.100.3   f0:99:bf:04:35:98       Apple, Inc.
+192.168.100.4   00:b3:62:dc:f9:91       (Unknown)
+192.168.100.20  00:22:cf:fa:57:b3       PLANEX COMMUNICATIONS INC.
+192.168.100.6   dc:ef:ca:89:91:d6       (Unknown)
+192.168.100.9   d8:00:4d:ee:5c:7d       Apple, Inc.
+192.168.100.12  60:f8:1d:be:e2:ac       Apple, Inc.
+192.168.100.15  78:88:6d:c3:86:58       (Unknown)
+
+518 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9.5: 256 hosts scanned in 1.851 seconds (138.30 hosts/sec). 10 responded
+</code></pre>
+
+<p>ラズパイには<code>PLANEX</code>の無線LAN子機をつけているので、今回の場合は<code>192.168.100.20</code>になります。</p>
+
+<pre><code>ssh pi@192.168.100.20
+</code></pre>
+
+<p><code>arp-scan</code>便利ですね。</p>
+
+<p>しかし、Apple製品多いな…</p>
+
+<p>manをはっておこう…</p>
+
+<pre><code>man arp-scan
+</code></pre>
+
+<pre><code>ARP-SCAN(1)                                                        ARP-SCAN(1)
+
+
+
+NNAAMMEE
+       arp-scan - The ARP scanner
+
+SSYYNNOOPPSSIISS
+       aarrpp--ssccaann [_o_p_t_i_o_n_s] [_h_o_s_t_s...]
+
+       Target  hosts  must  be specified on the command line unless the ----ffiillee
+       option is given, in which case the targets are read from the  specified
+       file  instead, or the ----llooccaallnneett option is used, in which case the tar-
+       gets are generated from the network interface IP address and netmask.
+
+       You will need to be root, or aarrpp--ssccaann must be SUID root,  in  order  to
+       run  aarrpp--ssccaann,  because  the  functions  that it uses to read and write
+       packets require root privilege.
+
+       The target hosts can be specified as IP addresses  or  hostnames.   You
+       can  also specify the target as IIPPnneettwwoorrkk//bbiittss (e.g. 192.168.1.0/24) to
+       specify all hosts in the given network (network and broadcast addresses
+       included), IIPPssttaarrtt--IIPPeenndd (e.g. 192.168.1.3-192.168.1.27) to specify all
+       hosts   in   the   inclusive   range,   or   IIPPnneettwwoorrkk::NNeettMMaasskk    (e.g.
+       192.168.1.0:255.255.255.0)  to  specify  all hosts in the given network
+       and mask.
+
+DDEESSCCRRIIPPTTIIOONN
+       aarrpp--ssccaann sends ARP packets to hosts on the local network  and  displays
+       any  responses  that  are received. The network interface to use can be
+       specified with the ----iinntteerrffaaccee option. If this option is  not  present,
+       aarrpp--ssccaann will search the system interface list for the lowest numbered,
+       configured up interface (excluding  loopback).   By  default,  the  ARP
+       packets  are sent to the Ethernet broadcast address, ff:ff:ff:ff:ff:ff,
+       but that can be changed with the ----ddeessttaaddddrr option.
+
+       The target hosts to scan may be specified in  one  of  three  ways:  by
+       specifying  the  targets on the command line; by specifying a file con-
+       taining the targets with  the  ----ffiillee  option;  or  by  specifying  the
+       ----llooccaallnneett  option  which  causes  all  possible  hosts  on the network
+       attached to the interface (as defined  by  the  interface  address  and
+       mask)  to  be scanned. For hosts specified on the command line, or with
+       the ----ffiillee option, you can use either IP addresses or  hostnames.   You
+       can  also  use network specifications IIPPnneettwwoorrkk//bbiittss, IIPPssttaarrtt--IIPPeenndd, or
+       IIPPnneettwwoorrkk::NNeettMMaasskk.
+
+       The list of target hosts is stored in memory.  Each host in  this  list
+       uses  28  bytes of memory, so scanning a Class-B network (65,536 hosts)
+       requires about 1.75MB of memory for the list, and  scanning  a  Class-A
+       (16,777,216 hosts) requires about 448MB.
+
+       aarrpp--ssccaann  supports Ethernet and 802.11 wireless networks. It could also
+       support token ring and FDDI, but they have not been tested. It does not
+       support  serial links such as PPP or SLIP, because ARP is not supported
+       on them.
+
+       The ARP protocol is a layer-2 (datalink layer) protocol that is used to
+       determine  a  host's  layer-2 address given its layer-3 (network layer)
+       address. ARP was designed to work with any layer-2 and layer-3  address
+       format,  but  the  most  common  use is to map IP addresses to Ethernet
+       hardware addresses, and this is what aarrpp--ssccaann supports. ARP only  oper-
+       ates  on the local network, and cannot be routed. Although the ARP pro-
+       tocol makes use of IP addresses, it is not  an  IP-based  protocol  and
+       aarrpp--ssccaann can be used on an interface that is not configured for IP.
+
+       ARP is only used by IPv4 hosts. IPv6 uses NDP (neighbour discovery pro-
+       tocol) instead, which is a different protocol and is not  supported  by
+       aarrpp--ssccaann.
+
+       One  ARP  packet is sent for each for each target host, with the target
+       protocol address (the ar$tpa field) set to the IP address of this host.
+       If  a  host  does not respond, then the ARP packet will be re-sent once
+       more.  The maximum number of retries can be changed  with  the  ----rreettrryy
+       option.   Reducing  the number of retries will reduce the scanning time
+       at the possible risk of missing some results due to packet loss.
+
+       You can specify the bandwidth that aarrpp--ssccaann will use for  the  outgoing
+       ARP  packets  with the ----bbaannddwwiiddtthh option.  By default, it uses a band-
+       width of 256000 bits per second. Increasing the bandwidth  will  reduce
+       the  scanning time, but setting the bandwidth too high may result in an
+       ARP storm which can disrupt network operation.  Also, setting the band-
+       width  too  high can send packets faster than the network interface can
+       transmit them, which will eventually fill the kernel's transmit  buffer
+       resulting in the error message: _N_o _b_u_f_f_e_r _s_p_a_c_e _a_v_a_i_l_a_b_l_e.  Another way
+       to specify the outgoing ARP packet rate is with the ----iinntteerrvvaall  option,
+       which is an alternative way to modify the same underlying parameter.
+
+       The  time  taken to perform a single-pass scan (i.e. with ----rreettrryy==11) is
+       given by:
+
+       time = n*i + t + o
+
+       Where _n is the number of hosts in the list,  _i  is  the  time  interval
+       between  packets (specified with ----iinntteerrvvaall, or calculated from ----bbaanndd--
+       wwiiddtthh), _t is the timeout value (specified with ----ttiimmeeoouutt) and _o is  the
+       overhead  time  taken  to  load  the targets into the list and read the
+       MAC/Vendor mapping files.  For small lists of hosts, the timeout  value
+       will  dominate,  but  for  large  lists the packet interval is the most
+       important value.
+
+       With 65,536 hosts, the default bandwidth of 256,000 bits/second  (which
+       results in a packet interval of 2ms), the default timeout of 500ms, and
+       a single pass ( ----rreettrryy==11), and assuming an overhead of 1  second,  the
+       scan would take 65536*0.002 + 0.5 + 1 = 132.57 seconds, or about 2 min-
+       utes 13 seconds.
+
+       Any part of the outgoing ARP packet may be modified through the use  of
+       the  various  ----aarrppXXXXXX  options.   The use of some of these options may
+       make the outgoing ARP packet non  RFC  compliant.  Different  operating
+       systems  handle the various non standard ARP packets in different ways,
+       and this may be used to fingerprint  these  systems.   See  aarrpp--ffiinnggeerr--
+       pprriinntt(1)  for  information  about  a script which uses these options to
+       fingerprint the target operating system.
+
+       The table below summarises the options that  change  the  outgoing  ARP
+       packet. In this table, the _F_i_e_l_d column gives the ARP packet field name
+       from RFC 826, _B_i_t_s specifies the number of bits in  the  field,  _O_p_t_i_o_n
+       shows  the  aarrpp--ssccaann  option  to modify this field, and _N_o_t_e_s gives the
+       default value and any other notes.
+
+       +---------------------------------------------------------------+
+       |                 OOuuttggooiinngg AARRPP PPaacckkeett OOppttiioonnss                   |
+       +-------+------+----------+-------------------------------------+
+       |FFiieelldd  | BBiittss | OOppttiioonn   | NNootteess                               |
+       +-------+------+----------+-------------------------------------+
+       |ar$hrd | 16   | --arphrd | Default is 1 (ARPHRD_ETHER)         |
+       |ar$pro | 16   | --arppro | Default is 0x0800                   |
+       |ar$hln | 8    | --arphln | Default is 6 (ETH_ALEN)             |
+       |ar$pln | 8    | --arppln | Default is 4 (IPv4)                 |
+       |ar$op  | 16   | --arpop  | Default is 1 (ARPOP_REQUEST)        |
+       |ar$sha | 48   | --arpsha | Default is interface h/w address    |
+       |ar$spa | 32   | --arpspa | Default is interface IP address     |
+       |ar$tha | 48   | --arptha | Default is zero (00:00:00:00:00:00) |
+       |ar$tpa | 32   | None     | Set to the target host IP address   |
+       +-------+------+----------+-------------------------------------+
+
+       The most commonly used outgoing ARP packet option  is  ----aarrppssppaa,  which
+       sets  the  source IP address in the ARP packet.  This option allows the
+       outgoing ARP packet to use a different source IP address from the  out-
+       going  interface  address.  With this option it is possible to use aarrpp--
+       ssccaann on an interface with no IP address configured, which can be useful
+       if  you want to ensure that the testing host does not interact with the
+       network being tested.
+
+       WWaarrnniinngg:: SSeettttiinngg aarr$$ssppaa ttoo tthhee ddeessttiinnaattiioonn IIPP aaddddrreessss ccaann ddiissrruupptt  ssoommee
+       ooppeerraattiinngg  ssyysstteemmss,, aass tthheeyy aassssuummee tthheerree iiss aann IIPP aaddddrreessss ccllaasshh iiff tthheeyy
+       rreecceeiivvee aann AARRPP rreeqquueesstt ffoorr tthheeiirr oowwnn aaddddrreessss..
+
+       It is also possible to change the values in the Ethernet  frame  header
+       that  precedes  the ARP packet in the outgoing packets. The table below
+       summarises the options that change values in the Ethernet frame header.
+
+       +-------------------------------------------------------------------+
+       |                 OOuuttggooiinngg EEtthheerrnneett FFrraammee OOppttiioonnss                   |
+       +---------------+------+-------------+------------------------------+
+       |FFiieelldd          | BBiittss | OOppttiioonn      | NNootteess                        |
+       +---------------+------+-------------+------------------------------+
+       |Dest Address   | 48   | --destaddr  | Default is ff:ff:ff:ff:ff:ff |
+       |Source Address | 48   | --srcaddr   | Default is interface address |
+       |Protocol Type  | 16   | --prototype | Default is 0x0806            |
+       +---------------+------+-------------+------------------------------+
+
+       The  most  commonly  used outgoing Ethernet frame option is ----ddeessttaaddddrr,
+       which sets the destination Ethernet address for the ARP packet.  ----pprroo--
+       ttoottyyppee is not often used, because it will cause the packet to be inter-
+       preted as a different Ethernet protocol.
+
+       Any ARP responses that are received are displayed in the following for-
+       mat:
+
+       &lt;IP Address&gt;   &lt;Hardware Address&gt;   &lt;Vendor Details&gt;
+
+       Where  IIPP  AAddddrreessss is the IP address of the responding target, HHaarrddwwaarree
+       AAddddrreessss is its  Ethernet  hardware  address  (also  known  as  the  MAC
+       address)  and  VVeennddoorr  DDeettaaiillss are the vendor details, decoded from the
+       hardware address.  The output fields are  separated  by  a  single  tab
+       character.
+
+       The  responses  are  displayed in the order they are received, which is
+       not always the same order as the requests were sent because some  hosts
+       may respond faster than others.
+
+       The  vendor decoding uses the files _i_e_e_e_-_o_u_i_._t_x_t, _i_e_e_e_-_i_a_b_._t_x_t and _m_a_c_-
+       _v_e_n_d_o_r_._t_x_t, which are supplied with  aarrpp--ssccaann.   The  _i_e_e_e_-_o_u_i_._t_x_t  and
+       _i_e_e_e_-_i_a_b_._t_x_t  files are generated from the OUI and IAB data on the IEEE
+       website at _h_t_t_p_:_/_/_s_t_a_n_d_a_r_d_s_-_o_u_i_._i_e_e_e_._o_r_g_/_o_u_i_/_o_u_i_._t_x_t  and  _h_t_t_p_:_/_/_s_t_a_n_-
+       _d_a_r_d_s_._i_e_e_e_._o_r_g_/_r_e_g_a_u_t_h_/_o_u_i_/_i_a_b_._t_x_t.   The Perl scripts ggeett--oouuii and ggeett--
+       iiaabb, which are included in the aarrpp--ssccaann package, can be used to  update
+       these  files  with the latest data from the IEEE website.  The _m_a_c_-_v_e_n_-
+       _d_o_r_._t_x_t file contains other MAC to Vendor mappings that are not covered
+       by  the IEEE OUI and IAB files, and can be used to add custom mappings.
+
+       Almost all hosts that support IP  will  respond  to  aarrpp--ssccaann  if  they
+       receive  an ARP packet with the target protocol address (ar$tpa) set to
+       their IP address.  This includes firewalls and other hosts with IP fil-
+       tering  that drop all IP traffic from the testing system. For this rea-
+       son, aarrpp--ssccaann is a useful tool to quickly determine all the  active  IP
+       hosts on a given Ethernet network segment.
+
+OOPPTTIIOONNSS
+       Where  an  option takes a value, that value is specified as a letter in
+       angle brackets. The letter indicates the type of data that is expected:
+
+       &lt;&lt;ss&gt;&gt;    A character string, e.g. --file=hostlist.txt.
+
+       &lt;&lt;ii&gt;&gt;    An  integer,  which can be specified as a decimal number or as a
+              hexadecimal number if preceeded with 0x, e.g.  --arppro=2048  or
+              --arpro=0x0800.
+
+       &lt;&lt;ff&gt;&gt;    A floating point decimal number, e.g. --backoff=1.5.
+
+       &lt;&lt;mm&gt;&gt;    An  Ethernet  MAC  address, which can be specified either in the
+              format 01:23:45:67:89:ab, or as  01-23-45-67-89-ab.  The  alpha-
+              betic  hex  characters  may  be either upper or lower case. E.g.
+              --arpsha=01:23:45:67:89:ab.
+
+       &lt;&lt;aa&gt;&gt;    An IPv4 address, e.g. --arpspa=10.0.0.1
+
+       &lt;&lt;hh&gt;&gt;    Binary data specified as a hexadecimal string, which should  not
+              include  a  leading  0x.  The  alphabetic  hex characters may be
+              either upper or lower case. E.g. --padding=aaaaaaaaaaaa
+
+       &lt;&lt;xx&gt;&gt;    Something else. See the description of the option for details.
+
+       ----hheellpp oorr --hh
+              Display this usage message and exit.
+
+       ----ffiillee==&lt;&lt;ss&gt;&gt; oorr --ff &lt;&lt;ss&gt;&gt;
+              Read hostnames or addresses from the specified file  instead  of
+              from  the command line. One name or IP address per line. Use &quot;-&quot;
+              for standard input.
+
+       ----llooccaallnneett oorr --ll
+              Generate addresses from network  interface  configuration.   Use
+              the  network  interface  IP address and network mask to generate
+              the list of target host addresses.  The list  will  include  the
+              network  and  broadcast  addresses,  so  an interface address of
+              10.0.0.1 with netmask 255.255.255.0 would  generate  256  target
+              hosts  from  10.0.0.0  to 10.0.0.255 inclusive.  If you use this
+              option, you cannot specify the --file option or specify any tar-
+              get hosts on the command line.  The interface specifications are
+              taken from the interface that arp-scan will use,  which  can  be
+              changed with the --interface option.
+
+       ----rreettrryy==&lt;&lt;ii&gt;&gt; oorr --rr &lt;&lt;ii&gt;&gt;
+              Set total number of attempts per host to &lt;i&gt;, default=2.
+
+       ----ttiimmeeoouutt==&lt;&lt;ii&gt;&gt; oorr --tt &lt;&lt;ii&gt;&gt;
+              Set initial per host timeout to &lt;i&gt; ms, default=500.  This time-
+              out is for the first packet sent to each host.  subsequent time-
+              outs  are  multiplied  by  the  backoff factor which is set with
+              --backoff.
+
+       ----iinntteerrvvaall==&lt;&lt;xx&gt;&gt; oorr --ii &lt;&lt;xx&gt;&gt;
+              Set minimum packet interval to &lt;x&gt;.  This controls the  outgoing
+              bandwidth  usage  by  limiting  the rate at which packets can be
+              sent. The packet interval will be no smaller than  this  number.
+              If you want to use up to a given bandwidth, then it is easier to
+              use the --bandwidth option instead.  The interval  specified  is
+              in  milliseconds  by  default,  or  in  microseconds  if  &quot;u&quot; is
+              appended to the value.
+
+       ----bbaannddwwiiddtthh==&lt;&lt;xx&gt;&gt; oorr --BB &lt;&lt;xx&gt;&gt;
+              Set desired outbound  bandwidth  to  &lt;x&gt;,  default=256000.   The
+              value is in bits per second by default. If you append &quot;K&quot; to the
+              value, then the units are kilobits per sec; and  if  you  append
+              &quot;M&quot;  to  the  value, the units are megabits per second.  The &quot;K&quot;
+              and &quot;M&quot; suffixes represent the decimal, not  binary,  multiples.
+              So  64K is 64000, not 65536.  You cannot specify both --interval
+              and --bandwidth because they are just different ways  to  change
+              the same underlying parameter.
+
+       ----bbaacckkooffff==&lt;&lt;ff&gt;&gt; oorr --bb &lt;&lt;ff&gt;&gt;
+              Set  timeout  backoff factor to &lt;f&gt;, default=1.50.  The per-host
+              timeout is multiplied by this factor after each timeout. So,  if
+              the  number  of  retries  is  3, the initial per-host timeout is
+              500ms and the backoff factor is 1.5, then the first timeout will
+              be 500ms, the second 750ms and the third 1125ms.
+
+       ----vveerrbboossee oorr --vv
+              Display  verbose  progress  messages.   Use  more  than once for
+              greater effect:
+
+              1 - Display the network address and mask used when the  --local-
+              net  option  is  specified,  display any nonzero packet padding,
+              display packets received from unknown hosts, and show when  each
+              pass through the list completes.
+
+              2 - Show each packet sent and received, when entries are removed
+              from the list, the pcap filter string, and counts of  MAC/Vendor
+              mapping entries.
+
+              3 - Display the host list before scanning starts.
+
+       ----vveerrssiioonn oorr --VV
+              Display program version and exit.
+
+       ----rraannddoomm oorr --RR
+              Randomise  the  host  list.  This option randomises the order of
+              the hosts in the host list, so the ARP packets are sent  to  the
+              hosts in a random order. It uses the Knuth shuffle algorithm.
+
+       ----rraannddoommsseeeedd==&lt;&lt;ii&gt;&gt;
+              Use &lt;i&gt; to seed the pseudo random number generator.  This option
+              seeds the PRNG with the specified number, which can be useful if
+              you want to ensure that the random host list is reproducable. By
+              default, the PRNG is seeded with an  unpredictable  value.  This
+              option  is  only effective in conjunction with the --random (-R)
+              option.
+
+       ----nnuummeerriicc oorr --NN
+              IP addresses only, no hostnames.  With this  option,  all  hosts
+              must  be specified as IP addresses. Hostnames are not permitted.
+              No DNS lookups will be performed.
+
+       ----ssnnaapp==&lt;&lt;ii&gt;&gt; oorr --nn &lt;&lt;ii&gt;&gt;
+              Set the pcap snap length to &lt;i&gt;. Default=64.  This specifies the
+              frame capture length. This length includes the data-link header.
+              The default is normally sufficient.
+
+       ----iinntteerrffaaccee==&lt;&lt;ss&gt;&gt; oorr --II &lt;&lt;ss&gt;&gt;
+              Use network interface &lt;s&gt;.  If this  option  is  not  specified,
+              arp-scan  will  search  the system interface list for the lowest
+              numbered, configured up  interface  (excluding  loopback).   The
+              interface specified must support ARP.
+
+       ----qquuiieett oorr --qq
+              Only  display  minimal  output.  No  protocol decoding.  If this
+              option is specified, then only the IP address  and  MAC  address
+              are displayed for each responding host.  No protocol decoding is
+              performed and the OUI mapping files are not used.
+
+       ----ppllaaiinn oorr --xx
+              Display plain output showing only responding hosts.  This option
+              supresses  the  printing of the header and footer text, and only
+              displays one line for each responding host. Useful if the output
+              will be parsed by a script.
+
+       ----iiggnnoorreedduuppss oorr --gg
+              Don't  display duplicate packets.  By default, duplicate packets
+              are displayed and are flagged with &quot;(DUP: n)&quot;.
+
+       ----oouuiiffiillee==&lt;&lt;ss&gt;&gt; oorr --OO &lt;&lt;ss&gt;&gt;
+              Use IEEE Ethernet OUI to  vendor  mapping  file  &lt;s&gt;.   If  this
+              option is not specified, the default filename is ieee-oui.txt in
+              the current directory. If that  is  not  found,  then  the  file
+              /usr/local/share/arp-scan/ieee-oui.txt is used.
+
+       ----iiaabbffiillee==&lt;&lt;ss&gt;&gt; oorr --OO &lt;&lt;ss&gt;&gt;
+              Use  IEEE  Ethernet  IAB  to  vendor  mapping file &lt;s&gt;.  If this
+              option is not specified, the default filename is ieee-iab.txt in
+              the  current  directory.  If  that  is  not found, then the file
+              /usr/local/share/arp-scan/ieee-iab.txt is used.
+
+       ----mmaaccffiillee==&lt;&lt;ss&gt;&gt; oorr --OO &lt;&lt;ss&gt;&gt;
+              Use custom Ethernet MAC to vendor mapping  file  &lt;s&gt;.   If  this
+              option  is not specified, the default filename is mac-vendor.txt
+              in the current directory. If that is not found,  then  the  file
+              /usr/local/share/arp-scan/mac-vendor.txt is used.
+
+       ----ssrrccaaddddrr==&lt;&lt;mm&gt;&gt; oorr --SS &lt;&lt;mm&gt;&gt;
+              Set  the  source  Ethernet  MAC  address  to &lt;m&gt;.  This sets the
+              48-bit hardware address in the Ethernet frame header for  outgo-
+              ing  ARP packets. It does not change the hardware address in the
+              ARP packet, see --arpsha for  details  on  how  to  change  that
+              address.   The  default  is the Ethernet address of the outgoing
+              interface.
+
+       ----ddeessttaaddddrr==&lt;&lt;mm&gt;&gt; oorr --TT &lt;&lt;mm&gt;&gt;
+              Send the packets to Ethernet  MAC  address  &lt;m&gt;  This  sets  the
+              48-bit  destination  address  in the Ethernet frame header.  The
+              default is the broadcast address ff:ff:ff:ff:ff:ff.  Most  oper-
+              ating  systems  will  also respond if the ARP request is sent to
+              their MAC address, or to a multicast address that they are  lis-
+              tening on.
+
+       ----aarrppsshhaa==&lt;&lt;mm&gt;&gt; oorr --uu &lt;&lt;mm&gt;&gt;
+              Use  &lt;m&gt; as the ARP source Ethernet address This sets the 48-bit
+              ar$sha field in the ARP packet It does not change  the  hardware
+              address in the frame header, see --srcaddr for details on how to
+              change that address. The default is the Ethernet address of  the
+              outgoing interface.
+
+       ----aarrpptthhaa==&lt;&lt;mm&gt;&gt; oorr --ww &lt;&lt;mm&gt;&gt;
+              Use  &lt;m&gt; as the ARP target Ethernet address This sets the 48-bit
+              ar$tha field in the ARP packet The default is zero, because this
+              field is not used for ARP request packets.
+
+       ----pprroottoottyyppee==&lt;&lt;ii&gt;&gt; oorr --yy &lt;&lt;ii&gt;&gt;
+              Set  the  Ethernet  protocol  type to &lt;i&gt;, default=0x0806.  This
+              sets the 16-bit  protocol  type  field  in  the  Ethernet  frame
+              header.   Setting this to a non-default value will result in the
+              packet being ignored by the target, or sent to the wrong  proto-
+              col stack.
+
+       ----aarrpphhrrdd==&lt;&lt;ii&gt;&gt; oorr --HH &lt;&lt;ii&gt;&gt;
+              Use  &lt;i&gt;  for  the  ARP hardware type, default=1.  This sets the
+              16-bit ar$hrd field in the ARP packet.  The normal  value  is  1
+              (ARPHRD_ETHER).  Most,  but not all, operating systems will also
+              respond to 6 (ARPHRD_IEEE802). A  few  systems  respond  to  any
+              value.
+
+       ----aarrpppprroo==&lt;&lt;ii&gt;&gt; oorr --pp &lt;&lt;ii&gt;&gt;
+              Use  &lt;i&gt;  for  the ARP protocol type, default=0x0800.  This sets
+              the 16-bit ar$pro field in the ARP packet.  Most operating  sys-
+              tems  only  respond  to  0x0800  (IPv4) but some will respond to
+              other values as well.
+
+       ----aarrpphhllnn==&lt;&lt;ii&gt;&gt; oorr --aa &lt;&lt;ii&gt;&gt;
+              Set the hardware address length to &lt;i&gt;,  default=6.   This  sets
+              the  8-bit  ar$hln field in the ARP packet.  It sets the claimed
+              length of the hardware address in the ARP packet. Setting it  to
+              any  value  other  than the default will make the packet non RFC
+              compliant.  Some operating  systems  may  still  respond  to  it
+              though.   Note  that the actual lengths of the ar$sha and ar$tha
+              fields in the ARP packet are not changed by this option; it only
+              changes the ar$hln field.
+
+       ----aarrppppllnn==&lt;&lt;ii&gt;&gt; oorr --PP &lt;&lt;ii&gt;&gt;
+              Set  the  protocol  address length to &lt;i&gt;, default=4.  This sets
+              the 8-bit ar$pln field in the ARP packet.  It sets  the  claimed
+              length  of the protocol address in the ARP packet. Setting it to
+              any value other than the default will make the  packet  non  RFC
+              compliant.   Some  operating  systems  may  still  respond to it
+              though.  Note that the actual lengths of the ar$spa  and  ar$tpa
+              fields in the ARP packet are not changed by this option; it only
+              changes the ar$pln field.
+
+       ----aarrppoopp==&lt;&lt;ii&gt;&gt; oorr --oo &lt;&lt;ii&gt;&gt;
+              Use &lt;i&gt; for the ARP operation, default=1.  This sets the  16-bit
+              ar$op field in the ARP packet.  Most operating systems will only
+              respond to the value 1 (ARPOP_REQUEST).  However,  some  systems
+              will respond to other values as well.
+
+       ----aarrppssppaa==&lt;&lt;aa&gt;&gt; oorr --ss &lt;&lt;aa&gt;&gt;
+              Use  &lt;a&gt; as the source IP address.  The address should be speci-
+              fied in dotted quad format; or the literal string &quot;dest&quot;,  which
+              sets  the  source  address  to  be  the  same as the target host
+              address.  This sets the 32-bit ar$spa field in the  ARP  packet.
+              Some  operating systems check this, and will only respond if the
+              source address is within the network of the receiving interface.
+              Others  don't  care, and will respond to any source address.  By
+              default, the outgoing interface address is used.
+
+              WARNING: Setting ar$spa to the destination IP address  can  dis-
+              rupt  some  operating  systems,  as  they  assume there is an IP
+              address clash if they receive  an  ARP  request  for  their  own
+              address.
+
+       ----ppaaddddiinngg==&lt;&lt;hh&gt;&gt; oorr --AA &lt;&lt;hh&gt;&gt;
+              Specify  padding after packet data.  Set the padding data to hex
+              value &lt;h&gt;. This data is appended to the end of the  ARP  packet,
+              after the data.  Most, if not all, operating systems will ignore
+              any padding. The default is no padding,  although  the  Ethernet
+              driver  on  the sending system may pad the packet to the minimum
+              Ethernet frame length.
+
+       ----llllcc oorr --LL
+              Use RFC 1042 LLC framing with SNAP.  This option causes the out-
+              going  ARP  packets to use IEEE 802.2 framing with a SNAP header
+              as described in RFC 1042. The  default  is  to  use  Ethernet-II
+              framing.   arp-scan will decode and display received ARP packets
+              in either Ethernet-II or IEEE 802.2 formats irrespective of this
+              option.
+
+       ----vvllaann==&lt;&lt;ii&gt;&gt; oorr --QQ &lt;&lt;ii&gt;&gt;
+              Use  802.1Q  tagging  with  VLAN id &lt;i&gt;.  This option causes the
+              outgoing ARP packets to use 802.1Q VLAN tagging with a  VLAN  ID
+              of  &lt;i&gt;, which should be in the range 0 to 4095 inclusive.  arp-
+              scan will always decode and  display  received  ARP  packets  in
+              802.1Q format irrespective of this option.
+
+       ----ppccaappssaavveeffiillee==&lt;&lt;ss&gt;&gt; oorr --WW &lt;&lt;ss&gt;&gt;
+              Write received packets to pcap savefile &lt;s&gt;.  This option causes
+              received ARP responses to be written to the specified pcap save-
+              file  as  well as being decoded and displayed. This savefile can
+              be analysed with programs that understand the pcap file  format,
+              such as &quot;tcpdump&quot; and &quot;wireshark&quot;.
+
+       ----rrtttt oorr --DD
+              Display the packet round-trip time.
+
+FFIILLEESS
+       _/_u_s_r_/_l_o_c_a_l_/_s_h_a_r_e_/_a_r_p_-_s_c_a_n_/_i_e_e_e_-_o_u_i_._t_x_t
+              List  of IEEE OUI (Organisationally Unique Identifier) to vendor
+              mappings.
+
+       _/_u_s_r_/_l_o_c_a_l_/_s_h_a_r_e_/_a_r_p_-_s_c_a_n_/_i_e_e_e_-_i_a_b_._t_x_t
+              List of IEEE IAB (Individual Address Block) to vendor  mappings.
+
+       _/_u_s_r_/_l_o_c_a_l_/_s_h_a_r_e_/_a_r_p_-_s_c_a_n_/_m_a_c_-_v_e_n_d_o_r_._t_x_t
+              List of other Ethernet MAC to vendor mappings.
+
+EEXXAAMMPPLLEESS
+       The  example  below  shows  aarrpp--ssccaann  being  used  to  scan the network
+       _1_9_2_._1_6_8_._0_._0_/_2_4 using the network interface _e_t_h_0.
+
+       $ arp-scan --interface=eth0 192.168.0.0/24
+       Interface: eth0, datalink type: EN10MB (Ethernet)
+       Starting arp-scan 1.4 with 256 hosts (http://www.nta-monitor.com/tools-resources/security-tools/arp-scan/)
+       192.168.0.1     00:c0:9f:09:b8:db       QUANTA COMPUTER, INC.
+       192.168.0.3     00:02:b3:bb:66:98       Intel Corporation
+       192.168.0.5     00:02:a5:90:c3:e6       Compaq Computer Corporation
+       192.168.0.6     00:c0:9f:0b:91:d1       QUANTA COMPUTER, INC.
+       192.168.0.12    00:02:b3:46:0d:4c       Intel Corporation
+       192.168.0.13    00:02:a5:de:c2:17       Compaq Computer Corporation
+       192.168.0.87    00:0b:db:b2:fa:60       Dell ESG PCBA Test
+       192.168.0.90    00:02:b3:06:d7:9b       Intel Corporation
+       192.168.0.105   00:13:72:09:ad:76       Dell Inc.
+       192.168.0.153   00:10:db:26:4d:52       Juniper Networks, Inc.
+       192.168.0.191   00:01:e6:57:8b:68       Hewlett-Packard Company
+       192.168.0.251   00:04:27:6a:5d:a1       Cisco Systems, Inc.
+       192.168.0.196   00:30:c1:5e:58:7d       HEWLETT-PACKARD
+
+       13 packets received by filter, 0 packets dropped by kernel
+       Ending arp-scan: 256 hosts scanned in 3.386 seconds (75.61 hosts/sec).  13 responded
+
+       This next example shows aarrpp--ssccaann being used to scan the  local  network
+       after configuring the network interface with DHCP using _p_u_m_p.
+
+       # pump
+       # ifconfig eth0
+       eth0      Link encap:Ethernet  HWaddr 00:D0:B7:0B:DD:C7
+                 inet addr:10.0.84.178  Bcast:10.0.84.183  Mask:255.255.255.248
+                 UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                 RX packets:46335 errors:0 dropped:0 overruns:0 frame:0
+                 TX packets:1542776 errors:0 dropped:0 overruns:0 carrier:0
+                 collisions:1644 txqueuelen:1000
+                 RX bytes:6184146 (5.8 MiB)  TX bytes:348887835 (332.7 MiB)
+       # arp-scan --localnet
+       Interface: eth0, datalink type: EN10MB (Ethernet)
+       Starting arp-scan 1.4 with 8 hosts (http://www.nta-monitor.com/tools-resources/security-tools/arp-scan/)
+       10.0.84.179     00:02:b3:63:c7:57       Intel Corporation
+       10.0.84.177     00:d0:41:08:be:e8       AMIGO TECHNOLOGY CO., LTD.
+       10.0.84.180     00:02:b3:bd:82:9b       Intel Corporation
+       10.0.84.181     00:02:b3:1f:73:da       Intel Corporation
+
+       4 packets received by filter, 0 packets dropped by kernel
+       Ending arp-scan 1.4: 8 hosts scanned in 0.820 seconds (9.76 hosts/sec).  4 responded
+
+AAUUTTHHOORR
+       Roy Hills &lt;Roy.Hills@nta-monitor.com&gt;
+
+SSEEEE AALLSSOO
+       ggeett--oouuii(1)
+
+       ggeett--iiaabb(1)
+
+       aarrpp--ffiinnggeerrpprriinntt(1)
+
+       RRFFCC 882266 - An Ethernet Address Resolution Protocol
+
+       _h_t_t_p_:_/_/_w_w_w_._n_t_a_-_m_o_n_i_t_o_r_._c_o_m_/_w_i_k_i_/ The arp-scan wiki page.
+
+       _h_t_t_p_s_:_/_/_g_i_t_h_u_b_._c_o_m_/_r_o_y_h_i_l_l_s_/_a_r_p_-_s_c_a_n The arp-scan homepage.
+
+
+
+                                August 13, 2016                    ARP-SCAN(1)
+
+
+</code></pre></div>
+
+  <footer class="article-footer">
+
+    <div class="addthis_inline_share_toolbox"></div>
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">POSTS</span></a></li>
+            
+            <li class="active">macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/macos/">macOS</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/categories/command/">Command</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/categories/arp-scan/">arp-scan</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/raspberry-pi/">Raspberry Pi</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/blog-hugo-start/">
+    <div class="thumb thumb-595902e3f91a7903b2e09e54e9d6166a"></div>
+
+    <div class="inner">
+      <div class="title">Hugoでブログを作りたくなったので始めました</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-26T00:11:48JST">2018-08-26</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+    <div class="mcol c6">
+      <header>Next Article</header>
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/">
+    <div class="thumb thumb-d70551f691c0a74c8d01707490adf401"></div>
+
+    <div class="inner">
+      <div class="title">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-29T01:13:00JST">2018-08-29</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+  </body>
+</html>
+

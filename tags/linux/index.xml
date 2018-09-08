@@ -6,8 +6,6 @@
     <description>Recent content in Linux on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <managingEditor>teruhirokomaki@gmail.com (Teruhiro Komaki)</managingEditor>
-    <webMaster>teruhirokomaki@gmail.com (Teruhiro Komaki)</webMaster>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Thu, 06 Sep 2018 00:41:40 +0900</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</title>
       <link>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</link>
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
       <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
 

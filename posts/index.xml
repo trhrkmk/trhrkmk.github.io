@@ -6,8 +6,6 @@
     <description>Recent content in Posts on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <managingEditor>teruhirokomaki@gmail.com (Teruhiro Komaki)</managingEditor>
-    <webMaster>teruhirokomaki@gmail.com (Teruhiro Komaki)</webMaster>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Thu, 06 Sep 2018 00:41:40 +0900</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</title>
       <link>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</link>
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
       <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
 
@@ -72,7 +70,7 @@ xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --c
       <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</title>
       <link>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</link>
       <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/</guid>
       <description>&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;
 
@@ -105,7 +103,7 @@ xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --c
       <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</title>
       <link>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</link>
       <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</guid>
       <description>&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;
 
@@ -147,7 +145,7 @@ drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
       <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</title>
       <link>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</link>
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
       <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
 
@@ -207,7 +205,7 @@ drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
       <title>macOSでarp-scanコマンドを使ってRaspberry Piのipを調べる</title>
       <link>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</link>
       <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</guid>
       <description>&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;
 
@@ -227,7 +225,7 @@ drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
       <title>Hugoでブログを作りたくなったので始めました</title>
       <link>https://www.trhrkmk.com/posts/blog-hugo-start/</link>
       <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/blog-hugo-start/</guid>
       <description>Go言語の勉強をスタートしてから数週間が経ちました。
 まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。

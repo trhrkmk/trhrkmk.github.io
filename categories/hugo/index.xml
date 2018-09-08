@@ -6,8 +6,6 @@
     <description>Recent content in Hugo on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <managingEditor>teruhirokomaki@gmail.com (Teruhiro Komaki)</managingEditor>
-    <webMaster>teruhirokomaki@gmail.com (Teruhiro Komaki)</webMaster>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Sun, 26 Aug 2018 00:11:48 +0900</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Hugoでブログを作りたくなったので始めました</title>
       <link>https://www.trhrkmk.com/posts/blog-hugo-start/</link>
       <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
-      <author>teruhirokomaki@gmail.com (Teruhiro Komaki)</author>
+      
       <guid>https://www.trhrkmk.com/posts/blog-hugo-start/</guid>
       <description>Go言語の勉強をスタートしてから数週間が経ちました。
 まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。
