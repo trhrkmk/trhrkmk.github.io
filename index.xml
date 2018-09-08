@@ -34,49 +34,6 @@ Tweets by trhrkmk
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
       <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
 
-&lt;p&gt;macのスニペットツールでググると&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TextExpander&lt;/strong&gt;、&lt;strong&gt;Alfred&lt;/strong&gt;、&lt;strong&gt;Dash&lt;/strong&gt;、など、いろいろなアプリがありますよね。&lt;/p&gt;
-
-&lt;p&gt;macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。&lt;/p&gt;
-
-&lt;p&gt;勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。&lt;/p&gt;
-
-&lt;h2 id=&#34;linuxのスニペットツール&#34;&gt;Linuxのスニペットツール&lt;/h2&gt;
-
-&lt;p&gt;TextExpanderの代わりになるアプリをググると、&lt;a href=&#34;https://alternativeto.net/software/textexpander/?platform=linux&#34;&gt;alternativeTo&lt;/a&gt;というサイトがよくでてきます。&lt;/p&gt;
-
-&lt;p&gt;おそらく、以下が定番なんでしょう。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;OldAutoKey&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;AutoKey&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semicomplete.com/projects/xdotool/&#34;&gt;xdotool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leehblue.com/ubuntu-text-expander/&#34;&gt;Texpander&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;色々と試してみた&#34;&gt;色々と試してみた&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;AutoKey&lt;/strong&gt;は、Pythonで書かれているので、Pythonができる方はおすすめ。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;xdotool&lt;/strong&gt;は、X11の操作をコマンドで操作できるコマンドのようです。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;# As of version 2.20100623, you can do this simpler version of above:
-xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --clearmodifiers ctrl+l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコマンドを実行すると&lt;code&gt;Firefoxをアクティブにして、ctrl+lを入力する&lt;/code&gt;状態にできます。&lt;/p&gt;
-
-&lt;p&gt;xdotoolは、Texpander内でも利用されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Texpander&lt;/strong&gt;は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というころで、今回は、Texpanderを使うことにしました！&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -92,24 +49,6 @@ xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --c
 
 &lt;p&gt;なんてことはありませんか？&lt;/p&gt;
 
-&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;
-
-&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;
-
-&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;
-
-&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;
-
-&lt;p&gt;有名なツールを以下に。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -123,35 +62,6 @@ xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --c
 
 &lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;
 
-&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;任意の場所に保存してください。
-今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;
-
-&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;
-
-&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;
-
-&lt;p&gt;展開します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/Downloads
-Downloads $ tar xf firefox-61.0.2.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Downloads $ ls -la
-total 57788
-drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
-drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
-drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
--rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -162,55 +72,6 @@ drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
       
       <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
       <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
-
-&lt;p&gt;データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ファイルパーミッション&lt;/strong&gt;については、ググってください。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3&#34;&gt;ファイルパーミッション&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;以下は、自分用のメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;ssh&#34;&gt;ssh&lt;/h2&gt;
-
-&lt;p&gt;sshで接続します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~ $ ssh user@macmini.local
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;databases-フォルダーのファイルパーミッションを確認する&#34;&gt;Databases フォルダーのファイルパーミッションを確認する&lt;/h2&gt;
-
-&lt;p&gt;デフォルトのディレクトリです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;macmini:Databases user$ pwd
-/Library/FileMaker Server/Data/Databases
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;macmini:Databases user$ ls -la
-total xx
-drwxrwxr-x   7 fmserver  fmsadmin   224B Jul 14 13:15:27 2018 .
-drwxrwxr-x  11 fmserver  fmsadmin   352B Aug 16 20:11:38 2018 ..
-drwxrwxr-x   4 fmserver  fmsadmin   128B Jul 12 23:46:52 2018 Removed_by_FMS
-drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir1
-drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir2
-drwxrwxr-x@ 79 fmserver  fmsadmin   2.5K Aug 29 01:02:53 2018 dir3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;Databases&lt;/code&gt;配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。&lt;/p&gt;
-
-&lt;h2 id=&#34;違う場合&#34;&gt;違う場合&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;fileC.fmp12&lt;/code&gt;は、ファイルパーミッションが正しくないため、変更する必要があります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;macmini:dir3 user$ ls -la
-total 47588320
-drwxrwxr-x@ 79 fmserver        fmsadmin   2.5K Aug 29 01:02:53 2018 .
-drwxrwxr-x   7 fmserver        fmsadmin   224B Jul 14 13:15:27 2018 ..
-drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
--rwxrwxr-x   1 fmserver        fmsadmin   204K Aug 16 18:12:40 2018 fileA.fmp12
--rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
--rw-r--r--   1 otherOwn        otherGrp    98M Aug 28 22:40:46 2018 fileC.fmp12
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -225,13 +86,6 @@ drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
 
 &lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;brew install arp-scan
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;インストールできました。&lt;/p&gt;
-
-&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -241,13 +95,11 @@ drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
       <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/blog-hugo-start/</guid>
-      <description>Go言語の勉強をスタートしてから数週間が経ちました。
-まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。
-Go楽しい
-FileMaker Goではないですよ…
-なぜ、Hugoで作りたくなったのか…
-それは、HugoがGoで作らているからです。
-少しづつ記事を書いていきまーす！</description>
+      <description>&lt;p&gt;Go言語の勉強をスタートしてから数週間が経ちました。&lt;/p&gt;
+
+&lt;p&gt;まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

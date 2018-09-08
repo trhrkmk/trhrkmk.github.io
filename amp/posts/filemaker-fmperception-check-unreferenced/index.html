@@ -25,21 +25,21 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <title>FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部</title>
     
-<meta name="description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 
 <meta property="og:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/filemaker-fmperception-check-unreferenced/fmperception-unreferenced-1.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
 <meta name="twitter:title" content="FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ - HHKBは体の一部">
-<meta name="twitter:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;そうですよね。ありますよね。&lt;/p&gt;&lt;p&gt;そんな時、あなたはどうしてますか？&lt;/p&gt;&lt;p&gt;一般的な&lt;strong&gt;FileMaker開発者&lt;/strong&gt;でしたら、&lt;strong&gt;DDR(データベースデザインレポート)&lt;/strong&gt;をエクスポートして、分析ツールを使っていますよね。&lt;/p&gt;&lt;h2 id=&#34;サードパーティの分析ツール&#34;&gt;サードパーティの分析ツール&lt;/h2&gt;&lt;p&gt;有名なツールを以下に。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;https://www.beezwax.net/products/inspector-pro/&#34;&gt;InspectorPro&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;ちなみに、私は&lt;a href=&#34;https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/&#34;&gt;FMPerception&lt;/a&gt;と、&lt;a href=&#34;http://www.baseelements.com/&#34;&gt;BaseElements&lt;/a&gt;を使っています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:description" content="&lt;p&gt;FileMakerで開発をしていて…&lt;/p&gt;&lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;&lt;p&gt;なんてことはありませんか？&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/filemaker-fmperception-check-unreferenced/fmperception-unreferenced-1.png">
 
 
@@ -79,24 +79,6 @@
 <p>「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」</p>
 
 <p>なんてことはありませんか？</p>
-
-<p>そうですよね。ありますよね。</p>
-
-<p>そんな時、あなたはどうしてますか？</p>
-
-<p>一般的な<strong>FileMaker開発者</strong>でしたら、<strong>DDR(データベースデザインレポート)</strong>をエクスポートして、分析ツールを使っていますよね。</p>
-
-<h2 id="サードパーティの分析ツール">サードパーティの分析ツール</h2>
-
-<p>有名なツールを以下に。</p>
-
-<ul>
-<li><a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a></li>
-<li><a href="http://www.baseelements.com/">BaseElements</a></li>
-<li><a href="https://www.beezwax.net/products/inspector-pro/">InspectorPro</a></li>
-</ul>
-
-<p>ちなみに、私は<a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a>と、<a href="http://www.baseelements.com/">BaseElements</a>を使っています。</p>
 
 <p></p>"
   }
@@ -158,6 +140,8 @@
 
 <p>なんてことはありませんか？</p>
 
+<p></p>
+
 <p>そうですよね。ありますよね。</p>
 
 <p>そんな時、あなたはどうしてますか？</p>
@@ -175,8 +159,6 @@
 </ul>
 
 <p>ちなみに、私は<a href="https://www.geistinteractive.com/products/fmperception-fast-filemaker-analysis/">FMPerception</a>と、<a href="http://www.baseelements.com/">BaseElements</a>を使っています。</p>
-
-<p></p>
 
 <h2 id="分析ツールを使ってできること">分析ツールを使ってできること</h2>
 

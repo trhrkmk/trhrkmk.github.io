@@ -98,49 +98,6 @@ if (!doNotTrack) {
 
       <div class="summary"><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
 
-<p>macのスニペットツールでググると</p>
-
-<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
-
-<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
-
-<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
-
-<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
-
-<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
-
-<p>おそらく、以下が定番なんでしょう。</p>
-
-<ul>
-<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
-<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
-<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
-<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
-</ul>
-
-<h2 id="色々と試してみた">色々と試してみた</h2>
-
-<ul>
-<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
-
-<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
-</ul>
-
-<pre><code># As of version 2.20100623, you can do this simpler version of above:
-xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
-</code></pre>
-
-<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
-
-<p>xdotoolは、Texpander内でも利用されています。</p>
-
-<ul>
-<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
-</ul>
-
-<p>というころで、今回は、Texpanderを使うことにしました！</p>
-
 <p></p></div>
     </div>
   </a>

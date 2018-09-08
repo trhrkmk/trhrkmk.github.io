@@ -20,49 +20,6 @@
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
       <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
 
-&lt;p&gt;macのスニペットツールでググると&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TextExpander&lt;/strong&gt;、&lt;strong&gt;Alfred&lt;/strong&gt;、&lt;strong&gt;Dash&lt;/strong&gt;、など、いろいろなアプリがありますよね。&lt;/p&gt;
-
-&lt;p&gt;macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。&lt;/p&gt;
-
-&lt;p&gt;勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。&lt;/p&gt;
-
-&lt;h2 id=&#34;linuxのスニペットツール&#34;&gt;Linuxのスニペットツール&lt;/h2&gt;
-
-&lt;p&gt;TextExpanderの代わりになるアプリをググると、&lt;a href=&#34;https://alternativeto.net/software/textexpander/?platform=linux&#34;&gt;alternativeTo&lt;/a&gt;というサイトがよくでてきます。&lt;/p&gt;
-
-&lt;p&gt;おそらく、以下が定番なんでしょう。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;OldAutoKey&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/autokey/autokey&#34;&gt;AutoKey&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semicomplete.com/projects/xdotool/&#34;&gt;xdotool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leehblue.com/ubuntu-text-expander/&#34;&gt;Texpander&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;色々と試してみた&#34;&gt;色々と試してみた&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;AutoKey&lt;/strong&gt;は、Pythonで書かれているので、Pythonができる方はおすすめ。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;xdotool&lt;/strong&gt;は、X11の操作をコマンドで操作できるコマンドのようです。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;# As of version 2.20100623, you can do this simpler version of above:
-xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --clearmodifiers ctrl+l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコマンドを実行すると&lt;code&gt;Firefoxをアクティブにして、ctrl+lを入力する&lt;/code&gt;状態にできます。&lt;/p&gt;
-
-&lt;p&gt;xdotoolは、Texpander内でも利用されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Texpander&lt;/strong&gt;は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というころで、今回は、Texpanderを使うことにしました！&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -75,35 +32,6 @@ xdotool search &amp;quot;Mozilla Firefox&amp;quot; windowactivate --sync key --c
       <description>&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;
 
 &lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;任意の場所に保存してください。
-今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;
-
-&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;
-
-&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;
-
-&lt;p&gt;展開します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/Downloads
-Downloads $ tar xf firefox-61.0.2.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Downloads $ ls -la
-total 57788
-drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
-drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
-drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
--rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

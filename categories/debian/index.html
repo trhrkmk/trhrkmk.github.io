@@ -98,49 +98,6 @@ if (!doNotTrack) {
 
       <div class="summary"><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
 
-<p>macのスニペットツールでググると</p>
-
-<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
-
-<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
-
-<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
-
-<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
-
-<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
-
-<p>おそらく、以下が定番なんでしょう。</p>
-
-<ul>
-<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
-<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
-<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
-<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
-</ul>
-
-<h2 id="色々と試してみた">色々と試してみた</h2>
-
-<ul>
-<li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li>
-
-<li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li>
-</ul>
-
-<pre><code># As of version 2.20100623, you can do this simpler version of above:
-xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
-</code></pre>
-
-<p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
-
-<p>xdotoolは、Texpander内でも利用されています。</p>
-
-<ul>
-<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
-</ul>
-
-<p>というころで、今回は、Texpanderを使うことにしました！</p>
-
 <p></p></div>
     </div>
   </a>
@@ -163,35 +120,6 @@ xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodi
       <div class="summary"><p>ご存知の通りDebian Stretch(GNOME)には、<code>Firefox ESR</code>が入っています。</p>
 
 <p>今回は、<strong>Firefox ESR</strong>ではなく、最新の<strong>Firefox</strong>をインストールするときのメモ。</p>
-
-<h2 id="ダウンロード">ダウンロード</h2>
-
-<p><a href="https://www.mozilla.org/ja/firefox/">Firefox</a>からダウンロードします。</p>
-
-<p><img src="/images/debian-stretch-install-firefox-latest/firefox-latest-1.png" alt="image" /></p>
-
-<p>任意の場所に保存してください。
-今回は<code>Downloads</code>として進めます。</p>
-
-<p>Downloadsに<code>firefox-61.0.2.tar.bz2</code>(バージョン番号は気にせず…)がダウンロードされると思います。</p>
-
-<h2 id="展開">展開</h2>
-
-<p>展開します。</p>
-
-<pre><code>cd ~/Downloads
-Downloads $ tar xf firefox-61.0.2.tar.bz2
-</code></pre>
-
-<p>展開すると、こんな感じだと思います。</p>
-
-<pre><code>Downloads $ ls -la
-total 57788
-drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
-drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
-drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
--rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
-</code></pre>
 
 <p></p></div>
     </div>

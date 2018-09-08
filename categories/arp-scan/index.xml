@@ -22,13 +22,6 @@
 
 &lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;brew install arp-scan
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;インストールできました。&lt;/p&gt;
-
-&lt;p&gt;ラズパイにsshする時に必要になるipアドレスを調べてみましょう。&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
