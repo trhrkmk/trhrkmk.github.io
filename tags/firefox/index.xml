@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firefox on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/firefox/</link>
+    <description>Recent content in Firefox on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Tue, 28 Aug 2018 20:24:36 -0400</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</title>
+      <link>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</link>
+      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</guid>
+      <description>&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;
+
+&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/ja/firefox/&#34;&gt;Firefox&lt;/a&gt;からダウンロードします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;任意の場所に保存してください。
+今回は&lt;code&gt;Downloads&lt;/code&gt;として進めます。&lt;/p&gt;
+
+&lt;p&gt;Downloadsに&lt;code&gt;firefox-61.0.2.tar.bz2&lt;/code&gt;(バージョン番号は気にせず…)がダウンロードされると思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;展開&#34;&gt;展開&lt;/h2&gt;
+
+&lt;p&gt;展開します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/Downloads
+Downloads $ tar xf firefox-61.0.2.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;展開すると、こんな感じだと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Downloads $ ls -la
+total 57788
+drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
+drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
+drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
+-rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
