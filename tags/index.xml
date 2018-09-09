@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Thu, 06 Sep 2018 00:41:40 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 11:23:36 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Addthis</title>
+      <link>https://www.trhrkmk.com/tags/addthis/</link>
+      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/addthis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Debian</title>
@@ -51,7 +60,7 @@
     <item>
       <title>Hugo</title>
       <link>https://www.trhrkmk.com/tags/hugo/</link>
-      <pubDate>Sun, 26 Aug 2018 00:11:48 +0900</pubDate>
+      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/hugo/</guid>
       <description></description>
@@ -81,6 +90,15 @@
       <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Share Button</title>
+      <link>https://www.trhrkmk.com/tags/share-button/</link>
+      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/share-button/</guid>
       <description></description>
     </item>
     

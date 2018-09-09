@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/hugo-share-button-addthis/</loc>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/about/</loc>
     <lastmod>2018-09-06T15:59:19+09:00</lastmod>
   </url>
@@ -35,6 +40,12 @@
   <url>
     <loc>https://www.trhrkmk.com/posts/blog-hugo-start/</loc>
     <lastmod>2018-08-26T00:11:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/addthis/</loc>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -105,19 +116,19 @@
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
-    <lastmod>2018-09-06T15:59:19+09:00</lastmod>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/hugo/</loc>
-    <lastmod>2018-08-26T00:11:48+09:00</lastmod>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/categories/hugo/</loc>
-    <lastmod>2018-08-26T00:11:48+09:00</lastmod>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -141,7 +152,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -152,8 +163,14 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/share-button/</loc>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/</loc>
-    <lastmod>2018-09-06T00:41:40+09:00</lastmod>
+    <lastmod>2018-09-09T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
