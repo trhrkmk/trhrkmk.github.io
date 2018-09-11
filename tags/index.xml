@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Tue, 11 Sep 2018 22:30:57 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 11:23:36 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>https://www.trhrkmk.com/tags/</link>
-      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Addthis</title>
@@ -42,7 +33,7 @@
     <item>
       <title>Filemaker</title>
       <link>https://www.trhrkmk.com/tags/filemaker/</link>
-      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
+      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/filemaker/</guid>
       <description></description>
@@ -126,6 +117,15 @@
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/textexpander/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://www.trhrkmk.com/tags/tips/</link>
+      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/tips/</guid>
       <description></description>
     </item>
     
