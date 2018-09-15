@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Sun, 09 Sep 2018 11:23:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Sep 2018 18:40:06 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugoのリンクを新規タブ(target=&#39;_blank&#39;)で開く設定のメモ</title>
+      <link>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</link>
+      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
+      <description>Hugoでブログを書いていて「リンクを新規タブで開くようにしたいなー」と思い、設定したのでメモ。
+なにも設定せずにリンク[ぐーぐる](https://google.com)を使うと、以下のようなhtmlになります。
+&amp;lt;a href=&amp;quot;https://google.com&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  新規タブで開く設定をしたいので、以下のhtmlにしたいです。
+&amp;lt;a href=&amp;quot;https://google.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  config.tomlを編集する config.tomlにhrefTargetBlank = trueを追加すればOKなはずです。
+defaultContentLanguage = &amp;quot;ja&amp;quot; baseurl = &amp;quot;https://www.trhrkmk.com/&amp;quot; languageCode = &amp;quot;jp&amp;quot; title = &amp;quot;HHKBは体の一部&amp;quot; theme = &amp;quot;themeName&amp;quot; [blackfriday] hrefTargetBlank = true  参考  HugoのMarkdownでtarget=&amp;rsquo;_blank&amp;rsquo;を実現する方法 How To Create Link With target=&amp;rsquo;_blank&amp;rsquo; In Hugo Markdown How to target=“_blank” in .md?  あとがき Hugoは、BlackfridayというGo製のMarkdown変換ツールを使っているのか。
+備忘録ということで…</description>
+    </item>
     
     <item>
       <title>AddThisを使ってHugoに共有ボタン(Share Button)を追加する</title>
