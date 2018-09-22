@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Sat, 15 Sep 2018 11:07:40 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 22 Sep 2018 10:08:11 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話</title>
+      <link>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</link>
+      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</guid>
+      <description>以前、ブログを書きました。
+ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。
+しかし、もっと簡単にできるはずだ！と思いググってみた。
+DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。
+結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。
+win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。
+win-acmeは、DNS認証は対応しているとのこと。
+CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。
+その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。
+DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。
+ Example Scripts Validation plugins How to &amp;ldquo;Run external program/script to create and update records&amp;rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &amp;ldquo;dns-01&amp;rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。
+https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264
+I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.</description>
+    </item>
     
     <item>
       <title>FileMaker ServerにLet&#39;s EncryptのSSL証明書を設定する</title>
