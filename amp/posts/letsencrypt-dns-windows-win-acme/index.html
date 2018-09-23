@@ -25,21 +25,21 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話 - HHKBは体の一部</title>
     
-<meta name="description" content="以前、ブログを書きました。ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。しかし、もっと簡単にできるはずだ！と思いググってみた。DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。win-acmeは、DNS認証は対応しているとのこと。CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。 Example Scripts Validation plugins How to &amp;ldquo;Run external program/script to create and update records&amp;rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &amp;ldquo;dns-01&amp;rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.">
+<meta name="description" content="&lt;p&gt;以前、&lt;a href=&#34;https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/&#34; target=&#34;_blank&#34;&gt;FileMaker ServerにLet&amp;rsquo;s EncryptのSSL証明書を設定する&lt;/a&gt;というブログを書きました。&lt;/p&gt;&lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 
 <meta property="og:title" content="Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話 - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/letsencrypt-dns-windows-win-acme/letsencrypt-dns-windows-win-acme-1.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="以前、ブログを書きました。ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。しかし、もっと簡単にできるはずだ！と思いググってみた。DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。win-acmeは、DNS認証は対応しているとのこと。CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。 Example Scripts Validation plugins How to &amp;ldquo;Run external program/script to create and update records&amp;rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &amp;ldquo;dns-01&amp;rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.">
+<meta property="og:description" content="&lt;p&gt;以前、&lt;a href=&#34;https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/&#34; target=&#34;_blank&#34;&gt;FileMaker ServerにLet&amp;rsquo;s EncryptのSSL証明書を設定する&lt;/a&gt;というブログを書きました。&lt;/p&gt;&lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/">
 <meta name="twitter:title" content="Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話 - HHKBは体の一部">
-<meta name="twitter:description" content="以前、ブログを書きました。ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。しかし、もっと簡単にできるはずだ！と思いググってみた。DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。win-acmeは、DNS認証は対応しているとのこと。CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。 Example Scripts Validation plugins How to &amp;ldquo;Run external program/script to create and update records&amp;rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &amp;ldquo;dns-01&amp;rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.">
+<meta name="twitter:description" content="&lt;p&gt;以前、&lt;a href=&#34;https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/&#34; target=&#34;_blank&#34;&gt;FileMaker ServerにLet&amp;rsquo;s EncryptのSSL証明書を設定する&lt;/a&gt;というブログを書きました。&lt;/p&gt;&lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/letsencrypt-dns-windows-win-acme/letsencrypt-dns-windows-win-acme-1.png">
 
 
@@ -74,19 +74,13 @@
         "height": 60
       }
     },
-    "description": "以前、ブログを書きました。
-ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。
-しかし、もっと簡単にできるはずだ！と思いググってみた。
-DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。
-結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。
-win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。
-win-acmeは、DNS認証は対応しているとのこと。
-CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。
-その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。
-DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。
- Example Scripts Validation plugins How to &ldquo;Run external program/script to create and update records&rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &ldquo;dns-01&rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。
-https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264
-I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful."
+    "description": "<p>以前、<a href="https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/" target="_blank">FileMaker ServerにLet&rsquo;s EncryptのSSL証明書を設定する</a>というブログを書きました。</p>
+
+<p>ブログを書いている時は、<strong>HTTPでの認証が一般的だろう</strong>程度でやっていました。</p>
+
+<p>しかし、もっと簡単にできるはずだ！と思いググってみた。</p>
+
+<p></p>"
   }
 </script>
 
@@ -161,13 +155,13 @@ I created scripts to do this that work on server 2012. As my server is behind a 
   </div>
   
 
-  <div class="article-body">
-
-<p>以前、ブログを書きました。</p>
+  <div class="article-body"><p>以前、<a href="https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/" target="_blank">FileMaker ServerにLet&rsquo;s EncryptのSSL証明書を設定する</a>というブログを書きました。</p>
 
 <p>ブログを書いている時は、<strong>HTTPでの認証が一般的だろう</strong>程度でやっていました。</p>
 
 <p>しかし、もっと簡単にできるはずだ！と思いググってみた。</p>
+
+<p></p>
 
 <p>DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。</p>
 
@@ -356,8 +350,7 @@ Error:     + FullyQualifiedErrorId : WIN32 1722,Remove-DnsServerResourceRecord
 
 <p>今回は、Windows Server ですので…</p>
 
-<p>Windowsとか、PowerShellとか、本当に辛い…</p>
-</div>
+<p>Windowsとか、PowerShellとか、本当に辛い…</p></div>
 
   <footer class="article-footer">
 

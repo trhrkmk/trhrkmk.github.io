@@ -18,19 +18,13 @@
       <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</guid>
-      <description>以前、ブログを書きました。
-ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。
-しかし、もっと簡単にできるはずだ！と思いググってみた。
-DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。
-結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。
-win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。
-win-acmeは、DNS認証は対応しているとのこと。
-CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。
-その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。
-DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。
- Example Scripts Validation plugins How to &amp;ldquo;Run external program/script to create and update records&amp;rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &amp;ldquo;dns-01&amp;rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。
-https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264
-I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.</description>
+      <description>&lt;p&gt;以前、&lt;a href=&#34;https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/&#34; target=&#34;_blank&#34;&gt;FileMaker ServerにLet&amp;rsquo;s EncryptのSSL証明書を設定する&lt;/a&gt;というブログを書きました。&lt;/p&gt;
+
+&lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;
+
+&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,12 +33,11 @@ I created scripts to do this that work on server 2012. As my server is behind a 
       <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
-      <description>Hugoでブログを書いていて「リンクを新規タブで開くようにしたいなー」と思い、設定したのでメモ。
-なにも設定せずにリンク[ぐーぐる](https://google.com)を使うと、以下のようなhtmlになります。
-&amp;lt;a href=&amp;quot;https://google.com&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  新規タブで開く設定をしたいので、以下のhtmlにしたいです。
-&amp;lt;a href=&amp;quot;https://google.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  config.tomlを編集する config.tomlにhrefTargetBlank = trueを追加すればOKなはずです。
-defaultContentLanguage = &amp;quot;ja&amp;quot; baseurl = &amp;quot;https://www.trhrkmk.com/&amp;quot; languageCode = &amp;quot;jp&amp;quot; title = &amp;quot;HHKBは体の一部&amp;quot; theme = &amp;quot;themeName&amp;quot; [blackfriday] hrefTargetBlank = true  参考  HugoのMarkdownでtarget=&amp;rsquo;_blank&amp;rsquo;を実現する方法 How To Create Link With target=&amp;rsquo;_blank&amp;rsquo; In Hugo Markdown How to target=“_blank” in .md?  あとがき Hugoは、BlackfridayというGo製のMarkdown変換ツールを使っているのか。
-備忘録ということで…</description>
+      <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
+
+&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

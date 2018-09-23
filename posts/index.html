@@ -96,19 +96,13 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">以前、ブログを書きました。
-ブログを書いている時は、HTTPでの認証が一般的だろう程度でやっていました。
-しかし、もっと簡単にできるはずだ！と思いググってみた。
-DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。
-結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。
-win-acmeでDNS認証を試みる GitHubのWikiを確認する こういうときは、Wiki Homeを見ましょう。
-win-acmeは、DNS認証は対応しているとのこと。
-CLIツールレベルで対応しているのは、Azure DNS validationだけのようです。
-その他のDNSを使っている場合は、自分でスクリプトを書いて指定してね。ということみたい。
-DNS認証時に利用するスクリプト スクリプトについて、具体的にどのように記述して指定するのかをググってみた。
- Example Scripts Validation plugins How to &ldquo;Run external program/script to create and update records&rdquo; #817 Can I use Win-ACME (v1.9.10.1) to validate using &ldquo;dns-01&rdquo;? #841  このリンクの方が、具体的なコードを書いてくれていました。
-https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264
-I created scripts to do this that work on server 2012. As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.</div>
+      <div class="summary"><p>以前、<a href="https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/" target="_blank">FileMaker ServerにLet&rsquo;s EncryptのSSL証明書を設定する</a>というブログを書きました。</p>
+
+<p>ブログを書いている時は、<strong>HTTPでの認証が一般的だろう</strong>程度でやっていました。</p>
+
+<p>しかし、もっと簡単にできるはずだ！と思いググってみた。</p>
+
+<p></p></div>
     </div>
   </a>
 </article>
@@ -127,12 +121,11 @@ I created scripts to do this that work on server 2012. As my server is behind a 
         
       </ul>
 
-      <div class="summary">Hugoでブログを書いていて「リンクを新規タブで開くようにしたいなー」と思い、設定したのでメモ。
-なにも設定せずにリンク[ぐーぐる](https://google.com)を使うと、以下のようなhtmlになります。
-&lt;a href=&quot;https://google.com&quot;&gt;ぐーぐる&lt;/a&gt;  新規タブで開く設定をしたいので、以下のhtmlにしたいです。
-&lt;a href=&quot;https://google.com&quot; target=&quot;_blank&quot;&gt;ぐーぐる&lt;/a&gt;  config.tomlを編集する config.tomlにhrefTargetBlank = trueを追加すればOKなはずです。
-defaultContentLanguage = &quot;ja&quot; baseurl = &quot;https://www.trhrkmk.com/&quot; languageCode = &quot;jp&quot; title = &quot;HHKBは体の一部&quot; theme = &quot;themeName&quot; [blackfriday] hrefTargetBlank = true  参考  HugoのMarkdownでtarget=&rsquo;_blank&rsquo;を実現する方法 How To Create Link With target=&rsquo;_blank&rsquo; In Hugo Markdown How to target=“_blank” in .md?  あとがき Hugoは、BlackfridayというGo製のMarkdown変換ツールを使っているのか。
-備忘録ということで…</div>
+      <div class="summary"><p>Hugoでブログを書いていて「<strong>リンクを新規タブで開くようにしたいなー</strong>」と思い、設定したのでメモ。</p>
+
+<p>なにも設定せずにリンク<code>[ぐーぐる](https://google.com)</code>を使うと、以下のようなhtmlになります。</p>
+
+<p></p></div>
     </div>
   </a>
 </article>
