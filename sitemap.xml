@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</loc>
     <lastmod>2018-09-22T10:08:11+09:00</lastmod>
   </url>
@@ -75,6 +80,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/bitnami/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
@@ -87,13 +98,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/debian/</loc>
+    <loc>https://www.trhrkmk.com/categories/debian/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/debian/</loc>
+    <loc>https://www.trhrkmk.com/tags/debian/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -111,25 +122,25 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
-    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
     <lastmod>2018-09-11T22:30:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/filemaker-server/</loc>
+    <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/categories/filemaker-server/</loc>
+    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/filemaker-server/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -148,18 +159,12 @@
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
-    <lastmod>2018-09-22T10:08:11+09:00</lastmod>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/href/</loc>
-    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.trhrkmk.com/tags/hugo/</loc>
     <lastmod>2018-09-15T18:40:06+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -171,20 +176,32 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/hugo/</loc>
+    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/icon/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
-    <lastmod>2018-09-22T10:08:11+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
-    <lastmod>2018-09-22T10:08:11+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/lightsail/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -208,13 +225,19 @@
   
   <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2018-09-22T10:08:11+09:00</lastmod>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/raspberry-pi/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/redmine/</loc>
+    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
