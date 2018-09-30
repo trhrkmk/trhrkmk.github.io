@@ -7,25 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Sat, 22 Sep 2018 10:08:11 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Sep 2018 18:40:06 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話</title>
-      <link>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</link>
-      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/</guid>
-      <description>&lt;p&gt;以前、&lt;a href=&#34;https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/&#34; target=&#34;_blank&#34;&gt;FileMaker ServerにLet&amp;rsquo;s EncryptのSSL証明書を設定する&lt;/a&gt;というブログを書きました。&lt;/p&gt;
-
-&lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;
-
-&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Hugoのリンクを新規タブ(target=&#39;_blank&#39;)で開く設定のメモ</title>
@@ -33,11 +18,12 @@
       <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
-      <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
-
-&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>Hugoでブログを書いていて「リンクを新規タブで開くようにしたいなー」と思い、設定したのでメモ。
+なにも設定せずにリンク[ぐーぐる](https://google.com)を使うと、以下のようなhtmlになります。
+&amp;lt;a href=&amp;quot;https://google.com&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  新規タブで開く設定をしたいので、以下のhtmlにしたいです。
+&amp;lt;a href=&amp;quot;https://google.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ぐーぐる&amp;lt;/a&amp;gt;  config.tomlを編集する config.tomlにhrefTargetBlank = trueを追加すればOKなはずです。
+defaultContentLanguage = &amp;quot;ja&amp;quot; baseurl = &amp;quot;https://www.trhrkmk.com/&amp;quot; languageCode = &amp;quot;jp&amp;quot; title = &amp;quot;HHKBは体の一部&amp;quot; theme = &amp;quot;themeName&amp;quot; [blackfriday] hrefTargetBlank = true  参考  HugoのMarkdownでtarget=&amp;rsquo;_blank&amp;rsquo;を実現する方法 How To Create Link With target=&amp;rsquo;_blank&amp;rsquo; In Hugo Markdown How to target=“_blank” in .md?  あとがき Hugoは、BlackfridayというGo製のMarkdown変換ツールを使っているのか。
+備忘録ということで…</description>
     </item>
     
     <item>
