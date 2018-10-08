@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.Bashrc on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/.bashrc/</link>
+    <description>Recent content in .Bashrc on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Mon, 08 Oct 2018 23:43:10 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/.bashrc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>.bashrcでOSを確認する</title>
+      <link>https://www.trhrkmk.com/posts/bashrc-os-check/</link>
+      <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/bashrc-os-check/</guid>
+      <description>最近、.bashrcや.vimrcなど、見直してました。
+macOSで利用している.bashrcを、Linuxでも利用したいと思ったからです。
+ということで、自分用のメモ。
+.bashrc .bashrcは、シンプルに外部ファイルを読み込むだけにしました。
+gitリポジトリは、ghqで管理しているので、こんな感じ。
+. $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_bashrc.bash . $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_alias.bash . $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_function.bash  .bash_bashrc.bash ファイルの一部を切り取っています。
+こんな感じで記述しました。
+#-------------------------------------------------- # os #-------------------------------------------------- if [ &amp;quot;`uname`&amp;quot; == &amp;quot;Darwin&amp;quot; ]; then ISMAC=true elif [ &amp;quot;`uname`&amp;quot; == &amp;quot;Linux&amp;quot; ]; then ISLINUX=true fi #-------------------------------------------------- # fzf #-------------------------------------------------- if [ $ISLINUX ]; then [ -f ~/.fzf.bash ] &amp;amp;&amp;amp; source ~/.fzf.bash fi  ファイル名についての模索 ファイル名の規則ってどんな感じなんでしょうかね？
+gcpのsdkをインストールした際に.bash_profileに追記されたのが、こちら
+path.bash.incとcompletion.bash.incというファイル名なんですね。
+先程の外部ファイルは.bash_bashrc.bashとしてますがbashrc.bash.incにしても良いかもしれない。
+# The next line updates PATH for the Google Cloud SDK.</description>
+    </item>
+    
+  </channel>
+</rss>

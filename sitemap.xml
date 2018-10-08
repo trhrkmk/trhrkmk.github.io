@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/bashrc-os-check/</loc>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</loc>
     <lastmod>2018-09-30T16:06:11+09:00</lastmod>
   </url>
@@ -68,6 +73,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/.bashrc/</loc>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/addthis/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
@@ -76,6 +87,12 @@
   <url>
     <loc>https://www.trhrkmk.com/categories/arp-scan/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/bashrc/</loc>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,19 +109,25 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/cli/</loc>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/command/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/debian/</loc>
+    <loc>https://www.trhrkmk.com/tags/debian/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/debian/</loc>
+    <loc>https://www.trhrkmk.com/categories/debian/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -122,25 +145,25 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
-    <lastmod>2018-09-11T22:30:57+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/filemaker-server/</loc>
-    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
+    <lastmod>2018-09-11T22:30:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/filemaker-server/</loc>
+    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/filemaker-server/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -159,18 +182,12 @@
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
-    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/tags/href/</loc>
-    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.trhrkmk.com/categories/hugo/</loc>
     <lastmod>2018-09-15T18:40:06+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -182,19 +199,25 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/categories/hugo/</loc>
+    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/icon/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
+    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
     <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
+    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
     <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -225,7 +248,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2018-09-30T16:06:11+09:00</lastmod>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -255,7 +278,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/tags/</loc>
-    <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <lastmod>2018-10-08T23:43:10+09:00</lastmod>
     <priority>0</priority>
   </url>
   

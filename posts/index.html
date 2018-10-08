@@ -84,6 +84,36 @@ if (!doNotTrack) {
       <div class="mrow">
         
         <div class="mcol c6"><article class="li">
+  <a href="https://www.trhrkmk.com/posts/bashrc-os-check/">
+    <div class="thumb thumb-ab9d8d7db485dd06772fef054384b0ee"></div>
+
+    <div class="inner">
+      <h2 class="title">.bashrcでOSを確認する</h2>
+
+      <ul class="facts">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-08T23:43:10JST">2018-10-08</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+      <div class="summary">最近、.bashrcや.vimrcなど、見直してました。
+macOSで利用している.bashrcを、Linuxでも利用したいと思ったからです。
+ということで、自分用のメモ。
+.bashrc .bashrcは、シンプルに外部ファイルを読み込むだけにしました。
+gitリポジトリは、ghqで管理しているので、こんな感じ。
+. $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_bashrc.bash . $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_alias.bash . $HOME/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_function.bash  .bash_bashrc.bash ファイルの一部を切り取っています。
+こんな感じで記述しました。
+#-------------------------------------------------- # os #-------------------------------------------------- if [ &quot;`uname`&quot; == &quot;Darwin&quot; ]; then ISMAC=true elif [ &quot;`uname`&quot; == &quot;Linux&quot; ]; then ISLINUX=true fi #-------------------------------------------------- # fzf #-------------------------------------------------- if [ $ISLINUX ]; then [ -f ~/.fzf.bash ] &amp;&amp; source ~/.fzf.bash fi  ファイル名についての模索 ファイル名の規則ってどんな感じなんでしょうかね？
+gcpのsdkをインストールした際に.bash_profileに追記されたのが、こちら
+path.bash.incとcompletion.bash.incというファイル名なんですね。
+先程の外部ファイルは.bash_bashrc.bashとしてますがbashrc.bash.incにしても良いかもしれない。
+# The next line updates PATH for the Google Cloud SDK.</div>
+    </div>
+  </a>
+</article>
+</div>
+        
+        <div class="mcol c6"><article class="li">
   <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
     <div class="thumb thumb-48829181f822197d67aae0bd2e10a89d"></div>
 
@@ -293,27 +323,6 @@ Host redmine.yourhost.com Hostname redmine.yourhost.com IdentityFile ~/.ssh/Ligh
 </article>
 </div>
         
-        <div class="mcol c6"><article class="li">
-  <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/">
-    <div class="thumb thumb-d70551f691c0a74c8d01707490adf401"></div>
-
-    <div class="inner">
-      <h2 class="title">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-      <div class="summary"><p>開発環境から、商用環境へリリースする際に、ローカル環境で<code>FMDataMigration</code>や、独自のマイグレーションツールを実行し、データ移行すると思います。</p>
-
-<p></p></div>
-    </div>
-  </a>
-</article>
-</div>
-        
       </div>
     </div>
 
@@ -356,6 +365,24 @@ Host redmine.yourhost.com Hostname redmine.yourhost.com IdentityFile ~/.ssh/Ligh
   <header>LATESTS</header>
   <div>
     <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/bashrc-os-check/">
+    <div class="thumb thumb-ab9d8d7db485dd06772fef054384b0ee"></div>
+
+    <div class="inner">
+      <div class="title">.bashrcでOSを確認する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-08T23:43:10JST">2018-10-08</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
       
       <article class="lism">
   <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
@@ -519,24 +546,6 @@ Host redmine.yourhost.com Hostname redmine.yourhost.com IdentityFile ~/.ssh/Ligh
 </article>
 
       
-      <article class="lism">
-  <a href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/">
-    <div class="thumb thumb-d70551f691c0a74c8d01707490adf401"></div>
-
-    <div class="inner">
-      <div class="title">リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
     </div>
   </div>
 </section>
@@ -546,7 +555,7 @@ Host redmine.yourhost.com Hostname redmine.yourhost.com IdentityFile ~/.ssh/Ligh
   <header>CATEGORIES</header>
   <div>
     <ul class="terms">
-      <li><a href="https://www.trhrkmk.com/categories/filemaker">filemaker <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/lets-encrypt">lets-encrypt <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/macos">macos <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/arp-scan">arp-scan <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/command">command <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/file-permission">file-permission <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/filemaker-server">filemaker-server <span class="count">(1)</span></a></li>
+      <li><a href="https://www.trhrkmk.com/categories/filemaker">filemaker <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/lets-encrypt">lets-encrypt <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/macos">macos <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/arp-scan">arp-scan <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/bashrc">bashrc <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/command">command <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/file-permission">file-permission <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/filemaker-server">filemaker-server <span class="count">(1)</span></a></li>
     </ul>
   </div>
 </section>
@@ -558,7 +567,7 @@ Host redmine.yourhost.com Hostname redmine.yourhost.com IdentityFile ~/.ssh/Ligh
   <header>TAGS</header>
   <div>
     <ul class="terms">
-      <li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/windows-server">windows-server <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/addthis">addthis <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bitnami">bitnami <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/dns">dns <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/filemaker-server">filemaker-server <span class="count">(1)</span></a></li>
+      <li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/windows-server">windows-server <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/.bashrc">.bashrc <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/addthis">addthis <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bitnami">bitnami <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(1)</span></a></li>
     </ul>
   </div>
 </section>
