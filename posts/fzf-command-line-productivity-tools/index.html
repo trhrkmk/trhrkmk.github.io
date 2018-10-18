@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+<link rel="apple-touch-icon" href="https://www.trhrkmk.com/images/logo.png">
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
+
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部</title>
+    
+
+<link rel="amphtml" type="text/html" href="https://www.trhrkmk.com/amp/posts/fzf-command-line-productivity-tools/">
+
+<meta name="description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBは体の一部">
+<meta property="og:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBは体の一部">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
+<meta name="twitter:title" content="fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部">
+<meta name="twitter:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-10-18T21:02:28JST",
+    "dateModified": "2018-10-18T21:02:28JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBは体の一部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBは体の一部",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。</p>
+
+<p>すごく快適になるので、試してみてほしいです！</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <style>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://www.trhrkmk.com/images/thumbnail/default.jpg); background-size: cover; background-position: center;}.thumb-48829181f822197d67aae0bd2e10a89d { background-image: url(https://www.trhrkmk.com/images/lightsail-bitnami-redmine-letsencrypt/lightsail-bitnami-redmine-letsencrypt-1.png);}.thumb-f5e515ece7bcac5194b3ee1f86417cc8 { background-image: url(https://www.trhrkmk.com/images/letsencrypt-dns-windows-win-acme/letsencrypt-dns-windows-win-acme-1.png);}.thumb-211a68066326af57662195e4fd3c867c { background-image: url(https://www.trhrkmk.com/images/hugo-link-target-blank-markdown/gohugoio-card-1.png);}.thumb-48d142721a390e870478036f7904163c { background-image: url(https://www.trhrkmk.com/images/filemaker-server-ssl-letsencrypt-windows-server/filemaker-server-ssl-letsencrypt-windows-server-7.png);}.thumb-b92f7b8ee6916c4e6c4b0a6542324cb5 { background-image: url(https://www.trhrkmk.com/images/filemaker-text-label-get-function/filemaker-text-label-get-function-1.png);}.thumb-37addc00d0b9c90d85e5bcc3c96e5641 { background-image: url(https://www.trhrkmk.com/images/hugo-share-button-addthis/hugo-share-button-addthis-1.png);}.thumb-b40d8f5050184fb578c9e2a9d48b0729 { background-image: url(https://www.trhrkmk.com/images/linux-textexpander-typinator-similar-app-introduction/texpander-1.png);}.thumb-b83507c5dabe1c8dc80f6d0e5d00803d { background-image: url(https://www.trhrkmk.com/images/filemaker-fmperception-check-unreferenced/fmperception-unreferenced-1.png);}.thumb-609fe292361a3aa310e4908207f2c905 { background-image: url(https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png);}.thumb-595902e3f91a7903b2e09e54e9d6166a { background-image: url(https://www.trhrkmk.com/images/blog-hugo-start/hugo-1.png);}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+    </style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7253798718530910",
+        enable_page_level_ads: true
+    });
+</script>
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-90586336-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+        </div>
+        
+<div class="description">
+  びぼうろく
+</div>
+
+
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<div class="mrow">
+  <div class="mcol c8">
+
+    <article class="sn">
+
+  <div class="thumb thumb-d15fa695c6416a710e0b16ac0945e5e8"></div>
+
+  <header class="article-header">
+    <h1 class="title">fzfを使ってターミナルでの作業を効率化する</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-18T21:02:28JST">2018-10-18</time></li>
+      <li><i class="fa fa-refresh" aria-hidden="true"></i><time datetime="2018-10-18T21:02:28JST">2018-10-18</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">POSTS</a></li>
+      
+    </ul>
+
+    <div class="addthis_inline_share_toolbox"></div>
+  </header>
+
+  
+  <div class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#fzfを使うと-どのように効率化できるのか">fzfを使うと、どのように効率化できるのか？</a>
+<ul>
+<li><a href="#シンプルにfzfコマンドを実行する">シンプルにfzfコマンドを実行する</a></li>
+<li><a href="#ghqとfzfを連携する">ghqとfzfを連携する</a></li>
+</ul></li>
+<li><a href="#各種リンク">各種リンク</a></li>
+<li><a href="#インストール">インストール</a></li>
+<li><a href="#まずは-使ってみる">まずは、使ってみる</a>
+<ul>
+<li><a href="#フォルダを選択する">フォルダを選択する</a></li>
+<li><a href="#vimで開く">Vimで開く</a></li>
+<li><a href="#heightオプションをつけて実行する">&ndash;heightオプションをつけて実行する</a></li>
+<li><a href="#reverseオプションをつけて実行する">&ndash;reverseオプションをつけて実行する</a></li>
+</ul></li>
+<li><a href="#デフォルトのオプションを設定する">デフォルトのオプションを設定する</a></li>
+<li><a href="#wikiをみる">Wikiをみる</a>
+<ul>
+<li><a href="#ghqとの連携で使っている関数">ghqとの連携で使っている関数</a></li>
+<li><a href="#wikiから引用して-私が使っている関数など">Wikiから引用して、私が使っている関数など</a></li>
+</ul></li>
+<li><a href="#あとがき">あとがき</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+  
+
+  <div class="article-body"><p>タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。</p>
+
+<p>すごく快適になるので、試してみてほしいです！</p>
+
+<p></p>
+
+<h2 id="fzfを使うと-どのように効率化できるのか">fzfを使うと、どのように効率化できるのか？</h2>
+
+<p>ターミナル内でのディレクトリの移動が快適にできるようになります。</p>
+
+<p>以下のgifにもある通り、ghqを使うことでリポジトリの移動が快適になります。</p>
+
+<p>どちらかといえば、pecoのほうが人気な気がしますが、Vimとの連携もできるので、Vimを使っている方にもおすすめです。</p>
+
+<h3 id="シンプルにfzfコマンドを実行する">シンプルにfzfコマンドを実行する</h3>
+
+<p>まずは、シンプルにfzfを実行する。</p>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-1.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<p>ちなみに、私は以下のデフォルトオプションを設定しています。</p>
+
+<pre><code>export FZF_DEFAULT_OPTS=&quot;--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'&quot;
+</code></pre>
+
+<h3 id="ghqとfzfを連携する">ghqとfzfを連携する</h3>
+
+<p>ghqとfzfを連携して、リポジトリの移動をする。</p>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-2.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<h2 id="各種リンク">各種リンク</h2>
+
+<ul>
+<li><a href="https://github.com/junegunn/fzf" target="_blank">https://github.com/junegunn/fzf</a></li>
+<li><a href="https://github.com/motemen/ghq" target="_blank">https://github.com/motemen/ghq</a></li>
+<li><a href="https://github.com/peco/peco" target="_blank">https://github.com/peco/peco</a></li>
+</ul>
+
+<h2 id="インストール">インストール</h2>
+
+<p>GitHubを見るのが良いと思いますが…</p>
+
+<p>一応ね…</p>
+
+<p>macの場合、brewでインストールできます。</p>
+
+<pre><code>brew install fzf
+</code></pre>
+
+<p>Ubuntuでは、リリースからバイナリをダウンロードして、パスを通して使っています。</p>
+
+<h2 id="まずは-使ってみる">まずは、使ってみる</h2>
+
+<p>gifにもあったように、<code>fzf</code>を実行してファイルを選択すると、該当のファイル名を受け取れます。</p>
+
+<pre><code>~/go/src/github.com/google/skicka [master=] $ fzf
+README.md
+</code></pre>
+
+<p>GitHubの引用ですが、以下のような感じで利用できます。</p>
+
+<h3 id="フォルダを選択する">フォルダを選択する</h3>
+
+<pre><code>find * -type d | fzf
+</code></pre>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-3.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<h3 id="vimで開く">Vimで開く</h3>
+
+<pre><code>vim $(fzf)
+</code></pre>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-4.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<h3 id="heightオプションをつけて実行する">&ndash;heightオプションをつけて実行する</h3>
+
+<pre><code>vim $(fzf --height 40%)
+</code></pre>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-5.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<h3 id="reverseオプションをつけて実行する">&ndash;reverseオプションをつけて実行する</h3>
+
+<pre><code>vim $(fzf --height 40% --reverse)
+</code></pre>
+
+<figure>
+  <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-6.gif" alt="" width="auto" height="auto">
+  
+</figure>
+
+
+<h2 id="デフォルトのオプションを設定する">デフォルトのオプションを設定する</h2>
+
+<pre><code>export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+</code></pre>
+
+<pre><code>export FZF_DEFAULT_COMMAND='fd --type f'
+</code></pre>
+
+<h2 id="wikiをみる">Wikiをみる</h2>
+
+<p>やりたいことは、Wikiを見れば分かると思います。</p>
+
+<ul>
+<li><a href="https://github.com/junegunn/fzf/wiki" target="_blank">https://github.com/junegunn/fzf/wiki</a></li>
+</ul>
+
+<h3 id="ghqとの連携で使っている関数">ghqとの連携で使っている関数</h3>
+
+<pre><code># fdg - ghq
+fdg() {
+  local selected
+  selected=$(ghq list | fzf)
+
+  if [ &quot;x$selected&quot; != &quot;x&quot; ]; then
+    cd $(ghq root)/$selected
+  fi
+}
+</code></pre>
+
+<h3 id="wikiから引用して-私が使っている関数など">Wikiから引用して、私が使っている関数など</h3>
+
+<pre><code># fh - repeat history
+fh() {
+  eval $( ([ -n &quot;$ZSH_NAME&quot; ] &amp;&amp; fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+</code></pre>
+
+<pre><code># fkill - kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ &quot;x$pid&quot; != &quot;x&quot; ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+</code></pre>
+
+<pre><code># fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2&gt; /dev/null | fzf +m) &amp;&amp;
+  cd &quot;$dir&quot;
+}
+</code></pre>
+
+<pre><code># fda - including hidden directories
+fda() {
+  local dir
+  dir=$(find ${1:-.} -type d 2&gt; /dev/null | fzf +m) &amp;&amp; cd &quot;$dir&quot;
+}
+</code></pre>
+
+<pre><code># fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format=&quot;%C(auto)%h%d %s %C(black)%C(bold)%cr&quot; &quot;$@&quot; |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind &quot;ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') &lt;&lt; 'FZF-EOF'
+                {}
+FZF-EOF&quot;
+}
+</code></pre>
+
+<pre><code># tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
+# `tm` will allow you to select your tmux session via fzf.
+# `tm irc` will attach to the irc session (if it exists), else it will create it.
+
+tm() {
+  [[ -n &quot;$TMUX&quot; ]] &amp;&amp; change=&quot;switch-client&quot; || change=&quot;attach-session&quot;
+  if [ $1 ]; then
+    tmux $change -t &quot;$1&quot; 2&gt;/dev/null || (tmux new-session -d -s $1 &amp;&amp; tmux $change -t &quot;$1&quot;); return
+  fi
+  session=$(tmux list-sessions -F &quot;#{session_name}&quot; 2&gt;/dev/null | fzf --exit-0) &amp;&amp;  tmux $change -t &quot;$session&quot; || echo &quot;No sessions found.&quot;
+}
+</code></pre>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>pecoもfzfもGo製ってのがいいですね！</p></div>
+
+  <footer class="article-footer">
+
+    <div class="addthis_inline_share_toolbox"></div>
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">POSTS</span></a></li>
+            
+            <li class="active">fzfを使ってターミナルでの作業を効率化する</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/fzf/">fzf</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/fzf/">fzf</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/terminal/">Terminal</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/cli/">CLI</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/command-line/">Command Line</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/productivity/">Productivity</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    <div class="adj">
+      <div class="mrow">
+        
+        <div class="mcol c6">
+          <header>Previous Article</header>
+          <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/bashrc-os-check/">
+    <div class="thumb thumb-ab9d8d7db485dd06772fef054384b0ee"></div>
+
+    <div class="inner">
+      <div class="title">.bashrcでOSを確認する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-08T23:43:10JST">2018-10-08</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+        </div>
+        
+        
+      </div>
+    </div>
+
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hhkb" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="mcol c4">
+    <aside class="l-sidebar">
+
+  <div class="sections sidebar">
+    
+<section class="sidebar">
+  <header>AUTHOR</header>
+  <div>
+    <div class="author">
+      
+      <div class="author-thumb" style="background-image: url(https://www.trhrkmk.com/images/author/author.jpg);"></div>
+      
+      <div class="author-name">Teruhiro Komaki</div>
+      <ul class="author-facts">
+        <li><a href="https://www.facebook.com/teruhirokomaki" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/trhrkmk" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://github.com/teruhirokomaki" rel="nofollow" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      </ul>
+      <div class="author-description"><p>I love Golang, Vim, Terminal, Debian, Raspberry Pi, Android, FileMaker.</p><p>I am studying english, Golang, Vim.</p><p>FileMaker Developer. FBA. <a href="https://frudens.jp">frudens Inc.</a></p><p><a href="https://www.trhrkmk.com/about/">about</a></p></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="sidebar">
+  <header>LATESTS</header>
+  <div>
+    <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
+    <div class="thumb thumb-d15fa695c6416a710e0b16ac0945e5e8"></div>
+
+    <div class="inner">
+      <div class="title">fzfを使ってターミナルでの作業を効率化する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-18T21:02:28JST">2018-10-18</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/bashrc-os-check/">
+    <div class="thumb thumb-ab9d8d7db485dd06772fef054384b0ee"></div>
+
+    <div class="inner">
+      <div class="title">.bashrcでOSを確認する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-08T23:43:10JST">2018-10-08</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
+    <div class="thumb thumb-48829181f822197d67aae0bd2e10a89d"></div>
+
+    <div class="inner">
+      <div class="title">LightsailのRedmine(Bitnami)でLet&#39;s Encryptを手動更新するときのメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-30T16:06:11JST">2018-09-30</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/">
+    <div class="thumb thumb-f5e515ece7bcac5194b3ee1f86417cc8"></div>
+
+    <div class="inner">
+      <div class="title">Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-22T10:08:11JST">2018-09-22</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/">
+    <div class="thumb thumb-211a68066326af57662195e4fd3c867c"></div>
+
+    <div class="inner">
+      <div class="title">Hugoのリンクを新規タブ(target=&#39;_blank&#39;)で開く設定のメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-15T18:40:06JST">2018-09-15</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/">
+    <div class="thumb thumb-48d142721a390e870478036f7904163c"></div>
+
+    <div class="inner">
+      <div class="title">FileMaker ServerにLet&#39;s EncryptのSSL証明書を設定する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-15T11:07:40JST">2018-09-15</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/filemaker-text-label-get-function/">
+    <div class="thumb thumb-b92f7b8ee6916c4e6c4b0a6542324cb5"></div>
+
+    <div class="inner">
+      <div class="title">FileMakerのテーブルビューのヘッダーに表示するテキストラベルのメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-11T22:30:57JST">2018-09-11</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/hugo-share-button-addthis/">
+    <div class="thumb thumb-37addc00d0b9c90d85e5bcc3c96e5641"></div>
+
+    <div class="inner">
+      <div class="title">AddThisを使ってHugoに共有ボタン(Share Button)を追加する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">
+    <div class="thumb thumb-b40d8f5050184fb578c9e2a9d48b0729"></div>
+
+    <div class="inner">
+      <div class="title">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
+    <div class="thumb thumb-b83507c5dabe1c8dc80f6d0e5d00803d"></div>
+
+    <div class="inner">
+      <div class="title">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+    </div>
+  </div>
+</section>
+
+    
+<section class="sidebar">
+  <header>CATEGORIES</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://www.trhrkmk.com/categories/filemaker">filemaker <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/categories/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/lets-encrypt">lets-encrypt <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/macos">macos <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/categories/arp-scan">arp-scan <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/bashrc">bashrc <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/command">command <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/file-permission">file-permission <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/categories/filemaker-server">filemaker-server <span class="count">(1)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+    
+<section class="sidebar">
+  <header>TAGS</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/windows-server">windows-server <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/.bashrc">.bashrc <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/addthis">addthis <span class="count">(1)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bitnami">bitnami <span class="count">(1)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+  </div>
+
+</aside>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b93adeef1936838" async></script>
+​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_addressbar = false;
+    addthis_config.data_track_clickback = false;
+</script>
+  </body>
+</html>
+
