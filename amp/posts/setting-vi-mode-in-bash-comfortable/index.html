@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+<link rel="apple-touch-icon" href="https://www.trhrkmk.com/images/logo.png">
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>BashをViモードに変更して快適になった話 - HHKBは体の一部</title>
+    
+<meta name="description" content="&lt;p&gt;私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="BashをViモードに変更して快適になった話 - HHKBは体の一部">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/setting-vi-mode-in-bash-comfortable/setting-vi-mode-in-bash-1.png">
+<meta property="og:site_name" content="HHKBは体の一部">
+<meta property="og:description" content="&lt;p&gt;私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBは体の一部">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/">
+<meta name="twitter:title" content="BashをViモードに変更して快適になった話 - HHKBは体の一部">
+<meta name="twitter:description" content="&lt;p&gt;私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/setting-vi-mode-in-bash-comfortable/setting-vi-mode-in-bash-1.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "BashをViモードに変更して快適になった話 - HHKBは体の一部",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/setting-vi-mode-in-bash-comfortable/setting-vi-mode-in-bash-1.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-11-03T08:07:02JST",
+    "dateModified": "2018-11-03T08:07:02JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBは体の一部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBは体の一部",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://www.trhrkmk.com/images/thumbnail/default.jpg); background-size: cover; background-position: center;}.thumb-8d1547d1de5ed1de49cd04c7fcb13e97 { background-image: url(https://www.trhrkmk.com/images/setting-vi-mode-in-bash-comfortable/setting-vi-mode-in-bash-1.png);}.thumb-d15fa695c6416a710e0b16ac0945e5e8 { background-image: url(https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-7.png);}.thumb-ab9d8d7db485dd06772fef054384b0ee { background-image: url(https://www.trhrkmk.com/images/bashrc-os-check/bashrc-os-check-1.png);}.thumb-48829181f822197d67aae0bd2e10a89d { background-image: url(https://www.trhrkmk.com/images/lightsail-bitnami-redmine-letsencrypt/lightsail-bitnami-redmine-letsencrypt-1.png);}.thumb-f5e515ece7bcac5194b3ee1f86417cc8 { background-image: url(https://www.trhrkmk.com/images/letsencrypt-dns-windows-win-acme/letsencrypt-dns-windows-win-acme-1.png);}.thumb-211a68066326af57662195e4fd3c867c { background-image: url(https://www.trhrkmk.com/images/hugo-link-target-blank-markdown/gohugoio-card-1.png);}.thumb-48d142721a390e870478036f7904163c { background-image: url(https://www.trhrkmk.com/images/filemaker-server-ssl-letsencrypt-windows-server/filemaker-server-ssl-letsencrypt-windows-server-7.png);}.thumb-b92f7b8ee6916c4e6c4b0a6542324cb5 { background-image: url(https://www.trhrkmk.com/images/filemaker-text-label-get-function/filemaker-text-label-get-function-1.png);}.thumb-37addc00d0b9c90d85e5bcc3c96e5641 { background-image: url(https://www.trhrkmk.com/images/hugo-share-button-addthis/hugo-share-button-addthis-1.png);}.thumb-b40d8f5050184fb578c9e2a9d48b0729 { background-image: url(https://www.trhrkmk.com/images/linux-textexpander-typinator-similar-app-introduction/texpander-1.png);}.thumb-b83507c5dabe1c8dc80f6d0e5d00803d { background-image: url(https://www.trhrkmk.com/images/filemaker-fmperception-check-unreferenced/fmperception-unreferenced-1.png);}.thumb-609fe292361a3aa310e4908207f2c905 { background-image: url(https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png);}.thumb-595902e3f91a7903b2e09e54e9d6166a { background-image: url(https://www.trhrkmk.com/images/blog-hugo-start/hugo-1.png);}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-90586336-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-8d1547d1de5ed1de49cd04c7fcb13e97"></div>
+
+  <header class="article-header">
+    <h1 class="title">BashをViモードに変更して快適になった話</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-11-03T08:07:02JST">2018-11-03</time></li>
+      <li><i class="fa fa-refresh" aria-hidden="true"></i><time datetime="2018-11-03T08:07:02JST">2018-11-03</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">POSTS</a></li>
+      
+    </ul>
+
+  </header>
+
+  
+  <div class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#設定したターミナル">設定したターミナル</a></li>
+<li><a href="#bashのviモードについてググる">BashのViモードについてググる</a></li>
+<li><a href="#inputrc-を修正する">~/.inputrc を修正する</a>
+<ul>
+<li><a href="#せっかくなので-bashrc-のps1も載せとく">せっかくなので ~/.bashrc のPS1も載せとく</a></li>
+</ul></li>
+<li><a href="#現在のモードがわからない問題">現在のモードがわからない問題</a></li>
+<li><a href="#ターミナルに現在のモードを表示する">ターミナルに現在のモードを表示する</a>
+<ul>
+<li>
+<ul>
+<li><a href="#bashのバージョンの確認">Bashのバージョンの確認</a></li>
+</ul></li>
+<li><a href="#brewでbashをインストールする">brewでBashをインストールする</a></li>
+<li><a href="#etc-shells-に追加する">/etc/shells に追加する</a></li>
+<li><a href="#ログインシェルを変更する">ログインシェルを変更する</a></li>
+<li><a href="#改めてバージョンを確認する">改めてバージョンを確認する</a></li>
+<li><a href="#現在のモードが表示されるはず">現在のモードが表示されるはず</a></li>
+</ul></li>
+<li><a href="#モードの表示を修正する">モードの表示を修正する</a></li>
+<li><a href="#あとがき">あとがき</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+  
+
+  <div class="article-body"><p>私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。</p>
+
+<p></p>
+
+<p>タイトルの通り、普段使っている <em>Bash</em> にも <em>Viモード</em> があるということが分かり、早速変更したのでメモ。</p>
+
+<h2 id="設定したターミナル">設定したターミナル</h2>
+
+<figure>
+  <amp-img src="https://www.trhrkmk.com/images/setting-vi-mode-in-bash-comfortable/setting-vi-mode-in-bash-2.gif" alt="" width=600 height=400 layout="responsive"></amp-img>
+  
+</figure>
+
+
+<h2 id="bashのviモードについてググる">BashのViモードについてググる</h2>
+
+<p>なにはともあれ、ググる</p>
+
+<ul>
+<li><a href="https://qiita.com/Pseudonym/items/2cb442ff257a2f9f9d70" target="_blank">vim色に染まれ．機能紹介のついでにbashをvi仕様に．</a></li>
+<li><a href="https://s15silvia.blog.so-net.ne.jp/2013-02-24" target="_blank">bashの編集モードをviモードにしてみる</a></li>
+<li><a href="https://oplern.hatenablog.com/entry/2017/03/07/211623" target="_blank">bashの操作をvi風にする</a></li>
+<li><a href="https://routecompass.net/shell-vi/" target="_blank">【Vim】えっ?Vimmerなのに、シェルのキーバインドはEmacsモード使ってるの?</a></li>
+</ul>
+
+<p>上の記事では<code>~/.bashrc</code>に<code>set -o vi</code>を追加すればOK、と書いてある。</p>
+
+<pre><code class="language-bashrc"># ~/.bashrc
+
+set -o vi
+</code></pre>
+
+<p>しかし、私は最終的に、以下のブログを参考にし<code>~/.bashrc</code>ではなく<code>~/.inputrc</code>を修正しました。</p>
+
+<ul>
+<li><a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal" target="_blank">Use vi shortcuts in terminal</a></li>
+<li><a href="http://d.hatena.ne.jp/yamazakiccs/20081207/1216817670" target="_blank">bash vi 最強ですね、わかります。</a></li>
+</ul>
+
+<p>以下に、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal" target="_blank">Use vi shortcuts in terminal</a>に記載されている設定を引用</p>
+
+<pre><code class="language-inputrc"># ~/.inputrc
+
+# Use Vi, not Emacs, style editing
+set editing-mode vi
+
+# Show all completions as soon as I press tab, even if there's more than one
+set show-all-if-ambiguous on
+# Ignore case
+set completion-ignore-case on
+# on menu-complete, first display the common prefix, then cycle through the 
+# options when hitting TAB
+set menu-complete-display-prefix on
+
+###########################################################
+# Keymaps for when we're in command mode (e.g., after hitting ESC)
+set keymap vi-command
+
+# Insert the arguments from the last command
+&quot;p&quot;: &quot;i !!*\r&quot;
+
+# When hitting option-up/option-down, cycle through the previous commands
+# which start with the prefix you've entered, rather than just cycling through
+# the last entered commands.
+# In OS X's Terminal.app preferences, I have 'Use option as meta key' off, and
+# have mapped &quot;option cursor up&quot; to &quot;\033\033[A&quot; and &quot;option cursor down&quot; to 
+# &quot;\033\033[B&quot;.
+# Feel free to bind to whatever you want. Delete the first '\e' in the keymap
+# to set plain up/down to do a history search by default.
+&quot;\e\e[A&quot;: history-search-backward
+&quot;\e\e[B&quot;: history-search-forward
+
+###########################################################
+# Keymaps for when we're in insert (i.e., typing stuff in) mode
+set keymap vi-insert
+
+# Pressing tab will list all completions &amp; select the first one. Pressing it 
+# again will cycle through available completions.
+TAB: menu-complete
+# Shift-TAB cycles completions backward
+&quot;\e[Z&quot;: menu-complete-backward
+
+# Option-up/option-down should also apply to insert mode
+&quot;\e\e[A&quot;: history-search-backward
+&quot;\e\e[B&quot;: history-search-forward
+
+# Needed because binding 'p' in command mode above wipes its insert mode
+# function, too. This fixes that, and will insert 'p' when you type 'p'.
+&quot;p&quot;: self-insert
+</code></pre>
+
+<h2 id="inputrc-を修正する">~/.inputrc を修正する</h2>
+
+<p>ほとんど、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal" target="_blank">Use vi shortcuts in terminal</a>の設定をコピーしていますが…</p>
+
+<p><code>for vi mode</code>の部分は、のちほど説明</p>
+
+<pre><code class="language-inputrc"># Use Vi, not Emacs, style editing
+set editing-mode vi
+
+# Show all completions as soon as I press tab, even if there's more than one
+set show-all-if-ambiguous on
+# Ignore case
+set completion-ignore-case on
+# on menu-complete, first display the common prefix, then cycle through the 
+# options when hitting TAB
+set menu-complete-display-prefix on
+
+###########################################################
+# Keymaps for when we're in command mode (e.g., after hitting ESC)
+set keymap vi-command
+
+###########################################################
+# Keymaps for when we're in insert (i.e., typing stuff in) mode
+set keymap vi-insert
+
+# Pressing tab will list all completions &amp; select the first one. Pressing it 
+# again will cycle through available completions.
+TAB: menu-complete
+# Shift-TAB cycles completions backward
+&quot;\e[Z&quot;: menu-complete-backward
+
+# for vi mode
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
+set vi-cmd-mode-string \1\e[31;1m\2(cmd) \1\e[0m\2
+</code></pre>
+
+<h3 id="せっかくなので-bashrc-のps1も載せとく">せっかくなので ~/.bashrc のPS1も載せとく</h3>
+
+<p>色をちょこちょこ設定しようと思ったので、以下のように設定してる</p>
+
+<p>バッドプラクティスかもしれないので、優しい方は突っ込んで頂けるとありがたいですm(_ _)m</p>
+
+<pre><code class="language-bashrc">#--------------------------------------------------
+# ps1
+#--------------------------------------------------
+
+function prompt {
+  local GITPS='$(__git_ps1 &quot; [%s]&quot;)'
+  local BLUE=&quot;\[\e[1;34m\]&quot;
+  local RED=&quot;\[\e[1;31m\]&quot;
+  local GREEN=&quot;\[\e[2;32m\]&quot;
+  local WHITE=&quot;\[\e[00m\]&quot;
+  local GRAY=&quot;\[\e[1;37m\]&quot;
+  PS1=&quot;$BLUE\w$BLUE$RED$GITPS$RED $WHITE\$$WHITE &quot;
+}
+prompt
+</code></pre>
+
+<h2 id="現在のモードがわからない問題">現在のモードがわからない問題</h2>
+
+<p><code>.inputrc</code>を設定し、ターミナルを起動すれば、無事 Viモードになっているはず</p>
+
+<p>この状態で、しばらく使っていたのですが、ターミナルに現在のモードが表示されていないため、現在のモードが<code>ins</code>なのか<code>cmd</code>なのか分からない問題が発生</p>
+
+<p>ということで、ターミナルに現在のモードを表示するために、引き続きググる</p>
+
+<h2 id="ターミナルに現在のモードを表示する">ターミナルに現在のモードを表示する</h2>
+
+<p>以下の記事にたどり着いた</p>
+
+<p>色々と見たが、おそらく <em>GitHub</em> の<code>README.md</code>を見るのが、わかりやすい</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/1039713/different-bash-prompt-for-different-vi-editing-mode" target="_blank">Different bash prompt for different vi editing mode?</a></li>
+<li><a href="https://github.com/calid/bash" target="_blank">calid/bash</a></li>
+</ul>
+
+<p>GitHubを見ると、Bashのバージョンが<code>4.3.48</code>以上が必要っぽい</p>
+
+<p>現在使っているBashのバージョンを確認し、必要であれば、brewでインストールし、ログインシェルを変更する必要がある</p>
+
+<h4 id="bashのバージョンの確認">Bashのバージョンの確認</h4>
+
+<p>まずは確認</p>
+
+<pre><code class="language-bash">~ $ /bin/bash -version
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin17)
+Copyright (C) 2007 Free Software Foundation, Inc.
+</code></pre>
+
+<h3 id="brewでbashをインストールする">brewでBashをインストールする</h3>
+
+<p>いつも通り、インストール</p>
+
+<pre><code class="language-bash">~ $ brew install bash
+Updating Homebrew...
+==&gt; Auto-updated Homebrew!
+Updated 3 taps (homebrew/cask-versions, homebrew/core and homebrew/cask).
+==&gt; Updated Formulae
+asciidoctor ✔                 ccextractor                   ethereum                      grib-api                      openvdb                       source-to-image
+harfbuzz ✔                    chruby-fish                   fluent-bit                    hebcal                        pacapt                        typescript
+weechat ✔                     cpprestsdk                    fonttools                     ioping                        pdftoipe                      you-get
+activemq                      dartsim                       git-archive-all               libjson-rpc-cpp               ppsspp
+ark                           dfmt                          glm                           liblo                         rdesktop
+bash-snippets                 django-completion             grails                        mongo-cxx-driver              selenium-server-standalone
+
+==&gt; Downloading https://homebrew.bintray.com/bottles/bash-4.4.23.high_sierra.bottle.tar.gz
+######################################################################## 100.0%
+==&gt; Pouring bash-4.4.23.high_sierra.bottle.tar.gz
+==&gt; Caveats
+In order to use this build of bash as your login shell,
+it must be added to /etc/shells.
+==&gt; Summary
+🍺  /usr/local/Cellar/bash/4.4.23: 146 files, 8.8MB
+</code></pre>
+
+<p>brewの出力にも書かれている通り<code>/etc/shells</code>に追加する</p>
+
+<pre><code class="language-bash">In order to use this build of bash as your login shell,
+it must be added to /etc/shells.
+</code></pre>
+
+<h3 id="etc-shells-に追加する">/etc/shells に追加する</h3>
+
+<p>現在のファイルを確認</p>
+
+<pre><code class="language-bash">~ $ sudo cat /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+</code></pre>
+
+<p>brewでインストールしたBashを追加</p>
+
+<pre><code class="language-bash">~ $ sudo vim /etc/shells
+</code></pre>
+
+<p>修正後に、改めて確認</p>
+
+<pre><code class="language-bash">~ $ sudo cat /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+/usr/local/bin/bash
+</code></pre>
+
+<h3 id="ログインシェルを変更する">ログインシェルを変更する</h3>
+
+<p>変更する前に確認</p>
+
+<pre><code class="language-bash">~ $ which bash
+/bin/bash
+</code></pre>
+
+<p>変更するためのコマンドを確認</p>
+
+<pre><code class="language-bash">~ $ man chsh
+</code></pre>
+
+<p>一部抜粋</p>
+
+<pre><code class="language-man">CHPASS(1)                 BSD General Commands Manual                CHPASS(1)
+
+NAME
+     chpass, chfn, chsh -- add or change user database information
+
+SYNOPSIS
+     chpass [-l location] [-u authname] [-s newshell] [user]
+
+DESCRIPTION
+     The chpass utility allows editing of the user database information associated with user or, by default, the current user.
+
+     The chpass utility cannot change the user's password on Open Directory systems.  Use the passwd(1) utility instead.
+
+     The chfn, and chsh utilities behave identically to chpass.  (There is only one program.)
+
+     The information is formatted and supplied to an editor for changes.
+
+     Only the information that the user is allowed to change is displayed.
+
+     The options are as follows:
+
+     -l location
+             If not specified, chpass will perform a search for the user record on all available Open Directory nodes.  When specified, chpass will edit the user record on the directory node at the given location.
+
+     -u authname
+             The user name to use when authenticating to the directory node containing the user.
+
+     -s newshell
+             Attempt to change the user's shell to newshell.
+
+     Possible display items are as follows:
+
+           Login:              user's login name
+           Uid:                user's login
+           Gid:                user's login group
+           Generated uid:      user's UUID
+           Full Name:          user's real name
+           Office Location:    user's office location
+           Office Phone:       user's office phone
+           Home Phone:         user's home phone
+           Home Directory:     user's home directory
+           Shell:              user's login shell
+</code></pre>
+
+<p>ということで、以下のコマンドを実行</p>
+
+<pre><code class="language-bash">~ $ chsh -s /usr/local/bin/bash
+Changing shell for yourName.
+Password for yourName:
+</code></pre>
+
+<p>確認(reboot必要かも…)</p>
+
+<pre><code class="language-bash">~ $ which bash
+/usr/local/bin/bash
+</code></pre>
+
+<h3 id="改めてバージョンを確認する">改めてバージョンを確認する</h3>
+
+<p>確認</p>
+
+<pre><code class="language-bash">~ $ bash --version
+GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</code></pre>
+
+<h3 id="現在のモードが表示されるはず">現在のモードが表示されるはず</h3>
+
+<p>これで現在のモードが表示されるはず</p>
+
+<h2 id="モードの表示を修正する">モードの表示を修正する</h2>
+
+<p><code>~/.inputrc</code>を修正すればよい</p>
+
+<p>このブログを見ている人には、説明不要だと思うので、各自で要調整</p>
+
+<pre><code class="language-inputrc"># for vi mode
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
+set vi-cmd-mode-string \1\e[31;1m\2(cmd) \1\e[0m\2
+</code></pre>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>いつも使うターミナルをViのキーバインドで操作できるようになって、本当に快適になった</p></div>
+
+  <footer class="article-footer">
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">POSTS</span></a></li>
+            
+            <li class="active">BashをViモードに変更して快適になった話</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/bash/">Bash</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/bash/">Bash</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/vi/">Vi</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
+    <div class="thumb thumb-d15fa695c6416a710e0b16ac0945e5e8"></div>
+
+    <div class="inner">
+      <div class="title">fzfを使ってターミナルでの作業を効率化する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-10-18T21:02:28JST">2018-10-18</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+    <amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-7253798718530910">
+</amp-auto-ads>
+  </body>
+</html>
+
