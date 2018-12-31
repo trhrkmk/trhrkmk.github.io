@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/vim/</link>
+    <description>Recent content in Vim on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Mon, 31 Dec 2018 10:32:28 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vimをビルドするときのconfigureのメモ(Debian)</title>
+      <link>https://www.trhrkmk.com/posts/vim-build-note-on-debian/</link>
+      <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/vim-build-note-on-debian/</guid>
+      <description>&lt;p&gt;Vimをビルドするときの&lt;code&gt;configure&lt;/code&gt;のオプションをメモっておく。&lt;/p&gt;
+
+&lt;p&gt;詳細は vim-jp の記事を見るのが良いと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://vim-jp.org/docs/build_linux.html&#34; target=&#34;_blank&#34;&gt;https://vim-jp.org/docs/build_linux.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
