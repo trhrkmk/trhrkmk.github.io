@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 17:47:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 01:31:33 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</title>
+      <link>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</link>
+      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
+      <description>今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
+しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
+cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
+ということで、cmus(https://cmus.github.io/)を使うことにしました。
+評判通り、快適ですね。
+Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
+ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
+パッケージとしも使えるし、使う前から、良いはずと。
+rylio/ytdl こんな感じでダウンロードできる。
+(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
+(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.</description>
+    </item>
     
     <item>
       <title>2018年を振り返る</title>
@@ -20,7 +39,7 @@
       <guid>https://www.trhrkmk.com/posts/look-back-on-2018/</guid>
       <description>2018年を振り返ってみました。
 技術的な部分についてですが、雑に振り返ります。
-fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHunbにて公開しました。
+fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。
 簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。
 GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。
 多いか少ないか良く分かりませんが、ありがとうございした。
@@ -38,10 +57,10 @@ AWSで使ったのは…
 Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。
 ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。
 (コードはダメダメでしょうけども…)
- sheetskv (https://github.com/makanikai) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。
+ sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。
 FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。
 しかし、Golangができるようになって、考え方が変わりました。
- Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 一生懸命cURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。
+ Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。
 あくまで、自分一人で開発する場合の話ですが…</description>
     </item>
     

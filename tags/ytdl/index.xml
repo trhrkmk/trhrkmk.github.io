@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ytdl on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/ytdl/</link>
+    <description>Recent content in Ytdl on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Wed, 02 Jan 2019 01:31:33 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/ytdl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</title>
+      <link>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</link>
+      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
+      <description>今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
+しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
+cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
+ということで、cmus(https://cmus.github.io/)を使うことにしました。
+評判通り、快適ですね。
+Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
+ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
+パッケージとしも使えるし、使う前から、良いはずと。
+rylio/ytdl こんな感じでダウンロードできる。
+(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
+(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.</description>
+    </item>
+    
+  </channel>
+</rss>
