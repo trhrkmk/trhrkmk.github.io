@@ -7,10 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 10:32:28 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Dec 2018 17:47:57 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018年を振り返る</title>
+      <link>https://www.trhrkmk.com/posts/look-back-on-2018/</link>
+      <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/look-back-on-2018/</guid>
+      <description>2018年を振り返ってみました。
+技術的な部分についてですが、雑に振り返ります。
+fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHunbにて公開しました。
+簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。
+GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。
+多いか少ないか良く分かりませんが、ありがとうございした。
+海外の開発者の方から、問い合わせを頂くことが増えました。
+ fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。
+ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑
+ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。
+LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。
+AWS、GCP AWSやGCPは、なくてはならないものになりました。
+AWSで使ったのは…
+ Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは…
+ App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。
+とくにApp Engineが好き。
+もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。
+Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。
+ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。
+(コードはダメダメでしょうけども…)
+ sheetskv (https://github.com/makanikai) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。
+FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。
+しかし、Golangができるようになって、考え方が変わりました。
+ Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 一生懸命cURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。
+あくまで、自分一人で開発する場合の話ですが…</description>
+    </item>
     
     <item>
       <title>Vimをビルドするときのconfigureのメモ(Debian)</title>
