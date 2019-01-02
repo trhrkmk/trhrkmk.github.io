@@ -24,21 +24,21 @@
 
 <link rel="amphtml" type="text/html" href="https://www.trhrkmk.com/amp/posts/download-youtube-dl-playlist/">
 
-<meta name="description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って、一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  #!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;youtube id or url is required.&amp;quot; exit 1 fi # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
+<meta name="description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。ということで、URLを引数にするように修正しました。#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&amp;quot;$1&amp;quot; if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;Youtube id is required.&amp;quot; exit 1 fi # set url YDLURL=&amp;quot;https://www.youtube.com/watch?v=$YOUTUBEID&amp;quot; # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
 
 <meta property="og:title" content="youtube-dlを使ってプレイリストを一括ダウンロードした - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/bash/bash.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って、一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  #!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;youtube id or url is required.&amp;quot; exit 1 fi # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
+<meta property="og:description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。ということで、URLを引数にするように修正しました。#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&amp;quot;$1&amp;quot; if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;Youtube id is required.&amp;quot; exit 1 fi # set url YDLURL=&amp;quot;https://www.youtube.com/watch?v=$YOUTUBEID&amp;quot; # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
 <meta name="twitter:title" content="youtube-dlを使ってプレイリストを一括ダウンロードした - HHKBは体の一部">
-<meta name="twitter:description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って、一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  #!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;youtube id or url is required.&amp;quot; exit 1 fi # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
+<meta name="twitter:description" content="先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。詳細はREADME.mdをみてください。シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。ファイル名はお任せ。youtube-dl.shなどchmodも忘れずに。Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。ということで、URLを引数にするように修正しました。#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&amp;quot;$1&amp;quot; if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;Youtube id is required.&amp;quot; exit 1 fi # set url YDLURL=&amp;quot;https://www.youtube.com/watch?v=$YOUTUBEID&amp;quot; # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/bash/bash.png">
 
 
@@ -74,14 +74,17 @@
       }
     },
     "description": "先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。
-しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って、一括ダウンロードを試みましたのでメモ。
+しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。
 youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。
 詳細はREADME.mdをみてください。
 シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。
 ファイル名はお任せ。
 youtube-dl.shなど
 chmodも忘れずに。
-Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;  #!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &quot;x&quot; ]; then echo &quot;youtube id or url is required.&quot; exit 1 fi # set music dir MUSICDIR=&quot;$HOME/Music/cmus&quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s."
+Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。
+URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。
+ということで、URLを引数にするように修正しました。
+#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&quot;$1&quot; if [ x$YOUTUBEID = &quot;x&quot; ]; then echo &quot;Youtube id is required.&quot; exit 1 fi # set url YDLURL=&quot;https://www.youtube.com/watch?v=$YOUTUBEID&quot; # set music dir MUSICDIR=&quot;$HOME/Music/cmus&quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s."
   }
 </script>
 
@@ -196,6 +199,7 @@ if (!doNotTrack) {
 <li><a href="#シェルスクリプト1">シェルスクリプト1</a>
 <ul>
 <li><a href="#gistからダウンロード">Gistからダウンロード</a></li>
+<li><a href="#補足">補足</a></li>
 <li><a href="#使ってみる">使ってみる</a></li>
 </ul></li>
 <li><a href="#プレイリストのidを取得する">プレイリストのidを取得する</a></li>
@@ -217,7 +221,7 @@ if (!doNotTrack) {
 
 <!-- more -->
 
-<p>しかし、プレイリストを一括でダウンロードしたいと思い、<code>youtube-dl</code>を使って、一括ダウンロードを試みましたのでメモ。</p>
+<p>しかし、プレイリストを一括でダウンロードしたいと思い、<code>youtube-dl</code>を使って一括ダウンロードを試みましたのでメモ。</p>
 
 <h2 id="youtube-dl">youtube-dl</h2>
 
@@ -240,20 +244,27 @@ if (!doNotTrack) {
 <pre><code>(cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;
 </code></pre>
 
+<h3 id="補足">補足</h3>
+
+<p>最初は<code>v=YOUTUBEID</code>の<code>YOUTUBEID</code>を引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。</p>
+
+<p>URLを確認すると<code>https://www.youtube.com/watch?v=-FyjEnoIgTM</code>となっており、引数が<code>-FyjEnoIgTM</code>となることが原因でした。</p>
+
+<p>ということで、URLを引数にするように修正しました。</p>
+
 <pre><code>#!/usr/bin/env bash
 set -Ceuo pipefail
 
-# export
-#export LC_ALL=C
-#export LANG=C
-
 # set youtube id from param
-YOUTUBEID=$1
+YOUTUBEID=&quot;$1&quot;
 
 if [ x$YOUTUBEID = &quot;x&quot; ]; then
-  echo &quot;youtube id or url is required.&quot;
+  echo &quot;Youtube id is required.&quot;
   exit 1
 fi
+
+# set url
+YDLURL=&quot;https://www.youtube.com/watch?v=$YOUTUBEID&quot;
 
 # set music dir
 MUSICDIR=&quot;$HOME/Music/cmus&quot;
@@ -264,7 +275,7 @@ if [ ! -d $MUSICDIR ]; then
 fi
 
 # get filename
-YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.%(ext)s' $YOUTUBEID)
+YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.%(ext)s' &quot;$YDLURL&quot;)
 
 # creator from filename
 YDLCREATOR=$(echo $YDLGETFILENAME | awk -F &quot;/&quot; '{print $1}')
@@ -285,17 +296,16 @@ if [ -f &quot;$YDLFILE&quot; ]; then
   echo &quot;File '$YDLFILE' already exists.&quot;
 else
   # download audio
-  youtube-dl --ignore-errors --format bestaudio -o &quot;$YDLFILE&quot; $YOUTUBEID
+  youtube-dl --ignore-errors --format bestaudio -o &quot;$YDLFILE&quot; &quot;$YDLURL&quot;
 
   # done
-  echo &quot;Downloaded to '$YDLFILE'&quot;
+  echo &quot;Downloaded to '$YDLFILE' ($YOUTUBEID).&quot;
 fi
-
 </code></pre>
 
 <h3 id="使ってみる">使ってみる</h3>
 
-<pre><code>(ins) /var/tmp $ youtube-dl.sh https://www.youtube.com/watch?v=QJO3ROT-A4E
+<pre><code>(ins) /var/tmp $ youtube-dl.sh QJO3ROT-A4E
 [youtube] QJO3ROT-A4E: Downloading webpage
 [youtube] QJO3ROT-A4E: Downloading video info webpage
 [download] Destination: /home/teruhiro/Music/cmus/One_Direction/One_Direction_-_What_Makes_You_Beautiful_Official_Video.mp4
@@ -365,7 +375,7 @@ Downloaded to '/home/teruhiro/Music/cmus/Pitbull/Pitbull_-_International_Love_ft
 
 <p><code>ytdl</code>と<code>youtube-dl</code>を使いましたが、<code>youtube-dl</code>のほうがオススメです。</p>
 
-<p>すなおに、<code>youtube-dl</code>使ったほうが良かったなと。</p>
+<p>最初から素直に<code>youtube-dl</code>使ったほうが良かったなと。</p>
 </div>
 
   <footer class="article-footer">

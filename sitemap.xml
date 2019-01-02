@@ -137,13 +137,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/bash/</loc>
+    <loc>https://www.trhrkmk.com/categories/bash/</loc>
     <lastmod>2018-11-04T21:22:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/bash/</loc>
+    <loc>https://www.trhrkmk.com/tags/bash/</loc>
     <lastmod>2018-11-04T21:22:16+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -179,14 +179,14 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/command/</loc>
-    <lastmod>2018-11-04T21:22:16+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/categories/command/</loc>
+    <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/command/</loc>
-    <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/tags/command/</loc>
+    <lastmod>2018-11-04T21:22:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,14 +197,14 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/debian/</loc>
-    <lastmod>2018-12-31T10:32:28+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/categories/debian/</loc>
+    <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/debian/</loc>
-    <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <loc>https://www.trhrkmk.com/tags/debian/</loc>
+    <lastmod>2018-12-31T10:32:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -227,25 +227,25 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
-    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.trhrkmk.com/categories/filemaker/</loc>
     <lastmod>2018-09-11T22:30:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/filemaker-server/</loc>
+    <loc>https://www.trhrkmk.com/tags/filemaker/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/categories/filemaker-server/</loc>
+    <lastmod>2018-09-15T11:07:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/filemaker-server/</loc>
     <lastmod>2018-09-15T11:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -263,13 +263,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/fzf/</loc>
+    <loc>https://www.trhrkmk.com/categories/fzf/</loc>
     <lastmod>2018-10-18T21:02:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/fzf/</loc>
+    <loc>https://www.trhrkmk.com/tags/fzf/</loc>
     <lastmod>2018-10-18T21:02:28+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -293,13 +293,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/hugo/</loc>
+    <loc>https://www.trhrkmk.com/categories/hugo/</loc>
     <lastmod>2018-09-15T18:40:06+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/hugo/</loc>
+    <loc>https://www.trhrkmk.com/tags/hugo/</loc>
     <lastmod>2018-09-15T18:40:06+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -311,13 +311,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
+    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
     <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/lets-encrypt/</loc>
+    <loc>https://www.trhrkmk.com/tags/lets-encrypt/</loc>
     <lastmod>2018-09-30T16:06:11+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -335,13 +335,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/look-back/</loc>
+    <loc>https://www.trhrkmk.com/categories/look-back/</loc>
     <lastmod>2018-12-31T17:47:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/look-back/</loc>
+    <loc>https://www.trhrkmk.com/tags/look-back/</loc>
     <lastmod>2018-12-31T17:47:57+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -395,13 +395,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/shell-script/</loc>
+    <loc>https://www.trhrkmk.com/categories/shell-script/</loc>
     <lastmod>2019-01-02T01:31:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/shell-script/</loc>
+    <loc>https://www.trhrkmk.com/tags/shell-script/</loc>
     <lastmod>2019-01-02T01:31:33+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -413,13 +413,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/t480s/</loc>
+    <loc>https://www.trhrkmk.com/categories/t480s/</loc>
     <lastmod>2018-12-28T22:32:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/t480s/</loc>
+    <loc>https://www.trhrkmk.com/tags/t480s/</loc>
     <lastmod>2018-12-28T22:32:52+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -479,13 +479,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/vim/</loc>
+    <loc>https://www.trhrkmk.com/categories/vim/</loc>
     <lastmod>2018-12-31T10:32:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/vim/</loc>
+    <loc>https://www.trhrkmk.com/tags/vim/</loc>
     <lastmod>2018-12-31T10:32:28+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -509,13 +509,13 @@
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/tags/youtube-dl/</loc>
+    <loc>https://www.trhrkmk.com/categories/youtube-dl/</loc>
     <lastmod>2019-01-02T11:14:10+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.trhrkmk.com/categories/youtube-dl/</loc>
+    <loc>https://www.trhrkmk.com/tags/youtube-dl/</loc>
     <lastmod>2019-01-02T11:14:10+09:00</lastmod>
     <priority>0</priority>
   </url>
