@@ -134,7 +134,7 @@ youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるよ
 ファイル名はお任せ。
 youtube-dl.shなど
 chmodも忘れずに。
-#!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &quot;x&quot; ]; then echo &quot;youtube id or url is required.&quot; exit 1 fi # set music dir MUSICDIR=&quot;$HOME/Music/cmus&quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.</div>
+Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;  #!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &quot;x&quot; ]; then echo &quot;youtube id or url is required.&quot; exit 1 fi # set music dir MUSICDIR=&quot;$HOME/Music/cmus&quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.</div>
     </div>
   </a>
 </article>
