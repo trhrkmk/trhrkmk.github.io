@@ -293,7 +293,7 @@ YDLFILE=&quot;$MUSICDIR/$YDLCREATOR/$YDLTITLEEXT&quot;
 
 # check file exist
 if [ -f &quot;$YDLFILE&quot; ]; then
-  echo &quot;File '$YDLFILE' already exists.&quot;
+  echo &quot;File '$YDLFILE' already exists ($YOUTUBEID).&quot;
 else
   # download audio
   youtube-dl --ignore-errors --format bestaudio -o &quot;$YDLFILE&quot; &quot;$YDLURL&quot;
