@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Youtube Dl on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/youtube-dl/</link>
+    <description>Recent content in Youtube Dl on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Wed, 02 Jan 2019 11:14:10 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/youtube-dl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>youtube-dlを使ってプレイリストを一括ダウンロードした</title>
+      <link>https://www.trhrkmk.com/posts/download-youtube-dl-playlist/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/download-youtube-dl-playlist/</guid>
+      <description>先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。
+しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って、一括ダウンロードを試みましたのでメモ。
+youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。
+詳細はREADME.mdをみてください。
+シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。
+ファイル名はお任せ。
+youtube-dl.shなど
+chmodも忘れずに。
+#!/usr/bin/env bash set -Ceuo pipefail # export #export LC_ALL=C #export LANG=C # set youtube id from param YOUTUBEID=$1 if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;youtube id or url is required.&amp;quot; exit 1 fi # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.</description>
+    </item>
+    
+  </channel>
+</rss>

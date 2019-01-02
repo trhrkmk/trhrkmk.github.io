@@ -20,7 +20,10 @@
       <guid>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
       <description>今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
 しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
-cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
+更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。
+ この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。
+ シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。
+  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
 ということで、cmus(https://cmus.github.io/)を使うことにしました。
 評判通り、快適ですね。
 Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
@@ -28,7 +31,7 @@ ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
 パッケージとしも使えるし、使う前から、良いはずと。
 rylio/ytdl こんな感じでダウンロードできる。
 (cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
-(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.</description>
+(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].</description>
     </item>
     
   </channel>
