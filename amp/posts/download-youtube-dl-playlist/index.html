@@ -226,7 +226,7 @@ if [ -f &quot;$YDLFILE&quot; ]; then
   echo &quot;File '$YDLFILE' already exists.&quot;
 else
   # download audio
-  youtube-dl --format bestaudio -o &quot;$YDLFILE&quot; $YOUTUBEID
+  youtube-dl --ignore-errors --format bestaudio -o &quot;$YDLFILE&quot; $YOUTUBEID
 
   # done
   echo &quot;Downloaded to '$YDLFILE'&quot;
