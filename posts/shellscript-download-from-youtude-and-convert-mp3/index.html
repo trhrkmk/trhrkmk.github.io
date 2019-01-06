@@ -24,21 +24,21 @@
 
 <link rel="amphtml" type="text/html" href="https://www.trhrkmk.com/amp/posts/shellscript-download-from-youtude-and-convert-mp3/">
 
-<meta name="description" content="今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。 この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。 シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。ということで、cmus(https://cmus.github.io/)を使うことにしました。評判通り、快適ですね。Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。パッケージとしも使えるし、使う前から、良いはずと。rylio/ytdl こんな感じでダウンロードできる。(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].">
+<meta name="description" content="&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 
 <meta property="og:title" content="Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/bash/bash.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。 この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。 シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。ということで、cmus(https://cmus.github.io/)を使うことにしました。評判通り、快適ですね。Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。パッケージとしも使えるし、使う前から、良いはずと。rylio/ytdl こんな感じでダウンロードできる。(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].">
+<meta property="og:description" content="&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/">
 <meta name="twitter:title" content="Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った - HHKBは体の一部">
-<meta name="twitter:description" content="今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。 この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。 シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。ということで、cmus(https://cmus.github.io/)を使うことにしました。評判通り、快適ですね。Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。パッケージとしも使えるし、使う前から、良いはずと。rylio/ytdl こんな感じでダウンロードできる。(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].">
+<meta name="twitter:description" content="&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/bash/bash.png">
 
 
@@ -73,20 +73,9 @@
         "height": 60
       }
     },
-    "description": "今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
-しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
-更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。
- この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。
- シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。
-  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
-ということで、cmus(https://cmus.github.io/)を使うことにしました。
-評判通り、快適ですね。
-Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
-ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
-パッケージとしも使えるし、使う前から、良いはずと。
-rylio/ytdl こんな感じでダウンロードできる。
-(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
-(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video]."
+    "description": "<p>今まで、mpsyt(<a href="https://github.com/mps-youtube/mps-youtube" target="_blank">https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p>
+
+<p></p>"
   }
 </script>
 
@@ -217,11 +206,9 @@ if (!doNotTrack) {
   </div>
   
 
-  <div class="article-body">
+  <div class="article-body"><p>今まで、mpsyt(<a href="https://github.com/mps-youtube/mps-youtube" target="_blank">https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p>
 
-<p>今まで、mpsyt(<a href="https://github.com/mps-youtube/mps-youtube" target="_blank">https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p>
-
-<!-- more -->
+<p></p>
 
 <p>しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。</p>
 
@@ -399,8 +386,7 @@ Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Musi
 
 <h2 id="あとがき">あとがき</h2>
 
-<p>これでcmusで再生できるようになりました。</p>
-</div>
+<p>これでcmusで再生できるようになりました。</p></div>
 
   <footer class="article-footer">
 
@@ -565,6 +551,24 @@ Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Musi
     <div class="articles sm">
       
       <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+    <div class="thumb thumb-b5f547b009658f8158266c961fdcc715"></div>
+
+    <div class="inner">
+      <div class="title">ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-06T17:40:13JST">2019-01-06</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
   <a href="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
     <div class="thumb thumb-c65a27d390a620d7bd687fb6b44b12ea"></div>
 
@@ -726,24 +730,6 @@ Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Musi
 </article>
 
       
-      <article class="lism">
-  <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
-    <div class="thumb thumb-48829181f822197d67aae0bd2e10a89d"></div>
-
-    <div class="inner">
-      <div class="title">LightsailのRedmine(Bitnami)でLet&#39;s Encryptを手動更新するときのメモ</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-30T16:06:11JST">2018-09-30</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
     </div>
   </div>
 </section>
@@ -765,7 +751,7 @@ Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Musi
   <header>TAGS</header>
   <div>
     <ul class="terms">
-      <li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bash">bash <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/linux">linux <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/mp3">mp3 <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/vi">vi <span class="count">(2)</span></a></li>
+      <li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(5)</span></a></li><li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bash">bash <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/linux">linux <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/mp3">mp3 <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/t480s">t480s <span class="count">(2)</span></a></li>
     </ul>
   </div>
 </section>

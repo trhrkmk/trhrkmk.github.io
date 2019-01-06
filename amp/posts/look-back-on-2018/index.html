@@ -25,21 +25,21 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <title>2018年を振り返る - HHKBは体の一部</title>
     
-<meta name="description" content="2018年を振り返ってみました。技術的な部分についてですが、雑に振り返ります。fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。多いか少ないか良く分かりませんが、ありがとうございした。海外の開発者の方から、問い合わせを頂くことが増えました。 fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。AWS、GCP AWSやGCPは、なくてはならないものになりました。AWSで使ったのは… Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは… App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。とくにApp Engineが好き。もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。(コードはダメダメでしょうけども…) sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。しかし、Golangができるようになって、考え方が変わりました。 Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。あくまで、自分一人で開発する場合の話ですが…">
+<meta name="description" content="&lt;p&gt;2018年を振り返ってみました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 
 <meta property="og:title" content="2018年を振り返る - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/look-back-on-2018/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="2018年を振り返ってみました。技術的な部分についてですが、雑に振り返ります。fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。多いか少ないか良く分かりませんが、ありがとうございした。海外の開発者の方から、問い合わせを頂くことが増えました。 fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。AWS、GCP AWSやGCPは、なくてはならないものになりました。AWSで使ったのは… Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは… App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。とくにApp Engineが好き。もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。(コードはダメダメでしょうけども…) sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。しかし、Golangができるようになって、考え方が変わりました。 Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。あくまで、自分一人で開発する場合の話ですが…">
+<meta property="og:description" content="&lt;p&gt;2018年を振り返ってみました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/look-back-on-2018/">
 <meta name="twitter:title" content="2018年を振り返る - HHKBは体の一部">
-<meta name="twitter:description" content="2018年を振り返ってみました。技術的な部分についてですが、雑に振り返ります。fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。多いか少ないか良く分かりませんが、ありがとうございした。海外の開発者の方から、問い合わせを頂くことが増えました。 fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。AWS、GCP AWSやGCPは、なくてはならないものになりました。AWSで使ったのは… Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは… App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。とくにApp Engineが好き。もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。(コードはダメダメでしょうけども…) sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。しかし、Golangができるようになって、考え方が変わりました。 Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。あくまで、自分一人で開発する場合の話ですが…">
+<meta name="twitter:description" content="&lt;p&gt;2018年を振り返ってみました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
 
 
@@ -74,31 +74,9 @@
         "height": 60
       }
     },
-    "description": "2018年を振り返ってみました。
-技術的な部分についてですが、雑に振り返ります。
-fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。
-簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。
-GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。
-多いか少ないか良く分かりませんが、ありがとうございした。
-海外の開発者の方から、問い合わせを頂くことが増えました。
- fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。
-ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑
-ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。
-LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。
-AWS、GCP AWSやGCPは、なくてはならないものになりました。
-AWSで使ったのは…
- Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは…
- App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。
-とくにApp Engineが好き。
-もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。
-Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。
-ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。
-(コードはダメダメでしょうけども…)
- sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。
-FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。
-しかし、Golangができるようになって、考え方が変わりました。
- Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。
-あくまで、自分一人で開発する場合の話ですが…"
+    "description": "<p>2018年を振り返ってみました。</p>
+
+<p></p>"
   }
 </script>
 
@@ -174,11 +152,9 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
   </div>
   
 
-  <div class="article-body">
+  <div class="article-body"><p>2018年を振り返ってみました。</p>
 
-<p>2018年を振り返ってみました。</p>
-
-<!-- more -->
+<p></p>
 
 <p>技術的な部分についてですが、雑に振り返ります。</p>
 
@@ -368,8 +344,7 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
 
 <p>FileMaker関連のことは、ほとんどツイートしなくなりましたが、FileMakerは大好きです。</p>
 
-<p>2019年も、よろしくお願いします m(_ _)m</p>
-</div>
+<p>2019年も、よろしくお願いします m(_ _)m</p></div>
 
   <footer class="article-footer">
 

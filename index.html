@@ -110,6 +110,29 @@ if (!doNotTrack) {
       <div class="mrow">
         
         <div class="mcol c6"><article class="li">
+  <a href="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+    <div class="thumb thumb-b5f547b009658f8158266c961fdcc715"></div>
+
+    <div class="inner">
+      <h2 class="title">ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</h2>
+
+      <ul class="facts">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-06T17:40:13JST">2019-01-06</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+      <div class="summary"><p>ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。</p>
+
+<p>ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。</p>
+
+<p></p></div>
+    </div>
+  </a>
+</article>
+</div>
+        
+        <div class="mcol c6"><article class="li">
   <a href="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
     <div class="thumb thumb-c65a27d390a620d7bd687fb6b44b12ea"></div>
 
@@ -122,18 +145,9 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。
-しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。
-youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。
-詳細はREADME.mdをみてください。
-シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。
-ファイル名はお任せ。
-youtube-dl.shなど
-chmodも忘れずに。
-Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。
-URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。
-ということで、URLを引数にするように修正しました。
-#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&quot;$1&quot; if [ x$YOUTUBEID = &quot;x&quot; ]; then echo &quot;Youtube id is required.&quot; exit 1 fi # set url YDLURL=&quot;https://www.youtube.com/watch?v=$YOUTUBEID&quot; # set music dir MUSICDIR=&quot;$HOME/Music/cmus&quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.</div>
+      <div class="summary"><p>先日、<a href="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/" target="_blank">Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</a>という記事を書きました。</p>
+
+<p></p></div>
     </div>
   </a>
 </article>
@@ -152,20 +166,9 @@ URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなってお�
         
       </ul>
 
-      <div class="summary">今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
-しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
-更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。
- この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。
- シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。
-  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
-ということで、cmus(https://cmus.github.io/)を使うことにしました。
-評判通り、快適ですね。
-Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
-ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
-パッケージとしも使えるし、使う前から、良いはずと。
-rylio/ytdl こんな感じでダウンロードできる。
-(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
-(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].</div>
+      <div class="summary"><p>今まで、mpsyt(<a href="https://github.com/mps-youtube/mps-youtube" target="_blank">https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p>
+
+<p></p></div>
     </div>
   </a>
 </article>
@@ -184,31 +187,9 @@ rylio/ytdl こんな感じでダウンロードできる。
         
       </ul>
 
-      <div class="summary">2018年を振り返ってみました。
-技術的な部分についてですが、雑に振り返ります。
-fmOAuth fmOAuthというソリューションを作成しまして、最終的にGitHubにて公開しました。
-簡単にいうと、FileMakerからGoogleのAPIをコールするためのファイルです。
-GitHubに公開するまでは、Webサイトからのみダウンロードできるようにしており、Webサイトからダウンロードされた回数は102回でした。
-多いか少ないか良く分かりませんが、ありがとうございした。
-海外の開発者の方から、問い合わせを頂くことが増えました。
- fmOAuth (https://github.com/frudens/fmoauth)  年末に見たところ、海外の開発者の方がForkしてくれてました。なんか嬉しいですね。
-ターミナル なぜターミナルを勉強し始めたのかは、覚えていません 笑
-ふと気づいたら、サーバーにSSHで接続してマイグレーションをしていました。
-LinuxやGolang、フロンエンド、AWSやGCPのCLIツールでもターミナルは必須になるので、ターミナルで一通りの操作ができるようになったのは、以外に大きいことでした。
-AWS、GCP AWSやGCPは、なくてはならないものになりました。
-AWSで使ったのは…
- Route 53 Cognito CloudFront SES DynamoDB Lambda S3 API Gateway EC2 Lightsail  GCPで使ったのは…
- App Engine Compute Engine Cloud Functions Datastore Firebase  個人的には、Golangを書くようになってからは、GCPばっかり使ってました。
-とくにApp Engineが好き。
-もっと色々なサービスを試しつつ、知識も少しづつ広げていきたいところです。
-Golang いつ勉強を始めたか覚えていませんが、楽しくて楽しくて、2018年の後半はずっとGolangを勉強してました。
-ターミナルでの生活を始めたこともあり、簡単なCLIツールを作りました。
-(コードはダメダメでしょうけども…)
- sheetskv (https://github.com/frudens/sheetskv) goFMDataMigration (https://github.com/frudens/gofmdatamigration)  個人的には、Golangを書けるようになったことが、一番大きな収穫だったと思います。
-FileMakerは良くも悪くも、頑張れば色々と作れてしまいます。
-しかし、Golangができるようになって、考え方が変わりました。
- Webビューアで複雑なことはせず、ブラウザでアクセスできるWebアプリを作る。 頑張ってcURLコマンドを使わないで、APIのブリッジを作る。  簡単に言うと「Webに関連する機能は、できる限りFileMakerで実装しない。」という考えになりました。
-あくまで、自分一人で開発する場合の話ですが…</div>
+      <div class="summary"><p>2018年を振り返ってみました。</p>
+
+<p></p></div>
     </div>
   </a>
 </article>
@@ -230,8 +211,6 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
       <div class="summary"><p>Vimをビルドするときの<code>configure</code>のオプションをメモっておく。</p>
 
 <p>詳細は vim-jp の記事を見るのが良いと思います。</p>
-
-<p><a href="https://vim-jp.org/docs/build_linux.html" target="_blank">https://vim-jp.org/docs/build_linux.html</a></p>
 
 <p></p></div>
     </div>
@@ -352,29 +331,6 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
 </article>
 </div>
         
-        <div class="mcol c6"><article class="li">
-  <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
-    <div class="thumb thumb-48829181f822197d67aae0bd2e10a89d"></div>
-
-    <div class="inner">
-      <h2 class="title">LightsailのRedmine(Bitnami)でLet&#39;s Encryptを手動更新するときのメモ</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-30T16:06:11JST">2018-09-30</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-      <div class="summary"><p>LightsailのRedmineで、Let&rsquo;s Encryptを使っていて、手動更新するときのメモです。</p>
-
-<p>sshの設定もメモっとく。</p>
-
-<p></p></div>
-    </div>
-  </a>
-</article>
-</div>
-        
       </div>
     </div>
 
@@ -417,6 +373,24 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
   <header>LATESTS</header>
   <div>
     <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+    <div class="thumb thumb-b5f547b009658f8158266c961fdcc715"></div>
+
+    <div class="inner">
+      <div class="title">ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-06T17:40:13JST">2019-01-06</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
       
       <article class="lism">
   <a href="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
@@ -580,24 +554,6 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
 </article>
 
       
-      <article class="lism">
-  <a href="https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/">
-    <div class="thumb thumb-48829181f822197d67aae0bd2e10a89d"></div>
-
-    <div class="inner">
-      <div class="title">LightsailのRedmine(Bitnami)でLet&#39;s Encryptを手動更新するときのメモ</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-30T16:06:11JST">2018-09-30</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
     </div>
   </div>
 </section>
@@ -619,7 +575,7 @@ FileMakerは良くも悪くも、頑張れば色々と作れてしまいます�
   <header>TAGS</header>
   <div>
     <ul class="terms">
-      <li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bash">bash <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/linux">linux <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/mp3">mp3 <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/vi">vi <span class="count">(2)</span></a></li>
+      <li><a href="https://www.trhrkmk.com/tags/debian">debian <span class="count">(5)</span></a></li><li><a href="https://www.trhrkmk.com/tags/filemaker">filemaker <span class="count">(4)</span></a></li><li><a href="https://www.trhrkmk.com/tags/hugo">hugo <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/lets-encrypt">lets-encrypt <span class="count">(3)</span></a></li><li><a href="https://www.trhrkmk.com/tags/bash">bash <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/cli">cli <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/linux">linux <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/mp3">mp3 <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/ssl">ssl <span class="count">(2)</span></a></li><li><a href="https://www.trhrkmk.com/tags/t480s">t480s <span class="count">(2)</span></a></li>
     </ul>
   </div>
 </section>

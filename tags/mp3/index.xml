@@ -18,18 +18,9 @@
       <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/download-youtube-dl-playlist/</guid>
-      <description>先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。
-しかし、プレイリストを一括でダウンロードしたいと思い、youtube-dlを使って一括ダウンロードを試みましたのでメモ。
-youtube-dl まずはyoutube-dl(https://rg3.github.io/youtube-dl/)を使えるようにします。
-詳細はREADME.mdをみてください。
-シェルスクリプト1 シンプルに1曲のみダウンロードするためのシェルスクリプトを作りました。
-ファイル名はお任せ。
-youtube-dl.shなど
-chmodも忘れずに。
-Gistからダウンロード (cmd) /var/tmp $ curl -o youtube-dl.sh &amp;quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&amp;quot;  補足 最初はv=YOUTUBEIDのYOUTUBEIDを引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。
-URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなっており、引数が-FyjEnoIgTMとなることが原因でした。
-ということで、URLを引数にするように修正しました。
-#!/usr/bin/env bash set -Ceuo pipefail # set youtube id from param YOUTUBEID=&amp;quot;$1&amp;quot; if [ x$YOUTUBEID = &amp;quot;x&amp;quot; ]; then echo &amp;quot;Youtube id is required.&amp;quot; exit 1 fi # set url YDLURL=&amp;quot;https://www.youtube.com/watch?v=$YOUTUBEID&amp;quot; # set music dir MUSICDIR=&amp;quot;$HOME/Music/cmus&amp;quot; # mkdir music dir if [ ! -d $MUSICDIR ]; then mkdir -p $MUSICDIR fi # get filename YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o &#39;%(creator)s/%(title)s.</description>
+      <description>&lt;p&gt;先日、&lt;a href=&#34;https://www.trhrkmk.com/posts/download-youtube-dl-playlist/&#34; target=&#34;_blank&#34;&gt;Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った&lt;/a&gt;という記事を書きました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,20 +29,9 @@ URLを確認するとhttps://www.youtube.com/watch?v=-FyjEnoIgTMとなってお�
       <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
-      <description>今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを再生してました。
-しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。
-更新 2019-01-02  やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、youtube-dlを使ってプレイリストを一括ダウンロードしたというブログを書きました。
- この記事ではytdlを使っていますが、上の記事ではyoutube-dlを使いました。どちらとも使いましたが、youtube-dlの方が良いと思います。
- シェルスクリプトについても、youtube-dlを使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。
-  cmus 色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。
-ということで、cmus(https://cmus.github.io/)を使うことにしました。
-評判通り、快適ですね。
-Youtubeの動画をダウンロード YoutubeからダウンロードするCLIツールをググると、youtube-dl(https://rg3.github.io/youtube-dl/)が出てきますが、Go製のCLIツールを探すことにしました。
-ytdl(https://github.com/rylio/ytdl)というCLIツールを見つけました。
-パッケージとしも使えるし、使う前から、良いはずと。
-rylio/ytdl こんな感じでダウンロードできる。
-(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s  -oオプションで指定できる。
-(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8 INFO[0000] Fetching video info... INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].</description>
+      <description>&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.48" />
+
+<link rel="apple-touch-icon" href="https://www.trhrkmk.com/images/logo.png">
+
+
+<link rel="canonical" href="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ - HHKBは体の一部</title>
+    
+<meta name="description" content="&lt;p&gt;ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。&lt;/p&gt;&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta property="og:title" content="ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ - HHKBは体の一部">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+<meta property="og:image" content="https://www.trhrkmk.com/images/default.png">
+<meta property="og:site_name" content="HHKBは体の一部">
+<meta property="og:description" content="&lt;p&gt;ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。&lt;/p&gt;&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="HHKBは体の一部">
+<meta name="twitter:url" content="https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/">
+<meta name="twitter:title" content="ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ - HHKBは体の一部">
+<meta name="twitter:description" content="&lt;p&gt;ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。&lt;/p&gt;&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="https://www.trhrkmk.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://www.trhrkmk.com/"
+    },
+    "headline": "ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ - HHKBは体の一部",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.trhrkmk.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-01-06T17:40:13JST",
+    "dateModified": "2019-01-06T17:40:13JST",
+    "author": {
+      "@type": "Person",
+      "name": "HHKBは体の一部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HHKBは体の一部",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trhrkmk.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "<p>ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。</p>
+
+<p>ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。</p>
+
+<p></p>"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://www.trhrkmk.com/images/thumbnail/default.jpg); background-size: cover; background-position: center;}.thumb-c65a27d390a620d7bd687fb6b44b12ea { background-image: url(https://www.trhrkmk.com/images/bash/bash.png);}.thumb-58dbb4801ad94f74f38ede0f10878041 { background-image: url(https://www.trhrkmk.com/images/bash/bash.png);}.thumb-4266cb1ef76ee983573bb68f0370b4b0 { background-image: url(https://www.trhrkmk.com/images/vim/vim.png);}.thumb-01fb886ffdfe3ab96998d8430fd86869 { background-image: url(https://www.trhrkmk.com/images/purchased-thinkpad-t480s/thinkpad-t480s.png);}.thumb-4c6e3fb64644d2b1c3c5b8b2ef7806d8 { background-image: url(https://www.trhrkmk.com/images/bash/bash.png);}.thumb-8d1547d1de5ed1de49cd04c7fcb13e97 { background-image: url(https://www.trhrkmk.com/images/bash/bash.png);}.thumb-d15fa695c6416a710e0b16ac0945e5e8 { background-image: url(https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-7.png);}.thumb-ab9d8d7db485dd06772fef054384b0ee { background-image: url(https://www.trhrkmk.com/images/bash/bash.png);}.thumb-48829181f822197d67aae0bd2e10a89d { background-image: url(https://www.trhrkmk.com/images/lightsail-bitnami-redmine-letsencrypt/lightsail-bitnami-redmine-letsencrypt-1.png);}.thumb-f5e515ece7bcac5194b3ee1f86417cc8 { background-image: url(https://www.trhrkmk.com/images/letsencrypt-dns-windows-win-acme/letsencrypt-dns-windows-win-acme-1.png);}.thumb-211a68066326af57662195e4fd3c867c { background-image: url(https://www.trhrkmk.com/images/hugo-link-target-blank-markdown/gohugoio-card-1.png);}.thumb-48d142721a390e870478036f7904163c { background-image: url(https://www.trhrkmk.com/images/filemaker-server-ssl-letsencrypt-windows-server/filemaker-server-ssl-letsencrypt-windows-server-7.png);}.thumb-b92f7b8ee6916c4e6c4b0a6542324cb5 { background-image: url(https://www.trhrkmk.com/images/filemaker-text-label-get-function/filemaker-text-label-get-function-1.png);}.thumb-37addc00d0b9c90d85e5bcc3c96e5641 { background-image: url(https://www.trhrkmk.com/images/hugo-share-button-addthis/hugo-share-button-addthis-1.png);}.thumb-b40d8f5050184fb578c9e2a9d48b0729 { background-image: url(https://www.trhrkmk.com/images/linux-textexpander-typinator-similar-app-introduction/texpander-1.png);}.thumb-b83507c5dabe1c8dc80f6d0e5d00803d { background-image: url(https://www.trhrkmk.com/images/filemaker-fmperception-check-unreferenced/fmperception-unreferenced-1.png);}.thumb-609fe292361a3aa310e4908207f2c905 { background-image: url(https://www.trhrkmk.com/images/debian-stretch-install-firefox-latest/firefox-latest-1.png);}.thumb-595902e3f91a7903b2e09e54e9d6166a { background-image: url(https://www.trhrkmk.com/images/blog-hugo-start/hugo-1.png);}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-90586336-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://www.trhrkmk.com/">HHKBは体の一部</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-b5f547b009658f8158266c961fdcc715"></div>
+
+  <header class="article-header">
+    <h1 class="title">ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-06T17:40:13JST">2019-01-06</time></li>
+      <li><i class="fa fa-refresh" aria-hidden="true"></i><time datetime="2019-01-06T17:40:13JST">2019-01-06</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.trhrkmk.com/posts/">POSTS</a></li>
+      
+    </ul>
+
+  </header>
+
+  
+  <div class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#thinkpad特有の問題-etc-default-grub">ThinkPad特有の問題(/etc/default/grub)</a>
+<ul>
+<li><a href="#参考リンク">参考リンク</a></li>
+<li><a href="#設定">設定</a></li>
+</ul></li>
+<li><a href="#backportsの設定-etc-apt-sources-list-d-stretch-backports-list">Backportsの設定(/etc/apt/sources.list.d/stretch-backports.list)</a>
+<ul>
+<li><a href="#参考リンク-1">参考リンク</a></li>
+<li><a href="#設定-1">設定</a></li>
+</ul></li>
+<li><a href="#sdカードのマウント-etc-fstab">SDカードのマウント(/etc/fstab)</a>
+<ul>
+<li><a href="#参考リンク-2">参考リンク</a></li>
+<li><a href="#設定-2">設定</a></li>
+</ul></li>
+<li><a href="#トラックポイントとタッチパットの設定-usr-share-x11-xorg-conf-d-30-touchpad-conf">トラックポイントとタッチパットの設定(/usr/share/X11/xorg.conf.d/30-touchpad.conf)</a>
+<ul>
+<li><a href="#参考リンク-3">参考リンク</a></li>
+<li><a href="#設定-3">設定</a></li>
+<li><a href="#xinputを使って設定">xinputを使って設定</a></li>
+</ul></li>
+<li><a href="#xbacklightでエラーになるため設定-usr-share-x11-xorg-conf-d-20-intel-conf">xbacklightでエラーになるため設定(/usr/share/X11/xorg.conf.d/20-intel.conf)</a>
+<ul>
+<li><a href="#参考リンク-4">参考リンク</a></li>
+<li><a href="#設定-4">設定</a></li>
+</ul></li>
+<li><a href="#fcitxを使う設定-inputrc">fcitxを使う設定(~/.inputrc)</a></li>
+<li><a href="#rofiやdmenu-runにシェルスクリプトを追加する設定-xsessionrc">rofiやdmenu_runにシェルスクリプトを追加する設定(~/.Xsessionrc)</a></li>
+<li><a href="#キーマップの設定-xmodmap">キーマップの設定(~/.Xmodmap)</a>
+<ul>
+<li><a href="#参考リンク-5">参考リンク</a></li>
+<li><a href="#設定-5">設定</a></li>
+</ul></li>
+<li><a href="#i3wmの設定-config-i3-config">i3wmの設定(~/.config/i3/config)</a></li>
+<li><a href="#i3statusの設定-config-i3status-config">i3statusの設定(~/.config/i3status/config)</a>
+<ul>
+<li><a href="#nmcliでネットワークを確認する">nmcliでネットワークを確認する。</a></li>
+<li><a href="#もしくは-ipでネットワークを確認する">(もしくは)ipでネットワークを確認する。</a></li>
+<li><a href="#設定-6">設定</a></li>
+</ul></li>
+<li><a href="#オーディオ関連の設定-bin-i3audio-sh">オーディオ関連の設定(~/bin/i3audio.sh)</a>
+<ul>
+<li><a href="#まずはpacmdの使い方を覚える">まずはpacmdの使い方を覚える</a></li>
+<li><a href="#シェルスクリプトを作った">シェルスクリプトを作った</a></li>
+<li><a href="#シェルスクリプトの使い方">シェルスクリプトの使い方</a></li>
+<li><a href="#参考リンク-6">参考リンク</a></li>
+<li><a href="#default-sink-の例">@DEFAULT_SINK@の例</a></li>
+</ul></li>
+<li><a href="#bluetoothの設定-bluetoothctl">Bluetoothの設定(bluetoothctl)</a></li>
+<li><a href="#ネットワークの設定-nmcli">ネットワークの設定(nmcli)</a></li>
+<li><a href="#i3lock-bin-i3lock-sh">i3lock(~/bin/i3lock.sh)</a></li>
+<li><a href="#キーマップの設定-bin-i3setxkb-sh">キーマップの設定(~/bin/i3setxkb.sh)</a></li>
+<li><a href="#ディスプレイの設定-screenlayout-2048x1152-sh">ディスプレイの設定(~/.screenlayout/2048x1152.sh)</a></li>
+<li><a href="#スクリーンショット-画面録画-kazam">スクリーンショット、画面録画(kazam)</a></li>
+<li><a href="#aptのhistoryの場所">aptのhistoryの場所</a></li>
+<li><a href="#インストールしたパッケージや使っているコマンドなど">インストールしたパッケージや使っているコマンドなど</a></li>
+<li><a href="#あとがき">あとがき</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+  
+
+  <div class="article-body"><p>ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。</p>
+
+<p>ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。</p>
+
+<p></p>
+
+<p>随時更新する予定です。</p>
+
+<h2 id="thinkpad特有の問題-etc-default-grub">ThinkPad特有の問題(/etc/default/grub)</h2>
+
+<p>ThinkPad T480s だけではないようですが、<code>XF86MonBrightnessUp</code>や<code>XF86MonBrightnessDown</code>などのキーが、認識しないようです。</p>
+
+<p>ググると、以下のように設定すればよい、とかいてあるので試したら無事設定できた。</p>
+
+<h3 id="参考リンク">参考リンク</h3>
+
+<ul>
+<li><a href="https://forums.lenovo.com/t5/Linux-Discussion/X140e-brightness-in-linux-does-not-work/td-p/1573496" target="_blank">X140e brightness in linux does not work.</a></li>
+<li><a href="https://askubuntu.com/questions/409378/changing-brightness-at-startup" target="_blank">Changing brightness at startup</a></li>
+</ul>
+
+<h3 id="設定">設定</h3>
+
+<p>vimで開く。</p>
+
+<pre><code>sudo vim /etc/default/grub
+</code></pre>
+
+<p>以下の<code>quiet</code>を</p>
+
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+</code></pre>
+
+<p><code>quiet splash thinkpad-acpi.brightness_enable=1 acpi_backlight=vendor</code>と変更する。</p>
+
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash thinkpad-acpi.brightness_enable=1 acpi_backlight=vendor&quot;
+</code></pre>
+
+<p>updateする。</p>
+
+<pre><code>sudo update-grub
+</code></pre>
+
+<p>最終的には、以下のような感じになった。</p>
+
+<pre><code>/etc/default/grub
+
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash thinkpad-acpi.brightness_enable=1 acpi_backlight=vendor&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM=&quot;0x01234567,0xfefefefe,0x89abcdef,0xefefefef&quot;
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass &quot;root=UUID=xxx&quot; parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY=&quot;true&quot;
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE=&quot;480 440 1&quot;
+</code></pre>
+
+<h2 id="backportsの設定-etc-apt-sources-list-d-stretch-backports-list">Backportsの設定(/etc/apt/sources.list.d/stretch-backports.list)</h2>
+
+<h3 id="参考リンク-1">参考リンク</h3>
+
+<ul>
+<li><a href="https://backports.debian.org/" target="_blank">Debian Backports</a></li>
+<li><a href="https://backports.debian.org/Instructions/" target="_blank">Debian Backports ›› Instructions</a></li>
+</ul>
+
+<h3 id="設定-1">設定</h3>
+
+<p>オフィシャルの内容の通りに設定する。</p>
+
+<pre><code>/etc/apt/sources.list.d/stretch-backports.list
+
+deb http://ftp.debian.org/debian stretch-backports main contrib non-free
+</code></pre>
+
+<h2 id="sdカードのマウント-etc-fstab">SDカードのマウント(/etc/fstab)</h2>
+
+<h3 id="参考リンク-2">参考リンク</h3>
+
+<ul>
+<li><a href="https://wiki.debian.org/fstab" target="_blank">fstab - Debian Wiki</a></li>
+<li><a href="https://askubuntu.com/questions/154180/how-to-mount-a-new-drive-on-startup" target="_blank">How to mount a new drive on startup [duplicate]</a></li>
+</ul>
+
+<h3 id="設定-2">設定</h3>
+
+<p>DebianのWikiの通りに設定する。</p>
+
+<pre><code>/etc/fstab
+
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+# / was on /dev/nvme0n1p2 during installation
+UUID=e6ff3dca-fab9-4a9f-b515-da2c54b2031d /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=DD05-11E9  /boot/efi       vfat    umask=0077      0       1
+# swap was on /dev/nvme0n1p3 during installation
+UUID=139e15f9-b78b-4418-a25c-169a9f694db2 none            swap    sw              0       0
+# / was on /dev/sda1 during installation
+UUID=fa0490b7-b591-4538-aa36-a02e0883b609 /media/sdcard               ext4    errors=remount-ro 0       1
+</code></pre>
+
+<h2 id="トラックポイントとタッチパットの設定-usr-share-x11-xorg-conf-d-30-touchpad-conf">トラックポイントとタッチパットの設定(/usr/share/X11/xorg.conf.d/30-touchpad.conf)</h2>
+
+<h3 id="参考リンク-3">参考リンク</h3>
+
+<ul>
+<li><a href="https://wiki.archlinux.jp/index.php/Libinput" target="_blank">libinput - ArchWiki</a></li>
+</ul>
+
+<h3 id="設定-3">設定</h3>
+
+<p>作る。</p>
+
+<pre><code>/usr/share/X11/xorg.conf.d/30-touchpad.conf
+
+Section &quot;InputClass&quot;
+  Identifier &quot;trackpoint catchall&quot;
+  Driver &quot;libinput&quot;
+  MatchIsPointer &quot;true&quot;
+  MatchProduct &quot;Elantech Touchpad|TrackPoint&quot;
+  MatchDevicePath &quot;/dev/input/event*&quot;
+  Option &quot;NaturalScrolling&quot; &quot;true&quot;
+EndSection
+
+Section &quot;InputClass&quot;
+  Identifier &quot;touchpad catchall&quot;
+  Driver &quot;libinput&quot;
+  MatchIsTouchpad &quot;true&quot;
+  MatchProduct &quot;Elantech Touchpad|TrackPoint&quot;
+  MatchDevicePath &quot;/dev/input/event*&quot;
+  Option &quot;Tapping&quot; &quot;on&quot;
+  Option &quot;NaturalScrolling&quot; &quot;true&quot;
+EndSection
+</code></pre>
+
+<h3 id="xinputを使って設定">xinputを使って設定</h3>
+
+<p>xinputコマンドでも設定できる。</p>
+
+<p>例として、TouchpadのNaturalScrollingを設定する。</p>
+
+<pre><code>(cmd) ~ $ xinput
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ ETPS/2 Elantech Touchpad                  id=11   [slave  pointer  (2)]
+⎜   ↳ ETPS/2 Elantech TrackPoint                id=12   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=8    [slave  keyboard (3)]
+    ↳ Integrated Camera                         id=9    [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
+    ↳ ThinkPad Extra Buttons                    id=13   [slave  keyboard (3)]
+    ↳ 08:EB:ED:9C:C4:FF                         id=14   [slave  keyboard (3)]
+
+(cmd) ~ $ xinput list-props 11
+Device 'ETPS/2 Elantech Touchpad':
+        Device Enabled (139):   1
+        Coordinate Transformation Matrix (141): 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+        libinput Tapping Enabled (274): 1
+        libinput Tapping Enabled Default (275): 0
+        libinput Tapping Drag Enabled (276):    1
+        libinput Tapping Drag Enabled Default (277):    1
+        libinput Tapping Drag Lock Enabled (278):       0
+        libinput Tapping Drag Lock Enabled Default (279):       0
+        libinput Tapping Button Mapping Enabled (280):  1, 0
+        libinput Tapping Button Mapping Default (281):  1, 0
+        libinput Accel Speed (282):     0.000000
+        libinput Accel Speed Default (283):     0.000000
+        libinput Natural Scrolling Enabled (284):       1
+        libinput Natural Scrolling Enabled Default (285):       0
+        libinput Send Events Modes Available (259):     1, 1
+        libinput Send Events Mode Enabled (260):        0, 0
+        libinput Send Events Mode Enabled Default (261):        0, 0
+        libinput Left Handed Enabled (286):     0
+        libinput Left Handed Enabled Default (287):     0
+        libinput Scroll Methods Available (288):        1, 1, 0
+        libinput Scroll Method Enabled (289):   1, 0, 0
+        libinput Scroll Method Enabled Default (290):   1, 0, 0
+        libinput Click Methods Available (291): 1, 1
+        libinput Click Method Enabled (292):    1, 0
+        libinput Click Method Enabled Default (293):    1, 0
+        libinput Middle Emulation Enabled (294):        0
+        libinput Middle Emulation Enabled Default (295):        0
+        libinput Disable While Typing Enabled (296):    1
+        libinput Disable While Typing Enabled Default (297):    1
+        Device Node (262):      &quot;/dev/input/event2&quot;
+        Device Product ID (263):        2, 14
+        libinput Drag Lock Buttons (298):       &lt;no items&gt;
+        libinput Horizontal Scroll Enabled (299):       1
+
+(cmd) ~ $ xinput set-prop 11 &quot;libinput Natural Scrolling Enabled&quot; 0
+</code></pre>
+
+<h2 id="xbacklightでエラーになるため設定-usr-share-x11-xorg-conf-d-20-intel-conf">xbacklightでエラーになるため設定(/usr/share/X11/xorg.conf.d/20-intel.conf)</h2>
+
+<p>以下のようなコマンドを実行すると<code>no outputs have backlight properties</code>とでるので、設定する。</p>
+
+<pre><code>(cmd) ~ $ xbacklight -inc 5
+(cmd) ~ $ xbacklight -dec 5
+</code></pre>
+
+<h3 id="参考リンク-4">参考リンク</h3>
+
+<ul>
+<li><a href="https://askubuntu.com/questions/715306/xbacklight-no-outputs-have-backlight-property-no-sys-class-backlight-folder" target="_blank">xbacklight: No outputs have backlight property - No /sys/class/backlight folder</a></li>
+<li><a href="https://askubuntu.com/questions/790972/xbacklight-no-outputs-have-backlight-property" target="_blank">xbacklight - No outputs have backlight property</a></li>
+</ul>
+
+<h3 id="設定-4">設定</h3>
+
+<p>作る。</p>
+
+<pre><code>/usr/share/X11/xorg.conf.d/20-intel.conf
+
+Section &quot;Device&quot;
+  Identifier  &quot;Backlight fix&quot;
+  Driver      &quot;intel&quot;
+  Option      &quot;Backlight&quot;  &quot;intel_backlight&quot;
+EndSection
+</code></pre>
+
+<h2 id="fcitxを使う設定-inputrc">fcitxを使う設定(~/.inputrc)</h2>
+
+<p><code>im-config</code>で、自動で作成されるみたい。</p>
+
+<pre><code>~/.inputrc
+
+# im-config(8) generated on Fri, 21 Dec 2018 21:56:16 +0900
+run_im fcitx
+# im-config signature: a0820a046c134d6459275e7ce49f57a2  -
+</code></pre>
+
+<h2 id="rofiやdmenu-runにシェルスクリプトを追加する設定-xsessionrc">rofiやdmenu_runにシェルスクリプトを追加する設定(~/.Xsessionrc)</h2>
+
+<p>rofiやdmenu_runの中に自分で作成したシェルスクリプトを追加するために、作る。</p>
+
+<p><code>.bashrc</code>や<code>.profile</code>の<code>$PATH</code>とは別のようなので、設定する。</p>
+
+<p><code>source $HOME/.bashrc</code>などでも良いと思う。</p>
+
+<p>キーリピートの設定はお好みで。</p>
+
+<pre><code>~/.Xsessionrc
+
+if [ -d &quot;$HOME/bin&quot; ] ; then
+  PATH=&quot;$HOME/bin:$PATH&quot;
+fi
+
+# key repeat
+xset r rate 250 90
+</code></pre>
+
+<h2 id="キーマップの設定-xmodmap">キーマップの設定(~/.Xmodmap)</h2>
+
+<h3 id="参考リンク-5">参考リンク</h3>
+
+<ul>
+<li><a href="https://www.emacswiki.org/emacs/SwapControlAltAndCapsLock#toc8" target="_blank">SwapControlAltAndCapsLock</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_capslock_esc_key.html" target="_blank">Linux: Swap CapsLock Escape Keys</a></li>
+<li><a href="https://askubuntu.com/questions/93624/how-do-i-swap-left-ctrl-with-left-alt-on-my-keyboard/101877#101877" target="_blank">How do I swap Left Ctrl with Left Alt on my keyboard?</a></li>
+<li><a href="https://askubuntu.com/questions/87392/i-see-how-to-have-left-alt-swapped-with-left-win-can-i-have-right-alt-swapped-w" target="_blank">I see how to have Left Alt swapped with Left Win; Can I have Right Alt swapped with Right Win?</a></li>
+</ul>
+
+<h3 id="設定-5">設定</h3>
+
+<p>以下のようなキーマップに変更している。</p>
+
+<pre><code>CapsLock -&gt; Control_L
+Alt_R -&gt; Super_R
+Alt_L -&gt; Control_L
+Super_L -&gt; Alt_L
+Control_L -&gt; Super_L
+</code></pre>
+
+<p>作る。</p>
+
+<p>起動時に読み込まれる。</p>
+
+<pre><code>~/.Xmodmap
+
+! -*- coding: utf-8 -*-
+! 2019-01-01
+
+! swap Ctrl and Alt keys
+
+! output taken from:
+! xmodmap -pke | egrep '(Control|Super|Alt|Menu)'
+! Use to set keycodes correctly below. List reordered to match
+! keys from left to right.
+
+! keycode  37 = Control_L NoSymbol Control_L
+! keycode  64 = Alt_L Meta_L Alt_L Meta_L
+! keycode  66 = CapsLock
+! keycode 105 = Control_R NoSymbol Control_R
+! keycode 108 = Alt_R Meta_R Alt_R Meta_R
+! keycode 133 = Super_L NoSymbol Super_L
+! keycode 134 = Super_R NoSymbol Super_R
+! keycode 135 = Menu
+
+! First clear all modifiers, caps lock &amp; control
+clear lock
+clear control
+clear mod1
+clear mod4
+
+keycode  37 = Super_L NoSymbol Super_L
+keycode  64 = Control_L NoSymbol Control_L
+keycode  66 = Control_L NoSymbol Control_L
+keycode 105 = Control_R NoSymbol Control_R
+keycode 108 = Super_R NoSymbol Super_R
+keycode 133 = Alt_L Meta_L Alt_L Meta_L
+keycode 134 = Alt_R Meta_R Alt_R Meta_R
+
+! We need to set keycodes first, as some programs (emacs!) read
+! the key names and seem to ignore what's below.
+add mod1    = Alt_R Alt_L Meta_R Meta_L
+add mod4    = Super_R Super_L Menu
+add control = Control_R Control_L
+</code></pre>
+
+<h2 id="i3wmの設定-config-i3-config">i3wmの設定(~/.config/i3/config)</h2>
+
+<p><code>i3lock.sh</code>などは、<code>.Xsessionrc</code>でパスを通している。</p>
+
+<pre><code>~/.config/i3/config
+
+# This file has been auto-generated by i3-config-wizard(1).
+# It will not be overwritten, so edit it as you like.
+#
+# Should you change your keyboard layout some time, delete
+# this file and re-run i3-config-wizard(1).
+#
+
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 8
+font pango:Ricty Diminished Regular 11
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec gnome-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id ~/bin/i3rofi.sh
+bindsym control+space exec --no-startup-id ~/bin/i3rofi.sh
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+#bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec &quot;i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'&quot;
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id i3audio.sh up #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id i3audio.sh down #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id i3audio.sh toggle # mute sound
+
+# print
+bindsym Print exec --no-startup-id kazam
+
+# Sleep key
+#bindsym XF86Sleep exec --no-startup-id systemctl suspend
+
+# resize window (you can also use the mouse for that)
+mode &quot;resize&quot; {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode &quot;default&quot;
+        bindsym Escape mode &quot;default&quot;
+}
+bindsym $mod+r mode &quot;resize&quot;
+
+# move floating windows with keys
+mode &quot;move&quot; {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode &quot;default&quot;
+    bindsym Escape mode &quot;default&quot;
+}
+bindsym $mod+m mode &quot;move&quot; focus floating
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+        font pango:Ricty Diminished Regular 12
+        position    top
+        tray_output primary
+        tray_padding -2
+}
+
+# all kill
+# Close all windows on all workspaces (any class string)
+#bindsym $mod+Shift+q [class=”.*”] kill
+
+# title bar
+new_window none
+new_float none
+for_window [class=&quot;^.*&quot;] border none
+
+# lock
+bindsym Control+Shift+l exec --no-startup-id i3lock.sh
+
+# for key bind emacs
+exec --no-startup-id gnome-settings-daemon
+
+# display
+exec --no-startup-id ~/.screenlayout/2048x1152.sh
+
+# wallpaper
+exec --no-startup-id feh --bg-scale /home/teruhiro/.config/i3/images/1920x1080_FullHD_v2.jpg
+
+# autolock
+exec --no-startup-id xautolock -detectsleep -time 5 -locker i3lock.sh
+</code></pre>
+
+<h2 id="i3statusの設定-config-i3status-config">i3statusの設定(~/.config/i3status/config)</h2>
+
+<h3 id="nmcliでネットワークを確認する">nmcliでネットワークを確認する。</h3>
+
+<pre><code>(cmd) ~ $ nmcli
+docker0: connected to docker0
+        bridge, 02:42:DD:C0:DB:BF, sw, mtu 1500
+        inet4 172.17.0.1/16
+
+wlp61s0: connected to z5j5zb82ds-network-5GHz 6
+        &quot;Intel Sunrise Point-LP PCI Express Root Port&quot;
+        wifi (iwlwifi), 98:3B:8F:B3:61:04, hw
+        ip4 default
+        inet4 192.168.100.3/24
+        route4 169.254.0.0/16
+        inet6 fe80::e647:cb7:436e:a0d2/64
+
+enp0s31f6: unavailable
+        &quot;Intel Ethernet Connection (4) I219-V&quot;
+        ethernet (e1000e), E8:6A:64:6C:05:E1, hw, mtu 1500
+
+vmnet1: unmanaged
+        ethernet (unknown), 00:50:56:C0:00:01, hw, mtu 1500
+
+vmnet8: unmanaged
+        ethernet (unknown), 00:50:56:C0:00:08, hw, mtu 1500
+
+lo: unmanaged
+        loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
+
+DNS configuration:
+        servers: 192.168.100.1
+        interface: wlp61s0
+
+Use &quot;nmcli device show&quot; to get complete information about known devices and
+&quot;nmcli connection show&quot; to get an overview on active connection profiles.
+
+Consult nmcli(1) and nmcli-examples(5) manual pages for complete usage details.
+</code></pre>
+
+<h3 id="もしくは-ipでネットワークを確認する">(もしくは)ipでネットワークを確認する。</h3>
+
+<pre><code>(ins) ~ $ ip link
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s31f6: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000
+    link/ether e8:6a:64:6c:05:e1 brd ff:ff:ff:ff:ff:ff
+3: wlp61s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DORMANT group default qlen 1000
+    link/ether 98:3b:8f:b3:61:04 brd ff:ff:ff:ff:ff:ff
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default
+    link/ether 02:42:dd:c0:db:bf brd ff:ff:ff:ff:ff:ff
+5: vmnet1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:c0:00:01 brd ff:ff:ff:ff:ff:ff
+6: vmnet8: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:c0:00:08 brd ff:ff:ff:ff:ff:ff
+</code></pre>
+
+<h3 id="設定-6">設定</h3>
+
+<p>上で調べたネットワークを指定する。</p>
+
+<pre><code>~/.config/i3status/config
+
+general {
+        output_format = &quot;i3bar&quot;
+        #output_format = &quot;dzen2&quot;
+        colors = true
+        color_good =     '#88b090'
+        color_degraded = '#ccdc90'
+        color_bad =      '#e89393'
+        interval = 5
+        separator = &quot;  &quot;
+}
+
+#order += &quot;ipv6&quot;
+order += &quot;disk /&quot;
+order += &quot;run_watch DHCP&quot;
+#order += &quot;run_watch VPNC&quot;
+#order += &quot;path_exists VPN&quot;
+order += &quot;wireless wlp61s0&quot;
+order += &quot;ethernet enp0s31f6&quot;
+order += &quot;battery 0&quot;
+#order += &quot;cpu_temperature 0&quot;
+order += &quot;load&quot;
+order += &quot;tztime local&quot;
+#order += &quot;tztime berlin&quot;
+
+wireless wlp61s0 {
+        #format_up = &quot;W: (%quality at %essid, %bitrate) %ip&quot;
+        format_up = &quot;W: (%quality at %essid) %ip&quot;
+        format_down = &quot;W: down&quot;
+}
+
+ethernet enp0s31f6 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = &quot;E: %ip (%speed)&quot;
+        format_down = &quot;E: down&quot;
+}
+
+battery 0 {
+        #format = &quot;%status %percentage %remaining %emptytime&quot;
+        format = &quot;%status %percentage %remaining&quot;
+        format_down = &quot;No battery&quot;
+        status_chr = &quot;⚡ CHR&quot;
+        status_bat = &quot;🔋 BAT&quot;
+        status_unk = &quot;? UNK&quot;
+        status_full = &quot;☻ FULL&quot;
+        path = &quot;/sys/class/power_supply/BAT%d/uevent&quot;
+        low_threshold = 10
+}
+
+run_watch DHCP {
+        pidfile = &quot;/var/run/dhclient*.pid&quot;
+}
+
+run_watch VPNC {
+        # file containing the PID of a vpnc process
+        pidfile = &quot;/var/run/vpnc/pid&quot;
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = &quot;/proc/sys/net/ipv4/conf/tun0&quot;
+}
+
+tztime local {
+        format = &quot;%Y-%m-%d %H:%M:%S&quot;
+}
+
+tztime berlin {
+        format = &quot;%Y-%m-%d %H:%M:%S %Z&quot;
+        timezone = &quot;Europe/Berlin&quot;
+}
+
+load {
+        format = &quot;%5min&quot;
+}
+
+cpu_temperature 0 {
+        format = &quot;T: %degrees °C&quot;
+        path = &quot;/sys/devices/platform/coretemp.0/temp1_input&quot;
+}
+
+disk &quot;/&quot; {
+        format = &quot;%free&quot;
+}
+</code></pre>
+
+<h2 id="オーディオ関連の設定-bin-i3audio-sh">オーディオ関連の設定(~/bin/i3audio.sh)</h2>
+
+<p>最初は、pasystrayを使っていましたが、接続のたびにアイコンを操作するのがつかれるので、シェルスクリプトを作った。</p>
+
+<h3 id="まずはpacmdの使い方を覚える">まずはpacmdの使い方を覚える</h3>
+
+<p>sinkの一覧を表示する。</p>
+
+<p>以下の例では、3つ接続している状態。</p>
+
+<ul>
+<li>Built-in Audio Analog Stereo</li>
+<li>Soundcore Liberty Air</li>
+<li>Pixel USB-C earbuds Analog Stereo</li>
+</ul>
+
+<p>ちなみに、<code>Soundcore Liberty Air</code>に接続している。</p>
+
+<pre><code>(cmd) ~ $ pacmd list-sinks
+3 sink(s) available.
+    index: 0
+	name: &lt;alsa_output.pci-0000_00_1f.3.analog-stereo&gt;
+	driver: &lt;module-alsa-card.c&gt;
+	flags: HARDWARE HW_MUTE_CTRL HW_VOLUME_CTRL DECIBEL_VOLUME LATENCY FLAT_VOLUME DYNAMIC_LATENCY
+	state: SUSPENDED
+	suspend cause: IDLE 
+	priority: 9959
+	volume: front-left: 3242 /   5% / -78.34 dB,   front-right: 3242 /   5% / -78.34 dB
+	        balance 0.00
+	base volume: 65536 / 100% / 0.00 dB
+	volume steps: 65537
+	muted: no
+	current latency: 0.00 ms
+	max request: 0 KiB
+	max rewind: 0 KiB
+	monitor source: 0
+	sample spec: s16le 2ch 48000Hz
+	channel map: front-left,front-right
+	             Stereo
+	used by: 0
+	linked by: 0
+	configured latency: 0.00 ms; range is 0.50 .. 1837.50 ms
+	card: 0 &lt;alsa_card.pci-0000_00_1f.3&gt;
+	module: 6
+	properties:
+		alsa.resolution_bits = &quot;16&quot;
+		device.api = &quot;alsa&quot;
+		device.class = &quot;sound&quot;
+		alsa.class = &quot;generic&quot;
+		alsa.subclass = &quot;generic-mix&quot;
+		alsa.name = &quot;ALC257 Analog&quot;
+		alsa.id = &quot;ALC257 Analog&quot;
+		alsa.subdevice = &quot;0&quot;
+		alsa.subdevice_name = &quot;subdevice #0&quot;
+		alsa.device = &quot;0&quot;
+		alsa.card = &quot;0&quot;
+		alsa.card_name = &quot;HDA Intel PCH&quot;
+		alsa.long_card_name = &quot;HDA Intel PCH at 0xe8348000 irq 145&quot;
+		alsa.driver_name = &quot;snd_hda_intel&quot;
+		device.bus_path = &quot;pci-0000:00:1f.3&quot;
+		sysfs.path = &quot;/devices/pci0000:00/0000:00:1f.3/sound/card0&quot;
+		device.bus = &quot;pci&quot;
+		device.vendor.id = &quot;8086&quot;
+		device.vendor.name = &quot;Intel Corporation&quot;
+		device.product.id = &quot;9d71&quot;
+		device.form_factor = &quot;internal&quot;
+		device.string = &quot;front:0&quot;
+		device.buffering.buffer_size = &quot;352800&quot;
+		device.buffering.fragment_size = &quot;176400&quot;
+		device.access_mode = &quot;mmap+timer&quot;
+		device.profile.name = &quot;analog-stereo&quot;
+		device.profile.description = &quot;Analog Stereo&quot;
+		device.description = &quot;Built-in Audio Analog Stereo&quot;
+		alsa.mixer_name = &quot;Realtek ALC257&quot;
+		alsa.components = &quot;HDA:10ec0257,17aa2258,00100001 HDA:8086280b,80860101,00100000&quot;
+		module-udev-detect.discovered = &quot;1&quot;
+		device.icon_name = &quot;audio-card-pci&quot;
+	ports:
+		analog-output-speaker: Speakers (priority 10000, latency offset 0 usec, available: unknown)
+			properties:
+				device.icon_name = &quot;audio-speakers&quot;
+		analog-output-headphones: Headphones (priority 9000, latency offset 0 usec, available: no)
+			properties:
+				device.icon_name = &quot;audio-headphones&quot;
+	active port: &lt;analog-output-speaker&gt;
+  * index: 3
+	name: &lt;bluez_sink.08_EB_ED_9C_C4_FF.a2dp_sink&gt;
+	driver: &lt;module-bluez5-device.c&gt;
+	flags: HARDWARE DECIBEL_VOLUME LATENCY FLAT_VOLUME 
+	state: RUNNING
+	suspend cause: 
+	priority: 9430
+	volume: front-left: 13062 /  20% / -42.03 dB,   front-right: 13062 /  20% / -42.03 dB
+	        balance 0.00
+	base volume: 65536 / 100% / 0.00 dB
+	volume steps: 65537
+	muted: no
+	current latency: 30.12 ms
+	max request: 2 KiB
+	max rewind: 0 KiB
+	monitor source: 4
+	sample spec: s16le 2ch 44100Hz
+	channel map: front-left,front-right
+	             Stereo
+	used by: 1
+	linked by: 1
+	fixed latency: 39.51 ms
+	card: 3 &lt;bluez_card.08_EB_ED_9C_C4_FF&gt;
+	module: 25
+	properties:
+		bluetooth.protocol = &quot;a2dp_sink&quot;
+		device.description = &quot;Soundcore Liberty Air&quot;
+		device.string = &quot;08:EB:ED:9C:C4:FF&quot;
+		device.api = &quot;bluez&quot;
+		device.class = &quot;sound&quot;
+		device.bus = &quot;bluetooth&quot;
+		device.form_factor = &quot;headphone&quot;
+		bluez.path = &quot;/org/bluez/hci0/dev_08_EB_ED_9C_C4_FF&quot;
+		bluez.class = &quot;0x240418&quot;
+		bluez.alias = &quot;Soundcore Liberty Air&quot;
+		device.icon_name = &quot;audio-headphones-bluetooth&quot;
+	ports:
+		headphone-output: Headphone (priority 0, latency offset 0 usec, available: yes)
+			properties:
+				
+	active port: &lt;headphone-output&gt;
+    index: 4
+	name: &lt;alsa_output.usb-Google_Pixel_USB-C_earbuds_00000087QAJ52920-00.analog-stereo&gt;
+	driver: &lt;module-alsa-card.c&gt;
+	flags: HARDWARE HW_MUTE_CTRL HW_VOLUME_CTRL DECIBEL_VOLUME LATENCY FLAT_VOLUME DYNAMIC_LATENCY
+	state: SUSPENDED
+	suspend cause: IDLE 
+	priority: 9049
+	volume: front-left: 19656 /  30% / -31.38 dB,   front-right: 19656 /  30% / -31.38 dB
+	        balance 0.00
+	base volume: 65536 / 100% / 0.00 dB
+	volume steps: 65537
+	muted: no
+	current latency: 0.00 ms
+	max request: 0 KiB
+	max rewind: 0 KiB
+	monitor source: 5
+	sample spec: s16le 2ch 44100Hz
+	channel map: front-left,front-right
+	             Stereo
+	used by: 0
+	linked by: 0
+	configured latency: 0.00 ms; range is 0.50 .. 2000.00 ms
+	card: 4 &lt;alsa_card.usb-Google_Pixel_USB-C_earbuds_00000087QAJ52920-00&gt;
+	module: 26
+	properties:
+		alsa.resolution_bits = &quot;16&quot;
+		device.api = &quot;alsa&quot;
+		device.class = &quot;sound&quot;
+		alsa.class = &quot;generic&quot;
+		alsa.subclass = &quot;generic-mix&quot;
+		alsa.name = &quot;USB Audio&quot;
+		alsa.id = &quot;USB Audio&quot;
+		alsa.subdevice = &quot;0&quot;
+		alsa.subdevice_name = &quot;subdevice #0&quot;
+		alsa.device = &quot;0&quot;
+		alsa.card = &quot;1&quot;
+		alsa.card_name = &quot;Pixel USB-C earbuds&quot;
+		alsa.long_card_name = &quot;Google Pixel USB-C earbuds at usb-0000:3c:00.0-1, full speed&quot;
+		alsa.driver_name = &quot;snd_usb_audio&quot;
+		device.bus_path = &quot;pci-0000:3c:00.0-usb-0:1:1.0&quot;
+		sysfs.path = &quot;/devices/pci0000:00/0000:00:1c.4/0000:04:00.0/0000:05:02.0/0000:3c:00.0/usb3/3-1/3-1:1.0/sound/card1&quot;
+		udev.id = &quot;usb-Google_Pixel_USB-C_earbuds_00000087QAJ52920-00&quot;
+		device.bus = &quot;usb&quot;
+		device.vendor.id = &quot;18d1&quot;
+		device.vendor.name = &quot;Google Inc.&quot;
+		device.product.id = &quot;5033&quot;
+		device.product.name = &quot;Pixel USB-C earbuds&quot;
+		device.serial = &quot;Google_Pixel_USB-C_earbuds_00000087QAJ52920&quot;
+		device.string = &quot;front:1&quot;
+		device.buffering.buffer_size = &quot;352800&quot;
+		device.buffering.fragment_size = &quot;176400&quot;
+		device.access_mode = &quot;mmap+timer&quot;
+		device.profile.name = &quot;analog-stereo&quot;
+		device.profile.description = &quot;Analog Stereo&quot;
+		device.description = &quot;Pixel USB-C earbuds Analog Stereo&quot;
+		alsa.mixer_name = &quot;USB Mixer&quot;
+		alsa.components = &quot;USB18d1:5033&quot;
+		module-udev-detect.discovered = &quot;1&quot;
+		device.icon_name = &quot;audio-card-usb&quot;
+	ports:
+		analog-output-headphones: Headphones (priority 9000, latency offset 0 usec, available: unknown)
+			properties:
+				device.icon_name = &quot;audio-headphones&quot;
+	active port: &lt;analog-output-headphones&gt;
+</code></pre>
+
+<p><code>Pixel USB-C earbuds Analog Stereo</code>を使うために、indexを設定する。</p>
+
+<pre><code>(ins) ~ $ pacmd set-default-sink 4
+</code></pre>
+
+<p>これで、<code>Soundcore Liberty Air</code>から<code>Pixel USB-C earbuds Analog Stereo</code>に切り替わる。</p>
+
+<p>以下のようにすれば、音量の変更や、ミュートにできる。</p>
+
+<pre><code>(ins) ~ $ pactl set-sink-volume 4 +5%
+(ins) ~ $ pactl set-sink-volume 4 -5%
+(ins) ~ $ pactl set-sink-mute 4 toggle
+</code></pre>
+
+<h3 id="シェルスクリプトを作った">シェルスクリプトを作った</h3>
+
+<pre><code>~/bin/i3audio.sh
+
+
+#!/usr/bin/env bash
+set -Ceuo pipefail
+
+TARGET=&quot;$1&quot;
+
+AUDIOPATH=&quot;/var/tmp/i3audio.txt&quot;
+
+# check param
+if [ x$TARGET = &quot;x&quot; ]; then
+  exit 1
+fi
+
+# check audio index
+if [ -f &quot;$AUDIOPATH&quot; ]; then
+  # exists
+  INDEX=$(cat &quot;$AUDIOPATH&quot;)
+else
+  # not exists
+  echo -n &quot;0&quot; &gt; &quot;$AUDIOPATH&quot;
+  INDEX=&quot;0&quot;
+fi
+
+# set index
+if [ $TARGET = &quot;index&quot; ]; then
+  # echo pacmd list-sinks
+  CNT=0
+  pacmd list-sinks | while read LINE
+  do
+    CNT=$(expr $CNT + 1)
+    if [ &quot;`echo $LINE | grep -e 'index:'`&quot; ]; then
+      echo &quot;$LINE&quot;
+    elif [ &quot;`echo $LINE | grep -e 'state:' -e 'volume:' -e 'device.description ='`&quot; ]; then
+      echo &quot;   $LINE&quot;
+    fi
+  done
+  # read index number
+  while :
+  do
+    read -p &quot;Input index number (number or c=cancel): &quot; DATA
+    # check input number
+    if [ &quot;$DATA&quot; = &quot;c&quot; ]; then
+      echo &quot;Canceled.&quot;
+      break
+    else
+      expr &quot;$DATA&quot; + 1 &gt; /dev/null 2&gt;&amp;1
+      if [ $? -lt 2 ]; then
+        # is Numeric
+        echo -n &quot;$DATA&quot; &gt;| &quot;$AUDIOPATH&quot;
+        pacmd set-default-sink &quot;$DATA&quot;
+        echo &quot;Done.&quot;
+        break
+      else
+        # is not Numeric
+        break
+      fi
+    fi
+  done
+fi
+
+# volume up
+if [ $TARGET = &quot;up&quot; ]; then
+  pactl set-sink-volume $INDEX +5%
+fi
+
+# volume down
+if [ $TARGET = &quot;down&quot; ]; then
+  pactl set-sink-volume $INDEX -5%
+fi
+
+# volume toggle
+if [ $TARGET = &quot;toggle&quot; ]; then
+  pactl set-sink-mute $INDEX toggle
+fi
+
+</code></pre>
+
+<h3 id="シェルスクリプトの使い方">シェルスクリプトの使い方</h3>
+
+<p>簡単なので、説明は不要だと思いますが、いちおう…</p>
+
+<p><code>var/tmp/i3audio.txt</code>にindexを記録するようにしているだけです。</p>
+
+<p><code>i3audio.sh index</code>と実行すると、indexとdeviceを表示するので、数字を入力すればよい。という感じです。</p>
+
+<p>どうやら<code>@DEFAULT_SINK@</code>なるものがあるようなのですが、うまいこと機能しなかったので作りました。</p>
+
+<pre><code>(cmd) ~ $ cat /var/tmp/i3audio.txt
+3
+</code></pre>
+
+<pre><code>(ins) ~ $ i3audio.sh index
+index: 0
+   state: SUSPENDED
+   volume: front-left: 3242 /   5% / -78.34 dB,   front-right: 3242 /   5% / -78.34 dB
+   base volume: 65536 / 100% / 0.00 dB
+   device.description = &quot;Built-in Audio Analog Stereo&quot;
+* index: 3
+   state: RUNNING
+   volume: front-left: 13062 /  20% / -42.03 dB,   front-right: 13062 /  20% / -42.03 dB
+   base volume: 65536 / 100% / 0.00 dB
+   device.description = &quot;Soundcore Liberty Air&quot;
+index: 4
+   state: SUSPENDED
+   volume: front-left: 19656 /  30% / -31.38 dB,   front-right: 19656 /  30% / -31.38 dB
+   base volume: 65536 / 100% / 0.00 dB
+   device.description = &quot;Pixel USB-C earbuds Analog Stereo&quot;
+Input index number (number or c=cancel): 4
+Done.
+</code></pre>
+
+<pre><code>(cmd) ~ $ cat /var/tmp/i3audio.txt
+4
+</code></pre>
+
+<h3 id="参考リンク-6">参考リンク</h3>
+
+<ul>
+<li><a href="https://www.reddit.com/r/i3wm/comments/4lxfe8/yet_another_post_about_volume_keybind_issues/" target="_blank">Yet another post about volume keybind issues</a></li>
+<li><a href="https://faq.i3wm.org/question/125/how-to-change-the-systems-volume.1.html" target="_blank">How to change the systems volume?</a></li>
+<li><a href="https://unix.stackexchange.com/questions/62818/how-can-i-switch-between-different-audio-output-hardware-using-the-shell" target="_blank">How can I switch between different audio output hardware using the shell?</a></li>
+<li><a href="https://unix.stackexchange.com/questions/21089/how-to-use-command-line-to-change-volume" target="_blank">How to use command line to change volume?</a></li>
+</ul>
+
+<h3 id="default-sink-の例">@DEFAULT_SINK@の例</h3>
+
+<pre><code>bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+</code></pre>
+
+<h2 id="bluetoothの設定-bluetoothctl">Bluetoothの設定(bluetoothctl)</h2>
+
+<p>最初は<code>blueman</code>を使っていましたが、現在は<code>bluetoothctl</code>を使っています。</p>
+
+<pre><code>(ins) ~ $ bluetoothctl
+[NEW] Controller 98:3B:8F:B3:61:08 debian [default]
+[NEW] Device 08:EB:ED:9C:C4:FF Soundcore Liberty Air
+
+(ins) [Soundcore Liberty Air]# disconnect
+Attempting to disconnect from 08:EB:ED:9C:C4:FF
+[CHG] Device 08:EB:ED:9C:C4:FF ServicesResolved: no
+Successful disconnected
+[CHG] Device 08:EB:ED:9C:C4:FF Connected: no
+
+(ins) [bluetooth]# connect 08:EB:ED:9C:C4:FF
+Attempting to connect to 08:EB:ED:9C:C4:FF
+[CHG] Device 08:EB:ED:9C:C4:FF Connected: yes
+Connection successful
+[CHG] Device 08:EB:ED:9C:C4:FF ServicesResolved: yes
+
+(ins) [Soundcore Liberty Air]#
+</code></pre>
+
+<pre><code>(ins) [bluetooth]# help
+Available commands:
+  list                       List available controllers
+  show [ctrl]                Controller information
+  select &lt;ctrl&gt;              Select default controller
+  devices                    List available devices
+  paired-devices             List paired devices
+  power &lt;on/off&gt;             Set controller power
+  pairable &lt;on/off&gt;          Set controller pairable mode
+  discoverable &lt;on/off&gt;      Set controller discoverable mode
+  agent &lt;on/off/capability&gt;  Enable/disable agent with given capability
+  default-agent              Set agent as the default one
+  advertise &lt;on/off/type&gt;    Enable/disable advertising with given type
+  set-advertise-uuids [uuid1 uuid2 ...] Set advertise uuids
+  set-advertise-service [uuid][data=[xx xx ...] Set advertise service data
+  set-advertise-manufacturer [id][data=[xx xx ...] Set advertise manufacturer data
+  set-advertise-tx-power &lt;on/off&gt; Enable/disable TX power to be advertised
+  set-scan-filter-uuids [uuid1 uuid2 ...] Set scan filter uuids
+  set-scan-filter-rssi [rssi] Set scan filter rssi, and clears pathloss
+  set-scan-filter-pathloss [pathloss] Set scan filter pathloss, and clears rssi
+  set-scan-filter-transport [transport] Set scan filter transport
+  set-scan-filter-clear      Clears discovery filter.
+  scan &lt;on/off&gt;              Scan for devices
+  info [dev]                 Device information
+  pair [dev]                 Pair with device
+  trust [dev]                Trust device
+  untrust [dev]              Untrust device
+  block [dev]                Block device
+  unblock [dev]              Unblock device
+  remove &lt;dev&gt;               Remove device
+  connect &lt;dev&gt;              Connect device
+  disconnect [dev]           Disconnect device
+  list-attributes [dev]      List attributes
+  set-alias &lt;alias&gt;          Set device alias
+  select-attribute &lt;attribute&gt; Select attribute
+  attribute-info [attribute] Select attribute
+  read                       Read attribute value
+  write &lt;data=[xx xx ...]&gt;   Write attribute value
+  notify &lt;on/off&gt;            Notify attribute value
+  register-profile &lt;UUID ...&gt; Register profile to connect
+  unregister-profile         Unregister profile
+  version                    Display version
+  quit                       Quit program
+</code></pre>
+
+<h2 id="ネットワークの設定-nmcli">ネットワークの設定(nmcli)</h2>
+
+<p>最初は<code>nm-applet</code>を使っていましたが、現在は<code>nmcli</code>を使っています。</p>
+
+<pre><code>(cmd) ~ $ nmcli device wifi list
+*  SSID                     MODE   CHAN  RATE       SIGNAL  BARS  SECURITY
+   z5j5zb82ds-network       Infra  6     54 Mbit/s  82      ▂▄▆█  WPA2
+*  z5j5zb82ds-network-5GHz  Infra  100   54 Mbit/s  60      ▂▄▆_  WPA2
+   AirPort23728             Infra  5     54 Mbit/s  59      ▂▄▆_  WPA1 WPA2
+   Game23728                Infra  5     54 Mbit/s  59      ▂▄▆_  WEP
+   wx03-0d7465              Infra  6     54 Mbit/s  54      ▂▄__  WPA1 WPA2
+   FS030W_P25856            Infra  11    54 Mbit/s  52      ▂▄__  WPA2
+   pwr-q9526fa-1            Infra  6     54 Mbit/s  45      ▂▄__  WPA2
+   0024A5D76337-1           Infra  6     54 Mbit/s  42      ▂▄__  WPA1
+   --                       Infra  6     54 Mbit/s  42      ▂▄__  WEP
+   2400BACA560A-2G          Infra  8     54 Mbit/s  42      ▂▄__  WPA1 WPA2
+   Buffalo-G-AD78           Infra  6     54 Mbit/s  37      ▂▄__  WPA1 WPA2
+   2400BACA560A-5G          Infra  116   54 Mbit/s  35      ▂▄__  WPA1 WPA2
+   HUMAX-7FF3C-A            Infra  136   54 Mbit/s  35      ▂▄__  WPA1 WPA2
+   HUMAX-34C66              Infra  1     54 Mbit/s  34      ▂▄__  WPA1 WPA2
+   pr500m-aa1e02-2          Infra  11    54 Mbit/s  34      ▂▄__  WPA2
+   pr500m-aa1e02-1          Infra  11    54 Mbit/s  30      ▂___  WPA2
+   HUMAX-7FF3C              Infra  1     54 Mbit/s  29      ▂___  WPA1 WPA2
+   aterm-9de1e8-g           Infra  1     54 Mbit/s  29      ▂___  WPA1 WPA2
+   Buffalo-G-DB48           Infra  11    54 Mbit/s  29      ▂___  WPA1 WPA2
+   Extender-G-7258          Infra  11    54 Mbit/s  29      ▂___  WPA2
+</code></pre>
+
+<pre><code>(ins) ~ $ nmcli device wifi connect
+--                       2400BACA560A-5G          Buffalo-G-AD78           FS030W_P25856            HUMAX-7FF3C              pr500m-aa1e02-2          z5j5zb82ds-network
+0024A5D76337-1           AirPort23728             Buffalo-G-DB48           Game23728                HUMAX-7FF3C-A            pwr-q9526fa-1            z5j5zb82ds-network-5GHz
+2400BACA560A-2G          aterm-9de1e8-g           Extender-G-7258          HUMAX-34C66              pr500m-aa1e02-1          wx03-0d7465
+
+(ins) ~ $ nmcli device wifi connect z5 &lt;-タブで補完される
+z5j5zb82ds-network       z5j5zb82ds-network-5GHz
+
+(ins) ~ $ nmcli device wifi connect z5j5zb82ds-network password HOGE
+Device 'wlp61s0' successfully activated with '8e11011c-11a1-4446-be23-13a6a19acb6b'.
+</code></pre>
+
+<pre><code>(ins) ~ $ nmcli help
+Usage: nmcli [OPTIONS] OBJECT { COMMAND | help }
+
+OPTIONS
+  -t[erse]                                   terse output
+  -p[retty]                                  pretty output
+  -m[ode] tabular|multiline                  output mode
+  -c[olors] auto|yes|no                      whether to use colors in output
+  -f[ields] &lt;field1,field2,...&gt;|all|common   specify fields to output
+  -e[scape] yes|no                           escape columns separators in values
+  -a[sk]                                     ask for missing parameters
+  -s[how-secrets]                            allow displaying passwords
+  -w[ait] &lt;seconds&gt;                          set timeout waiting for finishing operations
+  -v[ersion]                                 show program version
+  -h[elp]                                    print this help
+
+OBJECT
+  g[eneral]       NetworkManager's general status and operations
+  n[etworking]    overall networking control
+  r[adio]         NetworkManager radio switches
+  c[onnection]    NetworkManager's connections
+  d[evice]        devices managed by NetworkManager
+  a[gent]         NetworkManager secret agent or polkit agent
+  m[onitor]       monitor NetworkManager changes
+</code></pre>
+
+<h2 id="i3lock-bin-i3lock-sh">i3lock(~/bin/i3lock.sh)</h2>
+
+<pre><code>~/bin/i3lock.sh
+
+#!/bin/sh
+i3lock -e -i ~/.config/i3/images/background.png
+</code></pre>
+
+<p><code>-e</code> オプションはお好みで。</p>
+
+<pre><code> -e, --ignore-empty-password
+        When an empty password is provided by the user, do not validate it. Without this option, the empty password will be provided to PAM and, if invalid, the user will have to wait a few  seconds  before  another
+        try. This can be useful if the XF86ScreenSaver key is used to put a laptop to sleep and bounce on resume or if you happen to wake up your computer with the enter key.
+</code></pre>
+
+<h2 id="キーマップの設定-bin-i3setxkb-sh">キーマップの設定(~/bin/i3setxkb.sh)</h2>
+
+<p>最初は、これでやってたが<code>.Xmodmap</code>を使っているため、使わなくなった。</p>
+
+<pre><code>~/bin/i3setxkb.sh
+
+#!/bin/sh
+setxkbmap -option &quot;caps:ctrl_modifier,ctrl:swap_lalt_lctl_lwin,terminate:ctrl_alt_bksp,altwin:swap_alt_win&quot;
+</code></pre>
+
+<h2 id="ディスプレイの設定-screenlayout-2048x1152-sh">ディスプレイの設定(~/.screenlayout/2048x1152.sh)</h2>
+
+<p><code>arandr</code>というコマンドがおすすめです。</p>
+
+<p>GUIアプリで、マルチディスプレイの設定も比較的うまいことできます。</p>
+
+<p>設定を保存すると、以下のようなシェルスクリプトが生成されます。</p>
+
+<p>i3のconfigで、起動時に以下のシェルスクリプトを実行しています。</p>
+
+<pre><code>~/.screenlayout/2048x1152.sh
+
+#!/bin/sh
+xrandr --output VIRTUAL1 --off --output eDP1 --mode 2048x1152 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+</code></pre>
+
+<h2 id="スクリーンショット-画面録画-kazam">スクリーンショット、画面録画(kazam)</h2>
+
+<p><code>simplescreenrecorder</code>が良いって記事を見るけど、個人的には<code>kazam</code>の方が良いので、使っている。</p>
+
+<pre><code>sudo aptitude show kazam
+</code></pre>
+
+<h2 id="aptのhistoryの場所">aptのhistoryの場所</h2>
+
+<pre><code>/var/log/apt/history.log
+/var/log/apt/history.log.1.gz
+/var/log/dpkg.log
+/var/log/dpkg.log.1
+</code></pre>
+
+<h2 id="インストールしたパッケージや使っているコマンドなど">インストールしたパッケージや使っているコマンドなど</h2>
+
+<ul>
+<li>go</li>
+<li>fzf</li>
+<li>vim</li>
+<li>font(いろいろ)</li>
+<li>vmware player</li>
+<li>nodebrew</li>
+<li>yarn</li>
+<li>ternjs</li>
+<li>JetBrains Toolbox</li>
+<li>Sublime Text</li>
+<li>VSCode</li>
+<li>xsel</li>
+<li>sheetskv(自分で作ったCLIツール)</li>
+<li>oathtool</li>
+<li>aptitude</li>
+<li>Google Chrome</li>
+<li>Firefox</li>
+<li>KeePassXC</li>
+<li>skicka</li>
+<li>aws CLI</li>
+<li>gcp CLI</li>
+<li>i3status</li>
+<li>i3lock</li>
+<li>curl</li>
+<li>httpie</li>
+<li>lightdm</li>
+<li>blueman(bluetoothctlコマンドを使っているので、使っていない)</li>
+<li>nm-applet(nmcliコマンドを使っているので、使っていない)</li>
+<li>pasystray(i3audio.shを使っているので、使っていない)</li>
+<li>docker</li>
+<li>zeal</li>
+<li>dconf-editor</li>
+<li>firmware-iwlwifi</li>
+<li>feh</li>
+<li>tig</li>
+<li>trash-cli</li>
+<li>tmux</li>
+<li>parcellite</li>
+<li>VirtulBox</li>
+<li>gparted</li>
+<li>cmake</li>
+<li>ffmpeg</li>
+<li>mps-youtube(cmusに移行したので、使っていない)</li>
+<li>youtube-dl</li>
+<li>weechat</li>
+<li>simplescreenrecorder(kazamの方がよい)</li>
+<li>tree</li>
+<li>mplayer</li>
+<li>strongswan</li>
+<li>xl2tpd</li>
+<li>xautolock</li>
+<li>exuberant-ctags</li>
+<li>kazam</li>
+<li>vokoscreen</li>
+<li>obs-studio</li>
+<li>gtk-recordmydesktop</li>
+<li>recordmydesktop</li>
+<li>mutt</li>
+<li>lightdm-gtk-greeter-settings</li>
+<li>jq</li>
+<li>cmus</li>
+<li>xdotool</li>
+<li>bluez-tools</li>
+<li>screenfetch</li>
+<li>rxvt-unicode-256color</li>
+<li>xinput</li>
+<li>libinput-tools</li>
+<li>debian-keyring</li>
+</ul>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>Debianもi3wmも、まだまだビギナーなので、これからも使っていきたい。</p></div>
+
+  <footer class="article-footer">
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://www.trhrkmk.com/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.trhrkmk.com/posts/" itemprop="url"><span itemprop="title">POSTS</span></a></li>
+            
+            <li class="active">ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/categories/i3wm/">i3wm</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://www.trhrkmk.com/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://www.trhrkmk.com/tags/i3wm/">i3wm</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/thinkpad/">ThinkPad</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/t480s/">T480s</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/debian/">Debian</a></li>
+          
+          <li><a href="https://www.trhrkmk.com/tags/stretch/">Stretch</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/download-youtube-dl-playlist/">
+    <div class="thumb thumb-c65a27d390a620d7bd687fb6b44b12ea"></div>
+
+    <div class="inner">
+      <div class="title">youtube-dlを使ってプレイリストを一括ダウンロードした</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-02T11:14:10JST">2019-01-02</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p>&copy; <a href="https://twitter.com/trhrkmk">trhrkmk</a> 2018</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+    <amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-7253798718530910">
+</amp-auto-ads>
+  </body>
+</html>
+
