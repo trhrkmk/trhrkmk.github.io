@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</loc>
     <lastmod>2019-01-09T22:40:13+09:00</lastmod>
   </url>
@@ -136,6 +141,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/amp/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/arp-scan/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
@@ -226,6 +237,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/embed/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/categories/file-permission/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
     <priority>0</priority>
@@ -287,7 +304,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
-    <lastmod>2019-01-09T22:40:13+09:00</lastmod>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -299,13 +316,13 @@
   
   <url>
     <loc>https://www.trhrkmk.com/tags/hugo/</loc>
-    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.trhrkmk.com/categories/hugo/</loc>
-    <lastmod>2018-09-15T18:40:06+09:00</lastmod>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -383,7 +400,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2019-01-09T22:40:13+09:00</lastmod>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -420,6 +437,12 @@
   <url>
     <loc>https://www.trhrkmk.com/categories/shell-script/</loc>
     <lastmod>2019-01-02T01:31:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/shortcode/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -486,6 +509,18 @@
   <url>
     <loc>https://www.trhrkmk.com/tags/tips/</loc>
     <lastmod>2018-09-11T22:30:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/tweet/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/twitter/</loc>
+    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   

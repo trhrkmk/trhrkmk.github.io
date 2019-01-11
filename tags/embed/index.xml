@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embed on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/tags/embed/</link>
+    <description>Recent content in Embed on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Fri, 11 Jan 2019 09:22:12 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/tags/embed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo(AMP対応)にTwitterのツイートを埋め込む時のメモ</title>
+      <link>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</link>
+      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</guid>
+      <description>&lt;p&gt;このブログは&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34; target=&#34;_blank&#34;&gt;Robust&lt;/a&gt;を使わせて頂いております。&lt;/p&gt;
+
+&lt;p&gt;AMPに対応してますし素敵なThemeで、すごく気に入っています！&lt;/p&gt;
+
+&lt;p&gt;開発者の &lt;a href=&#34;https://twitter.com/dim0627&#34; target=&#34;_blank&#34;&gt;@dim0627&lt;/a&gt; さん、本当にありがとうございます m(_ _)m&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
