@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.trhrkmk.com/posts/thinkpad-bluetooth-keyboard-keytop-orderd/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</loc>
     <lastmod>2019-01-11T09:22:12+09:00</lastmod>
   </url>
@@ -177,6 +182,12 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/bluetooth/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/tags/build/</loc>
     <lastmod>2018-12-31T10:32:28+09:00</lastmod>
     <priority>0</priority>
@@ -304,7 +315,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/</loc>
-    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -341,6 +352,24 @@
   <url>
     <loc>https://www.trhrkmk.com/tags/icon/</loc>
     <lastmod>2018-09-10T11:23:36+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/keyboard/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/tags/keytop/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.trhrkmk.com/categories/keytop/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -399,8 +428,14 @@
   </url>
   
   <url>
+    <loc>https://www.trhrkmk.com/tags/orderd/</loc>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.trhrkmk.com/posts/</loc>
-    <lastmod>2019-01-11T09:22:12+09:00</lastmod>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -502,7 +537,7 @@
   
   <url>
     <loc>https://www.trhrkmk.com/tags/thinkpad/</loc>
-    <lastmod>2019-01-09T22:40:13+09:00</lastmod>
+    <lastmod>2019-02-01T21:36:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
