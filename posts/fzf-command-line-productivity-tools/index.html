@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.48" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="apple-touch-icon" href="https://www.trhrkmk.com/images/logo.png">
 
@@ -24,21 +24,21 @@
 
 <link rel="amphtml" type="text/html" href="https://www.trhrkmk.com/amp/posts/fzf-command-line-productivity-tools/">
 
-<meta name="description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;">
 
 <meta property="og:title" content="fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
 <meta property="og:image" content="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-7.png">
 <meta property="og:site_name" content="HHKBは体の一部">
-<meta property="og:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="HHKBは体の一部">
 <meta name="twitter:url" content="https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/">
 <meta name="twitter:title" content="fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部">
-<meta name="twitter:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:description" content="&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;">
 <meta name="twitter:image" content="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-7.png">
 
 
@@ -48,12 +48,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://www.trhrkmk.com/"
+      "@id":"https:\/\/www.trhrkmk.com\/"
     },
     "headline": "fzfを使ってターミナルでの作業を効率化する - HHKBは体の一部",
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-7.png",
+      "url": "https:\/\/www.trhrkmk.com\/images\/fzf-command-line-productivity-tools\/fzf-command-line-tools-7.png",
       "height": 800,
       "width": 800
     },
@@ -68,16 +68,12 @@
       "name": "HHKBは体の一部",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.trhrkmk.com/images/logo.png",
+        "url": "https:\/\/www.trhrkmk.com\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": "<p>タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。</p>
-
-<p>すごく快適になるので、試してみてほしいです！</p>
-
-<p></p>"
+    "description": "\x3cp\x3eタイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。\x3c\/p\x3e\n\n\x3cp\x3eすごく快適になるので、試してみてほしいです！\x3c\/p\x3e"
   }
 </script>
 
@@ -219,8 +215,6 @@ if (!doNotTrack) {
 
 <p>すごく快適になるので、試してみてほしいです！</p>
 
-<p></p>
-
 <h2 id="fzfを使うと-どのように効率化できるのか">fzfを使うと、どのように効率化できるのか？</h2>
 
 <p>ターミナル内でのディレクトリの移動が快適にできるようになります。</p>
@@ -238,7 +232,6 @@ if (!doNotTrack) {
   
 </figure>
 
-
 <p>ちなみに、私は以下のデフォルトオプションを設定しています。</p>
 
 <pre><code>export FZF_DEFAULT_OPTS=&quot;--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'&quot;
@@ -252,7 +245,6 @@ if (!doNotTrack) {
   <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-2.gif" alt="" width="auto" height="auto">
   
 </figure>
-
 
 <h2 id="各種リンク">各種リンク</h2>
 
@@ -295,7 +287,6 @@ README.md
   
 </figure>
 
-
 <h3 id="vimで開く">Vimで開く</h3>
 
 <pre><code>vim $(fzf)
@@ -305,7 +296,6 @@ README.md
   <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-4.gif" alt="" width="auto" height="auto">
   
 </figure>
-
 
 <h3 id="heightオプションをつけて実行する">&ndash;heightオプションをつけて実行する</h3>
 
@@ -317,7 +307,6 @@ README.md
   
 </figure>
 
-
 <h3 id="reverseオプションをつけて実行する">&ndash;reverseオプションをつけて実行する</h3>
 
 <pre><code>vim $(fzf --height 40% --reverse)
@@ -327,7 +316,6 @@ README.md
   <img src="https://www.trhrkmk.com/images/fzf-command-line-productivity-tools/fzf-command-line-tools-6.gif" alt="" width="auto" height="auto">
   
 </figure>
-
 
 <h2 id="デフォルトのオプションを設定する">デフォルトのオプションを設定する</h2>
 
@@ -585,6 +573,24 @@ tm() {
   <header>LATESTS</header>
   <div>
     <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://www.trhrkmk.com/posts/gmail-search-for-unlabeled-mail/">
+    <div class="thumb thumb-89514de232f9ff5d10f379dc12a86835"></div>
+
+    <div class="inner">
+      <div class="title">Gmailでラベルのないメールを検索する演算子のメモ</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-06-08T16:40:42JST">2019-06-08</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
       
       <article class="lism">
   <a href="https://www.trhrkmk.com/posts/thinkpad-bluetooth-keyboard-keytop-orderd/">
@@ -916,24 +922,6 @@ tm() {
 
     <div class="inner">
       <div class="title">Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POSTS</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://www.trhrkmk.com/posts/filemaker-fmperception-check-unreferenced/">
-    <div class="thumb thumb-b83507c5dabe1c8dc80f6d0e5d00803d"></div>
-
-    <div class="inner">
-      <div class="title">FMPerceptionで使われていないフィールドやスクリプトを削除する時のメモ</div>
 
       <ul class="facts sm">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-09-10T11:23:36JST">2018-09-10</time></li>

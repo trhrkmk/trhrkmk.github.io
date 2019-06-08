@@ -7,89 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
-    <lastBuildDate>Mon, 27 Aug 2018 17:42:49 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 16:40:42 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Arp Scan</title>
-      <link>https://www.trhrkmk.com/categories/arp-scan/</link>
-      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      <title>Gmail</title>
+      <link>https://www.trhrkmk.com/categories/gmail/</link>
+      <pubDate>Sat, 08 Jun 2019 16:40:42 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/categories/arp-scan/</guid>
+      <guid>https://www.trhrkmk.com/categories/gmail/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bash</title>
-      <link>https://www.trhrkmk.com/categories/bash/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      <title>keytop</title>
+      <link>https://www.trhrkmk.com/categories/keytop/</link>
+      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/categories/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bashrc</title>
-      <link>https://www.trhrkmk.com/categories/bashrc/</link>
-      <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/bashrc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command</title>
-      <link>https://www.trhrkmk.com/categories/command/</link>
-      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debian</title>
-      <link>https://www.trhrkmk.com/categories/debian/</link>
-      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>File Permission</title>
-      <link>https://www.trhrkmk.com/categories/file-permission/</link>
-      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/file-permission/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Filemaker</title>
-      <link>https://www.trhrkmk.com/categories/filemaker/</link>
-      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/filemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Filemaker Server</title>
-      <link>https://www.trhrkmk.com/categories/filemaker-server/</link>
-      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/filemaker-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fzf</title>
-      <link>https://www.trhrkmk.com/categories/fzf/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/fzf/</guid>
+      <guid>https://www.trhrkmk.com/categories/keytop/</guid>
       <description></description>
     </item>
     
@@ -103,7 +40,7 @@
     </item>
     
     <item>
-      <title>I3wm</title>
+      <title>i3wm</title>
       <link>https://www.trhrkmk.com/categories/i3wm/</link>
       <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
       
@@ -112,43 +49,16 @@
     </item>
     
     <item>
-      <title>Keytop</title>
-      <link>https://www.trhrkmk.com/categories/keytop/</link>
-      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
+      <title>youtube-dl</title>
+      <link>https://www.trhrkmk.com/categories/youtube-dl/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/categories/keytop/</guid>
+      <guid>https://www.trhrkmk.com/categories/youtube-dl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lets Encrypt</title>
-      <link>https://www.trhrkmk.com/categories/lets-encrypt/</link>
-      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/lets-encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Look Back</title>
-      <link>https://www.trhrkmk.com/categories/look-back/</link>
-      <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/look-back/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macos</title>
-      <link>https://www.trhrkmk.com/categories/macos/</link>
-      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/categories/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell Script</title>
+      <title>Shell script</title>
       <link>https://www.trhrkmk.com/categories/shell-script/</link>
       <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
       
@@ -157,11 +67,11 @@
     </item>
     
     <item>
-      <title>T480s</title>
-      <link>https://www.trhrkmk.com/categories/t480s/</link>
-      <pubDate>Fri, 28 Dec 2018 22:32:52 +0900</pubDate>
+      <title>look back</title>
+      <link>https://www.trhrkmk.com/categories/look-back/</link>
+      <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/categories/t480s/</guid>
+      <guid>https://www.trhrkmk.com/categories/look-back/</guid>
       <description></description>
     </item>
     
@@ -175,11 +85,110 @@
     </item>
     
     <item>
-      <title>Youtube Dl</title>
-      <link>https://www.trhrkmk.com/categories/youtube-dl/</link>
-      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      <title>T480s</title>
+      <link>https://www.trhrkmk.com/categories/t480s/</link>
+      <pubDate>Fri, 28 Dec 2018 22:32:52 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/categories/youtube-dl/</guid>
+      <guid>https://www.trhrkmk.com/categories/t480s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://www.trhrkmk.com/categories/bash/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fzf</title>
+      <link>https://www.trhrkmk.com/categories/fzf/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/fzf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bashrc</title>
+      <link>https://www.trhrkmk.com/categories/bashrc/</link>
+      <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/bashrc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://www.trhrkmk.com/categories/lets-encrypt/</link>
+      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FileMaker Server</title>
+      <link>https://www.trhrkmk.com/categories/filemaker-server/</link>
+      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/filemaker-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FileMaker</title>
+      <link>https://www.trhrkmk.com/categories/filemaker/</link>
+      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/filemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://www.trhrkmk.com/categories/debian/</link>
+      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file permission</title>
+      <link>https://www.trhrkmk.com/categories/file-permission/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/file-permission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://www.trhrkmk.com/categories/macos/</link>
+      <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>https://www.trhrkmk.com/categories/command/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arp-scan</title>
+      <link>https://www.trhrkmk.com/categories/arp-scan/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/categories/arp-scan/</guid>
       <description></description>
     </item>
     

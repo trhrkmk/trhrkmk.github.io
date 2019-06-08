@@ -22,9 +22,7 @@
 
 &lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;
 
-&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +33,7 @@
       <guid>https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/</guid>
       <description>&lt;p&gt;FileMaker Server(Windows Server)に&lt;strong&gt;Let&amp;rsquo;s EncryptのSSL証明書&lt;/strong&gt;を設定する際のメモ。&lt;/p&gt;
 
-&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;</description>
     </item>
     
   </channel>

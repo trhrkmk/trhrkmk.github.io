@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>File Permission on HHKBは体の一部</title>
+    <title>file permission on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/categories/file-permission/</link>
-    <description>Recent content in File Permission on HHKBは体の一部</description>
+    <description>Recent content in file permission on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
@@ -18,9 +18,7 @@
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
-      <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;</description>
     </item>
     
   </channel>

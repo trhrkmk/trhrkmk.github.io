@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arp Scan on HHKBは体の一部</title>
+    <title>arp-scan on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/categories/arp-scan/</link>
-    <description>Recent content in Arp Scan on HHKBは体の一部</description>
+    <description>Recent content in arp-scan on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</guid>
       <description>&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;
 
-&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;</description>
     </item>
     
   </channel>

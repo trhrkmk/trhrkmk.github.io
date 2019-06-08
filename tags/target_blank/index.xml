@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Target_blank on HHKBは体の一部</title>
+    <title>target=&#39;_blank&#39; on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/tags/target_blank/</link>
-    <description>Recent content in Target_blank on HHKBは体の一部</description>
+    <description>Recent content in target=&#39;_blank&#39; on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
       <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
       <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;</description>
     </item>
     
   </channel>

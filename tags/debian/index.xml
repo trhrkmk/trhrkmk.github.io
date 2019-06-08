@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</guid>
       <description>&lt;p&gt;ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。&lt;/p&gt;
 
-&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +31,7 @@
       <guid>https://www.trhrkmk.com/posts/vim-build-note-on-debian/</guid>
       <description>&lt;p&gt;Vimをビルドするときの&lt;code&gt;configure&lt;/code&gt;のオプションをメモっておく。&lt;/p&gt;
 
-&lt;p&gt;詳細は vim-jp の記事を見るのが良いと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;詳細は vim-jp の記事を見るのが良いと思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,9 +42,7 @@
       <guid>https://www.trhrkmk.com/posts/purchased-thinkpad-t480s/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.lenovo.com/jp/ja/notebooks/thinkpad/t-series/ThinkPad-T480s/p/22TP2TT480S&#34; target=&#34;_blank&#34;&gt;ThinkPad T480s&lt;/a&gt; を購入した。&lt;/p&gt;
 
-&lt;p&gt;購入後、しばらく使っているけど、かなり満足してる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;購入後、しばらく使っているけど、かなり満足してる。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +51,7 @@
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
-      <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +62,7 @@
       <guid>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</guid>
       <description>&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;
 
-&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;</description>
     </item>
     
   </channel>

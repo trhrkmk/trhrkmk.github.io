@@ -7,67 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
-    <lastBuildDate>Mon, 08 Oct 2018 23:43:10 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 16:40:42 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>.Bashrc</title>
-      <link>https://www.trhrkmk.com/tags/.bashrc/</link>
-      <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
+      <title>Gmail</title>
+      <link>https://www.trhrkmk.com/tags/gmail/</link>
+      <pubDate>Sat, 08 Jun 2019 16:40:42 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/.bashrc/</guid>
+      <guid>https://www.trhrkmk.com/tags/gmail/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>.Inputrc</title>
-      <link>https://www.trhrkmk.com/tags/.inputrc/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      <title>ThinkPad</title>
+      <link>https://www.trhrkmk.com/tags/thinkpad/</link>
+      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/.inputrc/</guid>
+      <guid>https://www.trhrkmk.com/tags/thinkpad/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Addthis</title>
-      <link>https://www.trhrkmk.com/tags/addthis/</link>
-      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/addthis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Amp</title>
-      <link>https://www.trhrkmk.com/tags/amp/</link>
-      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/amp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://www.trhrkmk.com/tags/bash/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bitnami</title>
-      <link>https://www.trhrkmk.com/tags/bitnami/</link>
-      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/bitnami/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bluetooth</title>
+      <title>bluetooth</title>
       <link>https://www.trhrkmk.com/tags/bluetooth/</link>
       <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
@@ -76,137 +40,38 @@
     </item>
     
     <item>
-      <title>Build</title>
-      <link>https://www.trhrkmk.com/tags/build/</link>
-      <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
+      <title>keyboard</title>
+      <link>https://www.trhrkmk.com/tags/keyboard/</link>
+      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/build/</guid>
+      <guid>https://www.trhrkmk.com/tags/keyboard/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cli</title>
-      <link>https://www.trhrkmk.com/tags/cli/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      <title>keytop</title>
+      <link>https://www.trhrkmk.com/tags/keytop/</link>
+      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/cli/</guid>
+      <guid>https://www.trhrkmk.com/tags/keytop/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Command</title>
-      <link>https://www.trhrkmk.com/tags/command/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      <title>orderd</title>
+      <link>https://www.trhrkmk.com/tags/orderd/</link>
+      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/command/</guid>
+      <guid>https://www.trhrkmk.com/tags/orderd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Command Line</title>
-      <link>https://www.trhrkmk.com/tags/command-line/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/command-line/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debian</title>
-      <link>https://www.trhrkmk.com/tags/debian/</link>
-      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dns</title>
-      <link>https://www.trhrkmk.com/tags/dns/</link>
-      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Download</title>
-      <link>https://www.trhrkmk.com/tags/download/</link>
-      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/download/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Embed</title>
-      <link>https://www.trhrkmk.com/tags/embed/</link>
+      <title>AMP</title>
+      <link>https://www.trhrkmk.com/tags/amp/</link>
       <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/embed/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Filemaker</title>
-      <link>https://www.trhrkmk.com/tags/filemaker/</link>
-      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/filemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Filemaker Server</title>
-      <link>https://www.trhrkmk.com/tags/filemaker-server/</link>
-      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/filemaker-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Firefox</title>
-      <link>https://www.trhrkmk.com/tags/firefox/</link>
-      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/firefox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fmperception</title>
-      <link>https://www.trhrkmk.com/tags/fmperception/</link>
-      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/fmperception/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fzf</title>
-      <link>https://www.trhrkmk.com/tags/fzf/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/fzf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://www.trhrkmk.com/tags/golang/</link>
-      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Href</title>
-      <link>https://www.trhrkmk.com/tags/href/</link>
-      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/href/</guid>
+      <guid>https://www.trhrkmk.com/tags/amp/</guid>
       <description></description>
     </item>
     
@@ -216,240 +81,6 @@
       <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>I3wm</title>
-      <link>https://www.trhrkmk.com/tags/i3wm/</link>
-      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/i3wm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Icon</title>
-      <link>https://www.trhrkmk.com/tags/icon/</link>
-      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/icon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Keyboard</title>
-      <link>https://www.trhrkmk.com/tags/keyboard/</link>
-      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/keyboard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Keytop</title>
-      <link>https://www.trhrkmk.com/tags/keytop/</link>
-      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/keytop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lets Encrypt</title>
-      <link>https://www.trhrkmk.com/tags/lets-encrypt/</link>
-      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/lets-encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lightsail</title>
-      <link>https://www.trhrkmk.com/tags/lightsail/</link>
-      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/lightsail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://www.trhrkmk.com/tags/linux/</link>
-      <pubDate>Fri, 28 Dec 2018 22:32:52 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Look Back</title>
-      <link>https://www.trhrkmk.com/tags/look-back/</link>
-      <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/look-back/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mp3</title>
-      <link>https://www.trhrkmk.com/tags/mp3/</link>
-      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/mp3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>New Tab</title>
-      <link>https://www.trhrkmk.com/tags/new-tab/</link>
-      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/new-tab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Orderd</title>
-      <link>https://www.trhrkmk.com/tags/orderd/</link>
-      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/orderd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Productivity</title>
-      <link>https://www.trhrkmk.com/tags/productivity/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/productivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi</title>
-      <link>https://www.trhrkmk.com/tags/raspberry-pi/</link>
-      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/raspberry-pi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redmine</title>
-      <link>https://www.trhrkmk.com/tags/redmine/</link>
-      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/redmine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Share Button</title>
-      <link>https://www.trhrkmk.com/tags/share-button/</link>
-      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/share-button/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell Script</title>
-      <link>https://www.trhrkmk.com/tags/shell-script/</link>
-      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/shell-script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shortcode</title>
-      <link>https://www.trhrkmk.com/tags/shortcode/</link>
-      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/shortcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssl</title>
-      <link>https://www.trhrkmk.com/tags/ssl/</link>
-      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/ssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stretch</title>
-      <link>https://www.trhrkmk.com/tags/stretch/</link>
-      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/stretch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>T480s</title>
-      <link>https://www.trhrkmk.com/tags/t480s/</link>
-      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/t480s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Target_blank</title>
-      <link>https://www.trhrkmk.com/tags/target_blank/</link>
-      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/target_blank/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Terminal</title>
-      <link>https://www.trhrkmk.com/tags/terminal/</link>
-      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/terminal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Texpander</title>
-      <link>https://www.trhrkmk.com/tags/texpander/</link>
-      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/texpander/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Textexpander</title>
-      <link>https://www.trhrkmk.com/tags/textexpander/</link>
-      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/textexpander/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thinkpad</title>
-      <link>https://www.trhrkmk.com/tags/thinkpad/</link>
-      <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/thinkpad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
-      <link>https://www.trhrkmk.com/tags/tips/</link>
-      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -472,47 +103,101 @@
     </item>
     
     <item>
-      <title>Vi</title>
-      <link>https://www.trhrkmk.com/tags/vi/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      <title>embed</title>
+      <link>https://www.trhrkmk.com/tags/embed/</link>
+      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/vi/</guid>
+      <guid>https://www.trhrkmk.com/tags/embed/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vi Mode</title>
-      <link>https://www.trhrkmk.com/tags/vi-mode/</link>
-      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      <title>shortcode</title>
+      <link>https://www.trhrkmk.com/tags/shortcode/</link>
+      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/vi-mode/</guid>
+      <guid>https://www.trhrkmk.com/tags/shortcode/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vim</title>
-      <link>https://www.trhrkmk.com/tags/vim/</link>
-      <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
+      <title>Debian</title>
+      <link>https://www.trhrkmk.com/tags/debian/</link>
+      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/vim/</guid>
+      <guid>https://www.trhrkmk.com/tags/debian/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Win Acme</title>
-      <link>https://www.trhrkmk.com/tags/win-acme/</link>
-      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      <title>Stretch</title>
+      <link>https://www.trhrkmk.com/tags/stretch/</link>
+      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/win-acme/</guid>
+      <guid>https://www.trhrkmk.com/tags/stretch/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Windows Server</title>
-      <link>https://www.trhrkmk.com/tags/windows-server/</link>
-      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      <title>T480s</title>
+      <link>https://www.trhrkmk.com/tags/t480s/</link>
+      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
       
-      <guid>https://www.trhrkmk.com/tags/windows-server/</guid>
+      <guid>https://www.trhrkmk.com/tags/t480s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>i3wm</title>
+      <link>https://www.trhrkmk.com/tags/i3wm/</link>
+      <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/i3wm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>download</title>
+      <link>https://www.trhrkmk.com/tags/download/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/download/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mp3</title>
+      <link>https://www.trhrkmk.com/tags/mp3/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/mp3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>https://www.trhrkmk.com/tags/youtube-dl/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/youtube-dl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://www.trhrkmk.com/tags/golang/</link>
+      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell script</title>
+      <link>https://www.trhrkmk.com/tags/shell-script/</link>
+      <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/shell-script/</guid>
       <description></description>
     </item>
     
@@ -526,20 +211,344 @@
     </item>
     
     <item>
-      <title>Youtube Dl</title>
-      <link>https://www.trhrkmk.com/tags/youtube-dl/</link>
-      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
-      
-      <guid>https://www.trhrkmk.com/tags/youtube-dl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ytdl</title>
+      <title>ytdl</title>
       <link>https://www.trhrkmk.com/tags/ytdl/</link>
       <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/tags/ytdl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>look back</title>
+      <link>https://www.trhrkmk.com/tags/look-back/</link>
+      <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/look-back/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Build</title>
+      <link>https://www.trhrkmk.com/tags/build/</link>
+      <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://www.trhrkmk.com/tags/vim/</link>
+      <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.trhrkmk.com/tags/linux/</link>
+      <pubDate>Fri, 28 Dec 2018 22:32:52 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.inputrc</title>
+      <link>https://www.trhrkmk.com/tags/.inputrc/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/.inputrc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://www.trhrkmk.com/tags/bash/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vi</title>
+      <link>https://www.trhrkmk.com/tags/vi/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/vi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vi mode</title>
+      <link>https://www.trhrkmk.com/tags/vi-mode/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/vi-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command</title>
+      <link>https://www.trhrkmk.com/tags/command/</link>
+      <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command Line</title>
+      <link>https://www.trhrkmk.com/tags/command-line/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/command-line/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://www.trhrkmk.com/tags/productivity/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>https://www.trhrkmk.com/tags/terminal/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://www.trhrkmk.com/tags/cli/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fzf</title>
+      <link>https://www.trhrkmk.com/tags/fzf/</link>
+      <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/fzf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.bashrc</title>
+      <link>https://www.trhrkmk.com/tags/.bashrc/</link>
+      <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/.bashrc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bitnami</title>
+      <link>https://www.trhrkmk.com/tags/bitnami/</link>
+      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/bitnami/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://www.trhrkmk.com/tags/lets-encrypt/</link>
+      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightsail</title>
+      <link>https://www.trhrkmk.com/tags/lightsail/</link>
+      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/lightsail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redmine</title>
+      <link>https://www.trhrkmk.com/tags/redmine/</link>
+      <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/redmine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>https://www.trhrkmk.com/tags/dns/</link>
+      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSL</title>
+      <link>https://www.trhrkmk.com/tags/ssl/</link>
+      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows Server</title>
+      <link>https://www.trhrkmk.com/tags/windows-server/</link>
+      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/windows-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>win-acme</title>
+      <link>https://www.trhrkmk.com/tags/win-acme/</link>
+      <pubDate>Sat, 22 Sep 2018 10:08:11 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/win-acme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New Tab</title>
+      <link>https://www.trhrkmk.com/tags/new-tab/</link>
+      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/new-tab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>href</title>
+      <link>https://www.trhrkmk.com/tags/href/</link>
+      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/href/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>target=&#39;_blank&#39;</title>
+      <link>https://www.trhrkmk.com/tags/target_blank/</link>
+      <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/target_blank/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FileMaker</title>
+      <link>https://www.trhrkmk.com/tags/filemaker/</link>
+      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/filemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FileMaker Server</title>
+      <link>https://www.trhrkmk.com/tags/filemaker-server/</link>
+      <pubDate>Sat, 15 Sep 2018 11:07:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/filemaker-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://www.trhrkmk.com/tags/tips/</link>
+      <pubDate>Tue, 11 Sep 2018 22:30:57 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AddThis</title>
+      <link>https://www.trhrkmk.com/tags/addthis/</link>
+      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/addthis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Share Button</title>
+      <link>https://www.trhrkmk.com/tags/share-button/</link>
+      <pubDate>Sun, 09 Sep 2018 11:23:36 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/share-button/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Texpander</title>
+      <link>https://www.trhrkmk.com/tags/texpander/</link>
+      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/texpander/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TextExpander</title>
+      <link>https://www.trhrkmk.com/tags/textexpander/</link>
+      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/textexpander/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FMPerception</title>
+      <link>https://www.trhrkmk.com/tags/fmperception/</link>
+      <pubDate>Sun, 02 Sep 2018 17:22:32 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/fmperception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firefox</title>
+      <link>https://www.trhrkmk.com/tags/firefox/</link>
+      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/firefox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>icon</title>
+      <link>https://www.trhrkmk.com/tags/icon/</link>
+      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/icon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://www.trhrkmk.com/tags/raspberry-pi/</link>
+      <pubDate>Mon, 27 Aug 2018 17:42:49 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     

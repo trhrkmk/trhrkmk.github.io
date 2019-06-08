@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lets Encrypt on HHKBは体の一部</title>
+    <title>Let&#39;s Encrypt on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/tags/lets-encrypt/</link>
-    <description>Recent content in Lets Encrypt on HHKBは体の一部</description>
+    <description>Recent content in Let&#39;s Encrypt on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</guid>
       <description>&lt;p&gt;LightsailのRedmineで、Let&amp;rsquo;s Encryptを使っていて、手動更新するときのメモです。&lt;/p&gt;
 
-&lt;p&gt;sshの設定もメモっとく。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;sshの設定もメモっとく。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +33,7 @@
 
 &lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;
 
-&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +44,7 @@
       <guid>https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/</guid>
       <description>&lt;p&gt;FileMaker Server(Windows Server)に&lt;strong&gt;Let&amp;rsquo;s EncryptのSSL証明書&lt;/strong&gt;を設定する際のメモ。&lt;/p&gt;
 
-&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;</description>
     </item>
     
   </channel>

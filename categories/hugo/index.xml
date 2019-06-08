@@ -22,9 +22,7 @@
 
 &lt;p&gt;AMPに対応してますし素敵なThemeで、すごく気に入っています！&lt;/p&gt;
 
-&lt;p&gt;開発者の &lt;a href=&#34;https://twitter.com/dim0627&#34; target=&#34;_blank&#34;&gt;@dim0627&lt;/a&gt; さん、本当にありがとうございます m(_ _)m&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;開発者の &lt;a href=&#34;https://twitter.com/dim0627&#34; target=&#34;_blank&#34;&gt;@dim0627&lt;/a&gt; さん、本当にありがとうございます m(_ _)m&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +33,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
       <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +44,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-share-button-addthis/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hugoに共有ボタンを追加したい&lt;/strong&gt;なと思い、調べて追加したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;色々な方法があるとおもいますが、AddThisを使うことで簡単に追加できると思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;色々な方法があるとおもいますが、AddThisを使うことで簡単に追加できると思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,9 +55,7 @@
       <guid>https://www.trhrkmk.com/posts/blog-hugo-start/</guid>
       <description>&lt;p&gt;Go言語の勉強をスタートしてから数週間が経ちました。&lt;/p&gt;
 
-&lt;p&gt;まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。&lt;/p&gt;</description>
     </item>
     
   </channel>

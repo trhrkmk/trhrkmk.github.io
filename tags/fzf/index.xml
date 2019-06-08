@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fzf on HHKBは体の一部</title>
+    <title>fzf on HHKBは体の一部</title>
     <link>https://www.trhrkmk.com/tags/fzf/</link>
-    <description>Recent content in Fzf on HHKBは体の一部</description>
+    <description>Recent content in fzf on HHKBは体の一部</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/</guid>
       <description>&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;
 
-&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;</description>
     </item>
     
   </channel>

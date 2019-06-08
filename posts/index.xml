@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
-    <lastBuildDate>Fri, 01 Feb 2019 21:36:48 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 16:40:42 +0900</lastBuildDate>
     
 	<atom:link href="https://www.trhrkmk.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gmailでラベルのないメールを検索する演算子のメモ</title>
+      <link>https://www.trhrkmk.com/posts/gmail-search-for-unlabeled-mail/</link>
+      <pubDate>Sat, 08 Jun 2019 16:40:42 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/gmail-search-for-unlabeled-mail/</guid>
+      <description>Gmailで誤ってアーカイブしてしまったので、そのアーカイブしたメールを見つけたくて…
+アーカイブすると、Inboxのラベルがなくなるため All Mail から、探しました。
+その際に、利用した検索演算子をメモっておきます。
+All Mail を選択し、以下の演算子で検索すれば、ラベルのないメールで、かつ、送信者が自分ではないメールを検索することができます。
+has:nouserlabels label: -inbox from: -me  Gmail で使用できる検索演算子</description>
+    </item>
     
     <item>
       <title>Thinkpad Bluetooth キーボードのキートップを購入した</title>
@@ -18,9 +31,7 @@
       <pubDate>Fri, 01 Feb 2019 21:36:48 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/thinkpad-bluetooth-keyboard-keytop-orderd/</guid>
-      <description>&lt;p&gt;Thinkpad T480s を購入したため、macでも同じキーボードを使いたいと思い、&lt;a href=&#34;https://www.lenovo.com/jp/ja/accessories-and-monitors/keyboards-and-mice/keyboards/KEYBOARD-US-English/p/0B47189&#34; target=&#34;_blank&#34;&gt;Thinkpad Bluetooth キーボード&lt;/a&gt;を購入しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Thinkpad T480s を購入したため、macでも同じキーボードを使いたいと思い、&lt;a href=&#34;https://www.lenovo.com/jp/ja/accessories-and-monitors/keyboards-and-mice/keyboards/KEYBOARD-US-English/p/0B47189&#34; target=&#34;_blank&#34;&gt;Thinkpad Bluetooth キーボード&lt;/a&gt;を購入しました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +44,7 @@
 
 &lt;p&gt;AMPに対応してますし素敵なThemeで、すごく気に入っています！&lt;/p&gt;
 
-&lt;p&gt;開発者の &lt;a href=&#34;https://twitter.com/dim0627&#34; target=&#34;_blank&#34;&gt;@dim0627&lt;/a&gt; さん、本当にありがとうございます m(_ _)m&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;開発者の &lt;a href=&#34;https://twitter.com/dim0627&#34; target=&#34;_blank&#34;&gt;@dim0627&lt;/a&gt; さん、本当にありがとうございます m(_ _)m&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,9 +55,7 @@
       <guid>https://www.trhrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</guid>
       <description>&lt;p&gt;ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。&lt;/p&gt;
 
-&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;ウインドウマネージャーはi3wmを使っているのですが、色々と設定して少しづつ形になってきたので、今までやってきたことをメモしておく。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +64,7 @@
       <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/download-youtube-dl-playlist/</guid>
-      <description>&lt;p&gt;先日、&lt;a href=&#34;https://www.trhrkmk.com/posts/download-youtube-dl-playlist/&#34; target=&#34;_blank&#34;&gt;Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った&lt;/a&gt;という記事を書きました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;先日、&lt;a href=&#34;https://www.trhrkmk.com/posts/download-youtube-dl-playlist/&#34; target=&#34;_blank&#34;&gt;Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った&lt;/a&gt;という記事を書きました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,9 +73,7 @@
       <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
-      <description>&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;今まで、mpsyt(&lt;a href=&#34;https://github.com/mps-youtube/mps-youtube&#34; target=&#34;_blank&#34;&gt;https://github.com/mps-youtube/mps-youtube&lt;/a&gt;)で、Youtubeのプレイリストを再生してました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,9 +82,7 @@
       <pubDate>Mon, 31 Dec 2018 17:47:57 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/look-back-on-2018/</guid>
-      <description>&lt;p&gt;2018年を振り返ってみました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;2018年を振り返ってみました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -92,9 +93,7 @@
       <guid>https://www.trhrkmk.com/posts/vim-build-note-on-debian/</guid>
       <description>&lt;p&gt;Vimをビルドするときの&lt;code&gt;configure&lt;/code&gt;のオプションをメモっておく。&lt;/p&gt;
 
-&lt;p&gt;詳細は vim-jp の記事を見るのが良いと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;詳細は vim-jp の記事を見るのが良いと思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -105,9 +104,7 @@
       <guid>https://www.trhrkmk.com/posts/purchased-thinkpad-t480s/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.lenovo.com/jp/ja/notebooks/thinkpad/t-series/ThinkPad-T480s/p/22TP2TT480S&#34; target=&#34;_blank&#34;&gt;ThinkPad T480s&lt;/a&gt; を購入した。&lt;/p&gt;
 
-&lt;p&gt;購入後、しばらく使っているけど、かなり満足してる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;購入後、しばらく使っているけど、かなり満足してる。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -118,9 +115,7 @@
       <guid>https://www.trhrkmk.com/posts/bash-vi-mode-command-setting/</guid>
       <description>&lt;p&gt;先日、&lt;a href=&#34;https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/&#34; target=&#34;_blank&#34;&gt;BashをViモードに変更して快適になった話&lt;/a&gt;というブログを書きました。&lt;/p&gt;
 
-&lt;p&gt;BashをViモードに変更して使うようになってから、快適にターミナルを使っています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;BashをViモードに変更して使うようになってから、快適にターミナルを使っています。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -129,9 +124,7 @@
       <pubDate>Sat, 03 Nov 2018 08:07:02 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/</guid>
-      <description>&lt;p&gt;私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -142,9 +135,7 @@
       <guid>https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/</guid>
       <description>&lt;p&gt;タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。&lt;/p&gt;
 
-&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;すごく快適になるので、試してみてほしいです！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -155,9 +146,7 @@
       <guid>https://www.trhrkmk.com/posts/bashrc-os-check/</guid>
       <description>&lt;p&gt;最近、&lt;code&gt;.bashrc&lt;/code&gt;や&lt;code&gt;.vimrc&lt;/code&gt;など、見直してました。&lt;/p&gt;
 
-&lt;p&gt;macOSで利用している&lt;code&gt;.bashrc&lt;/code&gt;を、Linuxでも利用したいと思ったからです。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;macOSで利用している&lt;code&gt;.bashrc&lt;/code&gt;を、Linuxでも利用したいと思ったからです。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -168,9 +157,7 @@
       <guid>https://www.trhrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</guid>
       <description>&lt;p&gt;LightsailのRedmineで、Let&amp;rsquo;s Encryptを使っていて、手動更新するときのメモです。&lt;/p&gt;
 
-&lt;p&gt;sshの設定もメモっとく。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;sshの設定もメモっとく。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -183,9 +170,7 @@
 
 &lt;p&gt;ブログを書いている時は、&lt;strong&gt;HTTPでの認証が一般的だろう&lt;/strong&gt;程度でやっていました。&lt;/p&gt;
 
-&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;しかし、もっと簡単にできるはずだ！と思いググってみた。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -196,9 +181,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
       <description>&lt;p&gt;Hugoでブログを書いていて「&lt;strong&gt;リンクを新規タブで開くようにしたいなー&lt;/strong&gt;」と思い、設定したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;なにも設定せずにリンク&lt;code&gt;[ぐーぐる](https://google.com)&lt;/code&gt;を使うと、以下のようなhtmlになります。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -209,9 +192,7 @@
       <guid>https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/</guid>
       <description>&lt;p&gt;FileMaker Server(Windows Server)に&lt;strong&gt;Let&amp;rsquo;s EncryptのSSL証明書&lt;/strong&gt;を設定する際のメモ。&lt;/p&gt;
 
-&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;FileMakerでは、Let&amp;rsquo;s Encryptはサポートされていないため、&lt;strong&gt;すべて自己責任&lt;/strong&gt;でチャレンジしてください。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -222,9 +203,7 @@
       <guid>https://www.trhrkmk.com/posts/filemaker-text-label-get-function/</guid>
       <description>&lt;p&gt;FileMaker開発者は、テーブルビューをよく使うと思います。&lt;/p&gt;
 
-&lt;p&gt;そのテーブルビューのヘッダー部分に表示するテキストのメモです。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;そのテーブルビューのヘッダー部分に表示するテキストのメモです。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -235,9 +214,7 @@
       <guid>https://www.trhrkmk.com/posts/hugo-share-button-addthis/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hugoに共有ボタンを追加したい&lt;/strong&gt;なと思い、調べて追加したのでメモ。&lt;/p&gt;
 
-&lt;p&gt;色々な方法があるとおもいますが、AddThisを使うことで簡単に追加できると思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;色々な方法があるとおもいますが、AddThisを使うことで簡単に追加できると思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -246,9 +223,7 @@
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
-      <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして&lt;strong&gt;Typinator&lt;/strong&gt;を利用しています。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -261,9 +236,7 @@
 
 &lt;p&gt;「この使ってなさそうなフィールド削除したいけど、どこかで使われていたら困るから、消せないな…」&lt;/p&gt;
 
-&lt;p&gt;なんてことはありませんか？&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;なんてことはありませんか？&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -274,9 +247,7 @@
       <guid>https://www.trhrkmk.com/posts/debian-stretch-install-firefox-latest/</guid>
       <description>&lt;p&gt;ご存知の通りDebian Stretch(GNOME)には、&lt;code&gt;Firefox ESR&lt;/code&gt;が入っています。&lt;/p&gt;
 
-&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;今回は、&lt;strong&gt;Firefox ESR&lt;/strong&gt;ではなく、最新の&lt;strong&gt;Firefox&lt;/strong&gt;をインストールするときのメモ。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -285,9 +256,7 @@
       <pubDate>Wed, 29 Aug 2018 01:13:00 +0900</pubDate>
       
       <guid>https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/</guid>
-      <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;開発環境から、商用環境へリリースする際に、ローカル環境で&lt;code&gt;FMDataMigration&lt;/code&gt;や、独自のマイグレーションツールを実行し、データ移行すると思います。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -298,9 +267,7 @@
       <guid>https://www.trhrkmk.com/posts/macos-command-arpscan-find-raspberrypi/</guid>
       <description>&lt;p&gt;Linuxではデフォルトでインストールされている&lt;code&gt;arp-scan&lt;/code&gt;コマンド。&lt;/p&gt;
 
-&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;macOSで利用する場合は、Homebrewでインストールしましょう。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -311,9 +278,7 @@
       <guid>https://www.trhrkmk.com/posts/blog-hugo-start/</guid>
       <description>&lt;p&gt;Go言語の勉強をスタートしてから数週間が経ちました。&lt;/p&gt;
 
-&lt;p&gt;まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;まだまだ基本的な部分しか分かっていないですが、今までにないくらい楽しくコードを書いています。&lt;/p&gt;</description>
     </item>
     
   </channel>
