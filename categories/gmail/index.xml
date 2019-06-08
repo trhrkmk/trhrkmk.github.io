@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gmail on HHKBは体の一部</title>
+    <link>https://www.trhrkmk.com/categories/gmail/</link>
+    <description>Recent content in Gmail on HHKBは体の一部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/trhrkmk&#34;&gt;trhrkmk&lt;/a&gt; 2019</copyright>
+    <lastBuildDate>Sat, 08 Jun 2019 16:40:42 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.trhrkmk.com/categories/gmail/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gmailでラベルのないメールを検索する演算子のメモ</title>
+      <link>https://www.trhrkmk.com/posts/gmail-search-for-unlabeled-mail/</link>
+      <pubDate>Sat, 08 Jun 2019 16:40:42 +0900</pubDate>
+      
+      <guid>https://www.trhrkmk.com/posts/gmail-search-for-unlabeled-mail/</guid>
+      <description>Gmailで誤ってアーカイブしてしまったので、そのアーカイブしたメールを見つけたくて…
+アーカイブすると、Inboxのラベルがなくなるため All Mail から、探しました。
+その際に、利用した検索演算子をメモっておきます。
+All Mail を選択し、以下の演算子で検索すれば、ラベルのないメールで、かつ、送信者が自分ではないメールを検索することができます。
+has:nouserlabels label: -inbox from: -me  Gmail で使用できる検索演算子</description>
+    </item>
+    
+  </channel>
+</rss>
