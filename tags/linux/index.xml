@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on trhrkmk.com</title>
+    <link>https://thrkmk.com/tags/linux/</link>
+    <description>Recent content in Linux on trhrkmk.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
+    <lastBuildDate>Fri, 28 Dec 2018 22:32:52 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ThinkPad T480s を購入した(Debian, i3wm)</title>
+      <link>https://thrkmk.com/posts/purchased-thinkpad-t480s/</link>
+      <pubDate>Fri, 28 Dec 2018 22:32:52 +0900</pubDate>
+      
+      <guid>https://thrkmk.com/posts/purchased-thinkpad-t480s/</guid>
+      <description>ThinkPad T480s を購入した。 購入後、しばらく使っているけど、かなり満足してる。 T480s にしてよかったと思うし、次回ノートパソコンを買う機会があれば、おそらくT</description>
+    </item>
+    
+    <item>
+      <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</title>
+      <link>https://thrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</link>
+      <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
+      
+      <guid>https://thrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
+      <description>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとしてTypinatorを利用しています。 macのスニペ</description>
+    </item>
+    
+  </channel>
+</rss>

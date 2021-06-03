@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>icon on trhrkmk.com</title>
+    <link>https://thrkmk.com/tags/icon/</link>
+    <description>Recent content in icon on trhrkmk.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
+    <lastBuildDate>Tue, 28 Aug 2018 20:24:36 -0400</lastBuildDate><atom:link href="https://thrkmk.com/tags/icon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian Stretch(GNOME)に最新のFirefoxをインストールしてアイコンも作成する</title>
+      <link>https://thrkmk.com/posts/debian-stretch-install-firefox-latest/</link>
+      <pubDate>Tue, 28 Aug 2018 20:24:36 -0400</pubDate>
+      
+      <guid>https://thrkmk.com/posts/debian-stretch-install-firefox-latest/</guid>
+      <description>ご存知の通りDebian Stretch(GNOME)には、Firefox ESRが入っています。 今回は、Firefox ESRではなく、最新のF</description>
+    </item>
+    
+  </channel>
+</rss>

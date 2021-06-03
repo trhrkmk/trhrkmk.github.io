@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>download on trhrkmk.com</title>
+    <link>https://thrkmk.com/tags/download/</link>
+    <description>Recent content in download on trhrkmk.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
+    <lastBuildDate>Wed, 02 Jan 2019 11:14:10 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/download/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>youtube-dlを使ってプレイリストを一括ダウンロードした</title>
+      <link>https://thrkmk.com/posts/download-youtube-dl-playlist/</link>
+      <pubDate>Wed, 02 Jan 2019 11:14:10 +0900</pubDate>
+      
+      <guid>https://thrkmk.com/posts/download-youtube-dl-playlist/</guid>
+      <description>先日、Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作ったという記事を書きました。 しかし、プレイリストを一括でダウ</description>
+    </item>
+    
+  </channel>
+</rss>

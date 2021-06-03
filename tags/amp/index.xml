@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AMP on trhrkmk.com</title>
+    <link>https://thrkmk.com/tags/amp/</link>
+    <description>Recent content in AMP on trhrkmk.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
+    <lastBuildDate>Fri, 11 Jan 2019 09:22:12 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/amp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo(AMP対応)にTwitterのツイートを埋め込む時のメモ</title>
+      <link>https://thrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</link>
+      <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
+      
+      <guid>https://thrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</guid>
+      <description>このブログはRobustを使わせて頂いております。 AMPに対応してますし素敵なThemeで、すごく気に入っています！ 開発者の @dim0627 さん、本当にあ</description>
+    </item>
+    
+  </channel>
+</rss>

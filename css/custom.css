@@ -1,0 +1,10 @@
+
+.highlight pre {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.highlight code{
+  overflow-x: scroll;
+  display: inline-block;
+}
