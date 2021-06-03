@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on trhrkmk.com</title>
-    <link>https://www.thrkmk.com/tags/twitter/</link>
+    <link>https://www.trhrkmk.com/tags/twitter/</link>
     <description>Recent content in Twitter on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Fri, 11 Jan 2019 09:22:12 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jan 2019 09:22:12 +0900</lastBuildDate><atom:link href="https://www.trhrkmk.com/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo(AMP対応)にTwitterのツイートを埋め込む時のメモ</title>
-      <link>https://www.thrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</link>
+      <link>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</link>
       <pubDate>Fri, 11 Jan 2019 09:22:12 +0900</pubDate>
       
-      <guid>https://www.thrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</guid>
+      <guid>https://www.trhrkmk.com/posts/hugo-amp-twitter-embedded-shortcode/</guid>
       <description>このブログはRobustを使わせて頂いております。 AMPに対応してますし素敵なThemeで、すごく気に入っています！ 開発者の @dim0627 さん、本当にあ</description>
     </item>
     

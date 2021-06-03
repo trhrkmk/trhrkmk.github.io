@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cli on trhrkmk.com</title>
-    <link>https://www.thrkmk.com/tags/cli/</link>
+    <link>https://www.trhrkmk.com/tags/cli/</link>
     <description>Recent content in cli on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Thu, 18 Oct 2018 21:02:28 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Oct 2018 21:02:28 +0900</lastBuildDate><atom:link href="https://www.trhrkmk.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fzfを使ってターミナルでの作業を効率化する</title>
-      <link>https://www.thrkmk.com/posts/fzf-command-line-productivity-tools/</link>
+      <link>https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/</link>
       <pubDate>Thu, 18 Oct 2018 21:02:28 +0900</pubDate>
       
-      <guid>https://www.thrkmk.com/posts/fzf-command-line-productivity-tools/</guid>
+      <guid>https://www.trhrkmk.com/posts/fzf-command-line-productivity-tools/</guid>
       <description>タイトルの通りですが、自分なりにfzfを使ってターミナルでの作業を効率化できたので、メモ。 すごく快適になるので、試してみてほしいです！ fzf</description>
     </item>
     
     <item>
       <title>.bashrcでOSを確認する</title>
-      <link>https://www.thrkmk.com/posts/bashrc-os-check/</link>
+      <link>https://www.trhrkmk.com/posts/bashrc-os-check/</link>
       <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
       
-      <guid>https://www.thrkmk.com/posts/bashrc-os-check/</guid>
+      <guid>https://www.trhrkmk.com/posts/bashrc-os-check/</guid>
       <description>最近、.bashrcや.vimrcなど、見直してました。 macOSで利用している.bashrcを、Linuxでも利用したいと思ったからです。</description>
     </item>
     

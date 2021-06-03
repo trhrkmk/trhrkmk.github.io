@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Texpander on trhrkmk.com</title>
-    <link>https://www.thrkmk.com/tags/texpander/</link>
+    <link>https://www.trhrkmk.com/tags/texpander/</link>
     <description>Recent content in Texpander on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Thu, 06 Sep 2018 00:41:40 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/texpander/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Sep 2018 00:41:40 +0900</lastBuildDate><atom:link href="https://www.trhrkmk.com/tags/texpander/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</title>
-      <link>https://www.thrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</link>
+      <link>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</link>
       <pubDate>Thu, 06 Sep 2018 00:41:40 +0900</pubDate>
       
-      <guid>https://www.thrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
+      <guid>https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/</guid>
       <description>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとしてTypinatorを利用しています。 macのスニペ</description>
     </item>
     
