@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>.bashrc on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/.bashrc/</link>
+    <link>https://www.thrkmk.com/tags/.bashrc/</link>
     <description>Recent content in .bashrc on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Mon, 08 Oct 2018 23:43:10 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/.bashrc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Oct 2018 23:43:10 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/.bashrc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.bashrcでOSを確認する</title>
-      <link>https://thrkmk.com/posts/bashrc-os-check/</link>
+      <link>https://www.thrkmk.com/posts/bashrc-os-check/</link>
       <pubDate>Mon, 08 Oct 2018 23:43:10 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/bashrc-os-check/</guid>
+      <guid>https://www.thrkmk.com/posts/bashrc-os-check/</guid>
       <description>最近、.bashrcや.vimrcなど、見直してました。 macOSで利用している.bashrcを、Linuxでも利用したいと思ったからです。</description>
     </item>
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/golang/</link>
+    <link>https://www.thrkmk.com/tags/golang/</link>
     <description>Recent content in Golang on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Wed, 02 Jan 2019 01:31:33 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jan 2019 01:31:33 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</title>
-      <link>https://thrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</link>
+      <link>https://www.thrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</link>
       <pubDate>Wed, 02 Jan 2019 01:31:33 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
+      <guid>https://www.thrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/</guid>
       <description>今まで、mpsyt(https://github.com/mps-youtube/mps-youtube)で、Youtubeのプレイリストを</description>
     </item>
     

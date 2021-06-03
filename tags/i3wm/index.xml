@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>i3wm on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/i3wm/</link>
+    <link>https://www.thrkmk.com/tags/i3wm/</link>
     <description>Recent content in i3wm on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Sun, 06 Jan 2019 17:40:13 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/i3wm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jan 2019 17:40:13 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/i3wm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThinkPad T480s Debian Stretchでi3wmを設定したときのメモ</title>
-      <link>https://thrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</link>
+      <link>https://www.thrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</link>
       <pubDate>Sun, 06 Jan 2019 17:40:13 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</guid>
+      <guid>https://www.thrkmk.com/posts/debian-stretch-i3wm-thinkpad-t480s-settings/</guid>
       <description>ThinkPad T480sを購入して、Debian Stretchをインストールして使っています。 ウインドウマネージャーはi3wmを使っているのですが、色々</description>
     </item>
     

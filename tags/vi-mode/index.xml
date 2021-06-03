@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vi mode on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/vi-mode/</link>
+    <link>https://www.thrkmk.com/tags/vi-mode/</link>
     <description>Recent content in Vi mode on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Sun, 04 Nov 2018 21:22:16 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/vi-mode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Nov 2018 21:22:16 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/vi-mode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash(Viモード)の設定やコマンドのメモ</title>
-      <link>https://thrkmk.com/posts/bash-vi-mode-command-setting/</link>
+      <link>https://www.thrkmk.com/posts/bash-vi-mode-command-setting/</link>
       <pubDate>Sun, 04 Nov 2018 21:22:16 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/bash-vi-mode-command-setting/</guid>
+      <guid>https://www.thrkmk.com/posts/bash-vi-mode-command-setting/</guid>
       <description>先日、BashをViモードに変更して快適になった話というブログを書きました。 BashをViモードに変更して使うようになってから、快適にターミ</description>
     </item>
     

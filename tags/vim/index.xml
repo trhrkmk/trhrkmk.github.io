@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/vim/</link>
+    <link>https://www.thrkmk.com/tags/vim/</link>
     <description>Recent content in Vim on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 10:32:28 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Dec 2018 10:32:28 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vimをビルドするときのconfigureのメモ(Debian)</title>
-      <link>https://thrkmk.com/posts/vim-build-note-on-debian/</link>
+      <link>https://www.thrkmk.com/posts/vim-build-note-on-debian/</link>
       <pubDate>Mon, 31 Dec 2018 10:32:28 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/vim-build-note-on-debian/</guid>
+      <guid>https://www.thrkmk.com/posts/vim-build-note-on-debian/</guid>
       <description>Vimをビルドするときのconfigureのオプションをメモっておく。 詳細は vim-jp の記事を見るのが良いと思います。 https://vim-jp.org/docs/build_linux.html Debianでsudo aptitude install v</description>
     </item>
     

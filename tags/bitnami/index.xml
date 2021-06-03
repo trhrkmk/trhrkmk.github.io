@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitnami on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/bitnami/</link>
+    <link>https://www.thrkmk.com/tags/bitnami/</link>
     <description>Recent content in Bitnami on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Sun, 30 Sep 2018 16:06:11 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/bitnami/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Sep 2018 16:06:11 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/bitnami/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LightsailのRedmine(Bitnami)でLet&#39;s Encryptを手動更新するときのメモ</title>
-      <link>https://thrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</link>
+      <link>https://www.thrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</link>
       <pubDate>Sun, 30 Sep 2018 16:06:11 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</guid>
+      <guid>https://www.thrkmk.com/posts/lightsail-bitnami-redmine-letsencrypt/</guid>
       <description>LightsailのRedmineで、Let&amp;rsquo;s Encryptを使っていて、手動更新するときのメモです。 sshの設定もメモっとく</description>
     </item>
     

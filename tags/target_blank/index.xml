@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>target=&#39;_blank&#39; on trhrkmk.com</title>
-    <link>https://thrkmk.com/tags/target_blank/</link>
+    <link>https://www.thrkmk.com/tags/target_blank/</link>
     <description>Recent content in target=&#39;_blank&#39; on trhrkmk.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright © 2019-2021 Teruhiro Komaki</copyright>
-    <lastBuildDate>Sat, 15 Sep 2018 18:40:06 +0900</lastBuildDate><atom:link href="https://thrkmk.com/tags/target_blank/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Sep 2018 18:40:06 +0900</lastBuildDate><atom:link href="https://www.thrkmk.com/tags/target_blank/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugoのリンクを新規タブ(target=&#39;_blank&#39;)で開く設定のメモ</title>
-      <link>https://thrkmk.com/posts/hugo-link-target-blank-markdown/</link>
+      <link>https://www.thrkmk.com/posts/hugo-link-target-blank-markdown/</link>
       <pubDate>Sat, 15 Sep 2018 18:40:06 +0900</pubDate>
       
-      <guid>https://thrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
+      <guid>https://www.thrkmk.com/posts/hugo-link-target-blank-markdown/</guid>
       <description>Hugoでブログを書いていて「リンクを新規タブで開くようにしたいなー」と思い、設定したのでメモ。 なにも設定せずにリンク[ぐーぐる](http</description>
     </item>
     
