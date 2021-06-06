@@ -1,101 +1,101 @@
-<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.com/css/syntax.css><link rel=stylesheet href=https://www.trhrkmk.com/css/custom.css><title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</h2><p>今まで、mpsyt(<a href=https://github.com/mps-youtube/mps-youtube>https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p><p>しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。</p><h2 id=更新>更新</h2><h3 id=2019-01-02>2019-01-02</h3><ul><li><p>やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、<a href=/posts/download-youtube-dl-playlist/>youtube-dlを使ってプレイリストを一括ダウンロードした</a>というブログを書きました。</p></li><li><p>この記事では<code>ytdl</code>を使っていますが、上の記事では<code>youtube-dl</code>を使いました。どちらとも使いましたが、<code>youtube-dl</code>の方が良いと思います。</p></li><li><p>シェルスクリプトについても、<code>youtube-dl</code>を使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。</p></li></ul><h2 id=cmus>cmus</h2><p>色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。</p><p>ということで、cmus(<a href=https://cmus.github.io/>https://cmus.github.io/</a>)を使うことにしました。</p><p>評判通り、快適ですね。</p><h2 id=youtubeの動画をダウンロード>Youtubeの動画をダウンロード</h2><p>YoutubeからダウンロードするCLIツールをググると、youtube-dl(<a href=https://rg3.github.io/youtube-dl/>https://rg3.github.io/youtube-dl/</a>)が出てきますが、Go製のCLIツールを探すことにしました。</p><p>ytdl(<a href=https://github.com/rylio/ytdl>https://github.com/rylio/ytdl</a>)というCLIツールを見つけました。</p><p>パッケージとしも使えるし、使う前から、良いはずと。</p><h2 id=rylioytdl>rylio/ytdl</h2><p>こんな感じでダウンロードできる。</p><pre><code>(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8
-INFO[0000] Fetching video info...
-INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4
- 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s
-</code></pre><p><code>-o</code>オプションで指定できる。</p><pre><code>(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8
-INFO[0000] Fetching video info...
-INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].mp4
- 22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.08 MiB/s 2s
-</code></pre><p><code>-j</code>オプションでjsonを取得できる。<code>jq(jqはインストールしてね)</code>でtitleを取得できる。</p><pre><code>(cmd) ~ $ ytdl -j https://www.youtube.com/watch?v=3OnnDqH6Wj8 | jq &quot;.title&quot;
-&quot;Flo Rida - Good Feeling [Official Video]&quot;
-</code></pre><h2 id=シェルスクリプト作った>シェルスクリプト作った</h2><h3 id=必須コマンド>必須コマンド</h3><p>各自インストールしてください。</p><ul><li>rylio/ytdl</li><li>jq</li><li>ffmpeg</li></ul><h3 id=コード>コード</h3><p>ファイル名は何でもよいです。(私は<code>ytdl2mp3.sh</code>というファイルにしました。)</p><p>パスの通っているフォルダに保存して<code>chmod</code>してください。</p><pre><code>#!/usr/bin/env bash
-set -Ceuo pipefail
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.com/css/syntax.css><link rel=stylesheet href=https://www.trhrkmk.com/css/custom.css><title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</h2><p>今まで、mpsyt(<a href=https://github.com/mps-youtube/mps-youtube>https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p><p>しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。</p><h2 id=更新>更新</h2><h3 id=2019-01-02>2019-01-02</h3><ul><li><p>やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、<a href=/posts/download-youtube-dl-playlist/>youtube-dlを使ってプレイリストを一括ダウンロードした</a>というブログを書きました。</p></li><li><p>この記事では<code>ytdl</code>を使っていますが、上の記事では<code>youtube-dl</code>を使いました。どちらとも使いましたが、<code>youtube-dl</code>の方が良いと思います。</p></li><li><p>シェルスクリプトについても、<code>youtube-dl</code>を使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。</p></li></ul><h2 id=cmus>cmus</h2><p>色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。</p><p>ということで、cmus(<a href=https://cmus.github.io/>https://cmus.github.io/</a>)を使うことにしました。</p><p>評判通り、快適ですね。</p><h2 id=youtubeの動画をダウンロード>Youtubeの動画をダウンロード</h2><p>YoutubeからダウンロードするCLIツールをググると、youtube-dl(<a href=https://rg3.github.io/youtube-dl/>https://rg3.github.io/youtube-dl/</a>)が出てきますが、Go製のCLIツールを探すことにしました。</p><p>ytdl(<a href=https://github.com/rylio/ytdl>https://github.com/rylio/ytdl</a>)というCLIツールを見つけました。</p><p>パッケージとしも使えるし、使う前から、良いはずと。</p><h2 id=rylioytdl>rylio/ytdl</h2><p>こんな感じでダウンロードできる。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>cmd<span class=o>)</span> ~ $ ytdl https://www.youtube.com/watch?v<span class=o>=</span>3OnnDqH6Wj8
+INFO<span class=o>[</span>0000<span class=o>]</span> Fetching video info...
+INFO<span class=o>[</span>0000<span class=o>]</span> Downloading to Flo Rida - Good Feeling <span class=o>[</span>Official Video<span class=o>]</span>.mp4
+ 22.38 MiB / 22.38 MiB <span class=o>[======================================================================================================================================================================]</span> 100.00% 9.98 MiB/s 2s
+</code></pre></div><p><code>-o</code>オプションで指定できる。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>cmd<span class=o>)</span> ~ $ ytdl -o /var/tmp/<span class=o>{{</span>.Title<span class=o>}}</span>.<span class=o>{{</span>.Ext<span class=o>}}</span> https://www.youtube.com/watch?v<span class=o>=</span>3OnnDqH6Wj8
+INFO<span class=o>[</span>0000<span class=o>]</span> Fetching video info...
+INFO<span class=o>[</span>0000<span class=o>]</span> Downloading to /var/tmp/Flo Rida - Good Feeling <span class=o>[</span>Official Video<span class=o>]</span>.mp4
+ 22.38 MiB / 22.38 MiB <span class=o>[======================================================================================================================================================================]</span> 100.00% 9.08 MiB/s 2s
+</code></pre></div><p><code>-j</code>オプションでjsonを取得できる。<code>jq(jqはインストールしてね)</code>でtitleを取得できる。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>cmd<span class=o>)</span> ~ $ ytdl -j https://www.youtube.com/watch?v<span class=o>=</span>3OnnDqH6Wj8 <span class=p>|</span> jq <span class=s2>&#34;.title&#34;</span>
+<span class=s2>&#34;Flo Rida - Good Feeling [Official Video]&#34;</span>
+</code></pre></div><h2 id=シェルスクリプト作った>シェルスクリプト作った</h2><h3 id=必須コマンド>必須コマンド</h3><p>各自インストールしてください。</p><ul><li>rylio/ytdl</li><li>jq</li><li>ffmpeg</li></ul><h3 id=コード>コード</h3><p>ファイル名は何でもよいです。(私は<code>ytdl2mp3.sh</code>というファイルにしました。)</p><p>パスの通っているフォルダに保存して<code>chmod</code>してください。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/usr/bin/env bash
+</span><span class=cp></span><span class=nb>set</span> -Ceuo pipefail
 
-# export
-export LC_ALL=C
-export LANG=C
+<span class=c1># export</span>
+<span class=nb>export</span> <span class=nv>LC_ALL</span><span class=o>=</span>C
+<span class=nb>export</span> <span class=nv>LANG</span><span class=o>=</span>C
 
-# set youtube id from param
-YOUTUBEID=$(echo $1 | awk -F &quot;v=&quot; '{print $2}' | awk -F &quot;&amp;&quot; '{print $1}')
+<span class=c1># set youtube id from param</span>
+<span class=nv>YOUTUBEID</span><span class=o>=</span><span class=k>$(</span><span class=nb>echo</span> <span class=nv>$1</span> <span class=p>|</span> awk -F <span class=s2>&#34;v=&#34;</span> <span class=s1>&#39;{print $2}&#39;</span> <span class=p>|</span> awk -F <span class=s2>&#34;&amp;&#34;</span> <span class=s1>&#39;{print $1}&#39;</span><span class=k>)</span>
 
-if [ x$YOUTUBEID = &quot;x&quot; ]; then
-  echo &quot;youtube id(v=ABCD) not found.&quot;
-  exit 1
-fi
+<span class=k>if</span> <span class=o>[</span> x<span class=nv>$YOUTUBEID</span> <span class=o>=</span> <span class=s2>&#34;x&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  <span class=nb>echo</span> <span class=s2>&#34;youtube id(v=ABCD) not found.&#34;</span>
+  <span class=nb>exit</span> <span class=m>1</span>
+<span class=k>fi</span>
 
-# set url
-URL=&quot;https://www.youtube.com/watch?v=$YOUTUBEID&quot;
+<span class=c1># set url</span>
+<span class=nv>URL</span><span class=o>=</span><span class=s2>&#34;https://www.youtube.com/watch?v=</span><span class=nv>$YOUTUBEID</span><span class=s2>&#34;</span>
 
-# set music dir
-MUSICDIR=&quot;$HOME/Music/cmus&quot;
+<span class=c1># set music dir</span>
+<span class=nv>MUSICDIR</span><span class=o>=</span><span class=s2>&#34;</span><span class=nv>$HOME</span><span class=s2>/Music/cmus&#34;</span>
 
-# mkdir music dir
-if [ ! -d $MUSICDIR ]; then
-  mkdir -p $MUSICDIR
-fi
+<span class=c1># mkdir music dir</span>
+<span class=k>if</span> <span class=o>[</span> ! -d <span class=nv>$MUSICDIR</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  mkdir -p <span class=nv>$MUSICDIR</span>
+<span class=k>fi</span>
 
-# get ytdl json
-YTDLJSON=$(ytdl -j $URL)
+<span class=c1># get ytdl json</span>
+<span class=nv>YTDLJSON</span><span class=o>=</span><span class=k>$(</span>ytdl -j <span class=nv>$URL</span><span class=k>)</span>
 
-# get author from json
-YTDLAUTHOR=$(echo $YTDLJSON | jq &quot;.author&quot; | sed &quot;s/\&quot;//g&quot;)
+<span class=c1># get author from json</span>
+<span class=nv>YTDLAUTHOR</span><span class=o>=</span><span class=k>$(</span><span class=nb>echo</span> <span class=nv>$YTDLJSON</span> <span class=p>|</span> jq <span class=s2>&#34;.author&#34;</span> <span class=p>|</span> sed <span class=s2>&#34;s/\&#34;//g&#34;</span><span class=k>)</span>
 
-# get title from json
-YTDLTITLE=$(echo $YTDLJSON | jq &quot;.title&quot; | sed &quot;s/\&quot;//g&quot;)
+<span class=c1># get title from json</span>
+<span class=nv>YTDLTITLE</span><span class=o>=</span><span class=k>$(</span><span class=nb>echo</span> <span class=nv>$YTDLJSON</span> <span class=p>|</span> jq <span class=s2>&#34;.title&#34;</span> <span class=p>|</span> sed <span class=s2>&#34;s/\&#34;//g&#34;</span><span class=k>)</span>
 
-# set file path
-FILEMP4=&quot;$MUSICDIR/$YTDLAUTHOR/$YTDLTITLE.mp4&quot;
-FILEMP3=&quot;$MUSICDIR/$YTDLAUTHOR/$YTDLTITLE.mp3&quot;
+<span class=c1># set file path</span>
+<span class=nv>FILEMP4</span><span class=o>=</span><span class=s2>&#34;</span><span class=nv>$MUSICDIR</span><span class=s2>/</span><span class=nv>$YTDLAUTHOR</span><span class=s2>/</span><span class=nv>$YTDLTITLE</span><span class=s2>.mp4&#34;</span>
+<span class=nv>FILEMP3</span><span class=o>=</span><span class=s2>&#34;</span><span class=nv>$MUSICDIR</span><span class=s2>/</span><span class=nv>$YTDLAUTHOR</span><span class=s2>/</span><span class=nv>$YTDLTITLE</span><span class=s2>.mp3&#34;</span>
 
-# mkdir author dir
-if [ ! -d &quot;$MUSICDIR/$YTDLAUTHOR&quot; ]; then
-  mkdir -p &quot;$MUSICDIR/$YTDLAUTHOR&quot;
-fi
+<span class=c1># mkdir author dir</span>
+<span class=k>if</span> <span class=o>[</span> ! -d <span class=s2>&#34;</span><span class=nv>$MUSICDIR</span><span class=s2>/</span><span class=nv>$YTDLAUTHOR</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  mkdir -p <span class=s2>&#34;</span><span class=nv>$MUSICDIR</span><span class=s2>/</span><span class=nv>$YTDLAUTHOR</span><span class=s2>&#34;</span>
+<span class=k>fi</span>
 
-# check file exist
-if [ -f &quot;$FILEMP3&quot; ]; then
-  echo &quot;File '$FILEMP3' already exists.&quot;
-  exit 1
-fi
+<span class=c1># check file exist</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s2>&#34;</span><span class=nv>$FILEMP3</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  <span class=nb>echo</span> <span class=s2>&#34;File &#39;</span><span class=nv>$FILEMP3</span><span class=s2>&#39; already exists.&#34;</span>
+  <span class=nb>exit</span> <span class=m>1</span>
+<span class=k>fi</span>
 
-# download mp4 file
-ytdl --silent -o &quot;$FILEMP4&quot; $URL
+<span class=c1># download mp4 file</span>
+ytdl --silent -o <span class=s2>&#34;</span><span class=nv>$FILEMP4</span><span class=s2>&#34;</span> <span class=nv>$URL</span>
 
-# convert mp4 2 mp3
-ffmpeg -loglevel panic -i &quot;$FILEMP4&quot; -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 &quot;$FILEMP3&quot;
+<span class=c1># convert mp4 2 mp3</span>
+ffmpeg -loglevel panic -i <span class=s2>&#34;</span><span class=nv>$FILEMP4</span><span class=s2>&#34;</span> -vn -acodec libmp3lame -ac <span class=m>2</span> -ab 160k -ar <span class=m>48000</span> <span class=s2>&#34;</span><span class=nv>$FILEMP3</span><span class=s2>&#34;</span>
 
-#rm $FILEMP4
-if [ -f &quot;$FILEMP4&quot; ]; then
-  rm -f &quot;$FILEMP4&quot;
-fi
+<span class=c1>#rm $FILEMP4</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s2>&#34;</span><span class=nv>$FILEMP4</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  rm -f <span class=s2>&#34;</span><span class=nv>$FILEMP4</span><span class=s2>&#34;</span>
+<span class=k>fi</span>
 
-# done
-echo &quot;Downloaded to '$FILEMP3'&quot;
-</code></pre><h2 id=使ってみた>使ってみた</h2><p>こんな感じになります。</p><p>URLをコピって、以下のように実行すればうまいこといくはずです。</p><pre><code>(ins) ~ $ ytdl2mp3.sh &quot;https://www.youtube.com/watch?v=2vjPBrBU-TM&amp;list=ALL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2&amp;index=115&quot;
-Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Music Video).mp3'
-</code></pre><pre><code>(ins) ~/Music/cmus $ tree
+<span class=c1># done</span>
+<span class=nb>echo</span> <span class=s2>&#34;Downloaded to &#39;</span><span class=nv>$FILEMP3</span><span class=s2>&#39;&#34;</span>
+</code></pre></div><h2 id=使ってみた>使ってみた</h2><p>こんな感じになります。</p><p>URLをコピって、以下のように実行すればうまいこといくはずです。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> ~ $ ytdl2mp3.sh <span class=s2>&#34;https://www.youtube.com/watch?v=2vjPBrBU-TM&amp;list=ALL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2&amp;index=115&#34;</span>
+Downloaded to <span class=s1>&#39;/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Music Video).mp3&#39;</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> ~/Music/cmus $ tree
 .
 ├── AdeleVEVO
 │   ├── Adele - Chasing Pavements.mp3
 │   ├── Adele - Hello.mp3
 │   ├── Adele - Rolling in the Deep.mp3
-│   ├── Adele - Send My Love (To Your New Lover).mp3
+│   ├── Adele - Send My Love <span class=o>(</span>To Your New Lover<span class=o>)</span>.mp3
 │   ├── Adele - Someone Like You.mp3
-│   └── Adele - When We Were Young (Live at The Church Studios).mp3
+│   └── Adele - When We Were Young <span class=o>(</span>Live at The Church Studios<span class=o>)</span>.mp3
 ├── BeyoncéVEVO
 │   └── Beyoncé - Halo.mp3
 ├── Ed Sheeran
-│   └── Ed Sheeran - Perfect (Official Music Video).mp3
+│   └── Ed Sheeran - Perfect <span class=o>(</span>Official Music Video<span class=o>)</span>.mp3
 ├── Galantis
-│   ├── Galantis - Don't Care (Official Audio).mp3
-│   ├── Galantis &amp; Hook N Sling - Love On Me (Official Video).mp3
-│   ├── Galantis - Spaceship feat. Uffie (Official Music Video).mp3
-│   └── Galantis &amp; Throttle - Tell Me You Love Me (Official Music Video).mp3
+│   ├── Galantis - Don<span class=err>&#39;</span>t Care <span class=o>(</span>Official Audio<span class=o>)</span>.mp3
+│   ├── Galantis <span class=p>&amp;</span> Hook N Sling - Love On Me <span class=o>(</span>Official Video<span class=o>)</span>.mp3
+│   ├── Galantis - Spaceship feat. Uffie <span class=o>(</span>Official Music Video<span class=o>)</span>.mp3
+│   └── Galantis <span class=p>&amp;</span> Throttle - Tell Me You Love Me <span class=o>(</span>Official Music Video<span class=o>)</span>.mp3
 ├── KygoOfficialVEVO
-│   ├── Kygo - Firestone ft. Conrad Sewell (Official Video).mp3
-│   └── Kygo &amp; Justin Jesso - Stargazing (Official Video).mp3
+│   ├── Kygo - Firestone ft. Conrad Sewell <span class=o>(</span>Official Video<span class=o>)</span>.mp3
+│   └── Kygo <span class=p>&amp;</span> Justin Jesso - Stargazing <span class=o>(</span>Official Video<span class=o>)</span>.mp3
 └── LadyGagaVEVO
-    └── Lady Gaga, Bradley Cooper - Shallow (A Star Is Born).mp3
+    └── Lady Gaga, Bradley Cooper - Shallow <span class=o>(</span>A Star Is Born<span class=o>)</span>.mp3
 
-6 directories, 15 files
-</code></pre><h2 id=あとがき>あとがき</h2><p>これでcmusで再生できるようになりました。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
+<span class=m>6</span> directories, <span class=m>15</span> files
+</code></pre></div><h2 id=あとがき>あとがき</h2><p>これでcmusで再生できるようになりました。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
