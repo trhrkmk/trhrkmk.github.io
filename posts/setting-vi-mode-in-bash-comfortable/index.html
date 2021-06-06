@@ -1,170 +1,105 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>BashをViモードに変更して快適になった話 | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/">
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>BashをViモードに変更して快適になった話 | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>BashをViモードに変更して快適になった話</h2><p>私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。</p><p>タイトルの通り、普段使っている <em>Bash</em> にも <em>Viモード</em> があるということが分かり、早速変更したのでメモ。</p><h2 id=設定したターミナル>設定したターミナル</h2><p><img src=./setting-vi-mode-in-bash-2.gif alt=bash title=bash></p><h2 id=bashのviモードについてググる>BashのViモードについてググる</h2><p>なにはともあれ、ググる</p><ul><li><a href=https://qiita.com/Pseudonym/items/2cb442ff257a2f9f9d70>vim色に染まれ．機能紹介のついでにbashをvi仕様に．</a></li><li><a href=https://s15silvia.blog.so-net.ne.jp/2013-02-24>bashの編集モードをviモードにしてみる</a></li><li><a href=https://oplern.hatenablog.com/entry/2017/03/07/211623>bashの操作をvi風にする</a></li><li><a href=https://routecompass.net/shell-vi/>【Vim】えっ?Vimmerなのに、シェルのキーバインドはEmacsモード使ってるの?</a></li></ul><p>上の記事では<code>~/.bashrc</code>に<code>set -o vi</code>を追加すればOK、と書いてある。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># ~/.bashrc</span>
 
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>BashをViモードに変更して快適になった話</h2>
-    <p>私は、まだまだ初心者のVimmerだと思いますが、Vimがあまりにも快適で使っていて気持ち良いため、普段からキーバインドをVimに変更できないかをググっています。</p>
-<p>タイトルの通り、普段使っている <em>Bash</em> にも <em>Viモード</em> があるということが分かり、早速変更したのでメモ。</p>
-<h2 id="設定したターミナル">設定したターミナル</h2>
-<p><img src="./setting-vi-mode-in-bash-2.gif" alt="bash" title="bash"></p>
-<h2 id="bashのviモードについてググる">BashのViモードについてググる</h2>
-<p>なにはともあれ、ググる</p>
-<ul>
-<li><a href="https://qiita.com/Pseudonym/items/2cb442ff257a2f9f9d70">vim色に染まれ．機能紹介のついでにbashをvi仕様に．</a></li>
-<li><a href="https://s15silvia.blog.so-net.ne.jp/2013-02-24">bashの編集モードをviモードにしてみる</a></li>
-<li><a href="https://oplern.hatenablog.com/entry/2017/03/07/211623">bashの操作をvi風にする</a></li>
-<li><a href="https://routecompass.net/shell-vi/">【Vim】えっ?Vimmerなのに、シェルのキーバインドはEmacsモード使ってるの?</a></li>
-</ul>
-<p>上の記事では<code>~/.bashrc</code>に<code>set -o vi</code>を追加すればOK、と書いてある。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~/.bashrc</span>
+<span class=nb>set</span> -o vi
+</code></pre></div><p>しかし、私は最終的に、以下のブログを参考にし<code>~/.bashrc</code>ではなく<code>~/.inputrc</code>を修正しました。</p><ul><li><a href=http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal>Use vi shortcuts in terminal</a></li><li><a href=http://d.hatena.ne.jp/yamazakiccs/20081207/1216817670>bash vi 最強ですね、わかります。</a></li></ul><p>以下に、<a href=http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal>Use vi shortcuts in terminal</a>に記載されている設定を引用</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># ~/.inputrc</span>
 
-<span class="nb">set</span> -o vi
-</code></pre></div><p>しかし、私は最終的に、以下のブログを参考にし<code>~/.bashrc</code>ではなく<code>~/.inputrc</code>を修正しました。</p>
-<ul>
-<li><a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal">Use vi shortcuts in terminal</a></li>
-<li><a href="http://d.hatena.ne.jp/yamazakiccs/20081207/1216817670">bash vi 最強ですね、わかります。</a></li>
-</ul>
-<p>以下に、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal">Use vi shortcuts in terminal</a>に記載されている設定を引用</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~/.inputrc</span>
+<span class=c1># Use Vi, not Emacs, style editing</span>
+<span class=nb>set</span> editing-mode vi
 
-<span class="c1"># Use Vi, not Emacs, style editing</span>
-<span class="nb">set</span> editing-mode vi
+<span class=c1># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
+<span class=nb>set</span> show-all-if-ambiguous on
+<span class=c1># Ignore case</span>
+<span class=nb>set</span> completion-ignore-case on
+<span class=c1># on menu-complete, first display the common prefix, then cycle through the </span>
+<span class=c1># options when hitting TAB</span>
+<span class=nb>set</span> menu-complete-display-prefix on
 
-<span class="c1"># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
-<span class="nb">set</span> show-all-if-ambiguous on
-<span class="c1"># Ignore case</span>
-<span class="nb">set</span> completion-ignore-case on
-<span class="c1"># on menu-complete, first display the common prefix, then cycle through the </span>
-<span class="c1"># options when hitting TAB</span>
-<span class="nb">set</span> menu-complete-display-prefix on
+<span class=c1>###########################################################</span>
+<span class=c1># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
+<span class=nb>set</span> keymap vi-command
 
-<span class="c1">###########################################################</span>
-<span class="c1"># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
-<span class="nb">set</span> keymap vi-command
+<span class=c1># Insert the arguments from the last command</span>
+<span class=s2>&#34;p&#34;</span>: <span class=s2>&#34;i !!*\r&#34;</span>
 
-<span class="c1"># Insert the arguments from the last command</span>
-<span class="s2">&#34;p&#34;</span>: <span class="s2">&#34;i !!*\r&#34;</span>
+<span class=c1># When hitting option-up/option-down, cycle through the previous commands</span>
+<span class=c1># which start with the prefix you&#39;ve entered, rather than just cycling through</span>
+<span class=c1># the last entered commands.</span>
+<span class=c1># In OS X&#39;s Terminal.app preferences, I have &#39;Use option as meta key&#39; off, and</span>
+<span class=c1># have mapped &#34;option cursor up&#34; to &#34;\033\033[A&#34; and &#34;option cursor down&#34; to </span>
+<span class=c1># &#34;\033\033[B&#34;.</span>
+<span class=c1># Feel free to bind to whatever you want. Delete the first &#39;\e&#39; in the keymap</span>
+<span class=c1># to set plain up/down to do a history search by default.</span>
+<span class=s2>&#34;\e\e[A&#34;</span>: history-search-backward
+<span class=s2>&#34;\e\e[B&#34;</span>: history-search-forward
 
-<span class="c1"># When hitting option-up/option-down, cycle through the previous commands</span>
-<span class="c1"># which start with the prefix you&#39;ve entered, rather than just cycling through</span>
-<span class="c1"># the last entered commands.</span>
-<span class="c1"># In OS X&#39;s Terminal.app preferences, I have &#39;Use option as meta key&#39; off, and</span>
-<span class="c1"># have mapped &#34;option cursor up&#34; to &#34;\033\033[A&#34; and &#34;option cursor down&#34; to </span>
-<span class="c1"># &#34;\033\033[B&#34;.</span>
-<span class="c1"># Feel free to bind to whatever you want. Delete the first &#39;\e&#39; in the keymap</span>
-<span class="c1"># to set plain up/down to do a history search by default.</span>
-<span class="s2">&#34;\e\e[A&#34;</span>: history-search-backward
-<span class="s2">&#34;\e\e[B&#34;</span>: history-search-forward
+<span class=c1>###########################################################</span>
+<span class=c1># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
+<span class=nb>set</span> keymap vi-insert
 
-<span class="c1">###########################################################</span>
-<span class="c1"># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
-<span class="nb">set</span> keymap vi-insert
-
-<span class="c1"># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
-<span class="c1"># again will cycle through available completions.</span>
+<span class=c1># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
+<span class=c1># again will cycle through available completions.</span>
 TAB: menu-complete
-<span class="c1"># Shift-TAB cycles completions backward</span>
-<span class="s2">&#34;\e[Z&#34;</span>: menu-complete-backward
+<span class=c1># Shift-TAB cycles completions backward</span>
+<span class=s2>&#34;\e[Z&#34;</span>: menu-complete-backward
 
-<span class="c1"># Option-up/option-down should also apply to insert mode</span>
-<span class="s2">&#34;\e\e[A&#34;</span>: history-search-backward
-<span class="s2">&#34;\e\e[B&#34;</span>: history-search-forward
+<span class=c1># Option-up/option-down should also apply to insert mode</span>
+<span class=s2>&#34;\e\e[A&#34;</span>: history-search-backward
+<span class=s2>&#34;\e\e[B&#34;</span>: history-search-forward
 
-<span class="c1"># Needed because binding &#39;p&#39; in command mode above wipes its insert mode</span>
-<span class="c1"># function, too. This fixes that, and will insert &#39;p&#39; when you type &#39;p&#39;.</span>
-<span class="s2">&#34;p&#34;</span>: self-insert
-</code></pre></div><h2 id="inputrc-を修正する">~/.inputrc を修正する</h2>
-<p>ほとんど、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal">Use vi shortcuts in terminal</a>の設定をコピーしていますが…</p>
-<p><code>for vi mode</code>の部分は、のちほど説明</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Use Vi, not Emacs, style editing</span>
-<span class="nb">set</span> editing-mode vi
+<span class=c1># Needed because binding &#39;p&#39; in command mode above wipes its insert mode</span>
+<span class=c1># function, too. This fixes that, and will insert &#39;p&#39; when you type &#39;p&#39;.</span>
+<span class=s2>&#34;p&#34;</span>: self-insert
+</code></pre></div><h2 id=inputrc-を修正する>~/.inputrc を修正する</h2><p>ほとんど、<a href=http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal>Use vi shortcuts in terminal</a>の設定をコピーしていますが…</p><p><code>for vi mode</code>の部分は、のちほど説明</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Use Vi, not Emacs, style editing</span>
+<span class=nb>set</span> editing-mode vi
 
-<span class="c1"># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
-<span class="nb">set</span> show-all-if-ambiguous on
-<span class="c1"># Ignore case</span>
-<span class="nb">set</span> completion-ignore-case on
-<span class="c1"># on menu-complete, first display the common prefix, then cycle through the </span>
-<span class="c1"># options when hitting TAB</span>
-<span class="nb">set</span> menu-complete-display-prefix on
+<span class=c1># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
+<span class=nb>set</span> show-all-if-ambiguous on
+<span class=c1># Ignore case</span>
+<span class=nb>set</span> completion-ignore-case on
+<span class=c1># on menu-complete, first display the common prefix, then cycle through the </span>
+<span class=c1># options when hitting TAB</span>
+<span class=nb>set</span> menu-complete-display-prefix on
 
-<span class="c1">###########################################################</span>
-<span class="c1"># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
-<span class="nb">set</span> keymap vi-command
+<span class=c1>###########################################################</span>
+<span class=c1># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
+<span class=nb>set</span> keymap vi-command
 
-<span class="c1">###########################################################</span>
-<span class="c1"># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
-<span class="nb">set</span> keymap vi-insert
+<span class=c1>###########################################################</span>
+<span class=c1># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
+<span class=nb>set</span> keymap vi-insert
 
-<span class="c1"># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
-<span class="c1"># again will cycle through available completions.</span>
+<span class=c1># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
+<span class=c1># again will cycle through available completions.</span>
 TAB: menu-complete
-<span class="c1"># Shift-TAB cycles completions backward</span>
-<span class="s2">&#34;\e[Z&#34;</span>: menu-complete-backward
+<span class=c1># Shift-TAB cycles completions backward</span>
+<span class=s2>&#34;\e[Z&#34;</span>: menu-complete-backward
 
-<span class="c1"># for vi mode</span>
-<span class="nb">set</span> show-mode-in-prompt on
-<span class="nb">set</span> vi-ins-mode-string <span class="se">\1\e</span><span class="o">[</span>34<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>ins<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
-<span class="nb">set</span> vi-cmd-mode-string <span class="se">\1\e</span><span class="o">[</span>31<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>cmd<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
-</code></pre></div><h3 id="せっかくなので-bashrc-のps1も載せとく">せっかくなので ~/.bashrc のPS1も載せとく</h3>
-<p>色をちょこちょこ設定しようと思ったので、以下のように設定してる</p>
-<p>バッドプラクティスかもしれないので、優しい方は突っ込んで頂けるとありがたいですm(_ _)m</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#--------------------------------------------------</span>
-<span class="c1"># ps1</span>
-<span class="c1">#--------------------------------------------------</span>
+<span class=c1># for vi mode</span>
+<span class=nb>set</span> show-mode-in-prompt on
+<span class=nb>set</span> vi-ins-mode-string <span class=se>\1\e</span><span class=o>[</span>34<span class=p>;</span>1m<span class=se>\2</span><span class=o>(</span>ins<span class=o>)</span> <span class=se>\1\e</span><span class=o>[</span>0m<span class=se>\2</span>
+<span class=nb>set</span> vi-cmd-mode-string <span class=se>\1\e</span><span class=o>[</span>31<span class=p>;</span>1m<span class=se>\2</span><span class=o>(</span>cmd<span class=o>)</span> <span class=se>\1\e</span><span class=o>[</span>0m<span class=se>\2</span>
+</code></pre></div><h3 id=せっかくなので-bashrc-のps1も載せとく>せっかくなので ~/.bashrc のPS1も載せとく</h3><p>色をちょこちょこ設定しようと思ったので、以下のように設定してる</p><p>バッドプラクティスかもしれないので、優しい方は突っ込んで頂けるとありがたいですm(_ _)m</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1>#--------------------------------------------------</span>
+<span class=c1># ps1</span>
+<span class=c1>#--------------------------------------------------</span>
 
-<span class="k">function</span> prompt <span class="o">{</span>
-  <span class="nb">local</span> <span class="nv">GITPS</span><span class="o">=</span><span class="s1">&#39;$(__git_ps1 &#34; [%s]&#34;)&#39;</span>
-  <span class="nb">local</span> <span class="nv">BLUE</span><span class="o">=</span><span class="s2">&#34;\[\e[1;34m\]&#34;</span>
-  <span class="nb">local</span> <span class="nv">RED</span><span class="o">=</span><span class="s2">&#34;\[\e[1;31m\]&#34;</span>
-  <span class="nb">local</span> <span class="nv">GREEN</span><span class="o">=</span><span class="s2">&#34;\[\e[2;32m\]&#34;</span>
-  <span class="nb">local</span> <span class="nv">WHITE</span><span class="o">=</span><span class="s2">&#34;\[\e[00m\]&#34;</span>
-  <span class="nb">local</span> <span class="nv">GRAY</span><span class="o">=</span><span class="s2">&#34;\[\e[1;37m\]&#34;</span>
-  <span class="nv">PS1</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$BLUE</span><span class="s2">\w</span><span class="nv">$BLUE$RED$GITPS$RED</span><span class="s2"> </span><span class="nv">$WHITE</span><span class="s2">\$</span><span class="nv">$WHITE</span><span class="s2"> &#34;</span>
-<span class="o">}</span>
+<span class=k>function</span> prompt <span class=o>{</span>
+  <span class=nb>local</span> <span class=nv>GITPS</span><span class=o>=</span><span class=s1>&#39;$(__git_ps1 &#34; [%s]&#34;)&#39;</span>
+  <span class=nb>local</span> <span class=nv>BLUE</span><span class=o>=</span><span class=s2>&#34;\[\e[1;34m\]&#34;</span>
+  <span class=nb>local</span> <span class=nv>RED</span><span class=o>=</span><span class=s2>&#34;\[\e[1;31m\]&#34;</span>
+  <span class=nb>local</span> <span class=nv>GREEN</span><span class=o>=</span><span class=s2>&#34;\[\e[2;32m\]&#34;</span>
+  <span class=nb>local</span> <span class=nv>WHITE</span><span class=o>=</span><span class=s2>&#34;\[\e[00m\]&#34;</span>
+  <span class=nb>local</span> <span class=nv>GRAY</span><span class=o>=</span><span class=s2>&#34;\[\e[1;37m\]&#34;</span>
+  <span class=nv>PS1</span><span class=o>=</span><span class=s2>&#34;</span><span class=nv>$BLUE</span><span class=s2>\w</span><span class=nv>$BLUE$RED$GITPS$RED</span><span class=s2> </span><span class=nv>$WHITE</span><span class=s2>\$</span><span class=nv>$WHITE</span><span class=s2> &#34;</span>
+<span class=o>}</span>
 prompt
-</code></pre></div><h2 id="現在のモードがわからない問題">現在のモードがわからない問題</h2>
-<p><code>.inputrc</code>を設定し、ターミナルを起動すれば、無事 Viモードになっているはず</p>
-<p>この状態で、しばらく使っていたのですが、ターミナルに現在のモードが表示されていないため、現在のモードが<code>ins</code>なのか<code>cmd</code>なのか分からない問題が発生</p>
-<p>ということで、ターミナルに現在のモードを表示するために、引き続きググる</p>
-<h2 id="ターミナルに現在のモードを表示する">ターミナルに現在のモードを表示する</h2>
-<p>以下の記事にたどり着いた</p>
-<p>色々と見たが、おそらく <em>GitHub</em> の<code>README.md</code>を見るのが、わかりやすい</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/1039713/different-bash-prompt-for-different-vi-editing-mode">Different bash prompt for different vi editing mode?</a></li>
-<li><a href="https://github.com/calid/bash">calid/bash</a></li>
-</ul>
-<p>GitHubを見ると、Bashのバージョンが<code>4.3.48</code>以上が必要っぽい</p>
-<p>現在使っているBashのバージョンを確認し、必要であれば、brewでインストールし、ログインシェルを変更する必要がある</p>
-<h4 id="bashのバージョンの確認">Bashのバージョンの確認</h4>
-<p>まずは確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ /bin/bash -version
-GNU bash, version 3.2.57<span class="o">(</span>1<span class="o">)</span>-release <span class="o">(</span>x86_64-apple-darwin17<span class="o">)</span>
-Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2007</span> Free Software Foundation, Inc.
-</code></pre></div><h3 id="brewでbashをインストールする">brewでBashをインストールする</h3>
-<p>いつも通り、インストール</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ brew install bash
+</code></pre></div><h2 id=現在のモードがわからない問題>現在のモードがわからない問題</h2><p><code>.inputrc</code>を設定し、ターミナルを起動すれば、無事 Viモードになっているはず</p><p>この状態で、しばらく使っていたのですが、ターミナルに現在のモードが表示されていないため、現在のモードが<code>ins</code>なのか<code>cmd</code>なのか分からない問題が発生</p><p>ということで、ターミナルに現在のモードを表示するために、引き続きググる</p><h2 id=ターミナルに現在のモードを表示する>ターミナルに現在のモードを表示する</h2><p>以下の記事にたどり着いた</p><p>色々と見たが、おそらく <em>GitHub</em> の<code>README.md</code>を見るのが、わかりやすい</p><ul><li><a href=https://stackoverflow.com/questions/1039713/different-bash-prompt-for-different-vi-editing-mode>Different bash prompt for different vi editing mode?</a></li><li><a href=https://github.com/calid/bash>calid/bash</a></li></ul><p>GitHubを見ると、Bashのバージョンが<code>4.3.48</code>以上が必要っぽい</p><p>現在使っているBashのバージョンを確認し、必要であれば、brewでインストールし、ログインシェルを変更する必要がある</p><h4 id=bashのバージョンの確認>Bashのバージョンの確認</h4><p>まずは確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ /bin/bash -version
+GNU bash, version 3.2.57<span class=o>(</span>1<span class=o>)</span>-release <span class=o>(</span>x86_64-apple-darwin17<span class=o>)</span>
+Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2007</span> Free Software Foundation, Inc.
+</code></pre></div><h3 id=brewでbashをインストールする>brewでBashをインストールする</h3><p>いつも通り、インストール</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ brew install bash
 Updating Homebrew...
-<span class="o">==</span>&gt; Auto-updated Homebrew!
-Updated <span class="m">3</span> taps <span class="o">(</span>homebrew/cask-versions, homebrew/core and homebrew/cask<span class="o">)</span>.
-<span class="o">==</span>&gt; Updated Formulae
+<span class=o>==</span>&gt; Auto-updated Homebrew!
+Updated <span class=m>3</span> taps <span class=o>(</span>homebrew/cask-versions, homebrew/core and homebrew/cask<span class=o>)</span>.
+<span class=o>==</span>&gt; Updated Formulae
 asciidoctor ✔                 ccextractor                   ethereum                      grib-api                      openvdb                       source-to-image
 harfbuzz ✔                    chruby-fish                   fluent-bit                    hebcal                        pacapt                        typescript
 weechat ✔                     cpprestsdk                    fonttools                     ioping                        pdftoipe                      you-get
@@ -172,23 +107,20 @@ activemq                      dartsim                       git-archive-all     
 ark                           dfmt                          glm                           liblo                         rdesktop
 bash-snippets                 django-completion             grails                        mongo-cxx-driver              selenium-server-standalone
 
-<span class="o">==</span>&gt; Downloading https://homebrew.bintray.com/bottles/bash-4.4.23.high_sierra.bottle.tar.gz
-<span class="c1">######################################################################## 100.0%</span>
-<span class="o">==</span>&gt; Pouring bash-4.4.23.high_sierra.bottle.tar.gz
-<span class="o">==</span>&gt; Caveats
+<span class=o>==</span>&gt; Downloading https://homebrew.bintray.com/bottles/bash-4.4.23.high_sierra.bottle.tar.gz
+<span class=c1>######################################################################## 100.0%</span>
+<span class=o>==</span>&gt; Pouring bash-4.4.23.high_sierra.bottle.tar.gz
+<span class=o>==</span>&gt; Caveats
 In order to use this build of bash as your login shell,
 it must be added to /etc/shells.
-<span class="o">==</span>&gt; Summary
-🍺  /usr/local/Cellar/bash/4.4.23: <span class="m">146</span> files, 8.8MB
-</code></pre></div><p>brewの出力にも書かれている通り<code>/etc/shells</code>に追加する</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">In order to use this build of bash as your login shell,
+<span class=o>==</span>&gt; Summary
+🍺  /usr/local/Cellar/bash/4.4.23: <span class=m>146</span> files, 8.8MB
+</code></pre></div><p>brewの出力にも書かれている通り<code>/etc/shells</code>に追加する</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>In order to use this build of bash as your login shell,
 it must be added to /etc/shells.
-</code></pre></div><h3 id="etcshells-に追加する">/etc/shells に追加する</h3>
-<p>現在のファイルを確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ sudo cat /etc/shells
-<span class="c1"># List of acceptable shells for chpass(1).</span>
-<span class="c1"># Ftpd will not allow users to connect who are not using</span>
-<span class="c1"># one of these shells.</span>
+</code></pre></div><h3 id=etcshells-に追加する>/etc/shells に追加する</h3><p>現在のファイルを確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ sudo cat /etc/shells
+<span class=c1># List of acceptable shells for chpass(1).</span>
+<span class=c1># Ftpd will not allow users to connect who are not using</span>
+<span class=c1># one of these shells.</span>
 
 /bin/bash
 /bin/csh
@@ -196,13 +128,11 @@ it must be added to /etc/shells.
 /bin/sh
 /bin/tcsh
 /bin/zsh
-</code></pre></div><p>brewでインストールしたBashを追加</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ sudo vim /etc/shells
-</code></pre></div><p>修正後に、改めて確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ sudo cat /etc/shells
-<span class="c1"># List of acceptable shells for chpass(1).</span>
-<span class="c1"># Ftpd will not allow users to connect who are not using</span>
-<span class="c1"># one of these shells.</span>
+</code></pre></div><p>brewでインストールしたBashを追加</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ sudo vim /etc/shells
+</code></pre></div><p>修正後に、改めて確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ sudo cat /etc/shells
+<span class=c1># List of acceptable shells for chpass(1).</span>
+<span class=c1># Ftpd will not allow users to connect who are not using</span>
+<span class=c1># one of these shells.</span>
 
 /bin/bash
 /bin/csh
@@ -211,91 +141,65 @@ it must be added to /etc/shells.
 /bin/tcsh
 /bin/zsh
 /usr/local/bin/bash
-</code></pre></div><h3 id="ログインシェルを変更する">ログインシェルを変更する</h3>
-<p>変更する前に確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ which bash
+</code></pre></div><h3 id=ログインシェルを変更する>ログインシェルを変更する</h3><p>変更する前に確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ which bash
 /bin/bash
-</code></pre></div><p>変更するためのコマンドを確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ man chsh
-</code></pre></div><p>一部抜粋</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">CHPASS<span class="o">(</span>1<span class="o">)</span>                 BSD General Commands Manual                CHPASS<span class="o">(</span>1<span class="o">)</span>
+</code></pre></div><p>変更するためのコマンドを確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ man chsh
+</code></pre></div><p>一部抜粋</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>CHPASS<span class=o>(</span>1<span class=o>)</span>                 BSD General Commands Manual                CHPASS<span class=o>(</span>1<span class=o>)</span>
 
 NAME
      chpass, chfn, chsh -- add or change user database information
 
 SYNOPSIS
-     chpass <span class="o">[</span>-l location<span class="o">]</span> <span class="o">[</span>-u authname<span class="o">]</span> <span class="o">[</span>-s newshell<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span>
+     chpass <span class=o>[</span>-l location<span class=o>]</span> <span class=o>[</span>-u authname<span class=o>]</span> <span class=o>[</span>-s newshell<span class=o>]</span> <span class=o>[</span>user<span class=o>]</span>
 
 DESCRIPTION
      The chpass utility allows editing of the user database information associated with user or, by default, the current user.
 
-     The chpass utility cannot change the user<span class="s1">&#39;s password on Open Directory systems.  Use the passwd(1) utility instead.
-</span><span class="s1">
-</span><span class="s1">     The chfn, and chsh utilities behave identically to chpass.  (There is only one program.)
-</span><span class="s1">
-</span><span class="s1">     The information is formatted and supplied to an editor for changes.
-</span><span class="s1">
-</span><span class="s1">     Only the information that the user is allowed to change is displayed.
-</span><span class="s1">
-</span><span class="s1">     The options are as follows:
-</span><span class="s1">
-</span><span class="s1">     -l location
-</span><span class="s1">             If not specified, chpass will perform a search for the user record on all available Open Directory nodes.  When specified, chpass will edit the user record on the directory node at the given location.
-</span><span class="s1">
-</span><span class="s1">     -u authname
-</span><span class="s1">             The user name to use when authenticating to the directory node containing the user.
-</span><span class="s1">
-</span><span class="s1">     -s newshell
-</span><span class="s1">             Attempt to change the user&#39;</span>s shell to newshell.
+     The chpass utility cannot change the user<span class=s1>&#39;s password on Open Directory systems.  Use the passwd(1) utility instead.
+</span><span class=s1>
+</span><span class=s1>     The chfn, and chsh utilities behave identically to chpass.  (There is only one program.)
+</span><span class=s1>
+</span><span class=s1>     The information is formatted and supplied to an editor for changes.
+</span><span class=s1>
+</span><span class=s1>     Only the information that the user is allowed to change is displayed.
+</span><span class=s1>
+</span><span class=s1>     The options are as follows:
+</span><span class=s1>
+</span><span class=s1>     -l location
+</span><span class=s1>             If not specified, chpass will perform a search for the user record on all available Open Directory nodes.  When specified, chpass will edit the user record on the directory node at the given location.
+</span><span class=s1>
+</span><span class=s1>     -u authname
+</span><span class=s1>             The user name to use when authenticating to the directory node containing the user.
+</span><span class=s1>
+</span><span class=s1>     -s newshell
+</span><span class=s1>             Attempt to change the user&#39;</span>s shell to newshell.
 
      Possible display items are as follows:
 
-           Login:              user<span class="s1">&#39;s login name
-</span><span class="s1">           Uid:                user&#39;</span>s login
-           Gid:                user<span class="s1">&#39;s login group
-</span><span class="s1">           Generated uid:      user&#39;</span>s UUID
-           Full Name:          user<span class="s1">&#39;s real name
-</span><span class="s1">           Office Location:    user&#39;</span>s office location
-           Office Phone:       user<span class="s1">&#39;s office phone
-</span><span class="s1">           Home Phone:         user&#39;</span>s home phone
-           Home Directory:     user<span class="s1">&#39;s home directory
-</span><span class="s1">           Shell:              user&#39;</span>s login shell
-</code></pre></div><p>ということで、以下のコマンドを実行</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ chsh -s /usr/local/bin/bash
-Changing shell <span class="k">for</span> yourName.
-Password <span class="k">for</span> yourName:
-</code></pre></div><p>確認(reboot必要かも…)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ which bash
+           Login:              user<span class=s1>&#39;s login name
+</span><span class=s1>           Uid:                user&#39;</span>s login
+           Gid:                user<span class=s1>&#39;s login group
+</span><span class=s1>           Generated uid:      user&#39;</span>s UUID
+           Full Name:          user<span class=s1>&#39;s real name
+</span><span class=s1>           Office Location:    user&#39;</span>s office location
+           Office Phone:       user<span class=s1>&#39;s office phone
+</span><span class=s1>           Home Phone:         user&#39;</span>s home phone
+           Home Directory:     user<span class=s1>&#39;s home directory
+</span><span class=s1>           Shell:              user&#39;</span>s login shell
+</code></pre></div><p>ということで、以下のコマンドを実行</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ chsh -s /usr/local/bin/bash
+Changing shell <span class=k>for</span> yourName.
+Password <span class=k>for</span> yourName:
+</code></pre></div><p>確認(reboot必要かも…)</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ which bash
 /usr/local/bin/bash
-</code></pre></div><h3 id="改めてバージョンを確認する">改めてバージョンを確認する</h3>
-<p>確認</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ bash --version
-GNU bash, version 4.4.23<span class="o">(</span>1<span class="o">)</span>-release <span class="o">(</span>x86_64-apple-darwin17.5.0<span class="o">)</span>
-Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2016</span> Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version <span class="m">3</span> or later &lt;http://gnu.org/licenses/gpl.html&gt;
+</code></pre></div><h3 id=改めてバージョンを確認する>改めてバージョンを確認する</h3><p>確認</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ bash --version
+GNU bash, version 4.4.23<span class=o>(</span>1<span class=o>)</span>-release <span class=o>(</span>x86_64-apple-darwin17.5.0<span class=o>)</span>
+Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2016</span> Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version <span class=m>3</span> or later &lt;http://gnu.org/licenses/gpl.html&gt;
 
-This is free software<span class="p">;</span> you are free to change and redistribute it.
+This is free software<span class=p>;</span> you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
-</code></pre></div><h3 id="現在のモードが表示されるはず">現在のモードが表示されるはず</h3>
-<p>これで現在のモードが表示されるはず</p>
-<h2 id="モードの表示を修正する">モードの表示を修正する</h2>
-<p><code>~/.inputrc</code>を修正すればよい</p>
-<p>このブログを見ている人には、説明不要だと思うので、各自で要調整</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># for vi mode</span>
-<span class="nb">set</span> show-mode-in-prompt on
-<span class="nb">set</span> vi-ins-mode-string <span class="se">\1\e</span><span class="o">[</span>34<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>ins<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
-<span class="nb">set</span> vi-cmd-mode-string <span class="se">\1\e</span><span class="o">[</span>31<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>cmd<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
-</code></pre></div><h2 id="あとがき">あとがき</h2>
-<p>いつも使うターミナルをViのキーバインドで操作できるようになって、本当に快適になった</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+</code></pre></div><h3 id=現在のモードが表示されるはず>現在のモードが表示されるはず</h3><p>これで現在のモードが表示されるはず</p><h2 id=モードの表示を修正する>モードの表示を修正する</h2><p><code>~/.inputrc</code>を修正すればよい</p><p>このブログを見ている人には、説明不要だと思うので、各自で要調整</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># for vi mode</span>
+<span class=nb>set</span> show-mode-in-prompt on
+<span class=nb>set</span> vi-ins-mode-string <span class=se>\1\e</span><span class=o>[</span>34<span class=p>;</span>1m<span class=se>\2</span><span class=o>(</span>ins<span class=o>)</span> <span class=se>\1\e</span><span class=o>[</span>0m<span class=se>\2</span>
+<span class=nb>set</span> vi-cmd-mode-string <span class=se>\1\e</span><span class=o>[</span>31<span class=p>;</span>1m<span class=se>\2</span><span class=o>(</span>cmd<span class=o>)</span> <span class=se>\1\e</span><span class=o>[</span>0m<span class=se>\2</span>
+</code></pre></div><h2 id=あとがき>あとがき</h2><p>いつも使うターミナルをViのキーバインドで操作できるようになって、本当に快適になった</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

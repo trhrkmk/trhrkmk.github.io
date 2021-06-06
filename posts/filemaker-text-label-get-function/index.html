@@ -1,82 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>FileMakerのテーブルビューのヘッダーに表示するテキストラベルのメモ | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/filemaker-text-label-get-function/">
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>FileMakerのテーブルビューのヘッダーに表示するテキストラベルのメモ | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/filemaker-text-label-get-function/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>FileMakerのテーブルビューのヘッダーに表示するテキストラベルのメモ</h2><p>FileMaker開発者は、テーブルビューをよく使うと思います。</p><p>そのテーブルビューのヘッダー部分に表示するテキストのメモです。</p><h2 id=データファイル>データファイル</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>NO ACCESS
 
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>FileMakerのテーブルビューのヘッダーに表示するテキストラベルのメモ</h2>
-    <p>FileMaker開発者は、テーブルビューをよく使うと思います。</p>
-<p>そのテーブルビューのヘッダー部分に表示するテキストのメモです。</p>
-<h2 id="データファイル">データファイル</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">NO ACCESS
+<span class=o>{{</span>ファイル名<span class=o>}}</span>
 
-<span class="o">{{</span>ファイル名<span class="o">}}</span>
+<span class=o>{{</span>レコード番号<span class=o>}}</span>
+<span class=o>{{</span>対象レコード数<span class=o>}}</span> / <span class=o>{{</span>レコード総数<span class=o>}}</span>
 
-<span class="o">{{</span>レコード番号<span class="o">}}</span>
-<span class="o">{{</span>対象レコード数<span class="o">}}</span> / <span class="o">{{</span>レコード総数<span class="o">}}</span>
+<span class=o>{{</span>レイアウト名<span class=o>}}</span>
+<span class=o>{{</span>レイアウトテーブル名<span class=o>}}</span>
 
-<span class="o">{{</span>レイアウト名<span class="o">}}</span>
-<span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
+<span class=o>{{</span>アカウント名<span class=o>}}</span>
+<span class=o>{{</span>アカウントアクセス権セット名<span class=o>}}</span>
+</code></pre></div><h2 id=テーブルビューのヘッダー>テーブルビューのヘッダー</h2><h3 id=英語>英語</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>NO ACCESS
 
-<span class="o">{{</span>アカウント名<span class="o">}}</span>
-<span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
-</code></pre></div><h2 id="テーブルビューのヘッダー">テーブルビューのヘッダー</h2>
-<h3 id="英語">英語</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">NO ACCESS
+<span class=o>{{</span>ファイル名<span class=o>}}</span>
 
-<span class="o">{{</span>ファイル名<span class="o">}}</span>
+<span class=o>{{</span>レコード番号<span class=o>}}</span>
+<span class=o>{{</span>対象レコード数<span class=o>}}</span> / <span class=o>{{</span>レコード総数<span class=o>}}</span>
 
-<span class="o">{{</span>レコード番号<span class="o">}}</span>
-<span class="o">{{</span>対象レコード数<span class="o">}}</span> / <span class="o">{{</span>レコード総数<span class="o">}}</span>
+<span class=o>{{</span>レイアウト名<span class=o>}}</span>
+<span class=o>{{</span>レイアウトテーブル名<span class=o>}}</span>
 
-<span class="o">{{</span>レイアウト名<span class="o">}}</span>
-<span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
-
-<span class="o">{{</span>アカウント名<span class="o">}}</span>
-<span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
-<span class="o">{{</span>LayoutName<span class="o">}}</span> : Record# <span class="o">[</span> <span class="o">{{</span>RecordNumber<span class="o">}}</span> of <span class="o">{{</span>FoundCount<span class="o">}}</span> <span class="o">]</span> – <span class="nv">Login</span> <span class="o">=</span> <span class="o">{{</span>AccountName<span class="o">}}</span> : <span class="o">{{</span>AccountPrivilegeSetName<span class="o">}}</span>
-<span class="o">{{</span>FilePath<span class="o">}}</span> <span class="p">|</span> <span class="nv">TABLE</span> <span class="o">=</span> <span class="o">{{</span>LayoutTableName<span class="o">}}</span>
-</code></pre></div><h3 id="日本語">日本語</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{{</span>レイアウト名<span class="o">}}</span> : Record# <span class="o">[</span> <span class="o">{{</span>レコード番号<span class="o">}}</span> of <span class="o">{{</span>対象レコード数<span class="o">}}</span> <span class="o">]</span> – <span class="nv">Login</span> <span class="o">=</span> <span class="o">{{</span>アカウント名<span class="o">}}</span> : <span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
-<span class="o">{{</span>ファイルパス<span class="o">}}</span> <span class="p">|</span> <span class="nv">TABLE</span> <span class="o">=</span> <span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
-</code></pre></div><h2 id="テーブルビューのフッター">テーブルビューのフッター</h2>
-<h3 id="英語-1">英語</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Record# <span class="o">[</span> <span class="o">{{</span>RecordNumber<span class="o">}}</span> of <span class="o">{{</span>FoundCount<span class="o">}}</span> <span class="o">]</span>  -  Found : <span class="o">{{</span>FoundCount<span class="o">}}</span> / Total : <span class="o">{{</span>TotalRecordCount<span class="o">}}</span>
-</code></pre></div><h3 id="日本語-1">日本語</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Record# <span class="o">[</span> <span class="o">{{</span>レコード番号<span class="o">}}</span> of <span class="o">{{</span>対象レコード数<span class="o">}}</span> <span class="o">]</span>  -  Found : <span class="o">{{</span>対象レコード数<span class="o">}}</span> / Total : <span class="o">{{</span>レコード総数<span class="o">}}</span>
-</code></pre></div><h2 id="サンプルファイル">サンプルファイル</h2>
-<p>以下のリポジトリからダウンロード(clone)してもらえればと思います。</p>
-<p><a href="https://github.com/frudens/fmperception-diff-viewer">fmperception-diff-viewer</a></p>
-<p><img src="./filemaker-text-label-get-function-1.webp" alt="FileMaker" title="FileMaker"></p>
-<p><img src="./filemaker-text-label-get-function-2.webp" alt="FileMaker" title="FileMaker"></p>
-<h2 id="あとがき">あとがき</h2>
-<p>こういうのは<strong>Gist</strong>でも良いんだけど、せっかくなのでブログに書いておきます。</p>
-<p>引き続き、追加していきまーす。</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+<span class=o>{{</span>アカウント名<span class=o>}}</span>
+<span class=o>{{</span>アカウントアクセス権セット名<span class=o>}}</span>
+<span class=o>{{</span>LayoutName<span class=o>}}</span> : Record# <span class=o>[</span> <span class=o>{{</span>RecordNumber<span class=o>}}</span> of <span class=o>{{</span>FoundCount<span class=o>}}</span> <span class=o>]</span> – <span class=nv>Login</span> <span class=o>=</span> <span class=o>{{</span>AccountName<span class=o>}}</span> : <span class=o>{{</span>AccountPrivilegeSetName<span class=o>}}</span>
+<span class=o>{{</span>FilePath<span class=o>}}</span> <span class=p>|</span> <span class=nv>TABLE</span> <span class=o>=</span> <span class=o>{{</span>LayoutTableName<span class=o>}}</span>
+</code></pre></div><h3 id=日本語>日本語</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>{{</span>レイアウト名<span class=o>}}</span> : Record# <span class=o>[</span> <span class=o>{{</span>レコード番号<span class=o>}}</span> of <span class=o>{{</span>対象レコード数<span class=o>}}</span> <span class=o>]</span> – <span class=nv>Login</span> <span class=o>=</span> <span class=o>{{</span>アカウント名<span class=o>}}</span> : <span class=o>{{</span>アカウントアクセス権セット名<span class=o>}}</span>
+<span class=o>{{</span>ファイルパス<span class=o>}}</span> <span class=p>|</span> <span class=nv>TABLE</span> <span class=o>=</span> <span class=o>{{</span>レイアウトテーブル名<span class=o>}}</span>
+</code></pre></div><h2 id=テーブルビューのフッター>テーブルビューのフッター</h2><h3 id=英語-1>英語</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Record# <span class=o>[</span> <span class=o>{{</span>RecordNumber<span class=o>}}</span> of <span class=o>{{</span>FoundCount<span class=o>}}</span> <span class=o>]</span>  -  Found : <span class=o>{{</span>FoundCount<span class=o>}}</span> / Total : <span class=o>{{</span>TotalRecordCount<span class=o>}}</span>
+</code></pre></div><h3 id=日本語-1>日本語</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Record# <span class=o>[</span> <span class=o>{{</span>レコード番号<span class=o>}}</span> of <span class=o>{{</span>対象レコード数<span class=o>}}</span> <span class=o>]</span>  -  Found : <span class=o>{{</span>対象レコード数<span class=o>}}</span> / Total : <span class=o>{{</span>レコード総数<span class=o>}}</span>
+</code></pre></div><h2 id=サンプルファイル>サンプルファイル</h2><p>以下のリポジトリからダウンロード(clone)してもらえればと思います。</p><p><a href=https://github.com/frudens/fmperception-diff-viewer>fmperception-diff-viewer</a></p><p><img src=./filemaker-text-label-get-function-1.webp alt=FileMaker title=FileMaker></p><p><img src=./filemaker-text-label-get-function-2.webp alt=FileMaker title=FileMaker></p><h2 id=あとがき>あとがき</h2><p>こういうのは<strong>Gist</strong>でも良いんだけど、せっかくなのでブログに書いておきます。</p><p>引き続き、追加していきまーす。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

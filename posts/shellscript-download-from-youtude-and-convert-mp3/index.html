@@ -1,75 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</h2>
-    <p>今まで、mpsyt(<a href="https://github.com/mps-youtube/mps-youtube">https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p>
-<p>しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。</p>
-<h2 id="更新">更新</h2>
-<h3 id="2019-01-02">2019-01-02</h3>
-<ul>
-<li>
-<p>やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、<a href="/posts/download-youtube-dl-playlist/">youtube-dlを使ってプレイリストを一括ダウンロードした</a>というブログを書きました。</p>
-</li>
-<li>
-<p>この記事では<code>ytdl</code>を使っていますが、上の記事では<code>youtube-dl</code>を使いました。どちらとも使いましたが、<code>youtube-dl</code>の方が良いと思います。</p>
-</li>
-<li>
-<p>シェルスクリプトについても、<code>youtube-dl</code>を使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。</p>
-</li>
-</ul>
-<h2 id="cmus">cmus</h2>
-<p>色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。</p>
-<p>ということで、cmus(<a href="https://cmus.github.io/">https://cmus.github.io/</a>)を使うことにしました。</p>
-<p>評判通り、快適ですね。</p>
-<h2 id="youtubeの動画をダウンロード">Youtubeの動画をダウンロード</h2>
-<p>YoutubeからダウンロードするCLIツールをググると、youtube-dl(<a href="https://rg3.github.io/youtube-dl/">https://rg3.github.io/youtube-dl/</a>)が出てきますが、Go製のCLIツールを探すことにしました。</p>
-<p>ytdl(<a href="https://github.com/rylio/ytdl">https://github.com/rylio/ytdl</a>)というCLIツールを見つけました。</p>
-<p>パッケージとしも使えるし、使う前から、良いはずと。</p>
-<h2 id="rylioytdl">rylio/ytdl</h2>
-<p>こんな感じでダウンロードできる。</p>
-<pre><code>(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/shellscript-download-from-youtude-and-convert-mp3/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Youtubeの動画をダウンロードしてmp3に変換するシェルスクリプトを作った</h2><p>今まで、mpsyt(<a href=https://github.com/mps-youtube/mps-youtube>https://github.com/mps-youtube/mps-youtube</a>)で、Youtubeのプレイリストを再生してました。</p><p>しかし、Debianではうまく動かないため、mpsytをやめて別のCLIクライアントを探すことにしました。</p><h2 id=更新>更新</h2><h3 id=2019-01-02>2019-01-02</h3><ul><li><p>やはり「Youtubeのプレイリストをまとめてダウンロードしたい」と思い、<a href=/posts/download-youtube-dl-playlist/>youtube-dlを使ってプレイリストを一括ダウンロードした</a>というブログを書きました。</p></li><li><p>この記事では<code>ytdl</code>を使っていますが、上の記事では<code>youtube-dl</code>を使いました。どちらとも使いましたが、<code>youtube-dl</code>の方が良いと思います。</p></li><li><p>シェルスクリプトについても、<code>youtube-dl</code>を使ったシェルスクリプトのほうがシンプルなため、この記事のシェルスクリプトは、見なくて良いと思います。</p></li></ul><h2 id=cmus>cmus</h2><p>色々と探しましたが、良さそうなCLIクライントがなかったので、mp3をローカルで管理することにしました。</p><p>ということで、cmus(<a href=https://cmus.github.io/>https://cmus.github.io/</a>)を使うことにしました。</p><p>評判通り、快適ですね。</p><h2 id=youtubeの動画をダウンロード>Youtubeの動画をダウンロード</h2><p>YoutubeからダウンロードするCLIツールをググると、youtube-dl(<a href=https://rg3.github.io/youtube-dl/>https://rg3.github.io/youtube-dl/</a>)が出てきますが、Go製のCLIツールを探すことにしました。</p><p>ytdl(<a href=https://github.com/rylio/ytdl>https://github.com/rylio/ytdl</a>)というCLIツールを見つけました。</p><p>パッケージとしも使えるし、使う前から、良いはずと。</p><h2 id=rylioytdl>rylio/ytdl</h2><p>こんな感じでダウンロードできる。</p><pre><code>(cmd) ~ $ ytdl https://www.youtube.com/watch?v=3OnnDqH6Wj8
 INFO[0000] Fetching video info...
 INFO[0000] Downloading to Flo Rida - Good Feeling [Official Video].mp4
  22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.98 MiB/s 2s
-</code></pre><p><code>-o</code>オプションで指定できる。</p>
-<pre><code>(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8
+</code></pre><p><code>-o</code>オプションで指定できる。</p><pre><code>(cmd) ~ $ ytdl -o /var/tmp/{{.Title}}.{{.Ext}} https://www.youtube.com/watch?v=3OnnDqH6Wj8
 INFO[0000] Fetching video info...
 INFO[0000] Downloading to /var/tmp/Flo Rida - Good Feeling [Official Video].mp4
  22.38 MiB / 22.38 MiB [======================================================================================================================================================================] 100.00% 9.08 MiB/s 2s
-</code></pre><p><code>-j</code>オプションでjsonを取得できる。<code>jq(jqはインストールしてね)</code>でtitleを取得できる。</p>
-<pre><code>(cmd) ~ $ ytdl -j https://www.youtube.com/watch?v=3OnnDqH6Wj8 | jq &quot;.title&quot;
+</code></pre><p><code>-j</code>オプションでjsonを取得できる。<code>jq(jqはインストールしてね)</code>でtitleを取得できる。</p><pre><code>(cmd) ~ $ ytdl -j https://www.youtube.com/watch?v=3OnnDqH6Wj8 | jq &quot;.title&quot;
 &quot;Flo Rida - Good Feeling [Official Video]&quot;
-</code></pre><h2 id="シェルスクリプト作った">シェルスクリプト作った</h2>
-<h3 id="必須コマンド">必須コマンド</h3>
-<p>各自インストールしてください。</p>
-<ul>
-<li>rylio/ytdl</li>
-<li>jq</li>
-<li>ffmpeg</li>
-</ul>
-<h3 id="コード">コード</h3>
-<p>ファイル名は何でもよいです。(私は<code>ytdl2mp3.sh</code>というファイルにしました。)</p>
-<p>パスの通っているフォルダに保存して<code>chmod</code>してください。</p>
-<pre><code>#!/usr/bin/env bash
+</code></pre><h2 id=シェルスクリプト作った>シェルスクリプト作った</h2><h3 id=必須コマンド>必須コマンド</h3><p>各自インストールしてください。</p><ul><li>rylio/ytdl</li><li>jq</li><li>ffmpeg</li></ul><h3 id=コード>コード</h3><p>ファイル名は何でもよいです。(私は<code>ytdl2mp3.sh</code>というファイルにしました。)</p><p>パスの通っているフォルダに保存して<code>chmod</code>してください。</p><pre><code>#!/usr/bin/env bash
 set -Ceuo pipefail
 
 # export
@@ -132,10 +71,7 @@ fi
 
 # done
 echo &quot;Downloaded to '$FILEMP3'&quot;
-</code></pre><h2 id="使ってみた">使ってみた</h2>
-<p>こんな感じになります。</p>
-<p>URLをコピって、以下のように実行すればうまいこといくはずです。</p>
-<pre><code>(ins) ~ $ ytdl2mp3.sh &quot;https://www.youtube.com/watch?v=2vjPBrBU-TM&amp;list=ALL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2&amp;index=115&quot;
+</code></pre><h2 id=使ってみた>使ってみた</h2><p>こんな感じになります。</p><p>URLをコピって、以下のように実行すればうまいこといくはずです。</p><pre><code>(ins) ~ $ ytdl2mp3.sh &quot;https://www.youtube.com/watch?v=2vjPBrBU-TM&amp;list=ALL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2&amp;index=115&quot;
 Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Music Video).mp3'
 </code></pre><pre><code>(ins) ~/Music/cmus $ tree
 .
@@ -162,17 +98,4 @@ Downloaded to '/home/teruhiro/Music/cmus/SiaVEVO/Sia - Chandelier (Official Musi
     └── Lady Gaga, Bradley Cooper - Shallow (A Star Is Born).mp3
 
 6 directories, 15 files
-</code></pre><h2 id="あとがき">あとがき</h2>
-<p>これでcmusで再生できるようになりました。</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+</code></pre><h2 id=あとがき>あとがき</h2><p>これでcmusで再生できるようになりました。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

@@ -1,59 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>Vimをビルドするときのconfigureのメモ(Debian) | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/vim-build-note-on-debian/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>Vimをビルドするときのconfigureのメモ(Debian)</h2>
-    <p>Vimをビルドするときの<code>configure</code>のオプションをメモっておく。</p>
-<p>詳細は vim-jp の記事を見るのが良いと思います。</p>
-<p><a href="https://vim-jp.org/docs/build_linux.html">https://vim-jp.org/docs/build_linux.html</a></p>
-<p>Debianで<code>sudo aptitude install vim-gnome</code>でインストールした場合<code>terminal(:ter)</code>が使えない…</p>
-<p>ということで、ビルドします。</p>
-<h2 id="configure">configure</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">./configure <span class="se">\
-</span><span class="se"></span>  --with-features<span class="o">=</span>huge <span class="se">\
-</span><span class="se"></span>  --enable-multibyte <span class="se">\
-</span><span class="se"></span>  --enable-gui<span class="o">=</span>gnome2 <span class="se">\
-</span><span class="se"></span>  --enable-gpm <span class="se">\
-</span><span class="se"></span>  --enable-cscope <span class="se">\
-</span><span class="se"></span>  --enable-perlinterp <span class="se">\
-</span><span class="se"></span>  --enable-pythoninterp <span class="se">\
-</span><span class="se"></span>  --enable-python3interp <span class="se">\
-</span><span class="se"></span>  --enable-rubyinterp <span class="se">\
-</span><span class="se"></span>  --enable-luainterp <span class="se">\
-</span><span class="se"></span>  --enable-acl <span class="se">\
-</span><span class="se"></span>  --enable-fontset <span class="se">\
-</span><span class="se"></span>  --enable-xim <span class="se">\
-</span><span class="se"></span>  --enable-terminal <span class="se">\
-</span><span class="se"></span>  --enable-fail-if-missing <span class="se">\
-</span><span class="se"></span>  --with-luajit <span class="se">\
-</span><span class="se"></span>  --with-x <span class="se">\
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">make
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo make install
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp/build_vim $ which vim
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>Vimをビルドするときのconfigureのメモ(Debian) | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/vim-build-note-on-debian/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Vimをビルドするときのconfigureのメモ(Debian)</h2><p>Vimをビルドするときの<code>configure</code>のオプションをメモっておく。</p><p>詳細は vim-jp の記事を見るのが良いと思います。</p><p><a href=https://vim-jp.org/docs/build_linux.html>https://vim-jp.org/docs/build_linux.html</a></p><p>Debianで<code>sudo aptitude install vim-gnome</code>でインストールした場合<code>terminal(:ter)</code>が使えない…</p><p>ということで、ビルドします。</p><h2 id=configure>configure</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>./configure <span class=se>\
+</span><span class=se></span>  --with-features<span class=o>=</span>huge <span class=se>\
+</span><span class=se></span>  --enable-multibyte <span class=se>\
+</span><span class=se></span>  --enable-gui<span class=o>=</span>gnome2 <span class=se>\
+</span><span class=se></span>  --enable-gpm <span class=se>\
+</span><span class=se></span>  --enable-cscope <span class=se>\
+</span><span class=se></span>  --enable-perlinterp <span class=se>\
+</span><span class=se></span>  --enable-pythoninterp <span class=se>\
+</span><span class=se></span>  --enable-python3interp <span class=se>\
+</span><span class=se></span>  --enable-rubyinterp <span class=se>\
+</span><span class=se></span>  --enable-luainterp <span class=se>\
+</span><span class=se></span>  --enable-acl <span class=se>\
+</span><span class=se></span>  --enable-fontset <span class=se>\
+</span><span class=se></span>  --enable-xim <span class=se>\
+</span><span class=se></span>  --enable-terminal <span class=se>\
+</span><span class=se></span>  --enable-fail-if-missing <span class=se>\
+</span><span class=se></span>  --with-luajit <span class=se>\
+</span><span class=se></span>  --with-x <span class=se>\
+</span></code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>make
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo make install
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> /var/tmp/build_vim $ which vim
 /usr/local/bin/vim
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp/build_vim $ vim --version
-VIM - Vi IMproved 8.1 <span class="o">(</span><span class="m">2018</span> May 18, compiled Dec <span class="m">29</span> <span class="m">2018</span> 23:18:33<span class="o">)</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> /var/tmp/build_vim $ vim --version
+VIM - Vi IMproved 8.1 <span class=o>(</span><span class=m>2018</span> May 18, compiled Dec <span class=m>29</span> <span class=m>2018</span> 23:18:33<span class=o>)</span>
 Included patches: 1-657
 Compiled by teruhiro@debian
-Huge version without GUI.  Features included <span class="o">(</span>+<span class="o">)</span> or not <span class="o">(</span>-<span class="o">)</span>:
+Huge version without GUI.  Features included <span class=o>(</span>+<span class=o>)</span> or not <span class=o>(</span>-<span class=o>)</span>:
 +acl               +extra_search      +mouse_netterm     +tag_old_static
 +arabic            +farsi             +mouse_sgr         -tag_any_white
 +autocmd           +file_in_path      -mouse_sysmouse    -tcl
@@ -61,7 +32,7 @@ Huge version without GUI.  Features included <span class="o">(</span>+<span clas
 -autoservername    +float             +mouse_xterm       +terminal
 -balloon_eval      +folding           +multi_byte        +terminfo
 +balloon_eval_term -footer            +multi_lang        +termresponse
--browse            +fork<span class="o">()</span>            -mzscheme          +textobjects
+-browse            +fork<span class=o>()</span>            -mzscheme          +textobjects
 ++builtin_terms    +gettext           +netbeans_intg     +textprop
 +byte_offset       -hangul_input      +num64             +timers
 +channel           +iconv             +packages          +title
@@ -85,25 +56,12 @@ Huge version without GUI.  Features included <span class="o">(</span>+<span clas
 +emacs_tags        +mouse_dec         -sun_workshop      +xsmp_interact
 +eval              +mouse_gpm         +syntax            +xterm_clipboard
 +ex_extra          -mouse_jsbterm     +tag_binary        -xterm_save
-   system vimrc file: <span class="s2">&#34;</span><span class="nv">$VIM</span><span class="s2">/vimrc&#34;</span>
-     user vimrc file: <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.vimrc&#34;</span>
- 2nd user vimrc file: <span class="s2">&#34;~/.vim/vimrc&#34;</span>
-      user exrc file: <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.exrc&#34;</span>
-       defaults file: <span class="s2">&#34;</span><span class="nv">$VIMRUNTIME</span><span class="s2">/defaults.vim&#34;</span>
-  fall-back <span class="k">for</span> <span class="nv">$VIM</span>: <span class="s2">&#34;/usr/local/share/vim&#34;</span>
-Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE<span class="o">=</span><span class="m">1</span>
+   system vimrc file: <span class=s2>&#34;</span><span class=nv>$VIM</span><span class=s2>/vimrc&#34;</span>
+     user vimrc file: <span class=s2>&#34;</span><span class=nv>$HOME</span><span class=s2>/.vimrc&#34;</span>
+ 2nd user vimrc file: <span class=s2>&#34;~/.vim/vimrc&#34;</span>
+      user exrc file: <span class=s2>&#34;</span><span class=nv>$HOME</span><span class=s2>/.exrc&#34;</span>
+       defaults file: <span class=s2>&#34;</span><span class=nv>$VIMRUNTIME</span><span class=s2>/defaults.vim&#34;</span>
+  fall-back <span class=k>for</span> <span class=nv>$VIM</span>: <span class=s2>&#34;/usr/local/share/vim&#34;</span>
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE<span class=o>=</span><span class=m>1</span>
 Linking: gcc   -L. -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,-E   -L/usr/local/lib -Wl,--as-needed -o vim    -lSM -lICE -lXpm -lXt -lX11 -lXdmcp -lSM -lICE  -lm -ltinfo -lnsl    -lacl -lattr -lgpm -ldl  -L/usr/lib/x86_64-linux-gnu -lluajit-5.1 -Wl,-E  -fstack-protector-strong -L/usr/local/lib  -L/usr/lib/x86_64-linux-gnu/perl/5.24/CORE -lperl -ldl -lm -lpthread -lcrypt    -lruby-2.3 -lpthread -lgmp -ldl -lcrypt -lm
-</code></pre></div><h2 id="あとがき">あとがき</h2>
-<p>誤りがありましたら、指摘していただけると、嬉しいです。</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+</code></pre></div><h2 id=あとがき>あとがき</h2><p>誤りがありましたら、指摘していただけると、嬉しいです。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

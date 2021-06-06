@@ -1,94 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話 | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</h2>
-    <p>開発環境から、商用環境へリリースする際に、ローカル環境で<code>FMDataMigration</code>や、独自のマイグレーションツールを実行し、データ移行すると思います。</p>
-<p>データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。</p>
-<p><strong>ファイルパーミッション</strong>については、ググってください。</p>
-<p><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファイルパーミッション</a></p>
-<p>以下は、自分用のメモ。</p>
-<h2 id="ssh">ssh</h2>
-<p>sshで接続します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ ssh user@macmini.local
-</code></pre></div><h2 id="databases-フォルダーのファイルパーミッションを確認する">Databases フォルダーのファイルパーミッションを確認する</h2>
-<p>デフォルトのディレクトリです。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ <span class="nb">pwd</span>
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話 | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/filemaker-server-release-file-permission/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>リリース時におけるFileMaker Server(macOS)のファイルパーミッションの話</h2><p>開発環境から、商用環境へリリースする際に、ローカル環境で<code>FMDataMigration</code>や、独自のマイグレーションツールを実行し、データ移行すると思います。</p><p>データ移行の完了したファイルを、 商用サーバーにアップロードする際に、該当ファイルのパーミッションには気をつける必要があります。</p><p><strong>ファイルパーミッション</strong>については、ググってください。</p><p><a href=https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3>ファイルパーミッション</a></p><p>以下は、自分用のメモ。</p><h2 id=ssh>ssh</h2><p>sshで接続します。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ ssh user@macmini.local
+</code></pre></div><h2 id=databases-フォルダーのファイルパーミッションを確認する>Databases フォルダーのファイルパーミッションを確認する</h2><p>デフォルトのディレクトリです。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ <span class=nb>pwd</span>
 /Library/FileMaker Server/Data/Databases
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ ls -la
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ ls -la
 total xx
-drwxrwxr-x   <span class="m">7</span> fmserver  fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> .
-drwxrwxr-x  <span class="m">11</span> fmserver  fmsadmin   352B Aug <span class="m">16</span> 20:11:38 <span class="m">2018</span> ..
-drwxrwxr-x   <span class="m">4</span> fmserver  fmsadmin   128B Jul <span class="m">12</span> 23:46:52 <span class="m">2018</span> Removed_by_FMS
-drwxrwxr-x@  <span class="m">5</span> fmserver  fmsadmin   160B Jul <span class="m">14</span> 13:17:43 <span class="m">2018</span> dir1
-drwxrwxr-x@  <span class="m">5</span> fmserver  fmsadmin   160B Jul <span class="m">14</span> 13:17:43 <span class="m">2018</span> dir2
-drwxrwxr-x@ <span class="m">79</span> fmserver  fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> dir3
-</code></pre></div><p><code>Databases</code>配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。</p>
-<h2 id="違う場合">違う場合</h2>
-<p><code>fileC.fmp12</code>は、ファイルパーミッションが正しくないため、変更する必要があります。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:dir3 user$ ls -la
-total <span class="m">47588320</span>
-drwxrwxr-x@ <span class="m">79</span> fmserver        fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> .
-drwxrwxr-x   <span class="m">7</span> fmserver        fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> ..
-drwxrwxr-x  <span class="m">88</span> fmserver        fmsadmin   2.8K Aug <span class="m">25</span> 18:23:32 <span class="m">2018</span> RC_Data_FMS
--rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin   204K Aug <span class="m">16</span> 18:12:40 <span class="m">2018</span> fileA.fmp12
--rwxrwxr-x@  <span class="m">1</span> fmserver        fmsadmin   1.6M Aug <span class="m">17</span> 22:04:34 <span class="m">2018</span> fileB.fmp12
--rw-r--r--   <span class="m">1</span> otherOwn        otherGrp    98M Aug <span class="m">28</span> 22:40:46 <span class="m">2018</span> fileC.fmp12
-</code></pre></div><h2 id="ファイルパーミッションの変更">ファイルパーミッションの変更</h2>
-<p>上記の例では<code>dir1</code>, <code>dir2</code>, <code>dir3</code>すべてのフォルダーが問題ないですが、以下の例では<code>dir3</code>も含めてパーミッションが変更が必要な場合を想定しています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ <span class="nb">pwd</span>
+drwxrwxr-x   <span class=m>7</span> fmserver  fmsadmin   224B Jul <span class=m>14</span> 13:15:27 <span class=m>2018</span> .
+drwxrwxr-x  <span class=m>11</span> fmserver  fmsadmin   352B Aug <span class=m>16</span> 20:11:38 <span class=m>2018</span> ..
+drwxrwxr-x   <span class=m>4</span> fmserver  fmsadmin   128B Jul <span class=m>12</span> 23:46:52 <span class=m>2018</span> Removed_by_FMS
+drwxrwxr-x@  <span class=m>5</span> fmserver  fmsadmin   160B Jul <span class=m>14</span> 13:17:43 <span class=m>2018</span> dir1
+drwxrwxr-x@  <span class=m>5</span> fmserver  fmsadmin   160B Jul <span class=m>14</span> 13:17:43 <span class=m>2018</span> dir2
+drwxrwxr-x@ <span class=m>79</span> fmserver  fmsadmin   2.5K Aug <span class=m>29</span> 01:02:53 <span class=m>2018</span> dir3
+</code></pre></div><p><code>Databases</code>配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。</p><h2 id=違う場合>違う場合</h2><p><code>fileC.fmp12</code>は、ファイルパーミッションが正しくないため、変更する必要があります。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:dir3 user$ ls -la
+total <span class=m>47588320</span>
+drwxrwxr-x@ <span class=m>79</span> fmserver        fmsadmin   2.5K Aug <span class=m>29</span> 01:02:53 <span class=m>2018</span> .
+drwxrwxr-x   <span class=m>7</span> fmserver        fmsadmin   224B Jul <span class=m>14</span> 13:15:27 <span class=m>2018</span> ..
+drwxrwxr-x  <span class=m>88</span> fmserver        fmsadmin   2.8K Aug <span class=m>25</span> 18:23:32 <span class=m>2018</span> RC_Data_FMS
+-rwxrwxr-x   <span class=m>1</span> fmserver        fmsadmin   204K Aug <span class=m>16</span> 18:12:40 <span class=m>2018</span> fileA.fmp12
+-rwxrwxr-x@  <span class=m>1</span> fmserver        fmsadmin   1.6M Aug <span class=m>17</span> 22:04:34 <span class=m>2018</span> fileB.fmp12
+-rw-r--r--   <span class=m>1</span> otherOwn        otherGrp    98M Aug <span class=m>28</span> 22:40:46 <span class=m>2018</span> fileC.fmp12
+</code></pre></div><h2 id=ファイルパーミッションの変更>ファイルパーミッションの変更</h2><p>上記の例では<code>dir1</code>, <code>dir2</code>, <code>dir3</code>すべてのフォルダーが問題ないですが、以下の例では<code>dir3</code>も含めてパーミッションが変更が必要な場合を想定しています。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ <span class=nb>pwd</span>
 /Library/FileMaker Server/Data/Databases
-</code></pre></div><h2 id="chmod">chmod</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chmod -R <span class="m">775</span> dir3/
-</code></pre></div><h2 id="chown">chown</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chown -R fmserver dir3/
-</code></pre></div><h2 id="chgrp">chgrp</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chgrp -R fmsadmin dir3/
-</code></pre></div><h2 id="変更を確認する">変更を確認する</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:dir3 user$ ls -la
-total <span class="m">47588320</span>
-drwxrwxr-x@ <span class="m">79</span> fmserver        fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> .
-drwxrwxr-x   <span class="m">7</span> fmserver        fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> ..
-drwxrwxr-x  <span class="m">88</span> fmserver        fmsadmin   2.8K Aug <span class="m">25</span> 18:23:32 <span class="m">2018</span> RC_Data_FMS
--rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin   204K Aug <span class="m">16</span> 18:12:40 <span class="m">2018</span> fileA.fmp12
--rwxrwxr-x@  <span class="m">1</span> fmserver        fmsadmin   1.6M Aug <span class="m">17</span> 22:04:34 <span class="m">2018</span> fileB.fmp12
--rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin    98M Aug <span class="m">28</span> 22:40:46 <span class="m">2018</span> fileC.fmp12
-</code></pre></div><h2 id="パーミッションの設定が誤っている場合">パーミッションの設定が誤っている場合</h2>
-<p>ファイルを開けても、スクリプトワークスペースや、データベースなどがグレイアウトしている場合は、パーミッションの設定をみると良いと思います。</p>
-<h2 id="正しいアップロード方法が良い">正しいアップロード方法が良い</h2>
-<p>FileMakerのクライアントから、アップロードすれば問題はありません。
-トリッキーなことはせずに、正しいアップロード方法でアップロードしましょう。</p>
-<h2 id="windowsユーザ">Windowsユーザ</h2>
-<p>Windowsユーザは気にならないかもしれませんが、macOSはUnix系のため、気をつける必要があります。</p>
-<h2 id="ファイルを閉じている時にやる">ファイルを閉じている時にやる</h2>
-<p>当然ですが、ファイルを開いている時に実行すると、破損する可能性があります。</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+</code></pre></div><h2 id=chmod>chmod</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ sudo chmod -R <span class=m>775</span> dir3/
+</code></pre></div><h2 id=chown>chown</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ sudo chown -R fmserver dir3/
+</code></pre></div><h2 id=chgrp>chgrp</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:Databases user$ sudo chgrp -R fmsadmin dir3/
+</code></pre></div><h2 id=変更を確認する>変更を確認する</h2><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>macmini:dir3 user$ ls -la
+total <span class=m>47588320</span>
+drwxrwxr-x@ <span class=m>79</span> fmserver        fmsadmin   2.5K Aug <span class=m>29</span> 01:02:53 <span class=m>2018</span> .
+drwxrwxr-x   <span class=m>7</span> fmserver        fmsadmin   224B Jul <span class=m>14</span> 13:15:27 <span class=m>2018</span> ..
+drwxrwxr-x  <span class=m>88</span> fmserver        fmsadmin   2.8K Aug <span class=m>25</span> 18:23:32 <span class=m>2018</span> RC_Data_FMS
+-rwxrwxr-x   <span class=m>1</span> fmserver        fmsadmin   204K Aug <span class=m>16</span> 18:12:40 <span class=m>2018</span> fileA.fmp12
+-rwxrwxr-x@  <span class=m>1</span> fmserver        fmsadmin   1.6M Aug <span class=m>17</span> 22:04:34 <span class=m>2018</span> fileB.fmp12
+-rwxrwxr-x   <span class=m>1</span> fmserver        fmsadmin    98M Aug <span class=m>28</span> 22:40:46 <span class=m>2018</span> fileC.fmp12
+</code></pre></div><h2 id=パーミッションの設定が誤っている場合>パーミッションの設定が誤っている場合</h2><p>ファイルを開けても、スクリプトワークスペースや、データベースなどがグレイアウトしている場合は、パーミッションの設定をみると良いと思います。</p><h2 id=正しいアップロード方法が良い>正しいアップロード方法が良い</h2><p>FileMakerのクライアントから、アップロードすれば問題はありません。
+トリッキーなことはせずに、正しいアップロード方法でアップロードしましょう。</p><h2 id=windowsユーザ>Windowsユーザ</h2><p>Windowsユーザは気にならないかもしれませんが、macOSはUnix系のため、気をつける必要があります。</p><h2 id=ファイルを閉じている時にやる>ファイルを閉じている時にやる</h2><p>当然ですが、ファイルを開いている時に実行すると、破損する可能性があります。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

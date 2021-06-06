@@ -1,68 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</h2>
-    <p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p>
-<p>macのスニペットツールでググると</p>
-<p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p>
-<p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p>
-<p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p>
-<h2 id="linuxのスニペットツール">Linuxのスニペットツール</h2>
-<p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p>
-<p>おそらく、以下が定番なんでしょう。</p>
-<ul>
-<li><a href="https://github.com/autokey/autokey">OldAutoKey</a></li>
-<li><a href="https://github.com/autokey/autokey">AutoKey</a></li>
-<li><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></li>
-<li><a href="https://leehblue.com/ubuntu-text-expander/">Texpander</a></li>
-</ul>
-<h2 id="色々と試してみた">色々と試してみた</h2>
-<ul>
-<li>
-<p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p>
-</li>
-<li>
-<p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p>
-</li>
-</ul>
-<pre><code># As of version 2.20100623, you can do this simpler version of above:
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/linux-textexpander-typinator-similar-app-introduction/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Linux(Debian Stretch)でTexpander(TextExpanderのようなスニペットツール)を使ってみた</h2><p>仕事の関係もあり、普段使っているマシンはMacBookPro15で、スニペットツールとして<strong>Typinator</strong>を利用しています。</p><p>macのスニペットツールでググると</p><p><strong>TextExpander</strong>、<strong>Alfred</strong>、<strong>Dash</strong>、など、いろいろなアプリがありますよね。</p><p>macにはいろいろなスニペットツールがあるのですが、Linuxでは選択肢が少ないと思います。</p><p>勉強用に使っているDebianでも、スニペットツールを使いたいなと思い、色々と調べたのでメモとして書いておきます。</p><h2 id=linuxのスニペットツール>Linuxのスニペットツール</h2><p>TextExpanderの代わりになるアプリをググると、<a href="https://alternativeto.net/software/textexpander/?platform=linux">alternativeTo</a>というサイトがよくでてきます。</p><p>おそらく、以下が定番なんでしょう。</p><ul><li><a href=https://github.com/autokey/autokey>OldAutoKey</a></li><li><a href=https://github.com/autokey/autokey>AutoKey</a></li><li><a href=https://www.semicomplete.com/projects/xdotool/>xdotool</a></li><li><a href=https://leehblue.com/ubuntu-text-expander/>Texpander</a></li></ul><h2 id=色々と試してみた>色々と試してみた</h2><ul><li><p><strong>AutoKey</strong>は、Pythonで書かれているので、Pythonができる方はおすすめ。</p></li><li><p><strong>xdotool</strong>は、X11の操作をコマンドで操作できるコマンドのようです。</p></li></ul><pre><code># As of version 2.20100623, you can do this simpler version of above:
 xdotool search &quot;Mozilla Firefox&quot; windowactivate --sync key --clearmodifiers ctrl+l
-</code></pre><p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p>
-<p>xdotoolは、Texpander内でも利用されています。</p>
-<ul>
-<li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li>
-</ul>
-<p>というころで、今回は、Texpanderを使うことにしました！</p>
-<h2 id="texpanderを使ってみる">Texpanderを使ってみる</h2>
-<p>作者の方のブログを読めば分かりますが、一応…</p>
-<p><a href="https://leehblue.com/ubuntu-text-expander/">https://leehblue.com/ubuntu-text-expander/</a></p>
-<p><img src="./texpander-1.webp" alt="texpander" title="texpander"></p>
-<h3 id="必要なコマンドをインストールする">必要なコマンドをインストールする</h3>
-<pre><code>sudo apt install xsel
+</code></pre><p>このコマンドを実行すると<code>Firefoxをアクティブにして、ctrl+lを入力する</code>状態にできます。</p><p>xdotoolは、Texpander内でも利用されています。</p><ul><li><strong>Texpander</strong>は、シェルスクリプトなので、カスタマイズが簡単にできるところが良いです！</li></ul><p>というころで、今回は、Texpanderを使うことにしました！</p><h2 id=texpanderを使ってみる>Texpanderを使ってみる</h2><p>作者の方のブログを読めば分かりますが、一応…</p><p><a href=https://leehblue.com/ubuntu-text-expander/>https://leehblue.com/ubuntu-text-expander/</a></p><p><img src=./texpander-1.webp alt=texpander title=texpander></p><h3 id=必要なコマンドをインストールする>必要なコマンドをインストールする</h3><pre><code>sudo apt install xsel
 sudo apt install xdotool
 sudo apt install zenity
-</code></pre><h3 id="clone">clone</h3>
-<p>Downloadsにcloneしてみます。</p>
-<pre><code>~ $ cd Downloads/
+</code></pre><h3 id=clone>clone</h3><p>Downloadsにcloneしてみます。</p><pre><code>~ $ cd Downloads/
 Downloads $ git clone git@github.com:leehblue/texpander.git
 Downloads $ cd texpander/
 texpander $ ls -la
@@ -74,460 +15,439 @@ drwxr-xr-x 8 teruhirokomaki teruhirokomaki  4096 Sep  7 21:37 .git
 -rw-r--r-- 1 teruhirokomaki teruhirokomaki 35142 Sep  7 21:37 LICENSE.md
 -rw-r--r-- 1 teruhirokomaki teruhirokomaki  5169 Sep  7 21:37 README.md
 -rwxr-xr-x 1 teruhirokomaki teruhirokomaki  2080 Sep  7 21:37 texpander.sh
-</code></pre><h3 id="texpandershをすきな場所におく">texpander.shをすきな場所におく</h3>
-<p><code>home/user/bin/</code>に<code>texpander.sh </code>をおく。</p>
-<p><code>~/bin</code>がなければ作成してください。</p>
-<pre><code>Downloads $ cp texpander/texpander.sh ~/bin/
-</code></pre><h3 id="texpanderを作成しテストファイルをおく">.texpanderを作成しテストファイルをおく</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Downloads $ <span class="nb">cd</span>
+</code></pre><h3 id=texpandershをすきな場所におく>texpander.shをすきな場所におく</h3><p><code>home/user/bin/</code>に<code>texpander.sh </code>をおく。</p><p><code>~/bin</code>がなければ作成してください。</p><pre><code>Downloads $ cp texpander/texpander.sh ~/bin/
+</code></pre><h3 id=texpanderを作成しテストファイルをおく>.texpanderを作成しテストファイルをおく</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Downloads $ <span class=nb>cd</span>
 ~ $ mkdir .texpander
-~ $ <span class="nb">echo</span> <span class="s1">&#39;test&#39;</span> &gt; .texpander/test.txt
-</code></pre></div><h3 id="ショートカットを設定する">ショートカットを設定する</h3>
-<p>作者の方と同じようにショートカットを設定します。</p>
-<p><img src="./texpander-2.webp" alt="texpander" title="texpander"></p>
-<p><img src="./texpander-3.webp" alt="texpander" title="texpander"></p>
-<h3 id="一部修正した">一部修正した</h3>
-<p><code>$HOME</code>の部分を修正した。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># If ~/.texpander directory does not exist, create it</span>
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="si">${</span><span class="nv">$HOME</span><span class="si">}</span>/.texpander <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir <span class="si">${</span><span class="nv">$HOME</span><span class="si">}</span>/.texpander
-<span class="k">fi</span>
-</code></pre></div><p>修正後</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># If ~/.texpander directory does not exist, create it</span>
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.texpander <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.texpander
-<span class="k">fi</span>
-</code></pre></div><h3 id="シェルスクリプトを見てみる">シェルスクリプトを見てみる</h3>
-<p>一部を抜粋してます…</p>
-<p>以下のスクリプトを見てわかるとおり、かなりシンプルなため…</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">name</span><span class="o">=</span><span class="k">$(</span>zenity --list --title<span class="o">=</span>Texpander --width<span class="o">=</span><span class="m">275</span> --height<span class="o">=</span><span class="m">400</span> --column<span class="o">=</span>Abbreviations <span class="nv">$abbrvs</span><span class="k">)</span>
+~ $ <span class=nb>echo</span> <span class=s1>&#39;test&#39;</span> &gt; .texpander/test.txt
+</code></pre></div><h3 id=ショートカットを設定する>ショートカットを設定する</h3><p>作者の方と同じようにショートカットを設定します。</p><p><img src=./texpander-2.webp alt=texpander title=texpander></p><p><img src=./texpander-3.webp alt=texpander title=texpander></p><h3 id=一部修正した>一部修正した</h3><p><code>$HOME</code>の部分を修正した。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># If ~/.texpander directory does not exist, create it</span>
+<span class=k>if</span> <span class=o>[</span> ! -d <span class=si>${</span><span class=nv>$HOME</span><span class=si>}</span>/.texpander <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    mkdir <span class=si>${</span><span class=nv>$HOME</span><span class=si>}</span>/.texpander
+<span class=k>fi</span>
+</code></pre></div><p>修正後</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># If ~/.texpander directory does not exist, create it</span>
+<span class=k>if</span> <span class=o>[</span> ! -d <span class=si>${</span><span class=nv>HOME</span><span class=si>}</span>/.texpander <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    mkdir <span class=si>${</span><span class=nv>HOME</span><span class=si>}</span>/.texpander
+<span class=k>fi</span>
+</code></pre></div><h3 id=シェルスクリプトを見てみる>シェルスクリプトを見てみる</h3><p>一部を抜粋してます…</p><p>以下のスクリプトを見てわかるとおり、かなりシンプルなため…</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>name</span><span class=o>=</span><span class=k>$(</span>zenity --list --title<span class=o>=</span>Texpander --width<span class=o>=</span><span class=m>275</span> --height<span class=o>=</span><span class=m>400</span> --column<span class=o>=</span>Abbreviations <span class=nv>$abbrvs</span><span class=k>)</span>
 
-<span class="nv">path</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class=nv>path</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>base_dir</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>name</span><span class=si>}</span><span class=s2>&#34;</span>
 
-<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="si">${</span><span class="nv">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span>
-<span class="k">then</span>
-  <span class="k">if</span> <span class="o">[</span> -e <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span> <span class="o">]</span>
-  <span class="k">then</span>
-    <span class="c1"># Preserve the current value of the clipboard</span>
-    <span class="nv">clipboard</span><span class="o">=</span><span class="k">$(</span>xsel -b -o<span class="k">)</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s2>&#34;</span><span class=si>${</span><span class=nv>base_dir</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>name</span><span class=si>}</span><span class=s2>&#34;</span> <span class=o>]</span>
+<span class=k>then</span>
+  <span class=k>if</span> <span class=o>[</span> -e <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span> <span class=o>]</span>
+  <span class=k>then</span>
+    <span class=c1># Preserve the current value of the clipboard</span>
+    <span class=nv>clipboard</span><span class=o>=</span><span class=k>$(</span>xsel -b -o<span class=k>)</span>
 
-    <span class="c1"># Put text in primary buffer for Shift+Insert pasting</span>
-    <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="p">|</span> xsel -p -i
+    <span class=c1># Put text in primary buffer for Shift+Insert pasting</span>
+    <span class=nb>echo</span> -n <span class=s2>&#34;</span><span class=k>$(</span>cat <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2>&#34;</span> <span class=p>|</span> xsel -p -i
 
-    <span class="c1"># Put text in clipboard selection for apps like Firefox that </span>
-    <span class="c1"># insist on using the clipboard for all pasting</span>
-    <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="p">|</span> xsel -b -i
+    <span class=c1># Put text in clipboard selection for apps like Firefox that </span>
+    <span class=c1># insist on using the clipboard for all pasting</span>
+    <span class=nb>echo</span> -n <span class=s2>&#34;</span><span class=k>$(</span>cat <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2>&#34;</span> <span class=p>|</span> xsel -b -i
 
-    <span class="c1"># Paste text into current active window</span>
+    <span class=c1># Paste text into current active window</span>
     sleep 0.3
     xdotool key shift+Insert
 
-</code></pre></div><p>ファイルが<code>.sh</code>と<code>.go</code>の場合の条件を追加してみた</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">name</span><span class="o">=</span><span class="k">$(</span>zenity --list --title<span class="o">=</span>Texpander --width<span class="o">=</span><span class="m">275</span> --height<span class="o">=</span><span class="m">400</span> --column<span class="o">=</span>Abbreviations <span class="nv">$abbrvs</span><span class="k">)</span>
+</code></pre></div><p>ファイルが<code>.sh</code>と<code>.go</code>の場合の条件を追加してみた</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>name</span><span class=o>=</span><span class=k>$(</span>zenity --list --title<span class=o>=</span>Texpander --width<span class=o>=</span><span class=m>275</span> --height<span class=o>=</span><span class=m>400</span> --column<span class=o>=</span>Abbreviations <span class=nv>$abbrvs</span><span class=k>)</span>
 
-<span class="nv">path</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class=nv>path</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>base_dir</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>name</span><span class=si>}</span><span class=s2>&#34;</span>
 
-<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="si">${</span><span class="nv">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span>
-<span class="k">then</span>
-  <span class="k">if</span> <span class="o">[</span> -e <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span> <span class="o">]</span>
-  <span class="k">then</span>
-    <span class="c1"># Preserve the current value of the clipboard</span>
-    <span class="nv">clipboard</span><span class="o">=</span><span class="k">$(</span>xsel -b -o<span class="k">)</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s2>&#34;</span><span class=si>${</span><span class=nv>base_dir</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>name</span><span class=si>}</span><span class=s2>&#34;</span> <span class=o>]</span>
+<span class=k>then</span>
+  <span class=k>if</span> <span class=o>[</span> -e <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span> <span class=o>]</span>
+  <span class=k>then</span>
+    <span class=c1># Preserve the current value of the clipboard</span>
+    <span class=nv>clipboard</span><span class=o>=</span><span class=k>$(</span>xsel -b -o<span class=k>)</span>
 
-    <span class="c1"># get ext from path</span>
-    <span class="nv">ext</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$path</span> <span class="p">|</span> sed <span class="s1">&#39;s/^.*\.\([^\.]*\)$/\1/&#39;</span><span class="k">)</span>
+    <span class=c1># get ext from path</span>
+    <span class=nv>ext</span><span class=o>=</span><span class=k>$(</span><span class=nb>echo</span> <span class=nv>$path</span> <span class=p>|</span> sed <span class=s1>&#39;s/^.*\.\([^\.]*\)$/\1/&#39;</span><span class=k>)</span>
 
-    <span class="c1"># check ext</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="nv">$ext</span> <span class="o">=</span> <span class="s2">&#34;sh&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-      bash <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$path</span><span class="k">)</span> <span class="p">|</span> xsel -p -i
-      bash <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$path</span><span class="k">)</span> <span class="p">|</span> xsel -b -i
+    <span class=c1># check ext</span>
+    <span class=k>if</span> <span class=o>[</span> <span class=nv>$ext</span> <span class=o>=</span> <span class=s2>&#34;sh&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+      bash <span class=k>$(</span><span class=nb>echo</span> <span class=nv>$path</span><span class=k>)</span> <span class=p>|</span> xsel -p -i
+      bash <span class=k>$(</span><span class=nb>echo</span> <span class=nv>$path</span><span class=k>)</span> <span class=p>|</span> xsel -b -i
 
-    <span class="k">elif</span> <span class="o">[</span> <span class="nv">$ext</span> <span class="o">=</span> <span class="s2">&#34;go&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-      go run <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$path</span><span class="k">)</span> <span class="p">|</span> xsel -p -i
-      go run <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$path</span><span class="k">)</span> <span class="p">|</span> xsel -b -i
+    <span class=k>elif</span> <span class=o>[</span> <span class=nv>$ext</span> <span class=o>=</span> <span class=s2>&#34;go&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+      go run <span class=k>$(</span><span class=nb>echo</span> <span class=nv>$path</span><span class=k>)</span> <span class=p>|</span> xsel -p -i
+      go run <span class=k>$(</span><span class=nb>echo</span> <span class=nv>$path</span><span class=k>)</span> <span class=p>|</span> xsel -b -i
 
-    <span class="k">else</span>
-      <span class="c1"># Put text in primary buffer for Shift+Insert pasting</span>
-      <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="p">|</span> xsel -p -i
+    <span class=k>else</span>
+      <span class=c1># Put text in primary buffer for Shift+Insert pasting</span>
+      <span class=nb>echo</span> -n <span class=s2>&#34;</span><span class=k>$(</span>cat <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2>&#34;</span> <span class=p>|</span> xsel -p -i
 
-      <span class="c1"># Put text in clipboard selection for apps like Firefox that </span>
-      <span class="c1"># insist on using the clipboard for all pasting</span>
-      <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$path</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="p">|</span> xsel -b -i
+      <span class=c1># Put text in clipboard selection for apps like Firefox that </span>
+      <span class=c1># insist on using the clipboard for all pasting</span>
+      <span class=nb>echo</span> -n <span class=s2>&#34;</span><span class=k>$(</span>cat <span class=s2>&#34;</span><span class=nv>$path</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2>&#34;</span> <span class=p>|</span> xsel -b -i
 
-    <span class="k">fi</span>
+    <span class=k>fi</span>
 
-    <span class="c1"># Paste text into current active window</span>
+    <span class=c1># Paste text into current active window</span>
     sleep 0.3
     xdotool key shift+Insert
-</code></pre></div><h3 id="使ってみる">使ってみる</h3>
-<p>こんな感じで使えます。</p>
-<p><img src="./texpander-demo.gif" alt="texpander" title="texpander"></p>
-<h2 id="zenityコマンドを見てみる">zenityコマンドを見てみる</h2>
-<p>Texpnaderで使われている<code>zenity</code>というコマンドは、どんなものか見てみました。</p>
-<p>manをみる</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">man zenity
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ZENITY<span class="o">(</span>1<span class="o">)</span>                                                                                  General Commands Manual                                                                                  ZENITY<span class="o">(</span>1<span class="o">)</span>
+</code></pre></div><h3 id=使ってみる>使ってみる</h3><p>こんな感じで使えます。</p><p><img src=./texpander-demo.gif alt=texpander title=texpander></p><h2 id=zenityコマンドを見てみる>zenityコマンドを見てみる</h2><p>Texpnaderで使われている<code>zenity</code>というコマンドは、どんなものか見てみました。</p><p>manをみる</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>man zenity
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>ZENITY<span class=o>(</span>1<span class=o>)</span>                                                                                  General Commands Manual                                                                                  ZENITY<span class=o>(</span>1<span class=o>)</span>
 
 NAME
        zenity - display GTK+ dialogs
 
 SYNOPSIS
-       zenity <span class="o">[</span>options<span class="o">]</span>
+       zenity <span class=o>[</span>options<span class=o>]</span>
 
 DESCRIPTION
-       zenity  is  a  program  that will display GTK+ dialogs, and <span class="k">return</span> <span class="o">(</span>either in the <span class="k">return</span> code, or on standard output<span class="o">)</span> the users input. This allows you to present information, and ask <span class="k">for</span> information
+       zenity  is  a  program  that will display GTK+ dialogs, and <span class=k>return</span> <span class=o>(</span>either in the <span class=k>return</span> code, or on standard output<span class=o>)</span> the users input. This allows you to present information, and ask <span class=k>for</span> information
        from the user, from all manner of shell scripts.
 
-       For example, zenity --question will <span class="k">return</span> either 0, <span class="m">1</span> or 5, depending on whether the user pressed OK, Cancel or timeout has been reached. zenity --entry will output on standard output what the user
+       For example, zenity --question will <span class=k>return</span> either 0, <span class=m>1</span> or 5, depending on whether the user pressed OK, Cancel or timeout has been reached. zenity --entry will output on standard output what the user
        typed into the text entry field.
 
        Comprehensive documentation is available in the GNOME Help Browser.
 
 OPTIONS
-       This program follows the usual GNU <span class="nb">command</span> line syntax, with long options starting with two dashes <span class="o">(</span><span class="sb">`</span>-<span class="s1">&#39;).
-</span><span class="s1">
-</span><span class="s1">       Dialog options
-</span><span class="s1">
-</span><span class="s1">       --calendar
-</span><span class="s1">              Display calendar dialog
-</span><span class="s1">
-</span><span class="s1">       --entry
-</span><span class="s1">              Display text entry dialog
-</span><span class="s1">
-</span><span class="s1">       --error
-</span><span class="s1">              Display error dialog
-</span><span class="s1">
-</span><span class="s1">       --file-selection
-</span><span class="s1">              Display file selection dialog
-</span><span class="s1">
-</span><span class="s1">       --info Display info dialog
-</span><span class="s1">
-</span><span class="s1">       --list Display list dialog
-</span><span class="s1">
-</span><span class="s1">       --notification
-</span><span class="s1">              Display notification
-</span><span class="s1">
-</span><span class="s1">       --progress
-</span><span class="s1">              Display progress indication dialog
-</span><span class="s1">
-</span><span class="s1">       --question
-</span><span class="s1">              Display question dialog
-</span><span class="s1">
-</span><span class="s1">       --text-info
-</span><span class="s1">              Display text information dialog
-</span><span class="s1">
-</span><span class="s1">       --warning
-</span><span class="s1">              Display warning dialog
-</span><span class="s1">
-</span><span class="s1">       --scale
-</span><span class="s1">              Display scale dialog
-</span><span class="s1">
-</span><span class="s1">       --color-selection
-</span><span class="s1">              Display color selection dialog
-</span><span class="s1">
-</span><span class="s1">       --password
-</span><span class="s1">              Display password dialog
-</span><span class="s1">
-</span><span class="s1">       --forms
-</span><span class="s1">              Display forms dialog
-</span><span class="s1">
-</span><span class="s1">       General options
-</span><span class="s1">
-</span><span class="s1">       --title=TITLE
-</span><span class="s1">              Set the dialog title
-</span><span class="s1">
-</span><span class="s1">       --window-icon=ICONPATH
-</span><span class="s1">              Set the window icon with the path to an image. Alternatively, one of the four stock icons can be used: &#39;</span>error<span class="s1">&#39;, &#39;</span>info<span class="s1">&#39;, &#39;</span>question<span class="s1">&#39; or &#39;</span>warning<span class="s1">&#39;
-</span><span class="s1">
-</span><span class="s1">       --width=WIDTH
-</span><span class="s1">              Set the dialog width
-</span><span class="s1">
-</span><span class="s1">       --height=HEIGHT
-</span><span class="s1">              Set the dialog height
-</span><span class="s1">
-</span><span class="s1">       --timeout=TIMEOUT
-</span><span class="s1">              Set the dialog timeout in seconds
-</span><span class="s1">
-</span><span class="s1">       Calendar options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --day=INT
-</span><span class="s1">              Set the calendar day
-</span><span class="s1">
-</span><span class="s1">       --month=INT
-</span><span class="s1">              Set the calendar month
-</span><span class="s1">
-</span><span class="s1">       --year=INT
-</span><span class="s1">              Set the calendar year
-</span><span class="s1">
-</span><span class="s1">       --date-format=PATTERN
-</span><span class="s1">              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
-</span><span class="s1">
-</span><span class="s1">       Text entry options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --entry-text=STRING
-</span><span class="s1">              Set the entry text
-</span><span class="s1">
-</span><span class="s1">       --hide-text
-</span><span class="s1">              Hide the entry text
-</span><span class="s1">
-</span><span class="s1">       Error options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --no-wrap
-</span><span class="s1">              Do not enable text wrapping
-</span><span class="s1">
-</span><span class="s1">       --no-markup
-</span><span class="s1">              Do not enable pango markup
-</span><span class="s1">
-</span><span class="s1">       File selection options
-</span><span class="s1">
-</span><span class="s1">       --filename=FILENAME
-</span><span class="s1">              Set the file or directory to be selected by default
-</span><span class="s1">
-</span><span class="s1">       --multiple
-</span><span class="s1">              Allow selection of multiple filenames in file selection dialog
-</span><span class="s1">
-</span><span class="s1">       --directory
-</span><span class="s1">              Activate directory-only selection
-</span><span class="s1">
-</span><span class="s1">       --save Activate save mode
-</span><span class="s1">
-</span><span class="s1">       --separator=SEPARATOR
-</span><span class="s1">              Specify separator character when returning multiple filenames
-</span><span class="s1">
-</span><span class="s1">       --confirm-overwrite
-</span><span class="s1">              Confirm file selection if filename already exists
-</span><span class="s1">
-</span><span class="s1">       --file-filter=NAME | PATTERN1 PATTERN2
-</span><span class="s1">              Sets a filename filter
-</span><span class="s1">
-</span><span class="s1">       Info options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --no-wrap
-</span><span class="s1">              Do not enable text wrapping
-</span><span class="s1">
-</span><span class="s1">       --no-markup
-</span><span class="s1">              Do not enable pango markup
-</span><span class="s1">
-</span><span class="s1">       List options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --column=STRING
-</span><span class="s1">              Set the column header
-</span><span class="s1">
-</span><span class="s1">       --checklist
-</span><span class="s1">              Use check boxes for first column
-</span><span class="s1">
-</span><span class="s1">       --radiolist
-</span><span class="s1">              Use radio buttons for first column
-</span><span class="s1">
-</span><span class="s1">       --separator=STRING
-</span><span class="s1">              Set output separator character
-</span><span class="s1">
-</span><span class="s1">       --multiple
-</span><span class="s1">              Allow multiple rows to be selected
-</span><span class="s1">
-</span><span class="s1">       --editable
-</span><span class="s1">              Allow changes to text
-</span><span class="s1">
-</span><span class="s1">       --print-column=NUMBER
-</span><span class="s1">              Specify what column to print to standard output. The default is to return the first column. &#39;</span>ALL<span class="s1">&#39; may be used to print all columns.
-</span><span class="s1">
-</span><span class="s1">       --hide-column=NUMBER
-</span><span class="s1">              Hide a specific column
-</span><span class="s1">
-</span><span class="s1">       --hide-header
-</span><span class="s1">              Hides the column headers
-</span><span class="s1">
-</span><span class="s1">       Notification options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the notification text
-</span><span class="s1">
-</span><span class="s1">       --listen
-</span><span class="s1">              Listen  for  commands  on  stdin.  Commands  include  &#39;</span>message<span class="s1">&#39;,  &#39;</span>tooltip<span class="s1">&#39;,  &#39;</span>icon<span class="s1">&#39;,  and  &#39;</span>visible<span class="s1">&#39;  separated  by  a colon. For example, &#39;</span>message: Hello world<span class="s1">&#39;, &#39;</span>visible: false<span class="s1">&#39;, or &#39;</span>icon:
-              /path/to/icon<span class="s1">&#39;. The icon command also accepts the four stock icon: &#39;</span>error<span class="s1">&#39;, &#39;</span>info<span class="s1">&#39;, &#39;</span>question<span class="s1">&#39;, and &#39;</span>warning<span class="s1">&#39;
-</span><span class="s1">
-</span><span class="s1">       Progress options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --percentage=INT
-</span><span class="s1">              Set initial percentage
-</span><span class="s1">
-</span><span class="s1">       --auto-close
-</span><span class="s1">              Close dialog when 100% has been reached
-</span><span class="s1">
-</span><span class="s1">       --auto-kill
-</span><span class="s1">              Kill parent process if cancel button is pressed
-</span><span class="s1">
-</span><span class="s1">       --pulsate
-</span><span class="s1">              Pulsate progress bar
-</span><span class="s1">
-</span><span class="s1">       --no-cancel
-</span><span class="s1">              Hides the cancel button
-</span><span class="s1">
-</span><span class="s1">       Question options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --no-wrap
-</span><span class="s1">              Do not enable text wrapping
-</span><span class="s1">
-</span><span class="s1">       --no-markup
-</span><span class="s1">              Do not enable pango markup
-</span><span class="s1">
-</span><span class="s1">       --ok-label
-</span><span class="s1">              Set the text of the OK button
-</span><span class="s1">
-</span><span class="s1">       --cancel-label
-</span><span class="s1">              Set the text of the cancel button
-</span><span class="s1">
-</span><span class="s1">       Text options
-</span><span class="s1">
-</span><span class="s1">       --filename=FILENAME
-</span><span class="s1">              Open file
-</span><span class="s1">
-</span><span class="s1">       --editable
-</span><span class="s1">              Allow changes to text
-</span><span class="s1">
-</span><span class="s1">       --checkbox=TEXT
-</span><span class="s1">              Enable a checkbox for use like a &#39;</span>I <span class="nb">read</span> and accept the terms.<span class="s1">&#39;
-</span><span class="s1">
-</span><span class="s1">       --ok-label
-</span><span class="s1">              Set the text of the OK button
-</span><span class="s1">
-</span><span class="s1">       --cancel-label
-</span><span class="s1">              Set the text of the cancel button
-</span><span class="s1">
-</span><span class="s1">       Warning options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --no-wrap
-</span><span class="s1">              Do not enable text wrapping
-</span><span class="s1">
-</span><span class="s1">       --no-markup
-</span><span class="s1">              Do not enable pango markup
-</span><span class="s1">
-</span><span class="s1">       Scale options
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --value=VALUE
-</span><span class="s1">              Set initial value
-</span><span class="s1">
-</span><span class="s1">       --min-value=VALUE
-</span><span class="s1">              Set minimum value
-</span><span class="s1">
-</span><span class="s1">       --max-value=VALUE
-</span><span class="s1">              Set maximum value
-</span><span class="s1">
-</span><span class="s1">       --step=VALUE
-</span><span class="s1">              Set step size
-</span><span class="s1">
-</span><span class="s1">       --print-partial
-</span><span class="s1">              Print partial values
-</span><span class="s1">
-</span><span class="s1">       --hide-value
-</span><span class="s1">              Hide value
-</span><span class="s1">
-</span><span class="s1">       Color selection options
-</span><span class="s1">
-</span><span class="s1">       --color=VALUE
-</span><span class="s1">              Set the initial color
-</span><span class="s1">
-</span><span class="s1">       --show-palette
-</span><span class="s1">              Show the palette
-</span><span class="s1">
-</span><span class="s1">       Password dialog options
-</span><span class="s1">
-</span><span class="s1">       --username
-</span><span class="s1">              Display the username field
-</span><span class="s1">
-</span><span class="s1">       Forms dialog options
-</span><span class="s1">
-</span><span class="s1">       --add-entry=FIELDNAME
-</span><span class="s1">              Add a new Entry in forms dialog
-</span><span class="s1">
-</span><span class="s1">       --add-password=FIELDNAME
-</span><span class="s1">              Add a new Password Entry in forms dialog
-</span><span class="s1">
-</span><span class="s1">       --add-calendar=FIELDNAME
-</span><span class="s1">              Add a new Calendar in forms dialog
-</span><span class="s1">
-</span><span class="s1">       --text=STRING
-</span><span class="s1">              Set the dialog text
-</span><span class="s1">
-</span><span class="s1">       --separator=STRING
-</span><span class="s1">              Set output separator character
-</span><span class="s1">
-</span><span class="s1">       --forms-date-format=PATTERN
-</span><span class="s1">              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
-</span><span class="s1">
-</span><span class="s1">       Miscellaneous options
-</span><span class="s1">
-</span><span class="s1">       -?, --help
-</span><span class="s1">              Show summary of options.
-</span><span class="s1">
-</span><span class="s1">       --about
-</span><span class="s1">              Display an about dialog.
-</span><span class="s1">
-</span><span class="s1">       --version
-</span><span class="s1">              Show version of program.
-</span><span class="s1">
-</span><span class="s1">       Also the standard GTK+ options are accepted. For more information about the GTK+ options, execute following command.
-</span><span class="s1">
-</span><span class="s1">              zenity --help-gtk
-</span><span class="s1">
-</span><span class="s1">ENVIRONMENT
-</span><span class="s1">       Normally, zenity detects the terminal window from which it was launched and keeps itself above that window.  This behavior can be disabled by unsetting the WINDOWID environment variable.
-</span><span class="s1">
-</span><span class="s1">EXAMPLES
-</span><span class="s1">       Display a file selector with the title Select a file to remove. The file selected is returned on standard output.
-</span><span class="s1">
-</span><span class="s1">              zenity  --title=&#34;Select a file to remove&#34; --file-selection
-</span><span class="s1">
-</span><span class="s1">       Display a text entry dialog with the title Select Host and the text Select the host you would like to flood-ping. The entered text is returned on standard output.
-</span><span class="s1">
-</span><span class="s1">              zenity  --title &#34;Select Host&#34; --entry --text &#34;Select the host you would like to flood-ping&#34;
-</span><span class="s1">
-</span><span class="s1">       Display a dialog, asking Microsoft Windows has been found! Would you like to remove it?. The return code will be 0 (true in shell) if OK is selected, and 1 (false) if Cancel is selected.
-</span><span class="s1">
-</span><span class="s1">              zenity  --question --title &#34;Alert&#34;  --text &#34;Microsoft Windows has been found! Would you like to remove it?&#34;
-</span><span class="s1">
-</span><span class="s1">       Show the search results in a list dialog with the title Search Results and the text Finding all header files....
-</span><span class="s1">
-</span><span class="s1">              find . -name &#39;</span>*.h<span class="s1">&#39; | zenity --list --title &#34;Search Results&#34; --text &#34;Finding all header files..&#34; --column &#34;Files&#34;
-</span><span class="s1">
-</span><span class="s1">       Show a notification in the message tray
-</span><span class="s1">
-</span><span class="s1">              zenity --notification --window-icon=update.png --text &#34;System update necessary!&#34;
-</span><span class="s1">
-</span><span class="s1">       Display a weekly shopping list in a check list dialog with Apples and Oranges pre selected
-</span><span class="s1">
-</span><span class="s1">              zenity --list --checklist --column &#34;Buy&#34; --column &#34;Item&#34; TRUE Apples TRUE Oranges FALSE Pears FALSE Toothpaste
-</span><span class="s1">
-</span><span class="s1">       Display a progress dialog while searching for all the postscript files in your home directory
-</span><span class="s1">
-</span><span class="s1">       find $HOME -name &#39;</span>*.ps<span class="err">&#39;</span> <span class="p">|</span> zenity --progress --pulsate
+       This program follows the usual GNU <span class=nb>command</span> line syntax, with long options starting with two dashes <span class=o>(</span><span class=sb>`</span>-<span class=s1>&#39;).
+</span><span class=s1>
+</span><span class=s1>       Dialog options
+</span><span class=s1>
+</span><span class=s1>       --calendar
+</span><span class=s1>              Display calendar dialog
+</span><span class=s1>
+</span><span class=s1>       --entry
+</span><span class=s1>              Display text entry dialog
+</span><span class=s1>
+</span><span class=s1>       --error
+</span><span class=s1>              Display error dialog
+</span><span class=s1>
+</span><span class=s1>       --file-selection
+</span><span class=s1>              Display file selection dialog
+</span><span class=s1>
+</span><span class=s1>       --info Display info dialog
+</span><span class=s1>
+</span><span class=s1>       --list Display list dialog
+</span><span class=s1>
+</span><span class=s1>       --notification
+</span><span class=s1>              Display notification
+</span><span class=s1>
+</span><span class=s1>       --progress
+</span><span class=s1>              Display progress indication dialog
+</span><span class=s1>
+</span><span class=s1>       --question
+</span><span class=s1>              Display question dialog
+</span><span class=s1>
+</span><span class=s1>       --text-info
+</span><span class=s1>              Display text information dialog
+</span><span class=s1>
+</span><span class=s1>       --warning
+</span><span class=s1>              Display warning dialog
+</span><span class=s1>
+</span><span class=s1>       --scale
+</span><span class=s1>              Display scale dialog
+</span><span class=s1>
+</span><span class=s1>       --color-selection
+</span><span class=s1>              Display color selection dialog
+</span><span class=s1>
+</span><span class=s1>       --password
+</span><span class=s1>              Display password dialog
+</span><span class=s1>
+</span><span class=s1>       --forms
+</span><span class=s1>              Display forms dialog
+</span><span class=s1>
+</span><span class=s1>       General options
+</span><span class=s1>
+</span><span class=s1>       --title=TITLE
+</span><span class=s1>              Set the dialog title
+</span><span class=s1>
+</span><span class=s1>       --window-icon=ICONPATH
+</span><span class=s1>              Set the window icon with the path to an image. Alternatively, one of the four stock icons can be used: &#39;</span>error<span class=s1>&#39;, &#39;</span>info<span class=s1>&#39;, &#39;</span>question<span class=s1>&#39; or &#39;</span>warning<span class=s1>&#39;
+</span><span class=s1>
+</span><span class=s1>       --width=WIDTH
+</span><span class=s1>              Set the dialog width
+</span><span class=s1>
+</span><span class=s1>       --height=HEIGHT
+</span><span class=s1>              Set the dialog height
+</span><span class=s1>
+</span><span class=s1>       --timeout=TIMEOUT
+</span><span class=s1>              Set the dialog timeout in seconds
+</span><span class=s1>
+</span><span class=s1>       Calendar options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --day=INT
+</span><span class=s1>              Set the calendar day
+</span><span class=s1>
+</span><span class=s1>       --month=INT
+</span><span class=s1>              Set the calendar month
+</span><span class=s1>
+</span><span class=s1>       --year=INT
+</span><span class=s1>              Set the calendar year
+</span><span class=s1>
+</span><span class=s1>       --date-format=PATTERN
+</span><span class=s1>              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
+</span><span class=s1>
+</span><span class=s1>       Text entry options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --entry-text=STRING
+</span><span class=s1>              Set the entry text
+</span><span class=s1>
+</span><span class=s1>       --hide-text
+</span><span class=s1>              Hide the entry text
+</span><span class=s1>
+</span><span class=s1>       Error options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --no-wrap
+</span><span class=s1>              Do not enable text wrapping
+</span><span class=s1>
+</span><span class=s1>       --no-markup
+</span><span class=s1>              Do not enable pango markup
+</span><span class=s1>
+</span><span class=s1>       File selection options
+</span><span class=s1>
+</span><span class=s1>       --filename=FILENAME
+</span><span class=s1>              Set the file or directory to be selected by default
+</span><span class=s1>
+</span><span class=s1>       --multiple
+</span><span class=s1>              Allow selection of multiple filenames in file selection dialog
+</span><span class=s1>
+</span><span class=s1>       --directory
+</span><span class=s1>              Activate directory-only selection
+</span><span class=s1>
+</span><span class=s1>       --save Activate save mode
+</span><span class=s1>
+</span><span class=s1>       --separator=SEPARATOR
+</span><span class=s1>              Specify separator character when returning multiple filenames
+</span><span class=s1>
+</span><span class=s1>       --confirm-overwrite
+</span><span class=s1>              Confirm file selection if filename already exists
+</span><span class=s1>
+</span><span class=s1>       --file-filter=NAME | PATTERN1 PATTERN2
+</span><span class=s1>              Sets a filename filter
+</span><span class=s1>
+</span><span class=s1>       Info options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --no-wrap
+</span><span class=s1>              Do not enable text wrapping
+</span><span class=s1>
+</span><span class=s1>       --no-markup
+</span><span class=s1>              Do not enable pango markup
+</span><span class=s1>
+</span><span class=s1>       List options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --column=STRING
+</span><span class=s1>              Set the column header
+</span><span class=s1>
+</span><span class=s1>       --checklist
+</span><span class=s1>              Use check boxes for first column
+</span><span class=s1>
+</span><span class=s1>       --radiolist
+</span><span class=s1>              Use radio buttons for first column
+</span><span class=s1>
+</span><span class=s1>       --separator=STRING
+</span><span class=s1>              Set output separator character
+</span><span class=s1>
+</span><span class=s1>       --multiple
+</span><span class=s1>              Allow multiple rows to be selected
+</span><span class=s1>
+</span><span class=s1>       --editable
+</span><span class=s1>              Allow changes to text
+</span><span class=s1>
+</span><span class=s1>       --print-column=NUMBER
+</span><span class=s1>              Specify what column to print to standard output. The default is to return the first column. &#39;</span>ALL<span class=s1>&#39; may be used to print all columns.
+</span><span class=s1>
+</span><span class=s1>       --hide-column=NUMBER
+</span><span class=s1>              Hide a specific column
+</span><span class=s1>
+</span><span class=s1>       --hide-header
+</span><span class=s1>              Hides the column headers
+</span><span class=s1>
+</span><span class=s1>       Notification options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the notification text
+</span><span class=s1>
+</span><span class=s1>       --listen
+</span><span class=s1>              Listen  for  commands  on  stdin.  Commands  include  &#39;</span>message<span class=s1>&#39;,  &#39;</span>tooltip<span class=s1>&#39;,  &#39;</span>icon<span class=s1>&#39;,  and  &#39;</span>visible<span class=s1>&#39;  separated  by  a colon. For example, &#39;</span>message: Hello world<span class=s1>&#39;, &#39;</span>visible: false<span class=s1>&#39;, or &#39;</span>icon:
+              /path/to/icon<span class=s1>&#39;. The icon command also accepts the four stock icon: &#39;</span>error<span class=s1>&#39;, &#39;</span>info<span class=s1>&#39;, &#39;</span>question<span class=s1>&#39;, and &#39;</span>warning<span class=s1>&#39;
+</span><span class=s1>
+</span><span class=s1>       Progress options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --percentage=INT
+</span><span class=s1>              Set initial percentage
+</span><span class=s1>
+</span><span class=s1>       --auto-close
+</span><span class=s1>              Close dialog when 100% has been reached
+</span><span class=s1>
+</span><span class=s1>       --auto-kill
+</span><span class=s1>              Kill parent process if cancel button is pressed
+</span><span class=s1>
+</span><span class=s1>       --pulsate
+</span><span class=s1>              Pulsate progress bar
+</span><span class=s1>
+</span><span class=s1>       --no-cancel
+</span><span class=s1>              Hides the cancel button
+</span><span class=s1>
+</span><span class=s1>       Question options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --no-wrap
+</span><span class=s1>              Do not enable text wrapping
+</span><span class=s1>
+</span><span class=s1>       --no-markup
+</span><span class=s1>              Do not enable pango markup
+</span><span class=s1>
+</span><span class=s1>       --ok-label
+</span><span class=s1>              Set the text of the OK button
+</span><span class=s1>
+</span><span class=s1>       --cancel-label
+</span><span class=s1>              Set the text of the cancel button
+</span><span class=s1>
+</span><span class=s1>       Text options
+</span><span class=s1>
+</span><span class=s1>       --filename=FILENAME
+</span><span class=s1>              Open file
+</span><span class=s1>
+</span><span class=s1>       --editable
+</span><span class=s1>              Allow changes to text
+</span><span class=s1>
+</span><span class=s1>       --checkbox=TEXT
+</span><span class=s1>              Enable a checkbox for use like a &#39;</span>I <span class=nb>read</span> and accept the terms.<span class=s1>&#39;
+</span><span class=s1>
+</span><span class=s1>       --ok-label
+</span><span class=s1>              Set the text of the OK button
+</span><span class=s1>
+</span><span class=s1>       --cancel-label
+</span><span class=s1>              Set the text of the cancel button
+</span><span class=s1>
+</span><span class=s1>       Warning options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --no-wrap
+</span><span class=s1>              Do not enable text wrapping
+</span><span class=s1>
+</span><span class=s1>       --no-markup
+</span><span class=s1>              Do not enable pango markup
+</span><span class=s1>
+</span><span class=s1>       Scale options
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --value=VALUE
+</span><span class=s1>              Set initial value
+</span><span class=s1>
+</span><span class=s1>       --min-value=VALUE
+</span><span class=s1>              Set minimum value
+</span><span class=s1>
+</span><span class=s1>       --max-value=VALUE
+</span><span class=s1>              Set maximum value
+</span><span class=s1>
+</span><span class=s1>       --step=VALUE
+</span><span class=s1>              Set step size
+</span><span class=s1>
+</span><span class=s1>       --print-partial
+</span><span class=s1>              Print partial values
+</span><span class=s1>
+</span><span class=s1>       --hide-value
+</span><span class=s1>              Hide value
+</span><span class=s1>
+</span><span class=s1>       Color selection options
+</span><span class=s1>
+</span><span class=s1>       --color=VALUE
+</span><span class=s1>              Set the initial color
+</span><span class=s1>
+</span><span class=s1>       --show-palette
+</span><span class=s1>              Show the palette
+</span><span class=s1>
+</span><span class=s1>       Password dialog options
+</span><span class=s1>
+</span><span class=s1>       --username
+</span><span class=s1>              Display the username field
+</span><span class=s1>
+</span><span class=s1>       Forms dialog options
+</span><span class=s1>
+</span><span class=s1>       --add-entry=FIELDNAME
+</span><span class=s1>              Add a new Entry in forms dialog
+</span><span class=s1>
+</span><span class=s1>       --add-password=FIELDNAME
+</span><span class=s1>              Add a new Password Entry in forms dialog
+</span><span class=s1>
+</span><span class=s1>       --add-calendar=FIELDNAME
+</span><span class=s1>              Add a new Calendar in forms dialog
+</span><span class=s1>
+</span><span class=s1>       --text=STRING
+</span><span class=s1>              Set the dialog text
+</span><span class=s1>
+</span><span class=s1>       --separator=STRING
+</span><span class=s1>              Set output separator character
+</span><span class=s1>
+</span><span class=s1>       --forms-date-format=PATTERN
+</span><span class=s1>              Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
+</span><span class=s1>
+</span><span class=s1>       Miscellaneous options
+</span><span class=s1>
+</span><span class=s1>       -?, --help
+</span><span class=s1>              Show summary of options.
+</span><span class=s1>
+</span><span class=s1>       --about
+</span><span class=s1>              Display an about dialog.
+</span><span class=s1>
+</span><span class=s1>       --version
+</span><span class=s1>              Show version of program.
+</span><span class=s1>
+</span><span class=s1>       Also the standard GTK+ options are accepted. For more information about the GTK+ options, execute following command.
+</span><span class=s1>
+</span><span class=s1>              zenity --help-gtk
+</span><span class=s1>
+</span><span class=s1>ENVIRONMENT
+</span><span class=s1>       Normally, zenity detects the terminal window from which it was launched and keeps itself above that window.  This behavior can be disabled by unsetting the WINDOWID environment variable.
+</span><span class=s1>
+</span><span class=s1>EXAMPLES
+</span><span class=s1>       Display a file selector with the title Select a file to remove. The file selected is returned on standard output.
+</span><span class=s1>
+</span><span class=s1>              zenity  --title=&#34;Select a file to remove&#34; --file-selection
+</span><span class=s1>
+</span><span class=s1>       Display a text entry dialog with the title Select Host and the text Select the host you would like to flood-ping. The entered text is returned on standard output.
+</span><span class=s1>
+</span><span class=s1>              zenity  --title &#34;Select Host&#34; --entry --text &#34;Select the host you would like to flood-ping&#34;
+</span><span class=s1>
+</span><span class=s1>       Display a dialog, asking Microsoft Windows has been found! Would you like to remove it?. The return code will be 0 (true in shell) if OK is selected, and 1 (false) if Cancel is selected.
+</span><span class=s1>
+</span><span class=s1>              zenity  --question --title &#34;Alert&#34;  --text &#34;Microsoft Windows has been found! Would you like to remove it?&#34;
+</span><span class=s1>
+</span><span class=s1>       Show the search results in a list dialog with the title Search Results and the text Finding all header files....
+</span><span class=s1>
+</span><span class=s1>              find . -name &#39;</span>*.h<span class=s1>&#39; | zenity --list --title &#34;Search Results&#34; --text &#34;Finding all header files..&#34; --column &#34;Files&#34;
+</span><span class=s1>
+</span><span class=s1>       Show a notification in the message tray
+</span><span class=s1>
+</span><span class=s1>              zenity --notification --window-icon=update.png --text &#34;System update necessary!&#34;
+</span><span class=s1>
+</span><span class=s1>       Display a weekly shopping list in a check list dialog with Apples and Oranges pre selected
+</span><span class=s1>
+</span><span class=s1>              zenity --list --checklist --column &#34;Buy&#34; --column &#34;Item&#34; TRUE Apples TRUE Oranges FALSE Pears FALSE Toothpaste
+</span><span class=s1>
+</span><span class=s1>       Display a progress dialog while searching for all the postscript files in your home directory
+</span><span class=s1>
+</span><span class=s1>       find $HOME -name &#39;</span>*.ps<span class=err>&#39;</span> <span class=p>|</span> zenity --progress --pulsate
 
 AUTHOR
        Zenity was written by Glynn Foster &lt;glynn.foster@sun.com&gt;.
@@ -535,32 +455,9 @@ AUTHOR
        This manual page was written by Ross Burton &lt;ross@burtonini.com&gt;.
 
 SEE ALSO
-       gdialog<span class="o">(</span>1<span class="o">)</span>, dialog<span class="o">(</span>1<span class="o">)</span>
-</code></pre></div><h3 id="色々と叩いてみる">色々と叩いてみる</h3>
-<p><code>--list</code>のオプションを指定してみる。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ zenity --list --title<span class="o">=</span>Texpander --width<span class="o">=</span><span class="m">275</span> --height<span class="o">=</span><span class="m">400</span> --column<span class="o">=</span><span class="s2">&#34;no&#34;</span> --column<span class="o">=</span><span class="s2">&#34;Abbreviations&#34;</span> --separator<span class="o">=</span><span class="s2">&#34;|&#34;</span> --text<span class="o">=</span>STRING --multiple --print-column<span class="o">=</span>ALL <span class="m">1</span> <span class="s2">&#34;aaa&#34;</span> <span class="m">2</span> <span class="s2">&#34;bbb&#34;</span>
-</code></pre></div><p>どうでしょうか。</p>
-<p><img src="./texpander-4.webp" alt="texpander" title="texpander"></p>
-<p>ダイアログはこんな感じです。</p>
-<p><img src="./texpander-5.webp" alt="texpander" title="texpander"></p>
-<p><code>--separator=&quot;|&quot;</code>と<code>--multiple</code>を指定して、2つを選択してるためか、出力はこんな感じです。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ 1<span class="p">|</span>aaa<span class="p">|</span>2<span class="p">|</span>bbb
-</code></pre></div><p>別のオプションを指定してみる。</p>
-<p><code>--editable</code>と<code>--column=&quot;param&quot;</code>を追加してみました。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ zenity --list --title<span class="o">=</span>Texpander --width<span class="o">=</span><span class="m">275</span> --height<span class="o">=</span><span class="m">400</span> --column<span class="o">=</span><span class="s2">&#34;no&#34;</span> --column<span class="o">=</span><span class="s2">&#34;Abbreviations&#34;</span> --column<span class="o">=</span><span class="s2">&#34;param&#34;</span> --editable --separator<span class="o">=</span><span class="s2">&#34;|&#34;</span> --text<span class="o">=</span>STRING --multiple --print-column<span class="o">=</span>ALL <span class="m">1</span> <span class="s2">&#34;aaa&#34;</span>  <span class="s2">&#34;&#34;</span> <span class="m">2</span> <span class="s2">&#34;bbb&#34;</span> <span class="s2">&#34;&#34;</span>
-</code></pre></div><p><img src="./texpander-6.webp" alt="texpander" title="texpander"></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ 1<span class="p">|</span>aaa<span class="p">|</span>引数を
-</code></pre></div><p>やろうと思えば、任意の文字列を渡せそうです。</p>
-<p>zenityは、list以外にも色々とあるので、いじってみます。</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+       gdialog<span class=o>(</span>1<span class=o>)</span>, dialog<span class=o>(</span>1<span class=o>)</span>
+</code></pre></div><h3 id=色々と叩いてみる>色々と叩いてみる</h3><p><code>--list</code>のオプションを指定してみる。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ zenity --list --title<span class=o>=</span>Texpander --width<span class=o>=</span><span class=m>275</span> --height<span class=o>=</span><span class=m>400</span> --column<span class=o>=</span><span class=s2>&#34;no&#34;</span> --column<span class=o>=</span><span class=s2>&#34;Abbreviations&#34;</span> --separator<span class=o>=</span><span class=s2>&#34;|&#34;</span> --text<span class=o>=</span>STRING --multiple --print-column<span class=o>=</span>ALL <span class=m>1</span> <span class=s2>&#34;aaa&#34;</span> <span class=m>2</span> <span class=s2>&#34;bbb&#34;</span>
+</code></pre></div><p>どうでしょうか。</p><p><img src=./texpander-4.webp alt=texpander title=texpander></p><p>ダイアログはこんな感じです。</p><p><img src=./texpander-5.webp alt=texpander title=texpander></p><p><code>--separator="|"</code>と<code>--multiple</code>を指定して、2つを選択してるためか、出力はこんな感じです。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ 1<span class=p>|</span>aaa<span class=p>|</span>2<span class=p>|</span>bbb
+</code></pre></div><p>別のオプションを指定してみる。</p><p><code>--editable</code>と<code>--column="param"</code>を追加してみました。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ zenity --list --title<span class=o>=</span>Texpander --width<span class=o>=</span><span class=m>275</span> --height<span class=o>=</span><span class=m>400</span> --column<span class=o>=</span><span class=s2>&#34;no&#34;</span> --column<span class=o>=</span><span class=s2>&#34;Abbreviations&#34;</span> --column<span class=o>=</span><span class=s2>&#34;param&#34;</span> --editable --separator<span class=o>=</span><span class=s2>&#34;|&#34;</span> --text<span class=o>=</span>STRING --multiple --print-column<span class=o>=</span>ALL <span class=m>1</span> <span class=s2>&#34;aaa&#34;</span>  <span class=s2>&#34;&#34;</span> <span class=m>2</span> <span class=s2>&#34;bbb&#34;</span> <span class=s2>&#34;&#34;</span>
+</code></pre></div><p><img src=./texpander-6.webp alt=texpander title=texpander></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>~ $ 1<span class=p>|</span>aaa<span class=p>|</span>引数を
+</code></pre></div><p>やろうと思えば、任意の文字列を渡せそうです。</p><p>zenityは、list以外にも色々とあるので、いじってみます。</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

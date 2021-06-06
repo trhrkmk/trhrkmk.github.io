@@ -1,53 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話 | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>Windows ServerでLet&#39;s EncryptのDNS認証を試みて失敗した話</h2>
-    <p>以前、<a href="/posts/filemaker-server-ssl-letsencrypt-windows-server/">FileMaker ServerにLet&rsquo;s EncryptのSSL証明書を設定する</a>というブログを書きました。</p>
-<p>ブログを書いている時は、<strong>HTTPでの認証が一般的だろう</strong>程度でやっていました。</p>
-<p>しかし、もっと簡単にできるはずだ！と思いググってみた。</p>
-<h2 id="更新">更新</h2>
-<h3 id="2019-02-02">2019-02-02</h3>
-<p>以下の記事を書きましたので、よろしければご覧ください。</p>
-<p><a href="https://frudens.jp/lego-filemaker-server-windows-server-2016-ssl-letsencrypt-dns/">legoを使ってLet’s EncryptのSSL証明書をDNS認証で発行しFileMaker Serverに設定する方法</a></p>
-<hr>
-<p>DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。</p>
-<p>結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。</p>
-<h2 id="win-acmeでdns認証を試みる">win-acmeでDNS認証を試みる</h2>
-<h3 id="githubのwikiを確認する">GitHubのWikiを確認する</h3>
-<p>こういうときは、<a href="https://github.com/PKISharp/win-acme/wiki">Wiki Home</a>を見ましょう。</p>
-<p>win-acmeは、DNS認証は対応しているとのこと。</p>
-<p>CLIツールレベルで対応しているのは、<a href="https://github.com/PKISharp/win-acme/wiki/Azure-DNS-validation">Azure DNS validation</a>だけのようです。</p>
-<p>その他のDNSを使っている場合は、**自分でスクリプトを書いて指定してね。**ということみたい。</p>
-<h3 id="dns認証時に利用するスクリプト">DNS認証時に利用するスクリプト</h3>
-<p>スクリプトについて、具体的にどのように記述して指定するのかをググってみた。</p>
-<ul>
-<li><a href="https://github.com/PKISharp/win-acme/wiki/Example-Scripts">Example Scripts</a></li>
-<li><a href="https://github.com/PKISharp/win-acme/wiki/Validation-plugins#dns-01-validation">Validation plugins</a></li>
-<li><a href="https://github.com/PKISharp/win-acme/issues/817">How to &ldquo;Run external program/script to create and update records&rdquo; #817</a></li>
-<li><a href="https://github.com/PKISharp/win-acme/issues/841">Can I use Win-ACME (v1.9.10.1) to validate using &ldquo;dns-01&rdquo;? #841</a></li>
-</ul>
-<p>このリンクの方が、具体的なコードを書いてくれていました。</p>
-<p><a href="https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264">https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264</a></p>
-<pre><code class="language-cli" data-lang="cli">I created scripts to do this that work on server 2012.
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>Windows ServerでLet's EncryptのDNS認証を試みて失敗した話 | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/letsencrypt-dns-windows-win-acme/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Windows ServerでLet's EncryptのDNS認証を試みて失敗した話</h2><p>以前、<a href=/posts/filemaker-server-ssl-letsencrypt-windows-server/>FileMaker ServerにLet&rsquo;s EncryptのSSL証明書を設定する</a>というブログを書きました。</p><p>ブログを書いている時は、<strong>HTTPでの認証が一般的だろう</strong>程度でやっていました。</p><p>しかし、もっと簡単にできるはずだ！と思いググってみた。</p><h2 id=更新>更新</h2><h3 id=2019-02-02>2019-02-02</h3><p>以下の記事を書きましたので、よろしければご覧ください。</p><p><a href=https://frudens.jp/lego-filemaker-server-windows-server-2016-ssl-letsencrypt-dns/>legoを使ってLet’s EncryptのSSL証明書をDNS認証で発行しFileMaker Serverに設定する方法</a></p><hr><p>DNSのTXTレコードを設定すれば、DNS認証ができると分かったので、せっかくなのでチャレンジしてみた。</p><p>結果的には途中で諦めて、DebianでDNS認証をしちゃいましたが、Windows環境で色々と模索したので、メモを残しておきます。</p><h2 id=win-acmeでdns認証を試みる>win-acmeでDNS認証を試みる</h2><h3 id=githubのwikiを確認する>GitHubのWikiを確認する</h3><p>こういうときは、<a href=https://github.com/PKISharp/win-acme/wiki>Wiki Home</a>を見ましょう。</p><p>win-acmeは、DNS認証は対応しているとのこと。</p><p>CLIツールレベルで対応しているのは、<a href=https://github.com/PKISharp/win-acme/wiki/Azure-DNS-validation>Azure DNS validation</a>だけのようです。</p><p>その他のDNSを使っている場合は、**自分でスクリプトを書いて指定してね。**ということみたい。</p><h3 id=dns認証時に利用するスクリプト>DNS認証時に利用するスクリプト</h3><p>スクリプトについて、具体的にどのように記述して指定するのかをググってみた。</p><ul><li><a href=https://github.com/PKISharp/win-acme/wiki/Example-Scripts>Example Scripts</a></li><li><a href=https://github.com/PKISharp/win-acme/wiki/Validation-plugins#dns-01-validation>Validation plugins</a></li><li><a href=https://github.com/PKISharp/win-acme/issues/817>How to &ldquo;Run external program/script to create and update records&rdquo; #817</a></li><li><a href=https://github.com/PKISharp/win-acme/issues/841>Can I use Win-ACME (v1.9.10.1) to validate using &ldquo;dns-01&rdquo;? #841</a></li></ul><p>このリンクの方が、具体的なコードを書いてくれていました。</p><p><a href=https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264>https://github.com/PKISharp/win-acme/issues/817#issuecomment-381164264</a></p><pre><code class=language-cli data-lang=cli>I created scripts to do this that work on server 2012.
 As my server is behind a firewall this turned out to be the wrong method to use, but you may find them useful.
 Replace DNSServer with the name of your DNSserver and repeat that line if you have more than one server.
 Replace YourZoneName with your domain name.
@@ -65,10 +16,7 @@ powershell -file ./delete-dns.ps1 %1 %2
 delete-dns.ps1:
 Import-module dnsserver
 Remove-DnsServerResourceRecord -Force -Computername DNSServer-ZoneName &quot;YourZoneName&quot; -RRType &quot;Txt&quot; -Name $args[1]
-</code></pre><h3 id="dnsサーバーを追加">DNSサーバーを追加</h3>
-<p>Windows ServerにDNSサーバーを追加しました。</p>
-<h3 id="実行してみた時のログ">実行してみた時のログ</h3>
-<pre><code class="language-cli" data-lang="cli"> [INFO] A Simple ACME Client for Windows (WACS)
+</code></pre><h3 id=dnsサーバーを追加>DNSサーバーを追加</h3><p>Windows ServerにDNSサーバーを追加しました。</p><h3 id=実行してみた時のログ>実行してみた時のログ</h3><pre><code class=language-cli data-lang=cli> [INFO] A Simple ACME Client for Windows (WACS)
  [INFO] Software version 1911.2.6726.40690 (RELEASE)
  [INFO] IIS version 10.0
  [INFO] ACME server https://acme-v01.api.letsencrypt.org/
@@ -170,29 +118,4 @@ Error:     + FullyQualifiedErrorId : WIN32 1722,Remove-DnsServerResourceRecord
  X: Cancel *all* scheduled renewals
  Q: Quit
 
-</code></pre><h3 id="そもそも">そもそも</h3>
-<p>(上の内容のDNSserverは置き換えてください。)</p>
-<p>Cloud DNSやRoute53であれば、API使えば設定できるけど、なんの認証もなく、DNSにTXTレコードを作成したり、削除することはできるわけないよね。</p>
-<p>この作業って、TXTレコードに設定する文字列を取得するための作業だと思っていたけど、指定しているスクリプトを改めて見てみると、TXTレコードを作成したり、削除するような内容なんですよね。</p>
-<p>そりゃ、できるわけないよね…</p>
-<h2 id="go製のacmeクライアントを使えば良いのではないか">Go製のACMEクライアントを使えば良いのではないか？</h2>
-<p>ということで、<a href="https://letsencrypt.org/docs/client-options/">ACME clients</a>を見てみる。</p>
-<p>このためにGoをインストールしたくないしな…</p>
-<h2 id="そもそもwindowsじゃなくて良いのではないか">そもそもWindowsじゃなくて良いのではないか？</h2>
-<p>ここまで来たけど、Windowsで作業するのが嫌になってきたので、macOSかLinuxでDNS認証しよう！と思い、今回のチャレンジは失敗しました。</p>
-<h2 id="あとがき">あとがき</h2>
-<p>Windows 10 であれえば、WSL(Windows Subsystem for Linux)でLinuxをインストールして、certbotを実行すれば良いんですけどね…</p>
-<p>今回は、Windows Server ですので…</p>
-<p>Windowsとか、PowerShellとか、本当に辛い…</p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+</code></pre><h3 id=そもそも>そもそも</h3><p>(上の内容のDNSserverは置き換えてください。)</p><p>Cloud DNSやRoute53であれば、API使えば設定できるけど、なんの認証もなく、DNSにTXTレコードを作成したり、削除することはできるわけないよね。</p><p>この作業って、TXTレコードに設定する文字列を取得するための作業だと思っていたけど、指定しているスクリプトを改めて見てみると、TXTレコードを作成したり、削除するような内容なんですよね。</p><p>そりゃ、できるわけないよね…</p><h2 id=go製のacmeクライアントを使えば良いのではないか>Go製のACMEクライアントを使えば良いのではないか？</h2><p>ということで、<a href=https://letsencrypt.org/docs/client-options/>ACME clients</a>を見てみる。</p><p>このためにGoをインストールしたくないしな…</p><h2 id=そもそもwindowsじゃなくて良いのではないか>そもそもWindowsじゃなくて良いのではないか？</h2><p>ここまで来たけど、Windowsで作業するのが嫌になってきたので、macOSかLinuxでDNS認証しよう！と思い、今回のチャレンジは失敗しました。</p><h2 id=あとがき>あとがき</h2><p>Windows 10 であれえば、WSL(Windows Subsystem for Linux)でLinuxをインストールして、certbotを実行すれば良いんですけどね…</p><p>今回は、Windows Server ですので…</p><p>Windowsとか、PowerShellとか、本当に辛い…</p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

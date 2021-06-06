@@ -1,96 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>FileMaker ServerにLet&#39;s EncryptのSSL証明書を設定する | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/">
-
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>FileMaker ServerにLet&#39;s EncryptのSSL証明書を設定する</h2>
-    <p>FileMaker Server(Windows Server)に<strong>Let&rsquo;s EncryptのSSL証明書</strong>を設定する際のメモ。</p>
-<p>FileMakerでは、Let&rsquo;s Encryptはサポートされていないため、<strong>すべて自己責任</strong>でチャレンジしてください。</p>
-<h2 id="更新">更新</h2>
-<h3 id="2019-02-02">2019-02-02</h3>
-<p>以下の記事を書きましたので、よろしければご覧ください。</p>
-<p><a href="https://frudens.jp/lego-filemaker-server-windows-server-2016-ssl-letsencrypt-dns/">legoを使ってLet’s EncryptのSSL証明書をDNS認証で発行しFileMaker Serverに設定する方法</a></p>
-<hr>
-<p>作業自体は簡単ですので、開発環境で使う場合など、チャレンジするのは良いと思います。</p>
-<p>ちなみに、私は<strong>Let&rsquo;s Encrypt</strong>を利用しています。</p>
-<h2 id="環境">環境</h2>
-<ul>
-<li>Windows Server 2016 Datacenter(GCP Compute Engine)</li>
-<li>FileMaker Server 17</li>
-<li>win-acme.v1.9.11.2</li>
-</ul>
-<h2 id="作業の前にやったこと">作業の前にやったこと</h2>
-<h3 id="ドメイン">ドメイン</h3>
-<ul>
-<li>GCP Cloud DNSにて管理しているドメイン(frudens.app)にサブドメイン(hoge.frudens.app)を追加。</li>
-<li>追加したサブドメイン(hoge.frudens.app)のAレコードにFileMaker ServerのIPを設定。</li>
-</ul>
-<h3 id="windows-server">Windows Server</h3>
-<ul>
-<li>GCP Compute EngineでWindows Serverを起動。</li>
-<li>GCPのファイアーウォールを適切に設定。</li>
-<li>Windows Serverのファイアーウォールを設定。</li>
-<li>FileMaker Serverをインストール。</li>
-</ul>
-<h2 id="windows-server-iisを設定する">Windows Server IISを設定する</h2>
-<h3 id="iisを確認する">IISを確認する</h3>
-<p>サーバーマネージャーから<code>インターネットインフォメーションサービス(IIS)マネージャー</code>を選択する。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-1.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>画面左の<code>接続</code>から<code>サイト &gt; FMWebSite</code>を選択する。</p>
-<p>画面右の<code>操作</code>から<code>バインド</code>を選択する。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-2.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h3 id="サイトバインドを設定する">サイトバインドを設定する</h3>
-<p>FileMaker Serverがインストールされているので、ポート(16000)も設定されています。</p>
-<p>ポート<code>80</code>の行を選択し<code>編集</code>を選択します。(もしくはダブルクリック)</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-3.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>ホスト名に<code>hoge.frudens.app</code>を入力します。</p>
-<p><code>80</code>と同じように<code>443</code>も<code>16000</code>も、<code>hoge.frudens.app</code>を入力します。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-4.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="lets-encryptを実行するための準備">Let&rsquo;s Encryptを実行するための準備</h2>
-<h3 id="win-acmeのダウンロード">win-acmeのダウンロード</h3>
-<p><code>win-acme</code>は、Let&rsquo;s Encryptの証明書の発行作業を、コマンドラインから簡単に実行するためのCLIツールです。</p>
-<p>ということで、ダウンロードし展開しましょう。</p>
-<p><a href="https://github.com/PKISharp/win-acme/releases">https://github.com/PKISharp/win-acme/releases</a></p>
-<p>展開する場所はどこでも大丈夫です。今回、私はデスクトップに展開しました。</p>
-<h3 id="webサーバのルートにフォルダを作成する">Webサーバのルートにフォルダを作成する</h3>
-<p>FileMaker Serverをインストールしたフォルダによってルートは変わりますが、デフォルトの場合は以下のフォルダがWebサーバのルートになるはずです。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf
-</code></pre></div><p><code>conf</code>の下が<code>.well-known/acme-challenge</code>となるようにフォルダを作成します。</p>
-<p>Windowsだと、GUIからでは<code>.フォルダ</code>が作れないと思いますので、コマンドプロンプトなど使って<code>mkdir</code>してください。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf<span class="se">\.</span>well-known<span class="se">\a</span>cme-challenge
-</code></pre></div><p>以下のような感じになると思います。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-5.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h3 id="lets-encryptのファイルを移動しrenameする">Let&rsquo;s Encryptのファイルを移動しrenameする</h3>
-<p><code>win-acme</code>を展開したフォルダの中にある<code>Web_Config.xml</code>を、上記で作成したフォルダ<code>\acme-challenge\</code>に移動し、<code>web.config</code>にrenameします。</p>
-<p>こんな感じのイメージです。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-6.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="letsencryptexeを実行する">letsencrypt.exeを実行する</h2>
-<p>準備が整いましたので<code>letsencrypt.exe</code>を実行します。</p>
-<p>CLIツールが起動します。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-7.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>CLIツールの質問に従い、順番に入力していくと完了します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="o">[</span>INFO<span class="o">]</span> A Simple ACME Client <span class="k">for</span> Windows <span class="o">(</span>WACS<span class="o">)</span>
- <span class="o">[</span>INFO<span class="o">]</span> Software version 1911.2.6726.40690 <span class="o">(</span>RELEASE<span class="o">)</span>
- <span class="o">[</span>INFO<span class="o">]</span> IIS version 10.0
- <span class="o">[</span>INFO<span class="o">]</span> ACME server https://acme-v01.api.letsencrypt.org/
- <span class="o">[</span>INFO<span class="o">]</span> Please report issues at https://github.com/PKISharp/win-acme
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>FileMaker ServerにLet's EncryptのSSL証明書を設定する | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/filemaker-server-ssl-letsencrypt-windows-server/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>FileMaker ServerにLet's EncryptのSSL証明書を設定する</h2><p>FileMaker Server(Windows Server)に<strong>Let&rsquo;s EncryptのSSL証明書</strong>を設定する際のメモ。</p><p>FileMakerでは、Let&rsquo;s Encryptはサポートされていないため、<strong>すべて自己責任</strong>でチャレンジしてください。</p><h2 id=更新>更新</h2><h3 id=2019-02-02>2019-02-02</h3><p>以下の記事を書きましたので、よろしければご覧ください。</p><p><a href=https://frudens.jp/lego-filemaker-server-windows-server-2016-ssl-letsencrypt-dns/>legoを使ってLet’s EncryptのSSL証明書をDNS認証で発行しFileMaker Serverに設定する方法</a></p><hr><p>作業自体は簡単ですので、開発環境で使う場合など、チャレンジするのは良いと思います。</p><p>ちなみに、私は<strong>Let&rsquo;s Encrypt</strong>を利用しています。</p><h2 id=環境>環境</h2><ul><li>Windows Server 2016 Datacenter(GCP Compute Engine)</li><li>FileMaker Server 17</li><li>win-acme.v1.9.11.2</li></ul><h2 id=作業の前にやったこと>作業の前にやったこと</h2><h3 id=ドメイン>ドメイン</h3><ul><li>GCP Cloud DNSにて管理しているドメイン(frudens.app)にサブドメイン(hoge.frudens.app)を追加。</li><li>追加したサブドメイン(hoge.frudens.app)のAレコードにFileMaker ServerのIPを設定。</li></ul><h3 id=windows-server>Windows Server</h3><ul><li>GCP Compute EngineでWindows Serverを起動。</li><li>GCPのファイアーウォールを適切に設定。</li><li>Windows Serverのファイアーウォールを設定。</li><li>FileMaker Serverをインストール。</li></ul><h2 id=windows-server-iisを設定する>Windows Server IISを設定する</h2><h3 id=iisを確認する>IISを確認する</h3><p>サーバーマネージャーから<code>インターネットインフォメーションサービス(IIS)マネージャー</code>を選択する。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-1.webp alt="FileMaker SSL" title=FileMaker></p><p>画面左の<code>接続</code>から<code>サイト > FMWebSite</code>を選択する。</p><p>画面右の<code>操作</code>から<code>バインド</code>を選択する。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-2.webp alt="FileMaker SSL" title=FileMaker></p><h3 id=サイトバインドを設定する>サイトバインドを設定する</h3><p>FileMaker Serverがインストールされているので、ポート(16000)も設定されています。</p><p>ポート<code>80</code>の行を選択し<code>編集</code>を選択します。(もしくはダブルクリック)</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-3.webp alt="FileMaker SSL" title=FileMaker></p><p>ホスト名に<code>hoge.frudens.app</code>を入力します。</p><p><code>80</code>と同じように<code>443</code>も<code>16000</code>も、<code>hoge.frudens.app</code>を入力します。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-4.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=lets-encryptを実行するための準備>Let&rsquo;s Encryptを実行するための準備</h2><h3 id=win-acmeのダウンロード>win-acmeのダウンロード</h3><p><code>win-acme</code>は、Let&rsquo;s Encryptの証明書の発行作業を、コマンドラインから簡単に実行するためのCLIツールです。</p><p>ということで、ダウンロードし展開しましょう。</p><p><a href=https://github.com/PKISharp/win-acme/releases>https://github.com/PKISharp/win-acme/releases</a></p><p>展開する場所はどこでも大丈夫です。今回、私はデスクトップに展開しました。</p><h3 id=webサーバのルートにフォルダを作成する>Webサーバのルートにフォルダを作成する</h3><p>FileMaker Serverをインストールしたフォルダによってルートは変わりますが、デフォルトの場合は以下のフォルダがWebサーバのルートになるはずです。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>C:<span class=se>\P</span>rogram Files<span class=se>\F</span>ileMaker<span class=se>\F</span>ileMaker Server<span class=se>\H</span>TTPServer<span class=se>\c</span>onf
+</code></pre></div><p><code>conf</code>の下が<code>.well-known/acme-challenge</code>となるようにフォルダを作成します。</p><p>Windowsだと、GUIからでは<code>.フォルダ</code>が作れないと思いますので、コマンドプロンプトなど使って<code>mkdir</code>してください。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>C:<span class=se>\P</span>rogram Files<span class=se>\F</span>ileMaker<span class=se>\F</span>ileMaker Server<span class=se>\H</span>TTPServer<span class=se>\c</span>onf<span class=se>\.</span>well-known<span class=se>\a</span>cme-challenge
+</code></pre></div><p>以下のような感じになると思います。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-5.webp alt="FileMaker SSL" title=FileMaker></p><h3 id=lets-encryptのファイルを移動しrenameする>Let&rsquo;s Encryptのファイルを移動しrenameする</h3><p><code>win-acme</code>を展開したフォルダの中にある<code>Web_Config.xml</code>を、上記で作成したフォルダ<code>\acme-challenge\</code>に移動し、<code>web.config</code>にrenameします。</p><p>こんな感じのイメージです。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-6.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=letsencryptexeを実行する>letsencrypt.exeを実行する</h2><p>準備が整いましたので<code>letsencrypt.exe</code>を実行します。</p><p>CLIツールが起動します。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-7.webp alt="FileMaker SSL" title=FileMaker></p><p>CLIツールの質問に従い、順番に入力していくと完了します。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash> <span class=o>[</span>INFO<span class=o>]</span> A Simple ACME Client <span class=k>for</span> Windows <span class=o>(</span>WACS<span class=o>)</span>
+ <span class=o>[</span>INFO<span class=o>]</span> Software version 1911.2.6726.40690 <span class=o>(</span>RELEASE<span class=o>)</span>
+ <span class=o>[</span>INFO<span class=o>]</span> IIS version 10.0
+ <span class=o>[</span>INFO<span class=o>]</span> ACME server https://acme-v01.api.letsencrypt.org/
+ <span class=o>[</span>INFO<span class=o>]</span> Please report issues at https://github.com/PKISharp/win-acme
 
  N: Create new certificate
  M: Create new certificate with advanced options
@@ -105,41 +19,41 @@
 
  Please choose from the menu: n
 
- <span class="o">[</span>INFO<span class="o">]</span> Running in Simple mode
+ <span class=o>[</span>INFO<span class=o>]</span> Running in Simple mode
 
  1: Single binding of an IIS site
- 2: SAN certificate <span class="k">for</span> all bindings of an IIS site
- 3: SAN certificate <span class="k">for</span> all bindings of multiple IIS sites
+ 2: SAN certificate <span class=k>for</span> all bindings of an IIS site
+ 3: SAN certificate <span class=k>for</span> all bindings of multiple IIS sites
  4: Manually input host names
  C: Cancel
 
- Which kind of certificate would you like to create?: <span class="m">2</span>
+ Which kind of certificate would you like to create?: <span class=m>2</span>
 
  1: FMWebSite
  C: Cancel
 
- Choose site: <span class="m">1</span>
+ Choose site: <span class=m>1</span>
 
  * hoge.frudens.app
 
- Press enter to include all listed hosts, or <span class="nb">type</span> a comma-separated lists of exclusions:
+ Press enter to include all listed hosts, or <span class=nb>type</span> a comma-separated lists of exclusions:
 
- <span class="o">[</span>INFO<span class="o">]</span> Plugin IISSite generated target <span class="o">[</span>IISSite<span class="o">]</span> FMWebSite <span class="o">(</span>SiteId 2<span class="o">)</span> <span class="o">[</span><span class="m">1</span> binding - hoge.frudens.app @ C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf<span class="se">\]</span>
- <span class="o">[</span>INFO<span class="o">]</span> Authorize identifier: hoge.frudens.app
- <span class="o">[</span>INFO<span class="o">]</span> Cached authorization result: valid
- <span class="o">[</span>INFO<span class="o">]</span> Requesting certificate FMWebSite 2018/9/15 15:03:41 ??
- <span class="o">[</span>INFO<span class="o">]</span> Saving certificate to C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org
- <span class="o">[</span>INFO<span class="o">]</span> Installing certificate in the certificate store
- <span class="o">[</span>INFO<span class="o">]</span> Adding certificate FMWebSite 2018/9/15 15:03:41 ?? to store WebHosting
- <span class="o">[</span>INFO<span class="o">]</span> Installing with IIS...
- <span class="o">[</span>INFO<span class="o">]</span> Updating existing https binding hoge.frudens.app:443
- <span class="o">[</span>INFO<span class="o">]</span> Updating existing https binding hoge.frudens.app:16000
- <span class="o">[</span>INFO<span class="o">]</span> Committing <span class="m">2</span> https binding changes to IIS
- <span class="o">[</span>INFO<span class="o">]</span> IIS will serve the new certificates after the Application Pool IdleTimeout has been reached.
- <span class="o">[</span>INFO<span class="o">]</span> Uninstalling certificate from the certificate store
- <span class="o">[</span>INFO<span class="o">]</span> Removing certificate FMWebSite 2018/9/14 23:35:40 ?? from store WebHosting
- <span class="o">[</span>INFO<span class="o">]</span> Renewal <span class="k">for</span> FMWebSite succeeded
- <span class="o">[</span>INFO<span class="o">]</span> Next renewal scheduled at 2018/11/9 6:03:44 ??
+ <span class=o>[</span>INFO<span class=o>]</span> Plugin IISSite generated target <span class=o>[</span>IISSite<span class=o>]</span> FMWebSite <span class=o>(</span>SiteId 2<span class=o>)</span> <span class=o>[</span><span class=m>1</span> binding - hoge.frudens.app @ C:<span class=se>\P</span>rogram Files<span class=se>\F</span>ileMaker<span class=se>\F</span>ileMaker Server<span class=se>\H</span>TTPServer<span class=se>\c</span>onf<span class=se>\]</span>
+ <span class=o>[</span>INFO<span class=o>]</span> Authorize identifier: hoge.frudens.app
+ <span class=o>[</span>INFO<span class=o>]</span> Cached authorization result: valid
+ <span class=o>[</span>INFO<span class=o>]</span> Requesting certificate FMWebSite 2018/9/15 15:03:41 ??
+ <span class=o>[</span>INFO<span class=o>]</span> Saving certificate to C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org
+ <span class=o>[</span>INFO<span class=o>]</span> Installing certificate in the certificate store
+ <span class=o>[</span>INFO<span class=o>]</span> Adding certificate FMWebSite 2018/9/15 15:03:41 ?? to store WebHosting
+ <span class=o>[</span>INFO<span class=o>]</span> Installing with IIS...
+ <span class=o>[</span>INFO<span class=o>]</span> Updating existing https binding hoge.frudens.app:443
+ <span class=o>[</span>INFO<span class=o>]</span> Updating existing https binding hoge.frudens.app:16000
+ <span class=o>[</span>INFO<span class=o>]</span> Committing <span class=m>2</span> https binding changes to IIS
+ <span class=o>[</span>INFO<span class=o>]</span> IIS will serve the new certificates after the Application Pool IdleTimeout has been reached.
+ <span class=o>[</span>INFO<span class=o>]</span> Uninstalling certificate from the certificate store
+ <span class=o>[</span>INFO<span class=o>]</span> Removing certificate FMWebSite 2018/9/14 23:35:40 ?? from store WebHosting
+ <span class=o>[</span>INFO<span class=o>]</span> Renewal <span class=k>for</span> FMWebSite succeeded
+ <span class=o>[</span>INFO<span class=o>]</span> Next renewal scheduled at 2018/11/9 6:03:44 ??
 
  N: Create new certificate
  M: Create new certificate with advanced options
@@ -153,27 +67,12 @@
  Q: Quit
 
  Please choose from the menu: q
-</code></pre></div><p>最初から最後までの実際の画像を…</p>
-<p>上記のテキストと画像は同じものではないので、時間など若干違いますが、気にしないでください。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-8.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="iisのサイトバインドを確認する">IISのサイトバインドを確認する</h2>
-<p>完了しましたので、IISのバインドを確認します。</p>
-<p><code>SSL 証明書</code>の部分に表示されています。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-9.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="httpsでアクセスする">httpsでアクセスする</h2>
-<p>試しに<code>https://hoge.frudens.app</code>にアクセスしてみます。</p>
-<p>証明書も認識しています。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-10.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="証明書をfilemaker-serverにインストールする">証明書をFileMaker Serverにインストールする</h2>
-<p>さきほど作成した証明書をFileMaker Serverにインポートします。</p>
-<h3 id="証明書の場所">証明書の場所</h3>
-<p>作成された証明書は、以下のフォルダにあります。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org&gt;dir
+</code></pre></div><p>最初から最後までの実際の画像を…</p><p>上記のテキストと画像は同じものではないので、時間など若干違いますが、気にしないでください。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-8.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=iisのサイトバインドを確認する>IISのサイトバインドを確認する</h2><p>完了しましたので、IISのバインドを確認します。</p><p><code>SSL 証明書</code>の部分に表示されています。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-9.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=httpsでアクセスする>httpsでアクセスする</h2><p>試しに<code>https://hoge.frudens.app</code>にアクセスしてみます。</p><p>証明書も認識しています。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-10.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=証明書をfilemaker-serverにインストールする>証明書をFileMaker Serverにインストールする</h2><p>さきほど作成した証明書をFileMaker Serverにインポートします。</p><h3 id=証明書の場所>証明書の場所</h3><p>作成された証明書は、以下のフォルダにあります。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org<span class=se>\
+</span></code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org&gt;dir
  Volume in drive C has no label.
  Volume Serial Number is D8A2-01B9
 
- Directory of C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org
+ Directory of C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org
 
 2018/09/15  15:03    &lt;DIR&gt;          .
 2018/09/15  15:03    &lt;DIR&gt;          ..
@@ -187,96 +86,16 @@
 2018/09/15  15:03             1,050 FMWebSite-gen-csr.json
 2018/09/15  15:03             1,807 FMWebSite-gen-key.json
 2018/09/15  15:03             1,702 FMWebSite-key.pem
-2018/09/15  15:03               <span class="m">542</span> FMWebSite.history.json
+2018/09/15  15:03               <span class=m>542</span> FMWebSite.history.json
 2018/09/14  01:08             1,015 Registration
-2018/09/15  15:03               <span class="m">420</span> Renewals
+2018/09/15  15:03               <span class=m>420</span> Renewals
 2018/09/14  01:08             1,679 Signer
-              <span class="m">14</span> File<span class="o">(</span>s<span class="o">)</span>         23,051 bytes
-               <span class="m">2</span> Dir<span class="o">(</span>s<span class="o">)</span>  30,963,933,184 bytes free
-</code></pre></div><p><img src="./filemaker-server-ssl-letsencrypt-windows-server-11.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h3 id="インポートする">インポートする</h3>
-<p>Admin Consoleにログインし、SSL証明書のインポートをします。</p>
-<p><code>fmsadmin</code>コマンドを使ってインポートしてもよいです。(最後の方にコマンドは書いています。)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ファイル</th>
-<th style="text-align:left">ファイル名</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">署名済みの証明書ファイル</td>
-<td style="text-align:left">FMWebSite-crt.pem</td>
-</tr>
-<tr>
-<td style="text-align:left">プライベートキーファイル</td>
-<td style="text-align:left">FMWebSite-key.pem</td>
-</tr>
-<tr>
-<td style="text-align:left">中間証明書ファイル</td>
-<td style="text-align:left">FMWebSite-chain.pem</td>
-</tr>
-</tbody>
-</table>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-12.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>インポートできました。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-13.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>インポートできたので、再起動します。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-14.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="filemakerからアクセスする">FileMakerからアクセスする</h2>
-<p>アクセスしてみます。</p>
-<p>緑色になっています。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-15.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<p>ロックアイコンをクリックすると、証明書が表示されます。</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-16.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h2 id="ssl証明書の更新作業renewの自動化">SSL証明書の更新作業(renew)の自動化</h2>
-<p>Let&rsquo;s EncryptのSSL証明書の有効期限は、<strong>3ヶ月間</strong>です。</p>
-<p>自動的にrenewコマンドを実行してほしいので、タスクスケジューラに登録します。</p>
-<p>(私の環境では、自動的にタスクスケジューラに登録されていました。)</p>
-<p><img src="./filemaker-server-ssl-letsencrypt-windows-server-17.webp" alt="FileMaker SSL" title="FileMaker"></p>
-<h3 id="タスクスケジューラにrenewを登録する">タスクスケジューラにrenewを登録する</h3>
-<p>もし、登録されていないようでしたら、簡単にコマンドで設定できるようです。</p>
-<p>自分でバッチを作っても良いと思います。</p>
-<p><a href="https://github.com/PKISharp/win-acme/wiki/Windows-Task-Scheduler-Settings">Windows Task Scheduler Settings</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Microsoft Windows <span class="o">[</span>Version 10.0.14393<span class="o">]</span>
-<span class="o">(</span>c<span class="o">)</span> <span class="m">2016</span> Microsoft Corporation. All rights reserved.
+              <span class=m>14</span> File<span class=o>(</span>s<span class=o>)</span>         23,051 bytes
+               <span class=m>2</span> Dir<span class=o>(</span>s<span class=o>)</span>  30,963,933,184 bytes free
+</code></pre></div><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-11.webp alt="FileMaker SSL" title=FileMaker></p><h3 id=インポートする>インポートする</h3><p>Admin Consoleにログインし、SSL証明書のインポートをします。</p><p><code>fmsadmin</code>コマンドを使ってインポートしてもよいです。(最後の方にコマンドは書いています。)</p><table><thead><tr><th style=text-align:left>ファイル</th><th style=text-align:left>ファイル名</th></tr></thead><tbody><tr><td style=text-align:left>署名済みの証明書ファイル</td><td style=text-align:left>FMWebSite-crt.pem</td></tr><tr><td style=text-align:left>プライベートキーファイル</td><td style=text-align:left>FMWebSite-key.pem</td></tr><tr><td style=text-align:left>中間証明書ファイル</td><td style=text-align:left>FMWebSite-chain.pem</td></tr></tbody></table><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-12.webp alt="FileMaker SSL" title=FileMaker></p><p>インポートできました。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-13.webp alt="FileMaker SSL" title=FileMaker></p><p>インポートできたので、再起動します。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-14.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=filemakerからアクセスする>FileMakerからアクセスする</h2><p>アクセスしてみます。</p><p>緑色になっています。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-15.webp alt="FileMaker SSL" title=FileMaker></p><p>ロックアイコンをクリックすると、証明書が表示されます。</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-16.webp alt="FileMaker SSL" title=FileMaker></p><h2 id=ssl証明書の更新作業renewの自動化>SSL証明書の更新作業(renew)の自動化</h2><p>Let&rsquo;s EncryptのSSL証明書の有効期限は、<strong>3ヶ月間</strong>です。</p><p>自動的にrenewコマンドを実行してほしいので、タスクスケジューラに登録します。</p><p>(私の環境では、自動的にタスクスケジューラに登録されていました。)</p><p><img src=./filemaker-server-ssl-letsencrypt-windows-server-17.webp alt="FileMaker SSL" title=FileMaker></p><h3 id=タスクスケジューラにrenewを登録する>タスクスケジューラにrenewを登録する</h3><p>もし、登録されていないようでしたら、簡単にコマンドで設定できるようです。</p><p>自分でバッチを作っても良いと思います。</p><p><a href=https://github.com/PKISharp/win-acme/wiki/Windows-Task-Scheduler-Settings>Windows Task Scheduler Settings</a></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Microsoft Windows <span class=o>[</span>Version 10.0.14393<span class=o>]</span>
+<span class=o>(</span>c<span class=o>)</span> <span class=m>2016</span> Microsoft Corporation. All rights reserved.
 
-C:<span class="se">\U</span>sers<span class="se">\u</span>ser&gt;C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>esktop<span class="se">\w</span>in-acme.v1.9.11.2<span class="se">\l</span>etsencrypt.exe --renew --baseuri <span class="s2">&#34;https://hoge.frudens.app&#34;</span>
-</code></pre></div><h2 id="filemaker-serverへのインポートの自動化">FileMaker Serverへのインポートの自動化</h2>
-<p>上記の作業では<code>C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\</code>にある、証明書が更新されるのみですので、FileMaker Serverの証明書は更新されません。</p>
-<p>ということで、FileMaker Serverの証明書を更新する作業を<code>fmsadmin</code>コマンドで書いてバッチファイルにしておけば、タイミングを見てダブルクリックで手軽に更新できます。</p>
-<p>FileMaker Serverのrestartもあるので、メンテナンスの際に実行するのが良いと思います。</p>
-<p>(削除してから、インポートする必要があります。)</p>
-<h3 id="fmsadmin-certificate-delete">fmsadmin certificate delete</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fmsadmin certificate delete -y -u USER -p PASSWORD
-</code></pre></div><h3 id="fmsadmin-certificate-import">fmsadmin certificate import</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fmsadmin certificate import C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-crt.pem --keyfile C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-key.pem --intermediateCA C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-chain.pem -y -u USER -p PASSWORD
-</code></pre></div><h2 id="セキュリティについて">セキュリティについて</h2>
-<p>今回の作業時には、FileMaker Serverのポート(80, 443など)を開ける必要があります。</p>
-<p>Data APIを使う場合などは、443を開ける必要はあるかもしれませんが、基本的には開けないほうが良いです。</p>
-<p>そのため、作業終了時には、ポートやファイアーウォールを適切な状態に戻しておきましょう。</p>
-<p>当然ですが、更新の際にはポートを開ける必要があります。</p>
-<h2 id="filemaker製品でサポートされるssl証明書">FileMaker製品でサポートされるSSL証明書</h2>
-<p>FileMaker製品でサポートされるSSL証明書を購入する場合は、以下のリンクを参照してください。</p>
-<p><a href="https://www.famlog.jp/article/2555">FileMaker製品でサポートされるSSLサーバー証明書の販売元と種類の一覧</a></p>
-<h2 id="あとがき">あとがき</h2>
-<p>Let&rsquo;s Encrypt は「安全なのか？」みたいな話をする人もいるかも知れませんが、個人的には問題ないと思っています。</p>
-<p>ご自身でググってください。</p>
-<h3 id="参考">参考</h3>
-<p><a href="https://www.emic.co.jp/fmpress/services/ssl/">https://www.emic.co.jp/fmpress/services/ssl/</a></p>
-<p><a href="https://twitter.com/HiromitsuTakagi/status/1004013636883382274">https://twitter.com/HiromitsuTakagi/status/1004013636883382274</a></p>
-<p><a href="https://security.srad.jp/story/18/06/07/0535217/">上場企業やgo.jpドメインでもLet&rsquo;s Encryptのサーバ証明書の利用が広がる</a></p>
-<p><a href="https://knowledge.sakura.ad.jp/2988/">改めて知ろう、SSLサーバー証明書とは？（第二回）</a></p>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+C:<span class=se>\U</span>sers<span class=se>\u</span>ser&gt;C:<span class=se>\U</span>sers<span class=se>\u</span>ser<span class=se>\D</span>esktop<span class=se>\w</span>in-acme.v1.9.11.2<span class=se>\l</span>etsencrypt.exe --renew --baseuri <span class=s2>&#34;https://hoge.frudens.app&#34;</span>
+</code></pre></div><h2 id=filemaker-serverへのインポートの自動化>FileMaker Serverへのインポートの自動化</h2><p>上記の作業では<code>C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\</code>にある、証明書が更新されるのみですので、FileMaker Serverの証明書は更新されません。</p><p>ということで、FileMaker Serverの証明書を更新する作業を<code>fmsadmin</code>コマンドで書いてバッチファイルにしておけば、タイミングを見てダブルクリックで手軽に更新できます。</p><p>FileMaker Serverのrestartもあるので、メンテナンスの際に実行するのが良いと思います。</p><p>(削除してから、インポートする必要があります。)</p><h3 id=fmsadmin-certificate-delete>fmsadmin certificate delete</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>fmsadmin certificate delete -y -u USER -p PASSWORD
+</code></pre></div><h3 id=fmsadmin-certificate-import>fmsadmin certificate import</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>fmsadmin certificate import C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org<span class=se>\F</span>MWebSite-crt.pem --keyfile C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org<span class=se>\F</span>MWebSite-key.pem --intermediateCA C:<span class=se>\P</span>rogramData<span class=se>\w</span>in-acme<span class=se>\h</span>ttpsacme-v01.api.letsencrypt.org<span class=se>\F</span>MWebSite-chain.pem -y -u USER -p PASSWORD
+</code></pre></div><h2 id=セキュリティについて>セキュリティについて</h2><p>今回の作業時には、FileMaker Serverのポート(80, 443など)を開ける必要があります。</p><p>Data APIを使う場合などは、443を開ける必要はあるかもしれませんが、基本的には開けないほうが良いです。</p><p>そのため、作業終了時には、ポートやファイアーウォールを適切な状態に戻しておきましょう。</p><p>当然ですが、更新の際にはポートを開ける必要があります。</p><h2 id=filemaker製品でサポートされるssl証明書>FileMaker製品でサポートされるSSL証明書</h2><p>FileMaker製品でサポートされるSSL証明書を購入する場合は、以下のリンクを参照してください。</p><p><a href=https://www.famlog.jp/article/2555>FileMaker製品でサポートされるSSLサーバー証明書の販売元と種類の一覧</a></p><h2 id=あとがき>あとがき</h2><p>Let&rsquo;s Encrypt は「安全なのか？」みたいな話をする人もいるかも知れませんが、個人的には問題ないと思っています。</p><p>ご自身でググってください。</p><h3 id=参考>参考</h3><p><a href=https://www.emic.co.jp/fmpress/services/ssl/>https://www.emic.co.jp/fmpress/services/ssl/</a></p><p><a href=https://twitter.com/HiromitsuTakagi/status/1004013636883382274>https://twitter.com/HiromitsuTakagi/status/1004013636883382274</a></p><p><a href=https://security.srad.jp/story/18/06/07/0535217/>上場企業やgo.jpドメインでもLet&rsquo;s Encryptのサーバ証明書の利用が広がる</a></p><p><a href=https://knowledge.sakura.ad.jp/2988/>改めて知ろう、SSLサーバー証明書とは？（第二回）</a></p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>

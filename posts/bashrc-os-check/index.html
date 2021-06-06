@@ -1,114 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/syntax.css">
-  <link rel="stylesheet" href="https://www.trhrkmk.comcss/custom.css">
-  <title>.bashrcでOSを確認する | trhrkmk.com</title>
-  <link rel="canonical" href="https://www.trhrkmk.com/posts/bashrc-os-check/">
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.comcss/syntax.css><link rel=stylesheet href=https://www.trhrkmk.comcss/custom.css><title>.bashrcでOSを確認する | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/bashrc-os-check/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>.bashrcでOSを確認する</h2><p>最近、<code>.bashrc</code>や<code>.vimrc</code>など、見直してました。</p><p>macOSで利用している<code>.bashrc</code>を、Linuxでも利用したいと思ったからです。</p><p>ということで、自分用のメモ。</p><h2 id=bashrc>.bashrc</h2><p><code>.bashrc</code>は、シンプルに外部ファイルを読み込むだけにしました。</p><p>gitリポジトリは、<code>ghq</code>で管理しているので、こんな感じ。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>. <span class=nv>$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_bashrc.bash
+. <span class=nv>$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_alias.bash
+. <span class=nv>$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_function.bash
+</code></pre></div><h2 id=bash_bashrcbash>.bash_bashrc.bash</h2><p>ファイルの一部を切り取っています。</p><p>こんな感じで記述しました。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1>#--------------------------------------------------</span>
+<span class=c1># os</span>
+<span class=c1>#--------------------------------------------------</span>
+<span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;`uname`&#34;</span> <span class=o>==</span> <span class=s2>&#34;Darwin&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  <span class=nv>ISMAC</span><span class=o>=</span><span class=nb>true</span>
+<span class=k>elif</span> <span class=o>[</span> <span class=s2>&#34;`uname`&#34;</span> <span class=o>==</span> <span class=s2>&#34;Linux&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  <span class=nv>ISLINUX</span><span class=o>=</span><span class=nb>true</span>
+<span class=k>fi</span>
 
-  <meta name="description" content="  " />
-  <body>
-    <div id="wrapper"><header>
-  <div class="head__inner">
-    <h1><a href="https://www.trhrkmk.com">trhrkmk.com</a></h1>
-  </div>
-</header>
-<div id="content">
-<main>
-  <section class="entry">
-    <h2>.bashrcでOSを確認する</h2>
-    <p>最近、<code>.bashrc</code>や<code>.vimrc</code>など、見直してました。</p>
-<p>macOSで利用している<code>.bashrc</code>を、Linuxでも利用したいと思ったからです。</p>
-<p>ということで、自分用のメモ。</p>
-<h2 id="bashrc">.bashrc</h2>
-<p><code>.bashrc</code>は、シンプルに外部ファイルを読み込むだけにしました。</p>
-<p>gitリポジトリは、<code>ghq</code>で管理しているので、こんな感じ。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">. <span class="nv">$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_bashrc.bash
-. <span class="nv">$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_alias.bash
-. <span class="nv">$HOME</span>/go/src/gitlab.com/teruhirokomaki/dotfiles/.bash_function.bash
-</code></pre></div><h2 id="bash_bashrcbash">.bash_bashrc.bash</h2>
-<p>ファイルの一部を切り取っています。</p>
-<p>こんな感じで記述しました。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#--------------------------------------------------</span>
-<span class="c1"># os</span>
-<span class="c1">#--------------------------------------------------</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;`uname`&#34;</span> <span class="o">==</span> <span class="s2">&#34;Darwin&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nv">ISMAC</span><span class="o">=</span><span class="nb">true</span>
-<span class="k">elif</span> <span class="o">[</span> <span class="s2">&#34;`uname`&#34;</span> <span class="o">==</span> <span class="s2">&#34;Linux&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nv">ISLINUX</span><span class="o">=</span><span class="nb">true</span>
-<span class="k">fi</span>
+<span class=c1>#--------------------------------------------------</span>
+<span class=c1># fzf</span>
+<span class=c1>#--------------------------------------------------</span>
 
-<span class="c1">#--------------------------------------------------</span>
-<span class="c1"># fzf</span>
-<span class="c1">#--------------------------------------------------</span>
+<span class=k>if</span> <span class=o>[</span> <span class=nv>$ISLINUX</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+  <span class=o>[</span> -f ~/.fzf.bash <span class=o>]</span> <span class=o>&amp;&amp;</span> <span class=nb>source</span> ~/.fzf.bash
+<span class=k>fi</span>
+</code></pre></div><h2 id=ファイル名についての模索>ファイル名についての模索</h2><p>ファイル名の規則ってどんな感じなんでしょうかね？</p><p>gcpのsdkをインストールした際に<code>.bash_profile</code>に追記されたのが、こちら</p><p><code>path.bash.inc</code>と<code>completion.bash.inc</code>というファイル名なんですね。</p><p>先程の外部ファイルは<code>.bash_bashrc.bash</code>としてますが<code>bashrc.bash.inc</code>にしても良いかもしれない。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># The next line updates PATH for the Google Cloud SDK.</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s1>&#39;/Users/teruhirokomaki/google-cloud-sdk/path.bash.inc&#39;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span> <span class=nb>source</span> <span class=s1>&#39;/Users/teruhirokomaki/google-cloud-sdk/path.bash.inc&#39;</span><span class=p>;</span> <span class=k>fi</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$ISLINUX</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="o">[</span> -f ~/.fzf.bash <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.fzf.bash
-<span class="k">fi</span>
-</code></pre></div><h2 id="ファイル名についての模索">ファイル名についての模索</h2>
-<p>ファイル名の規則ってどんな感じなんでしょうかね？</p>
-<p>gcpのsdkをインストールした際に<code>.bash_profile</code>に追記されたのが、こちら</p>
-<p><code>path.bash.inc</code>と<code>completion.bash.inc</code>というファイル名なんですね。</p>
-<p>先程の外部ファイルは<code>.bash_bashrc.bash</code>としてますが<code>bashrc.bash.inc</code>にしても良いかもしれない。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># The next line updates PATH for the Google Cloud SDK.</span>
-<span class="k">if</span> <span class="o">[</span> -f <span class="s1">&#39;/Users/teruhirokomaki/google-cloud-sdk/path.bash.inc&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">source</span> <span class="s1">&#39;/Users/teruhirokomaki/google-cloud-sdk/path.bash.inc&#39;</span><span class="p">;</span> <span class="k">fi</span>
-
-<span class="c1"># The next line enables shell command completion for gcloud.</span>
-<span class="k">if</span> <span class="o">[</span> -f <span class="s1">&#39;/Users/teruhirokomaki/google-cloud-sdk/completion.bash.inc&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">source</span> <span class="s1">&#39;/Users/teruhirokomaki/google-cloud-sdk/completion.bash.inc&#39;</span><span class="p">;</span> <span class="k">fi</span>
-</code></pre></div><h2 id="ググってみた">ググってみた</h2>
-<p>ググってみると…</p>
-<p><a href="https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script">How to detect the OS from a Bash script?</a></p>
-<p><code>uname</code>と<code>$OSTYPE</code>のパターンがありましたが、macOSの場合の記述がシンプルなので、<code>uname</code>にしました。</p>
-<h3 id="uname">uname</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">platform</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span>
-<span class="nv">unamestr</span><span class="o">=</span><span class="sb">`</span>uname<span class="sb">`</span>
-<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$unamestr</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;Linux&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-   <span class="nv">platform</span><span class="o">=</span><span class="s1">&#39;linux&#39;</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$unamestr</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;FreeBSD&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-   <span class="nv">platform</span><span class="o">=</span><span class="s1">&#39;freebsd&#39;</span>
-<span class="k">fi</span>
-</code></pre></div><h3 id="ostype">$OSTYPE</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;linux-gnu&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># ...</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;darwin&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># Mac OSX</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;cygwin&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># POSIX compatibility layer and Linux environment emulation for Windows</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;msys&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># Lightweight shell and GNU utilities compiled for Windows (part of MinGW)</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;win32&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># I&#39;m not sure this can happen.</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;freebsd&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c1"># ...</span>
-<span class="k">else</span>
-        <span class="c1"># Unknown.</span>
-<span class="k">fi</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> in
-  solaris*<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;SOLARIS&#34;</span> <span class="p">;;</span>
-  darwin*<span class="o">)</span>  <span class="nb">echo</span> <span class="s2">&#34;OSX&#34;</span> <span class="p">;;</span>
-  linux*<span class="o">)</span>   <span class="nb">echo</span> <span class="s2">&#34;LINUX&#34;</span> <span class="p">;;</span>
-  bsd*<span class="o">)</span>     <span class="nb">echo</span> <span class="s2">&#34;BSD&#34;</span> <span class="p">;;</span>
-  msys*<span class="o">)</span>    <span class="nb">echo</span> <span class="s2">&#34;WINDOWS&#34;</span> <span class="p">;;</span>
-  *<span class="o">)</span>        <span class="nb">echo</span> <span class="s2">&#34;unknown: </span><span class="nv">$OSTYPE</span><span class="s2">&#34;</span> <span class="p">;;</span>
-<span class="k">esac</span>
-</code></pre></div><h2 id="参考にしました">参考にしました</h2>
-<ul>
-<li><a href="https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script">How to detect the OS from a Bash script?</a></li>
-<li><a href="https://qiita.com/UmedaTakefumi/items/fe02d17264de6c78443d">シェルスクリプトでOSを判別する</a></li>
-</ul>
-
-  </section>
-</main>
-
-      </div><footer>
-  <div class="foot__inner">
-    <p class="copyright">Copyright © 2019-2021 Teruhiro Komaki <a href="https://twitter.com/trhrkmk">@trhrkmk</a></p>
-  </div>
-</footer>
-</div>
-  </body>
-</html>
+<span class=c1># The next line enables shell command completion for gcloud.</span>
+<span class=k>if</span> <span class=o>[</span> -f <span class=s1>&#39;/Users/teruhirokomaki/google-cloud-sdk/completion.bash.inc&#39;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span> <span class=nb>source</span> <span class=s1>&#39;/Users/teruhirokomaki/google-cloud-sdk/completion.bash.inc&#39;</span><span class=p>;</span> <span class=k>fi</span>
+</code></pre></div><h2 id=ググってみた>ググってみた</h2><p>ググってみると…</p><p><a href=https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script>How to detect the OS from a Bash script?</a></p><p><code>uname</code>と<code>$OSTYPE</code>のパターンがありましたが、macOSの場合の記述がシンプルなので、<code>uname</code>にしました。</p><h3 id=uname>uname</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>platform</span><span class=o>=</span><span class=s1>&#39;unknown&#39;</span>
+<span class=nv>unamestr</span><span class=o>=</span><span class=sb>`</span>uname<span class=sb>`</span>
+<span class=k>if</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$unamestr</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s1>&#39;Linux&#39;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+   <span class=nv>platform</span><span class=o>=</span><span class=s1>&#39;linux&#39;</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$unamestr</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s1>&#39;FreeBSD&#39;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+   <span class=nv>platform</span><span class=o>=</span><span class=s1>&#39;freebsd&#39;</span>
+<span class=k>fi</span>
+</code></pre></div><h3 id=ostype>$OSTYPE</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=k>if</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;linux-gnu&#34;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># ...</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;darwin&#34;</span>* <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># Mac OSX</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;cygwin&#34;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># POSIX compatibility layer and Linux environment emulation for Windows</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;msys&#34;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># Lightweight shell and GNU utilities compiled for Windows (part of MinGW)</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;win32&#34;</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># I&#39;m not sure this can happen.</span>
+<span class=k>elif</span> <span class=o>[[</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;freebsd&#34;</span>* <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=c1># ...</span>
+<span class=k>else</span>
+        <span class=c1># Unknown.</span>
+<span class=k>fi</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=k>case</span> <span class=s2>&#34;</span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> in
+  solaris*<span class=o>)</span> <span class=nb>echo</span> <span class=s2>&#34;SOLARIS&#34;</span> <span class=p>;;</span>
+  darwin*<span class=o>)</span>  <span class=nb>echo</span> <span class=s2>&#34;OSX&#34;</span> <span class=p>;;</span>
+  linux*<span class=o>)</span>   <span class=nb>echo</span> <span class=s2>&#34;LINUX&#34;</span> <span class=p>;;</span>
+  bsd*<span class=o>)</span>     <span class=nb>echo</span> <span class=s2>&#34;BSD&#34;</span> <span class=p>;;</span>
+  msys*<span class=o>)</span>    <span class=nb>echo</span> <span class=s2>&#34;WINDOWS&#34;</span> <span class=p>;;</span>
+  *<span class=o>)</span>        <span class=nb>echo</span> <span class=s2>&#34;unknown: </span><span class=nv>$OSTYPE</span><span class=s2>&#34;</span> <span class=p>;;</span>
+<span class=k>esac</span>
+</code></pre></div><h2 id=参考にしました>参考にしました</h2><ul><li><a href=https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script>How to detect the OS from a Bash script?</a></li><li><a href=https://qiita.com/UmedaTakefumi/items/fe02d17264de6c78443d>シェルスクリプトでOSを判別する</a></li></ul></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
