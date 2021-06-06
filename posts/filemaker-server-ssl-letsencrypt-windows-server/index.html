@@ -71,11 +71,11 @@
 <p>展開する場所はどこでも大丈夫です。今回、私はデスクトップに展開しました。</p>
 <h3 id="webサーバのルートにフォルダを作成する">Webサーバのルートにフォルダを作成する</h3>
 <p>FileMaker Serverをインストールしたフォルダによってルートは変わりますが、デフォルトの場合は以下のフォルダがWebサーバのルートになるはずです。</p>
-<pre><code class="language-path" data-lang="path">C:\Program Files\FileMaker\FileMaker Server\HTTPServer\conf
-</code></pre><p><code>conf</code>の下が<code>.well-known/acme-challenge</code>となるようにフォルダを作成します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf
+</code></pre></div><p><code>conf</code>の下が<code>.well-known/acme-challenge</code>となるようにフォルダを作成します。</p>
 <p>Windowsだと、GUIからでは<code>.フォルダ</code>が作れないと思いますので、コマンドプロンプトなど使って<code>mkdir</code>してください。</p>
-<pre><code class="language-path" data-lang="path">C:\Program Files\FileMaker\FileMaker Server\HTTPServer\conf\.well-known\acme-challenge
-</code></pre><p>以下のような感じになると思います。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf<span class="se">\.</span>well-known<span class="se">\a</span>cme-challenge
+</code></pre></div><p>以下のような感じになると思います。</p>
 <p><img src="./filemaker-server-ssl-letsencrypt-windows-server-5.webp" alt="FileMaker SSL" title="FileMaker"></p>
 <h3 id="lets-encryptのファイルを移動しrenameする">Let&rsquo;s Encryptのファイルを移動しrenameする</h3>
 <p><code>win-acme</code>を展開したフォルダの中にある<code>Web_Config.xml</code>を、上記で作成したフォルダ<code>\acme-challenge\</code>に移動し、<code>web.config</code>にrenameします。</p>
@@ -86,11 +86,11 @@
 <p>CLIツールが起動します。</p>
 <p><img src="./filemaker-server-ssl-letsencrypt-windows-server-7.webp" alt="FileMaker SSL" title="FileMaker"></p>
 <p>CLIツールの質問に従い、順番に入力していくと完了します。</p>
-<pre><code class="language-cli" data-lang="cli"> [INFO] A Simple ACME Client for Windows (WACS)
- [INFO] Software version 1911.2.6726.40690 (RELEASE)
- [INFO] IIS version 10.0
- [INFO] ACME server https://acme-v01.api.letsencrypt.org/
- [INFO] Please report issues at https://github.com/PKISharp/win-acme
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="o">[</span>INFO<span class="o">]</span> A Simple ACME Client <span class="k">for</span> Windows <span class="o">(</span>WACS<span class="o">)</span>
+ <span class="o">[</span>INFO<span class="o">]</span> Software version 1911.2.6726.40690 <span class="o">(</span>RELEASE<span class="o">)</span>
+ <span class="o">[</span>INFO<span class="o">]</span> IIS version 10.0
+ <span class="o">[</span>INFO<span class="o">]</span> ACME server https://acme-v01.api.letsencrypt.org/
+ <span class="o">[</span>INFO<span class="o">]</span> Please report issues at https://github.com/PKISharp/win-acme
 
  N: Create new certificate
  M: Create new certificate with advanced options
@@ -105,41 +105,41 @@
 
  Please choose from the menu: n
 
- [INFO] Running in Simple mode
+ <span class="o">[</span>INFO<span class="o">]</span> Running in Simple mode
 
  1: Single binding of an IIS site
- 2: SAN certificate for all bindings of an IIS site
- 3: SAN certificate for all bindings of multiple IIS sites
+ 2: SAN certificate <span class="k">for</span> all bindings of an IIS site
+ 3: SAN certificate <span class="k">for</span> all bindings of multiple IIS sites
  4: Manually input host names
  C: Cancel
 
- Which kind of certificate would you like to create?: 2
+ Which kind of certificate would you like to create?: <span class="m">2</span>
 
  1: FMWebSite
  C: Cancel
 
- Choose site: 1
+ Choose site: <span class="m">1</span>
 
  * hoge.frudens.app
 
- Press enter to include all listed hosts, or type a comma-separated lists of exclusions:
+ Press enter to include all listed hosts, or <span class="nb">type</span> a comma-separated lists of exclusions:
 
- [INFO] Plugin IISSite generated target [IISSite] FMWebSite (SiteId 2) [1 binding - hoge.frudens.app @ C:\Program Files\FileMaker\FileMaker Server\HTTPServer\conf\]
- [INFO] Authorize identifier: hoge.frudens.app
- [INFO] Cached authorization result: valid
- [INFO] Requesting certificate FMWebSite 2018/9/15 15:03:41 ??
- [INFO] Saving certificate to C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org
- [INFO] Installing certificate in the certificate store
- [INFO] Adding certificate FMWebSite 2018/9/15 15:03:41 ?? to store WebHosting
- [INFO] Installing with IIS...
- [INFO] Updating existing https binding hoge.frudens.app:443
- [INFO] Updating existing https binding hoge.frudens.app:16000
- [INFO] Committing 2 https binding changes to IIS
- [INFO] IIS will serve the new certificates after the Application Pool IdleTimeout has been reached.
- [INFO] Uninstalling certificate from the certificate store
- [INFO] Removing certificate FMWebSite 2018/9/14 23:35:40 ?? from store WebHosting
- [INFO] Renewal for FMWebSite succeeded
- [INFO] Next renewal scheduled at 2018/11/9 6:03:44 ??
+ <span class="o">[</span>INFO<span class="o">]</span> Plugin IISSite generated target <span class="o">[</span>IISSite<span class="o">]</span> FMWebSite <span class="o">(</span>SiteId 2<span class="o">)</span> <span class="o">[</span><span class="m">1</span> binding - hoge.frudens.app @ C:<span class="se">\P</span>rogram Files<span class="se">\F</span>ileMaker<span class="se">\F</span>ileMaker Server<span class="se">\H</span>TTPServer<span class="se">\c</span>onf<span class="se">\]</span>
+ <span class="o">[</span>INFO<span class="o">]</span> Authorize identifier: hoge.frudens.app
+ <span class="o">[</span>INFO<span class="o">]</span> Cached authorization result: valid
+ <span class="o">[</span>INFO<span class="o">]</span> Requesting certificate FMWebSite 2018/9/15 15:03:41 ??
+ <span class="o">[</span>INFO<span class="o">]</span> Saving certificate to C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org
+ <span class="o">[</span>INFO<span class="o">]</span> Installing certificate in the certificate store
+ <span class="o">[</span>INFO<span class="o">]</span> Adding certificate FMWebSite 2018/9/15 15:03:41 ?? to store WebHosting
+ <span class="o">[</span>INFO<span class="o">]</span> Installing with IIS...
+ <span class="o">[</span>INFO<span class="o">]</span> Updating existing https binding hoge.frudens.app:443
+ <span class="o">[</span>INFO<span class="o">]</span> Updating existing https binding hoge.frudens.app:16000
+ <span class="o">[</span>INFO<span class="o">]</span> Committing <span class="m">2</span> https binding changes to IIS
+ <span class="o">[</span>INFO<span class="o">]</span> IIS will serve the new certificates after the Application Pool IdleTimeout has been reached.
+ <span class="o">[</span>INFO<span class="o">]</span> Uninstalling certificate from the certificate store
+ <span class="o">[</span>INFO<span class="o">]</span> Removing certificate FMWebSite 2018/9/14 23:35:40 ?? from store WebHosting
+ <span class="o">[</span>INFO<span class="o">]</span> Renewal <span class="k">for</span> FMWebSite succeeded
+ <span class="o">[</span>INFO<span class="o">]</span> Next renewal scheduled at 2018/11/9 6:03:44 ??
 
  N: Create new certificate
  M: Create new certificate with advanced options
@@ -153,7 +153,7 @@
  Q: Quit
 
  Please choose from the menu: q
-</code></pre><p>最初から最後までの実際の画像を…</p>
+</code></pre></div><p>最初から最後までの実際の画像を…</p>
 <p>上記のテキストと画像は同じものではないので、時間など若干違いますが、気にしないでください。</p>
 <p><img src="./filemaker-server-ssl-letsencrypt-windows-server-8.webp" alt="FileMaker SSL" title="FileMaker"></p>
 <h2 id="iisのサイトバインドを確認する">IISのサイトバインドを確認する</h2>
@@ -168,12 +168,12 @@
 <p>さきほど作成した証明書をFileMaker Serverにインポートします。</p>
 <h3 id="証明書の場所">証明書の場所</h3>
 <p>作成された証明書は、以下のフォルダにあります。</p>
-<pre><code class="language-path" data-lang="path">C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\
-</code></pre><pre><code class="language-path" data-lang="path">C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org&gt;dir
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org&gt;dir
  Volume in drive C has no label.
  Volume Serial Number is D8A2-01B9
 
- Directory of C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org
+ Directory of C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org
 
 2018/09/15  15:03    &lt;DIR&gt;          .
 2018/09/15  15:03    &lt;DIR&gt;          ..
@@ -187,13 +187,13 @@
 2018/09/15  15:03             1,050 FMWebSite-gen-csr.json
 2018/09/15  15:03             1,807 FMWebSite-gen-key.json
 2018/09/15  15:03             1,702 FMWebSite-key.pem
-2018/09/15  15:03               542 FMWebSite.history.json
+2018/09/15  15:03               <span class="m">542</span> FMWebSite.history.json
 2018/09/14  01:08             1,015 Registration
-2018/09/15  15:03               420 Renewals
+2018/09/15  15:03               <span class="m">420</span> Renewals
 2018/09/14  01:08             1,679 Signer
-              14 File(s)         23,051 bytes
-               2 Dir(s)  30,963,933,184 bytes free
-</code></pre><p><img src="./filemaker-server-ssl-letsencrypt-windows-server-11.webp" alt="FileMaker SSL" title="FileMaker"></p>
+              <span class="m">14</span> File<span class="o">(</span>s<span class="o">)</span>         23,051 bytes
+               <span class="m">2</span> Dir<span class="o">(</span>s<span class="o">)</span>  30,963,933,184 bytes free
+</code></pre></div><p><img src="./filemaker-server-ssl-letsencrypt-windows-server-11.webp" alt="FileMaker SSL" title="FileMaker"></p>
 <h3 id="インポートする">インポートする</h3>
 <p>Admin Consoleにログインし、SSL証明書のインポートをします。</p>
 <p><code>fmsadmin</code>コマンドを使ってインポートしてもよいです。(最後の方にコマンドは書いています。)</p>
@@ -239,20 +239,20 @@
 <p>もし、登録されていないようでしたら、簡単にコマンドで設定できるようです。</p>
 <p>自分でバッチを作っても良いと思います。</p>
 <p><a href="https://github.com/PKISharp/win-acme/wiki/Windows-Task-Scheduler-Settings">Windows Task Scheduler Settings</a></p>
-<pre><code class="language-cli" data-lang="cli">Microsoft Windows [Version 10.0.14393]
-(c) 2016 Microsoft Corporation. All rights reserved.
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Microsoft Windows <span class="o">[</span>Version 10.0.14393<span class="o">]</span>
+<span class="o">(</span>c<span class="o">)</span> <span class="m">2016</span> Microsoft Corporation. All rights reserved.
 
-C:\Users\user&gt;C:\Users\user\Desktop\win-acme.v1.9.11.2\letsencrypt.exe --renew --baseuri &quot;https://hoge.frudens.app&quot;
-</code></pre><h2 id="filemaker-serverへのインポートの自動化">FileMaker Serverへのインポートの自動化</h2>
+C:<span class="se">\U</span>sers<span class="se">\u</span>ser&gt;C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>esktop<span class="se">\w</span>in-acme.v1.9.11.2<span class="se">\l</span>etsencrypt.exe --renew --baseuri <span class="s2">&#34;https://hoge.frudens.app&#34;</span>
+</code></pre></div><h2 id="filemaker-serverへのインポートの自動化">FileMaker Serverへのインポートの自動化</h2>
 <p>上記の作業では<code>C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\</code>にある、証明書が更新されるのみですので、FileMaker Serverの証明書は更新されません。</p>
 <p>ということで、FileMaker Serverの証明書を更新する作業を<code>fmsadmin</code>コマンドで書いてバッチファイルにしておけば、タイミングを見てダブルクリックで手軽に更新できます。</p>
 <p>FileMaker Serverのrestartもあるので、メンテナンスの際に実行するのが良いと思います。</p>
 <p>(削除してから、インポートする必要があります。)</p>
 <h3 id="fmsadmin-certificate-delete">fmsadmin certificate delete</h3>
-<pre><code class="language-cli" data-lang="cli">fmsadmin certificate delete -y -u USER -p PASSWORD
-</code></pre><h3 id="fmsadmin-certificate-import">fmsadmin certificate import</h3>
-<pre><code class="language-cli" data-lang="cli">fmsadmin certificate import C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\FMWebSite-crt.pem --keyfile C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\FMWebSite-key.pem --intermediateCA C:\ProgramData\win-acme\httpsacme-v01.api.letsencrypt.org\FMWebSite-chain.pem -y -u USER -p PASSWORD
-</code></pre><h2 id="セキュリティについて">セキュリティについて</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fmsadmin certificate delete -y -u USER -p PASSWORD
+</code></pre></div><h3 id="fmsadmin-certificate-import">fmsadmin certificate import</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fmsadmin certificate import C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-crt.pem --keyfile C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-key.pem --intermediateCA C:<span class="se">\P</span>rogramData<span class="se">\w</span>in-acme<span class="se">\h</span>ttpsacme-v01.api.letsencrypt.org<span class="se">\F</span>MWebSite-chain.pem -y -u USER -p PASSWORD
+</code></pre></div><h2 id="セキュリティについて">セキュリティについて</h2>
 <p>今回の作業時には、FileMaker Serverのポート(80, 443など)を開ける必要があります。</p>
 <p>Data APIを使う場合などは、443を開ける必要はあるかもしれませんが、基本的には開けないほうが良いです。</p>
 <p>そのため、作業終了時には、ポートやファイアーウォールを適切な状態に戻しておきましょう。</p>

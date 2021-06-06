@@ -34,7 +34,7 @@
 <li><a href="https://routecompass.net/shell-vi/">【Vim】えっ?Vimmerなのに、シェルのキーバインドはEmacsモード使ってるの?</a></li>
 </ul>
 <p>上の記事では<code>~/.bashrc</code>に<code>set -o vi</code>を追加すればOK、と書いてある。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bashrc" data-lang="bashrc"><span class="c1"># ~/.bashrc</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~/.bashrc</span>
 
 <span class="nb">set</span> -o vi
 </code></pre></div><p>しかし、私は最終的に、以下のブログを参考にし<code>~/.bashrc</code>ではなく<code>~/.inputrc</code>を修正しました。</p>
@@ -43,90 +43,90 @@
 <li><a href="http://d.hatena.ne.jp/yamazakiccs/20081207/1216817670">bash vi 最強ですね、わかります。</a></li>
 </ul>
 <p>以下に、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal">Use vi shortcuts in terminal</a>に記載されている設定を引用</p>
-<pre><code class="language-inputrc" data-lang="inputrc"># ~/.inputrc
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~/.inputrc</span>
 
-# Use Vi, not Emacs, style editing
-set editing-mode vi
+<span class="c1"># Use Vi, not Emacs, style editing</span>
+<span class="nb">set</span> editing-mode vi
 
-# Show all completions as soon as I press tab, even if there's more than one
-set show-all-if-ambiguous on
-# Ignore case
-set completion-ignore-case on
-# on menu-complete, first display the common prefix, then cycle through the 
-# options when hitting TAB
-set menu-complete-display-prefix on
+<span class="c1"># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
+<span class="nb">set</span> show-all-if-ambiguous on
+<span class="c1"># Ignore case</span>
+<span class="nb">set</span> completion-ignore-case on
+<span class="c1"># on menu-complete, first display the common prefix, then cycle through the </span>
+<span class="c1"># options when hitting TAB</span>
+<span class="nb">set</span> menu-complete-display-prefix on
 
-###########################################################
-# Keymaps for when we're in command mode (e.g., after hitting ESC)
-set keymap vi-command
+<span class="c1">###########################################################</span>
+<span class="c1"># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
+<span class="nb">set</span> keymap vi-command
 
-# Insert the arguments from the last command
-&quot;p&quot;: &quot;i !!*\r&quot;
+<span class="c1"># Insert the arguments from the last command</span>
+<span class="s2">&#34;p&#34;</span>: <span class="s2">&#34;i !!*\r&#34;</span>
 
-# When hitting option-up/option-down, cycle through the previous commands
-# which start with the prefix you've entered, rather than just cycling through
-# the last entered commands.
-# In OS X's Terminal.app preferences, I have 'Use option as meta key' off, and
-# have mapped &quot;option cursor up&quot; to &quot;\033\033[A&quot; and &quot;option cursor down&quot; to 
-# &quot;\033\033[B&quot;.
-# Feel free to bind to whatever you want. Delete the first '\e' in the keymap
-# to set plain up/down to do a history search by default.
-&quot;\e\e[A&quot;: history-search-backward
-&quot;\e\e[B&quot;: history-search-forward
+<span class="c1"># When hitting option-up/option-down, cycle through the previous commands</span>
+<span class="c1"># which start with the prefix you&#39;ve entered, rather than just cycling through</span>
+<span class="c1"># the last entered commands.</span>
+<span class="c1"># In OS X&#39;s Terminal.app preferences, I have &#39;Use option as meta key&#39; off, and</span>
+<span class="c1"># have mapped &#34;option cursor up&#34; to &#34;\033\033[A&#34; and &#34;option cursor down&#34; to </span>
+<span class="c1"># &#34;\033\033[B&#34;.</span>
+<span class="c1"># Feel free to bind to whatever you want. Delete the first &#39;\e&#39; in the keymap</span>
+<span class="c1"># to set plain up/down to do a history search by default.</span>
+<span class="s2">&#34;\e\e[A&#34;</span>: history-search-backward
+<span class="s2">&#34;\e\e[B&#34;</span>: history-search-forward
 
-###########################################################
-# Keymaps for when we're in insert (i.e., typing stuff in) mode
-set keymap vi-insert
+<span class="c1">###########################################################</span>
+<span class="c1"># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
+<span class="nb">set</span> keymap vi-insert
 
-# Pressing tab will list all completions &amp; select the first one. Pressing it 
-# again will cycle through available completions.
+<span class="c1"># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
+<span class="c1"># again will cycle through available completions.</span>
 TAB: menu-complete
-# Shift-TAB cycles completions backward
-&quot;\e[Z&quot;: menu-complete-backward
+<span class="c1"># Shift-TAB cycles completions backward</span>
+<span class="s2">&#34;\e[Z&#34;</span>: menu-complete-backward
 
-# Option-up/option-down should also apply to insert mode
-&quot;\e\e[A&quot;: history-search-backward
-&quot;\e\e[B&quot;: history-search-forward
+<span class="c1"># Option-up/option-down should also apply to insert mode</span>
+<span class="s2">&#34;\e\e[A&#34;</span>: history-search-backward
+<span class="s2">&#34;\e\e[B&#34;</span>: history-search-forward
 
-# Needed because binding 'p' in command mode above wipes its insert mode
-# function, too. This fixes that, and will insert 'p' when you type 'p'.
-&quot;p&quot;: self-insert
-</code></pre><h2 id="inputrc-を修正する">~/.inputrc を修正する</h2>
+<span class="c1"># Needed because binding &#39;p&#39; in command mode above wipes its insert mode</span>
+<span class="c1"># function, too. This fixes that, and will insert &#39;p&#39; when you type &#39;p&#39;.</span>
+<span class="s2">&#34;p&#34;</span>: self-insert
+</code></pre></div><h2 id="inputrc-を修正する">~/.inputrc を修正する</h2>
 <p>ほとんど、<a href="http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal">Use vi shortcuts in terminal</a>の設定をコピーしていますが…</p>
 <p><code>for vi mode</code>の部分は、のちほど説明</p>
-<pre><code class="language-inputrc" data-lang="inputrc"># Use Vi, not Emacs, style editing
-set editing-mode vi
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Use Vi, not Emacs, style editing</span>
+<span class="nb">set</span> editing-mode vi
 
-# Show all completions as soon as I press tab, even if there's more than one
-set show-all-if-ambiguous on
-# Ignore case
-set completion-ignore-case on
-# on menu-complete, first display the common prefix, then cycle through the 
-# options when hitting TAB
-set menu-complete-display-prefix on
+<span class="c1"># Show all completions as soon as I press tab, even if there&#39;s more than one</span>
+<span class="nb">set</span> show-all-if-ambiguous on
+<span class="c1"># Ignore case</span>
+<span class="nb">set</span> completion-ignore-case on
+<span class="c1"># on menu-complete, first display the common prefix, then cycle through the </span>
+<span class="c1"># options when hitting TAB</span>
+<span class="nb">set</span> menu-complete-display-prefix on
 
-###########################################################
-# Keymaps for when we're in command mode (e.g., after hitting ESC)
-set keymap vi-command
+<span class="c1">###########################################################</span>
+<span class="c1"># Keymaps for when we&#39;re in command mode (e.g., after hitting ESC)</span>
+<span class="nb">set</span> keymap vi-command
 
-###########################################################
-# Keymaps for when we're in insert (i.e., typing stuff in) mode
-set keymap vi-insert
+<span class="c1">###########################################################</span>
+<span class="c1"># Keymaps for when we&#39;re in insert (i.e., typing stuff in) mode</span>
+<span class="nb">set</span> keymap vi-insert
 
-# Pressing tab will list all completions &amp; select the first one. Pressing it 
-# again will cycle through available completions.
+<span class="c1"># Pressing tab will list all completions &amp; select the first one. Pressing it </span>
+<span class="c1"># again will cycle through available completions.</span>
 TAB: menu-complete
-# Shift-TAB cycles completions backward
-&quot;\e[Z&quot;: menu-complete-backward
+<span class="c1"># Shift-TAB cycles completions backward</span>
+<span class="s2">&#34;\e[Z&#34;</span>: menu-complete-backward
 
-# for vi mode
-set show-mode-in-prompt on
-set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
-set vi-cmd-mode-string \1\e[31;1m\2(cmd) \1\e[0m\2
-</code></pre><h3 id="せっかくなので-bashrc-のps1も載せとく">せっかくなので ~/.bashrc のPS1も載せとく</h3>
+<span class="c1"># for vi mode</span>
+<span class="nb">set</span> show-mode-in-prompt on
+<span class="nb">set</span> vi-ins-mode-string <span class="se">\1\e</span><span class="o">[</span>34<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>ins<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
+<span class="nb">set</span> vi-cmd-mode-string <span class="se">\1\e</span><span class="o">[</span>31<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>cmd<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
+</code></pre></div><h3 id="せっかくなので-bashrc-のps1も載せとく">せっかくなので ~/.bashrc のPS1も載せとく</h3>
 <p>色をちょこちょこ設定しようと思ったので、以下のように設定してる</p>
 <p>バッドプラクティスかもしれないので、優しい方は突っ込んで頂けるとありがたいですm(_ _)m</p>
-<div class="highlight"><pre class="chroma"><code class="language-bashrc" data-lang="bashrc"><span class="c1">#--------------------------------------------------</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#--------------------------------------------------</span>
 <span class="c1"># ps1</span>
 <span class="c1">#--------------------------------------------------</span>
 
@@ -218,49 +218,49 @@ it must be added to /etc/shells.
 </code></pre></div><p>変更するためのコマンドを確認</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ man chsh
 </code></pre></div><p>一部抜粋</p>
-<pre><code class="language-man" data-lang="man">CHPASS(1)                 BSD General Commands Manual                CHPASS(1)
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">CHPASS<span class="o">(</span>1<span class="o">)</span>                 BSD General Commands Manual                CHPASS<span class="o">(</span>1<span class="o">)</span>
 
 NAME
      chpass, chfn, chsh -- add or change user database information
 
 SYNOPSIS
-     chpass [-l location] [-u authname] [-s newshell] [user]
+     chpass <span class="o">[</span>-l location<span class="o">]</span> <span class="o">[</span>-u authname<span class="o">]</span> <span class="o">[</span>-s newshell<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span>
 
 DESCRIPTION
      The chpass utility allows editing of the user database information associated with user or, by default, the current user.
 
-     The chpass utility cannot change the user's password on Open Directory systems.  Use the passwd(1) utility instead.
-
-     The chfn, and chsh utilities behave identically to chpass.  (There is only one program.)
-
-     The information is formatted and supplied to an editor for changes.
-
-     Only the information that the user is allowed to change is displayed.
-
-     The options are as follows:
-
-     -l location
-             If not specified, chpass will perform a search for the user record on all available Open Directory nodes.  When specified, chpass will edit the user record on the directory node at the given location.
-
-     -u authname
-             The user name to use when authenticating to the directory node containing the user.
-
-     -s newshell
-             Attempt to change the user's shell to newshell.
+     The chpass utility cannot change the user<span class="s1">&#39;s password on Open Directory systems.  Use the passwd(1) utility instead.
+</span><span class="s1">
+</span><span class="s1">     The chfn, and chsh utilities behave identically to chpass.  (There is only one program.)
+</span><span class="s1">
+</span><span class="s1">     The information is formatted and supplied to an editor for changes.
+</span><span class="s1">
+</span><span class="s1">     Only the information that the user is allowed to change is displayed.
+</span><span class="s1">
+</span><span class="s1">     The options are as follows:
+</span><span class="s1">
+</span><span class="s1">     -l location
+</span><span class="s1">             If not specified, chpass will perform a search for the user record on all available Open Directory nodes.  When specified, chpass will edit the user record on the directory node at the given location.
+</span><span class="s1">
+</span><span class="s1">     -u authname
+</span><span class="s1">             The user name to use when authenticating to the directory node containing the user.
+</span><span class="s1">
+</span><span class="s1">     -s newshell
+</span><span class="s1">             Attempt to change the user&#39;</span>s shell to newshell.
 
      Possible display items are as follows:
 
-           Login:              user's login name
-           Uid:                user's login
-           Gid:                user's login group
-           Generated uid:      user's UUID
-           Full Name:          user's real name
-           Office Location:    user's office location
-           Office Phone:       user's office phone
-           Home Phone:         user's home phone
-           Home Directory:     user's home directory
-           Shell:              user's login shell
-</code></pre><p>ということで、以下のコマンドを実行</p>
+           Login:              user<span class="s1">&#39;s login name
+</span><span class="s1">           Uid:                user&#39;</span>s login
+           Gid:                user<span class="s1">&#39;s login group
+</span><span class="s1">           Generated uid:      user&#39;</span>s UUID
+           Full Name:          user<span class="s1">&#39;s real name
+</span><span class="s1">           Office Location:    user&#39;</span>s office location
+           Office Phone:       user<span class="s1">&#39;s office phone
+</span><span class="s1">           Home Phone:         user&#39;</span>s home phone
+           Home Directory:     user<span class="s1">&#39;s home directory
+</span><span class="s1">           Shell:              user&#39;</span>s login shell
+</code></pre></div><p>ということで、以下のコマンドを実行</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ chsh -s /usr/local/bin/bash
 Changing shell <span class="k">for</span> yourName.
 Password <span class="k">for</span> yourName:
@@ -281,11 +281,11 @@ There is NO WARRANTY, to the extent permitted by law.
 <h2 id="モードの表示を修正する">モードの表示を修正する</h2>
 <p><code>~/.inputrc</code>を修正すればよい</p>
 <p>このブログを見ている人には、説明不要だと思うので、各自で要調整</p>
-<pre><code class="language-inputrc" data-lang="inputrc"># for vi mode
-set show-mode-in-prompt on
-set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
-set vi-cmd-mode-string \1\e[31;1m\2(cmd) \1\e[0m\2
-</code></pre><h2 id="あとがき">あとがき</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># for vi mode</span>
+<span class="nb">set</span> show-mode-in-prompt on
+<span class="nb">set</span> vi-ins-mode-string <span class="se">\1\e</span><span class="o">[</span>34<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>ins<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
+<span class="nb">set</span> vi-cmd-mode-string <span class="se">\1\e</span><span class="o">[</span>31<span class="p">;</span>1m<span class="se">\2</span><span class="o">(</span>cmd<span class="o">)</span> <span class="se">\1\e</span><span class="o">[</span>0m<span class="se">\2</span>
+</code></pre></div><h2 id="あとがき">あとがき</h2>
 <p>いつも使うターミナルをViのキーバインドで操作できるようになって、本当に快適になった</p>
 
   </section>

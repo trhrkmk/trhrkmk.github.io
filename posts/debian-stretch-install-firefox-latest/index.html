@@ -31,31 +31,31 @@
 <p>Downloadsに<code>firefox-61.0.2.tar.bz2</code>(バージョン番号は気にせず…)がダウンロードされると思います。</p>
 <h2 id="展開">展開</h2>
 <p>展開します。</p>
-<pre><code>cd ~/Downloads
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Downloads
 Downloads $ tar xf firefox-61.0.2.tar.bz2
-</code></pre><p>展開すると、こんな感じだと思います。</p>
-<pre><code>Downloads $ ls -la
-total 57788
-drwxr-xr-x  3 teruhirokomaki teruhirokomaki     4096 Aug 28 20:10 .
-drwxr-xr-x 28 teruhirokomaki teruhirokomaki     4096 Aug 28 20:32 ..
-drwxr-xr-x  9 teruhirokomaki teruhirokomaki     4096 Aug 28 11:20 firefox
--rw-r--r--  1 teruhirokomaki teruhirokomaki 52674082 Aug 28 11:07 firefox-61.0.2.tar.bz2
-</code></pre><h2 id="optに移動">optに移動</h2>
+</code></pre></div><p>展開すると、こんな感じだと思います。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Downloads $ ls -la
+total <span class="m">57788</span>
+drwxr-xr-x  <span class="m">3</span> teruhirokomaki teruhirokomaki     <span class="m">4096</span> Aug <span class="m">28</span> 20:10 .
+drwxr-xr-x <span class="m">28</span> teruhirokomaki teruhirokomaki     <span class="m">4096</span> Aug <span class="m">28</span> 20:32 ..
+drwxr-xr-x  <span class="m">9</span> teruhirokomaki teruhirokomaki     <span class="m">4096</span> Aug <span class="m">28</span> 11:20 firefox
+-rw-r--r--  <span class="m">1</span> teruhirokomaki teruhirokomaki <span class="m">52674082</span> Aug <span class="m">28</span> 11:07 firefox-61.0.2.tar.bz2
+</code></pre></div><h2 id="optに移動">optに移動</h2>
 <p><code>firefox</code>を<code>opt</code>に移動します。</p>
-<pre><code>Downloads $ sudo cp -r firefox /opt/
-[sudo] password for user
-</code></pre><p><code>opt</code>を見てみます。</p>
-<pre><code>Downloads $ ls -la /opt/
-total 16
-drwxr-xr-x  4 root root 4096 Aug 28 20:37 .
-drwxr-xr-x 23 root root 4096 Aug 28 10:14 ..
-drwxr-xr-x  9 root root 4096 Aug 28 20:37 firefox
-drwxr-xr-x  3 root root 4096 Aug 28 10:45 google
-</code></pre><h2 id="デスクトップアイコンの作成">デスクトップアイコンの作成</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Downloads $ sudo cp -r firefox /opt/
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> user
+</code></pre></div><p><code>opt</code>を見てみます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Downloads $ ls -la /opt/
+total <span class="m">16</span>
+drwxr-xr-x  <span class="m">4</span> root root <span class="m">4096</span> Aug <span class="m">28</span> 20:37 .
+drwxr-xr-x <span class="m">23</span> root root <span class="m">4096</span> Aug <span class="m">28</span> 10:14 ..
+drwxr-xr-x  <span class="m">9</span> root root <span class="m">4096</span> Aug <span class="m">28</span> 20:37 firefox
+drwxr-xr-x  <span class="m">3</span> root root <span class="m">4096</span> Aug <span class="m">28</span> 10:45 google
+</code></pre></div><h2 id="デスクトップアイコンの作成">デスクトップアイコンの作成</h2>
 <p>デスクトップアイコンを作成します。</p>
 <p>いちから作成するのは面倒くさいので、既存の<code>Firefox ESR</code>を複製して使います。</p>
 <p>デスクトップアイコンは、以下にあります。</p>
-<pre><code>applications $ pwd
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">applications $ <span class="nb">pwd</span>
 /usr/share/applications
 applications $ ls
 bluetooth-sendto.desktop         gnome-chess.desktop                   gnome-user-accounts-panel.desktop  openjdk-8-policytool.desktop           quadrapassel.desktop
@@ -92,151 +92,151 @@ gkbd-keyboard-display.desktop    gnome-system-monitor-kde.desktop      nautilus-
 gnome-background-panel.desktop   gnome-tetravex.desktop                nm-applet.desktop                  org.keepassxc.KeePassXC.desktop
 gnome-bluetooth-panel.desktop    gnome-tweak-tool.desktop              nm-connection-editor.desktop       python2.7.desktop
 gnome-calculator.desktop         gnome-universal-access-panel.desktop  notification-daemon.desktop        python3.5.desktop
-</code></pre><p>複製します。</p>
-<pre><code>applications $ sudo cp firefox-esr.desktop firefox.desktop
-</code></pre><pre><code>applications $ sudo vim firefox.desktop
-</code></pre><p>この中を適当に修正します。</p>
+</code></pre></div><p>複製します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">applications $ sudo cp firefox-esr.desktop firefox.desktop
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">applications $ sudo vim firefox.desktop
+</code></pre></div><p>この中を適当に修正します。</p>
 <p><code>Exec=/usr/lib/firefox-esr/firefox-esr %u</code>のパスを修正すればよいだけだと思います。</p>
-<pre><code>[Desktop Entry]
-Name=Firefox ESR
-Name[bg]=Firefox ESR
-Name[ca]=Firefox ESR
-Name[cs]=Firefox ESR
-Name[el]=Firefox ESR
-Name[es]=Firefox ESR
-Name[fa]=Firefox ESR
-Name[fi]=Firefox ESR
-Name[fr]=Firefox ESR
-Name[hu]=Firefox ESR
-Name[it]=Firefox ESR
-Name[ja]=Firefox ESR
-Name[ko]=Firefox ESR
-Name[nb]=Firefox ESR
-Name[nl]=Firefox ESR
-Name[nn]=Firefox ESR
-Name[no]=Firefox ESR
-Name[pl]=Firefox ESR
-Name[pt]=Firefox ESR
-Name[pt_BR]=Firefox ESR
-Name[ru]=Firefox ESR
-Name[sk]=Firefox ESR
-Name[sv]=Firefox ESR
-Comment=Browse the World Wide Web
-Comment[bg]=Сърфиране в Мрежата
-Comment[ca]=Navegueu per el web
-Comment[cs]=Prohlížení stránek World Wide Webu
-Comment[de]=Im Internet surfen
-Comment[el]=Περιηγηθείτε στον παγκόσμιο ιστό
-Comment[es]=Navegue por la web
-Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
-Comment[fi]=Selaa Internetin WWW-sivuja
-Comment[fr]=Navigue sur Internet
-Comment[hu]=A világháló böngészése
-Comment[it]=Esplora il web
-Comment[ja]=ウェブを閲覧します
-Comment[ko]=웹을 돌아 다닙니다
-Comment[nb]=Surf på nettet
-Comment[nl]=Verken het internet
-Comment[nn]=Surf på nettet
-Comment[no]=Surf på nettet
-Comment[pl]=Przeglądanie stron WWW 
-Comment[pt]=Navegue na Internet
-Comment[pt_BR]=Navegue na Internet
-Comment[ru]=Обозреватель Всемирной Паутины
-Comment[sk]=Prehliadanie internetu
-Comment[sv]=Surfa på webben
-GenericName=Web Browser
-GenericName[bg]=Интернет браузър
-GenericName[ca]=Navegador web
-GenericName[cs]=Webový prohlížeč
-GenericName[de]=Webbrowser
-GenericName[el]=Περιηγητής ιστού
-GenericName[es]=Navegador web
-GenericName[fa]=مرورگر اینترنتی
-GenericName[fi]=WWW-selain
-GenericName[fr]=Navigateur Web
-GenericName[hu]=Webböngésző
-GenericName[it]=Browser Web
-GenericName[ja]=ウェブ・ブラウザ
-GenericName[ko]=웹 브라우저
-GenericName[nb]=Nettleser
-GenericName[nl]=Webbrowser
-GenericName[nn]=Nettlesar
-GenericName[no]=Nettleser
-GenericName[pl]=Przeglądarka WWW
-GenericName[pt]=Navegador Web
-GenericName[pt_BR]=Navegador Web
-GenericName[ru]=Интернет-браузер
-GenericName[sk]=Internetový prehliadač
-GenericName[sv]=Webbläsare
-X-GNOME-FullName=Firefox ESR Web Browser
-X-GNOME-FullName[bg]=Интернет браузър (Firefox ESR)
-X-GNOME-FullName[ca]=Navegador web Firefox ESR
-X-GNOME-FullName[cs]=Firefox ESR Webový prohlížeč
-X-GNOME-FullName[el]=Περιηγήτης Ιστού Firefox ESR
-X-GNOME-FullName[es]=Navegador web Firefox ESR
-X-GNOME-FullName[fa]=مرورگر اینترنتی Firefox ESR
-X-GNOME-FullName[fi]=Firefox ESR-selain
-X-GNOME-FullName[fr]=Navigateur Web Firefox ESR
-X-GNOME-FullName[hu]=Firefox ESR webböngésző
-X-GNOME-FullName[it]=Firefox ESR Browser Web
-X-GNOME-FullName[ja]=Firefox ESR ウェブ・ブラウザ
-X-GNOME-FullName[ko]=Firefox ESR 웹 브라우저
-X-GNOME-FullName[nb]=Firefox ESR Nettleser
-X-GNOME-FullName[nl]=Firefox ESR webbrowser
-X-GNOME-FullName[nn]=Firefox ESR Nettlesar
-X-GNOME-FullName[no]=Firefox ESR Nettleser
-X-GNOME-FullName[pl]=Przeglądarka WWW Firefox ESR
-X-GNOME-FullName[pt]=Firefox ESR Navegador Web
-X-GNOME-FullName[pt_BR]=Navegador Web Firefox ESR
-X-GNOME-FullName[ru]=Интернет-браузер Firefox ESR
-X-GNOME-FullName[sk]=Internetový prehliadač Firefox ESR
-X-GNOME-FullName[sv]=Webbläsaren Firefox ESR
-Exec=/usr/lib/firefox-esr/firefox-esr %u
-Terminal=false
-X-MultipleArgs=false
-Type=Application
-Icon=firefox-esr
-Categories=Network;WebBrowser;
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
-StartupWMClass=Firefox-esr
-StartupNotify=true
-</code></pre><p>編集しましたので、diffを。</p>
-<pre><code>applications $ colordiff -u firefox-esr.desktop firefox.desktop
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Name</span><span class="o">=</span>Firefox ESR
+Name<span class="o">[</span>bg<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>ca<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>cs<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>el<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>es<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>fa<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span><span class="k">fi</span><span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>fr<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>hu<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>it<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>ja<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>ko<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>nb<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>nl<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>nn<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>no<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>pl<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>pt<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>pt_BR<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>ru<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>sk<span class="o">]=</span>Firefox ESR
+Name<span class="o">[</span>sv<span class="o">]=</span>Firefox ESR
+<span class="nv">Comment</span><span class="o">=</span>Browse the World Wide Web
+Comment<span class="o">[</span>bg<span class="o">]=</span>Сърфиране в Мрежата
+Comment<span class="o">[</span>ca<span class="o">]=</span>Navegueu per el web
+Comment<span class="o">[</span>cs<span class="o">]=</span>Prohlížení stránek World Wide Webu
+Comment<span class="o">[</span>de<span class="o">]=</span>Im Internet surfen
+Comment<span class="o">[</span>el<span class="o">]=</span>Περιηγηθείτε στον παγκόσμιο ιστό
+Comment<span class="o">[</span>es<span class="o">]=</span>Navegue por la web
+Comment<span class="o">[</span>fa<span class="o">]=</span>صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment<span class="o">[</span><span class="k">fi</span><span class="o">]=</span>Selaa Internetin WWW-sivuja
+Comment<span class="o">[</span>fr<span class="o">]=</span>Navigue sur Internet
+Comment<span class="o">[</span>hu<span class="o">]=</span>A világháló böngészése
+Comment<span class="o">[</span>it<span class="o">]=</span>Esplora il web
+Comment<span class="o">[</span>ja<span class="o">]=</span>ウェブを閲覧します
+Comment<span class="o">[</span>ko<span class="o">]=</span>웹을 돌아 다닙니다
+Comment<span class="o">[</span>nb<span class="o">]=</span>Surf på nettet
+Comment<span class="o">[</span>nl<span class="o">]=</span>Verken het internet
+Comment<span class="o">[</span>nn<span class="o">]=</span>Surf på nettet
+Comment<span class="o">[</span>no<span class="o">]=</span>Surf på nettet
+Comment<span class="o">[</span>pl<span class="o">]=</span>Przeglądanie stron WWW 
+Comment<span class="o">[</span>pt<span class="o">]=</span>Navegue na Internet
+Comment<span class="o">[</span>pt_BR<span class="o">]=</span>Navegue na Internet
+Comment<span class="o">[</span>ru<span class="o">]=</span>Обозреватель Всемирной Паутины
+Comment<span class="o">[</span>sk<span class="o">]=</span>Prehliadanie internetu
+Comment<span class="o">[</span>sv<span class="o">]=</span>Surfa på webben
+<span class="nv">GenericName</span><span class="o">=</span>Web Browser
+GenericName<span class="o">[</span>bg<span class="o">]=</span>Интернет браузър
+GenericName<span class="o">[</span>ca<span class="o">]=</span>Navegador web
+GenericName<span class="o">[</span>cs<span class="o">]=</span>Webový prohlížeč
+GenericName<span class="o">[</span>de<span class="o">]=</span>Webbrowser
+GenericName<span class="o">[</span>el<span class="o">]=</span>Περιηγητής ιστού
+GenericName<span class="o">[</span>es<span class="o">]=</span>Navegador web
+GenericName<span class="o">[</span>fa<span class="o">]=</span>مرورگر اینترنتی
+GenericName<span class="o">[</span><span class="k">fi</span><span class="o">]=</span>WWW-selain
+GenericName<span class="o">[</span>fr<span class="o">]=</span>Navigateur Web
+GenericName<span class="o">[</span>hu<span class="o">]=</span>Webböngésző
+GenericName<span class="o">[</span>it<span class="o">]=</span>Browser Web
+GenericName<span class="o">[</span>ja<span class="o">]=</span>ウェブ・ブラウザ
+GenericName<span class="o">[</span>ko<span class="o">]=</span>웹 브라우저
+GenericName<span class="o">[</span>nb<span class="o">]=</span>Nettleser
+GenericName<span class="o">[</span>nl<span class="o">]=</span>Webbrowser
+GenericName<span class="o">[</span>nn<span class="o">]=</span>Nettlesar
+GenericName<span class="o">[</span>no<span class="o">]=</span>Nettleser
+GenericName<span class="o">[</span>pl<span class="o">]=</span>Przeglądarka WWW
+GenericName<span class="o">[</span>pt<span class="o">]=</span>Navegador Web
+GenericName<span class="o">[</span>pt_BR<span class="o">]=</span>Navegador Web
+GenericName<span class="o">[</span>ru<span class="o">]=</span>Интернет-браузер
+GenericName<span class="o">[</span>sk<span class="o">]=</span>Internetový prehliadač
+GenericName<span class="o">[</span>sv<span class="o">]=</span>Webbläsare
+X-GNOME-FullName<span class="o">=</span>Firefox ESR Web Browser
+X-GNOME-FullName<span class="o">[</span>bg<span class="o">]=</span>Интернет браузър <span class="o">(</span>Firefox ESR<span class="o">)</span>
+X-GNOME-FullName<span class="o">[</span>ca<span class="o">]=</span>Navegador web Firefox ESR
+X-GNOME-FullName<span class="o">[</span>cs<span class="o">]=</span>Firefox ESR Webový prohlížeč
+X-GNOME-FullName<span class="o">[</span>el<span class="o">]=</span>Περιηγήτης Ιστού Firefox ESR
+X-GNOME-FullName<span class="o">[</span>es<span class="o">]=</span>Navegador web Firefox ESR
+X-GNOME-FullName<span class="o">[</span>fa<span class="o">]=</span>مرورگر اینترنتی Firefox ESR
+X-GNOME-FullName<span class="o">[</span><span class="k">fi</span><span class="o">]=</span>Firefox ESR-selain
+X-GNOME-FullName<span class="o">[</span>fr<span class="o">]=</span>Navigateur Web Firefox ESR
+X-GNOME-FullName<span class="o">[</span>hu<span class="o">]=</span>Firefox ESR webböngésző
+X-GNOME-FullName<span class="o">[</span>it<span class="o">]=</span>Firefox ESR Browser Web
+X-GNOME-FullName<span class="o">[</span>ja<span class="o">]=</span>Firefox ESR ウェブ・ブラウザ
+X-GNOME-FullName<span class="o">[</span>ko<span class="o">]=</span>Firefox ESR 웹 브라우저
+X-GNOME-FullName<span class="o">[</span>nb<span class="o">]=</span>Firefox ESR Nettleser
+X-GNOME-FullName<span class="o">[</span>nl<span class="o">]=</span>Firefox ESR webbrowser
+X-GNOME-FullName<span class="o">[</span>nn<span class="o">]=</span>Firefox ESR Nettlesar
+X-GNOME-FullName<span class="o">[</span>no<span class="o">]=</span>Firefox ESR Nettleser
+X-GNOME-FullName<span class="o">[</span>pl<span class="o">]=</span>Przeglądarka WWW Firefox ESR
+X-GNOME-FullName<span class="o">[</span>pt<span class="o">]=</span>Firefox ESR Navegador Web
+X-GNOME-FullName<span class="o">[</span>pt_BR<span class="o">]=</span>Navegador Web Firefox ESR
+X-GNOME-FullName<span class="o">[</span>ru<span class="o">]=</span>Интернет-браузер Firefox ESR
+X-GNOME-FullName<span class="o">[</span>sk<span class="o">]=</span>Internetový prehliadač Firefox ESR
+X-GNOME-FullName<span class="o">[</span>sv<span class="o">]=</span>Webbläsaren Firefox ESR
+<span class="nv">Exec</span><span class="o">=</span>/usr/lib/firefox-esr/firefox-esr %u
+<span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+X-MultipleArgs<span class="o">=</span><span class="nb">false</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Icon</span><span class="o">=</span>firefox-esr
+<span class="nv">Categories</span><span class="o">=</span>Network<span class="p">;</span>WebBrowser<span class="p">;</span>
+<span class="nv">MimeType</span><span class="o">=</span>text/html<span class="p">;</span>text/xml<span class="p">;</span>application/xhtml+xml<span class="p">;</span>application/xml<span class="p">;</span>application/vnd.mozilla.xul+xml<span class="p">;</span>application/rss+xml<span class="p">;</span>application/rdf+xml<span class="p">;</span>image/gif<span class="p">;</span>image/jpeg<span class="p">;</span>image/png<span class="p">;</span>x-scheme-handler/http<span class="p">;</span>x-scheme-handler/https<span class="p">;</span>
+<span class="nv">StartupWMClass</span><span class="o">=</span>Firefox-esr
+<span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div><p>編集しましたので、diffを。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">applications $ colordiff -u firefox-esr.desktop firefox.desktop
 --- firefox-esr.desktop 2018-06-26 18:33:25.000000000 -0400
 +++ firefox.desktop     2018-08-28 20:47:09.339156963 -0400
 @@ -1,5 +1,5 @@
- [Desktop Entry]
--Name=Firefox ESR
-+Name=Firefox
- Name[bg]=Firefox ESR
- Name[ca]=Firefox ESR
- Name[cs]=Firefox ESR
+ <span class="o">[</span>Desktop Entry<span class="o">]</span>
+-Name<span class="o">=</span>Firefox ESR
++Name<span class="o">=</span>Firefox
+ Name<span class="o">[</span>bg<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>ca<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>cs<span class="o">]=</span>Firefox ESR
 @@ -10,7 +10,7 @@
- Name[fr]=Firefox ESR
- Name[hu]=Firefox ESR
- Name[it]=Firefox ESR
--Name[ja]=Firefox ESR
-+Name[ja]=Firefox
- Name[ko]=Firefox ESR
- Name[nb]=Firefox ESR
- Name[nl]=Firefox ESR
+ Name<span class="o">[</span>fr<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>hu<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>it<span class="o">]=</span>Firefox ESR
+-Name<span class="o">[</span>ja<span class="o">]=</span>Firefox ESR
++Name<span class="o">[</span>ja<span class="o">]=</span>Firefox
+ Name<span class="o">[</span>ko<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>nb<span class="o">]=</span>Firefox ESR
+ Name<span class="o">[</span>nl<span class="o">]=</span>Firefox ESR
 @@ -93,12 +93,12 @@
- X-GNOME-FullName[ru]=Интернет-браузер Firefox ESR
- X-GNOME-FullName[sk]=Internetový prehliadač Firefox ESR
- X-GNOME-FullName[sv]=Webbläsaren Firefox ESR
--Exec=/usr/lib/firefox-esr/firefox-esr %u
-+Exec=/opt/firefox/firefox %u
- Terminal=false
- X-MultipleArgs=false
- Type=Application
- Icon=firefox-esr
- Categories=Network;WebBrowser;
- MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
--StartupWMClass=Firefox-esr
-+StartupWMClass=Firefox
- StartupNotify=true
-</code></pre><p>これで普通に使えると思います。</p>
+ X-GNOME-FullName<span class="o">[</span>ru<span class="o">]=</span>Интернет-браузер Firefox ESR
+ X-GNOME-FullName<span class="o">[</span>sk<span class="o">]=</span>Internetový prehliadač Firefox ESR
+ X-GNOME-FullName<span class="o">[</span>sv<span class="o">]=</span>Webbläsaren Firefox ESR
+-Exec<span class="o">=</span>/usr/lib/firefox-esr/firefox-esr %u
++Exec<span class="o">=</span>/opt/firefox/firefox %u
+ <span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+ X-MultipleArgs<span class="o">=</span><span class="nb">false</span>
+ <span class="nv">Type</span><span class="o">=</span>Application
+ <span class="nv">Icon</span><span class="o">=</span>firefox-esr
+ <span class="nv">Categories</span><span class="o">=</span>Network<span class="p">;</span>WebBrowser<span class="p">;</span>
+ <span class="nv">MimeType</span><span class="o">=</span>text/html<span class="p">;</span>text/xml<span class="p">;</span>application/xhtml+xml<span class="p">;</span>application/xml<span class="p">;</span>application/vnd.mozilla.xul+xml<span class="p">;</span>application/rss+xml<span class="p">;</span>application/rdf+xml<span class="p">;</span>image/gif<span class="p">;</span>image/jpeg<span class="p">;</span>image/png<span class="p">;</span>x-scheme-handler/http<span class="p">;</span>x-scheme-handler/https<span class="p">;</span>
+-StartupWMClass<span class="o">=</span>Firefox-esr
++StartupWMClass<span class="o">=</span>Firefox
+ <span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div><p>これで普通に使えると思います。</p>
 <p><img src="./firefox-latest-2.webp" alt="firefox" title="firefox"></p>
 <p>起動しましょう。</p>
 <p><img src="./firefox-latest-3.webp" alt="firefox" title="firefox"></p>

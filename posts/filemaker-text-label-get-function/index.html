@@ -24,31 +24,43 @@
     <p>FileMaker開発者は、テーブルビューをよく使うと思います。</p>
 <p>そのテーブルビューのヘッダー部分に表示するテキストのメモです。</p>
 <h2 id="データファイル">データファイル</h2>
-<pre><code class="language-filemaker" data-lang="filemaker">NO ACCESS
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">NO ACCESS
 
-{{ファイル名}}
+<span class="o">{{</span>ファイル名<span class="o">}}</span>
 
-{{レコード番号}}
-{{対象レコード数}} / {{レコード総数}}
+<span class="o">{{</span>レコード番号<span class="o">}}</span>
+<span class="o">{{</span>対象レコード数<span class="o">}}</span> / <span class="o">{{</span>レコード総数<span class="o">}}</span>
 
-{{レイアウト名}}
-{{レイアウトテーブル名}}
+<span class="o">{{</span>レイアウト名<span class="o">}}</span>
+<span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
 
-{{アカウント名}}
-{{アカウントアクセス権セット名}}
-</code></pre><h2 id="テーブルビューのヘッダー">テーブルビューのヘッダー</h2>
+<span class="o">{{</span>アカウント名<span class="o">}}</span>
+<span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
+</code></pre></div><h2 id="テーブルビューのヘッダー">テーブルビューのヘッダー</h2>
 <h3 id="英語">英語</h3>
-<pre><code class="language-filemaker" data-lang="filemaker">{{LayoutName}} : Record# [ {{RecordNumber}} of {{FoundCount}} ] – Login = {{AccountName}} : {{AccountPrivilegeSetName}}
-{{FilePath}} | TABLE = {{LayoutTableName}}
-</code></pre><h3 id="日本語">日本語</h3>
-<pre><code class="language-filemaker" data-lang="filemaker">{{レイアウト名}} : Record# [ {{レコード番号}} of {{対象レコード数}} ] – Login = {{アカウント名}} : {{アカウントアクセス権セット名}}
-{{ファイルパス}} | TABLE = {{レイアウトテーブル名}}
-</code></pre><h2 id="テーブルビューのフッター">テーブルビューのフッター</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">NO ACCESS
+
+<span class="o">{{</span>ファイル名<span class="o">}}</span>
+
+<span class="o">{{</span>レコード番号<span class="o">}}</span>
+<span class="o">{{</span>対象レコード数<span class="o">}}</span> / <span class="o">{{</span>レコード総数<span class="o">}}</span>
+
+<span class="o">{{</span>レイアウト名<span class="o">}}</span>
+<span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
+
+<span class="o">{{</span>アカウント名<span class="o">}}</span>
+<span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
+<span class="o">{{</span>LayoutName<span class="o">}}</span> : Record# <span class="o">[</span> <span class="o">{{</span>RecordNumber<span class="o">}}</span> of <span class="o">{{</span>FoundCount<span class="o">}}</span> <span class="o">]</span> – <span class="nv">Login</span> <span class="o">=</span> <span class="o">{{</span>AccountName<span class="o">}}</span> : <span class="o">{{</span>AccountPrivilegeSetName<span class="o">}}</span>
+<span class="o">{{</span>FilePath<span class="o">}}</span> <span class="p">|</span> <span class="nv">TABLE</span> <span class="o">=</span> <span class="o">{{</span>LayoutTableName<span class="o">}}</span>
+</code></pre></div><h3 id="日本語">日本語</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{{</span>レイアウト名<span class="o">}}</span> : Record# <span class="o">[</span> <span class="o">{{</span>レコード番号<span class="o">}}</span> of <span class="o">{{</span>対象レコード数<span class="o">}}</span> <span class="o">]</span> – <span class="nv">Login</span> <span class="o">=</span> <span class="o">{{</span>アカウント名<span class="o">}}</span> : <span class="o">{{</span>アカウントアクセス権セット名<span class="o">}}</span>
+<span class="o">{{</span>ファイルパス<span class="o">}}</span> <span class="p">|</span> <span class="nv">TABLE</span> <span class="o">=</span> <span class="o">{{</span>レイアウトテーブル名<span class="o">}}</span>
+</code></pre></div><h2 id="テーブルビューのフッター">テーブルビューのフッター</h2>
 <h3 id="英語-1">英語</h3>
-<pre><code class="language-filemaker" data-lang="filemaker">Record# [ {{RecordNumber}} of {{FoundCount}} ]  -  Found : {{FoundCount}} / Total : {{TotalRecordCount}}
-</code></pre><h3 id="日本語-1">日本語</h3>
-<pre><code class="language-filemaker" data-lang="filemaker">Record# [ {{レコード番号}} of {{対象レコード数}} ]  -  Found : {{対象レコード数}} / Total : {{レコード総数}}
-</code></pre><h2 id="サンプルファイル">サンプルファイル</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Record# <span class="o">[</span> <span class="o">{{</span>RecordNumber<span class="o">}}</span> of <span class="o">{{</span>FoundCount<span class="o">}}</span> <span class="o">]</span>  -  Found : <span class="o">{{</span>FoundCount<span class="o">}}</span> / Total : <span class="o">{{</span>TotalRecordCount<span class="o">}}</span>
+</code></pre></div><h3 id="日本語-1">日本語</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Record# <span class="o">[</span> <span class="o">{{</span>レコード番号<span class="o">}}</span> of <span class="o">{{</span>対象レコード数<span class="o">}}</span> <span class="o">]</span>  -  Found : <span class="o">{{</span>対象レコード数<span class="o">}}</span> / Total : <span class="o">{{</span>レコード総数<span class="o">}}</span>
+</code></pre></div><h2 id="サンプルファイル">サンプルファイル</h2>
 <p>以下のリポジトリからダウンロード(clone)してもらえればと思います。</p>
 <p><a href="https://github.com/frudens/fmperception-diff-viewer">fmperception-diff-viewer</a></p>
 <p><img src="./filemaker-text-label-get-function-1.webp" alt="FileMaker" title="FileMaker"></p>

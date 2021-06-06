@@ -28,50 +28,50 @@
 <p>以下は、自分用のメモ。</p>
 <h2 id="ssh">ssh</h2>
 <p>sshで接続します。</p>
-<pre><code>~ $ ssh user@macmini.local
-</code></pre><h2 id="databases-フォルダーのファイルパーミッションを確認する">Databases フォルダーのファイルパーミッションを確認する</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ ssh user@macmini.local
+</code></pre></div><h2 id="databases-フォルダーのファイルパーミッションを確認する">Databases フォルダーのファイルパーミッションを確認する</h2>
 <p>デフォルトのディレクトリです。</p>
-<pre><code>macmini:Databases user$ pwd
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ <span class="nb">pwd</span>
 /Library/FileMaker Server/Data/Databases
-</code></pre><pre><code>macmini:Databases user$ ls -la
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ ls -la
 total xx
-drwxrwxr-x   7 fmserver  fmsadmin   224B Jul 14 13:15:27 2018 .
-drwxrwxr-x  11 fmserver  fmsadmin   352B Aug 16 20:11:38 2018 ..
-drwxrwxr-x   4 fmserver  fmsadmin   128B Jul 12 23:46:52 2018 Removed_by_FMS
-drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir1
-drwxrwxr-x@  5 fmserver  fmsadmin   160B Jul 14 13:17:43 2018 dir2
-drwxrwxr-x@ 79 fmserver  fmsadmin   2.5K Aug 29 01:02:53 2018 dir3
-</code></pre><p><code>Databases</code>配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。</p>
+drwxrwxr-x   <span class="m">7</span> fmserver  fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> .
+drwxrwxr-x  <span class="m">11</span> fmserver  fmsadmin   352B Aug <span class="m">16</span> 20:11:38 <span class="m">2018</span> ..
+drwxrwxr-x   <span class="m">4</span> fmserver  fmsadmin   128B Jul <span class="m">12</span> 23:46:52 <span class="m">2018</span> Removed_by_FMS
+drwxrwxr-x@  <span class="m">5</span> fmserver  fmsadmin   160B Jul <span class="m">14</span> 13:17:43 <span class="m">2018</span> dir1
+drwxrwxr-x@  <span class="m">5</span> fmserver  fmsadmin   160B Jul <span class="m">14</span> 13:17:43 <span class="m">2018</span> dir2
+drwxrwxr-x@ <span class="m">79</span> fmserver  fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> dir3
+</code></pre></div><p><code>Databases</code>配下のファイルやフォルダのパーミッションが上記と違う場合は、上記と同じようにパーミッションを変更する。</p>
 <h2 id="違う場合">違う場合</h2>
 <p><code>fileC.fmp12</code>は、ファイルパーミッションが正しくないため、変更する必要があります。</p>
-<pre><code>macmini:dir3 user$ ls -la
-total 47588320
-drwxrwxr-x@ 79 fmserver        fmsadmin   2.5K Aug 29 01:02:53 2018 .
-drwxrwxr-x   7 fmserver        fmsadmin   224B Jul 14 13:15:27 2018 ..
-drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
--rwxrwxr-x   1 fmserver        fmsadmin   204K Aug 16 18:12:40 2018 fileA.fmp12
--rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
--rw-r--r--   1 otherOwn        otherGrp    98M Aug 28 22:40:46 2018 fileC.fmp12
-</code></pre><h2 id="ファイルパーミッションの変更">ファイルパーミッションの変更</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:dir3 user$ ls -la
+total <span class="m">47588320</span>
+drwxrwxr-x@ <span class="m">79</span> fmserver        fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> .
+drwxrwxr-x   <span class="m">7</span> fmserver        fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> ..
+drwxrwxr-x  <span class="m">88</span> fmserver        fmsadmin   2.8K Aug <span class="m">25</span> 18:23:32 <span class="m">2018</span> RC_Data_FMS
+-rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin   204K Aug <span class="m">16</span> 18:12:40 <span class="m">2018</span> fileA.fmp12
+-rwxrwxr-x@  <span class="m">1</span> fmserver        fmsadmin   1.6M Aug <span class="m">17</span> 22:04:34 <span class="m">2018</span> fileB.fmp12
+-rw-r--r--   <span class="m">1</span> otherOwn        otherGrp    98M Aug <span class="m">28</span> 22:40:46 <span class="m">2018</span> fileC.fmp12
+</code></pre></div><h2 id="ファイルパーミッションの変更">ファイルパーミッションの変更</h2>
 <p>上記の例では<code>dir1</code>, <code>dir2</code>, <code>dir3</code>すべてのフォルダーが問題ないですが、以下の例では<code>dir3</code>も含めてパーミッションが変更が必要な場合を想定しています。</p>
-<pre><code>macmini:Databases user$ pwd
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ <span class="nb">pwd</span>
 /Library/FileMaker Server/Data/Databases
-</code></pre><h2 id="chmod">chmod</h2>
-<pre><code>macmini:Databases user$ sudo chmod -R 775 dir3/
-</code></pre><h2 id="chown">chown</h2>
-<pre><code>macmini:Databases user$ sudo chown -R fmserver dir3/
-</code></pre><h2 id="chgrp">chgrp</h2>
-<pre><code>macmini:Databases user$ sudo chgrp -R fmsadmin dir3/
-</code></pre><h2 id="変更を確認する">変更を確認する</h2>
-<pre><code>macmini:dir3 user$ ls -la
-total 47588320
-drwxrwxr-x@ 79 fmserver        fmsadmin   2.5K Aug 29 01:02:53 2018 .
-drwxrwxr-x   7 fmserver        fmsadmin   224B Jul 14 13:15:27 2018 ..
-drwxrwxr-x  88 fmserver        fmsadmin   2.8K Aug 25 18:23:32 2018 RC_Data_FMS
--rwxrwxr-x   1 fmserver        fmsadmin   204K Aug 16 18:12:40 2018 fileA.fmp12
--rwxrwxr-x@  1 fmserver        fmsadmin   1.6M Aug 17 22:04:34 2018 fileB.fmp12
--rwxrwxr-x   1 fmserver        fmsadmin    98M Aug 28 22:40:46 2018 fileC.fmp12
-</code></pre><h2 id="パーミッションの設定が誤っている場合">パーミッションの設定が誤っている場合</h2>
+</code></pre></div><h2 id="chmod">chmod</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chmod -R <span class="m">775</span> dir3/
+</code></pre></div><h2 id="chown">chown</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chown -R fmserver dir3/
+</code></pre></div><h2 id="chgrp">chgrp</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:Databases user$ sudo chgrp -R fmsadmin dir3/
+</code></pre></div><h2 id="変更を確認する">変更を確認する</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">macmini:dir3 user$ ls -la
+total <span class="m">47588320</span>
+drwxrwxr-x@ <span class="m">79</span> fmserver        fmsadmin   2.5K Aug <span class="m">29</span> 01:02:53 <span class="m">2018</span> .
+drwxrwxr-x   <span class="m">7</span> fmserver        fmsadmin   224B Jul <span class="m">14</span> 13:15:27 <span class="m">2018</span> ..
+drwxrwxr-x  <span class="m">88</span> fmserver        fmsadmin   2.8K Aug <span class="m">25</span> 18:23:32 <span class="m">2018</span> RC_Data_FMS
+-rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin   204K Aug <span class="m">16</span> 18:12:40 <span class="m">2018</span> fileA.fmp12
+-rwxrwxr-x@  <span class="m">1</span> fmserver        fmsadmin   1.6M Aug <span class="m">17</span> 22:04:34 <span class="m">2018</span> fileB.fmp12
+-rwxrwxr-x   <span class="m">1</span> fmserver        fmsadmin    98M Aug <span class="m">28</span> 22:40:46 <span class="m">2018</span> fileC.fmp12
+</code></pre></div><h2 id="パーミッションの設定が誤っている場合">パーミッションの設定が誤っている場合</h2>
 <p>ファイルを開けても、スクリプトワークスペースや、データベースなどがグレイアウトしている場合は、パーミッションの設定をみると良いと思います。</p>
 <h2 id="正しいアップロード方法が良い">正しいアップロード方法が良い</h2>
 <p>FileMakerのクライアントから、アップロードすれば問題はありません。

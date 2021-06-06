@@ -32,110 +32,110 @@
 <p><code>youtube-dl.sh</code>など</p>
 <p><code>chmod</code>も忘れずに。</p>
 <h3 id="gistからダウンロード">Gistからダウンロード</h3>
-<pre><code>(cmd) /var/tmp $ curl -o youtube-dl.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&quot;
-</code></pre><h3 id="補足">補足</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>cmd<span class="o">)</span> /var/tmp $ curl -o youtube-dl.sh <span class="s2">&#34;https://gist.githubusercontent.com/teruhirokomaki/8f0333c35cb8aa1ba8692a25a8a04336/raw/6d53ea298f6c2e5dde2f5de1949f76747ec48fa3/youtube-dl.sh&#34;</span>
+</code></pre></div><h3 id="補足">補足</h3>
 <p>最初は<code>v=YOUTUBEID</code>の<code>YOUTUBEID</code>を引数として使っていましたが、一括ダウンロードの途中で、エラーになってしまいました。</p>
 <p>URLを確認すると<code>https://www.youtube.com/watch?v=-FyjEnoIgTM</code>となっており、引数が<code>-FyjEnoIgTM</code>となることが原因でした。</p>
 <p>ということで、URLを引数にするように修正しました。</p>
-<pre><code>#!/usr/bin/env bash
-set -Ceuo pipefail
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash
+</span><span class="cp"></span><span class="nb">set</span> -Ceuo pipefail
 
-# set youtube id from param
-YOUTUBEID=&quot;$1&quot;
+<span class="c1"># set youtube id from param</span>
+<span class="nv">YOUTUBEID</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
 
-if [ x$YOUTUBEID = &quot;x&quot; ]; then
-  echo &quot;Youtube id is required.&quot;
-  exit 1
-fi
+<span class="k">if</span> <span class="o">[</span> x<span class="nv">$YOUTUBEID</span> <span class="o">=</span> <span class="s2">&#34;x&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&#34;Youtube id is required.&#34;</span>
+  <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
 
-# set url
-YDLURL=&quot;https://www.youtube.com/watch?v=$YOUTUBEID&quot;
+<span class="c1"># set url</span>
+<span class="nv">YDLURL</span><span class="o">=</span><span class="s2">&#34;https://www.youtube.com/watch?v=</span><span class="nv">$YOUTUBEID</span><span class="s2">&#34;</span>
 
-# set music dir
-MUSICDIR=&quot;$HOME/Music/cmus&quot;
+<span class="c1"># set music dir</span>
+<span class="nv">MUSICDIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Music/cmus&#34;</span>
 
-# mkdir music dir
-if [ ! -d $MUSICDIR ]; then
-  mkdir -p $MUSICDIR
-fi
+<span class="c1"># mkdir music dir</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="nv">$MUSICDIR</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  mkdir -p <span class="nv">$MUSICDIR</span>
+<span class="k">fi</span>
 
-# get filename
-YDLGETFILENAME=$(youtube-dl --get-filename --restrict-filenames -o '%(creator)s/%(title)s.%(ext)s' &quot;$YDLURL&quot;)
+<span class="c1"># get filename</span>
+<span class="nv">YDLGETFILENAME</span><span class="o">=</span><span class="k">$(</span>youtube-dl --get-filename --restrict-filenames -o <span class="s1">&#39;%(creator)s/%(title)s.%(ext)s&#39;</span> <span class="s2">&#34;</span><span class="nv">$YDLURL</span><span class="s2">&#34;</span><span class="k">)</span>
 
-# creator from filename
-YDLCREATOR=$(echo $YDLGETFILENAME | awk -F &quot;/&quot; '{print $1}')
+<span class="c1"># creator from filename</span>
+<span class="nv">YDLCREATOR</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$YDLGETFILENAME</span> <span class="p">|</span> awk -F <span class="s2">&#34;/&#34;</span> <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
 
-# title and ext from filename
-YDLTITLEEXT=$(echo $YDLGETFILENAME | awk -F &quot;/&quot; '{print $2}')
+<span class="c1"># title and ext from filename</span>
+<span class="nv">YDLTITLEEXT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$YDLGETFILENAME</span> <span class="p">|</span> awk -F <span class="s2">&#34;/&#34;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 
-# mkdir author dir
-if [ ! -d &quot;$MUSICDIR/$YDLCREATOR&quot; ]; then
-  mkdir -p &quot;$MUSICDIR/$YDLCREATOR&quot;
-fi
+<span class="c1"># mkdir author dir</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="nv">$MUSICDIR</span><span class="s2">/</span><span class="nv">$YDLCREATOR</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  mkdir -p <span class="s2">&#34;</span><span class="nv">$MUSICDIR</span><span class="s2">/</span><span class="nv">$YDLCREATOR</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
 
-# file pah
-YDLFILE=&quot;$MUSICDIR/$YDLCREATOR/$YDLTITLEEXT&quot;
+<span class="c1"># file pah</span>
+<span class="nv">YDLFILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$MUSICDIR</span><span class="s2">/</span><span class="nv">$YDLCREATOR</span><span class="s2">/</span><span class="nv">$YDLTITLEEXT</span><span class="s2">&#34;</span>
 
-# check file exist
-if [ -f &quot;$YDLFILE&quot; ]; then
-  echo &quot;File '$YDLFILE' already exists ($YOUTUBEID).&quot;
-else
-  # download audio
-  youtube-dl --ignore-errors --format bestaudio -o &quot;$YDLFILE&quot; &quot;$YDLURL&quot;
+<span class="c1"># check file exist</span>
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$YDLFILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&#34;File &#39;</span><span class="nv">$YDLFILE</span><span class="s2">&#39; already exists (</span><span class="nv">$YOUTUBEID</span><span class="s2">).&#34;</span>
+<span class="k">else</span>
+  <span class="c1"># download audio</span>
+  youtube-dl --ignore-errors --format bestaudio -o <span class="s2">&#34;</span><span class="nv">$YDLFILE</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$YDLURL</span><span class="s2">&#34;</span>
 
-  # done
-  echo &quot;Downloaded to '$YDLFILE' ($YOUTUBEID).&quot;
-fi
-</code></pre><h3 id="使ってみる">使ってみる</h3>
-<pre><code>(ins) /var/tmp $ youtube-dl.sh QJO3ROT-A4E
-[youtube] QJO3ROT-A4E: Downloading webpage
-[youtube] QJO3ROT-A4E: Downloading video info webpage
-[download] Destination: /home/teruhiro/Music/cmus/One_Direction/One_Direction_-_What_Makes_You_Beautiful_Official_Video.mp4
-[download] 100% of 3.12MiB in 00:00
-Downloaded to '/home/teruhiro/Music/cmus/One_Direction/One_Direction_-_What_Makes_You_Beautiful_Official_Video.mp4'
-</code></pre><h2 id="プレイリストのidを取得する">プレイリストのidを取得する</h2>
+  <span class="c1"># done</span>
+  <span class="nb">echo</span> <span class="s2">&#34;Downloaded to &#39;</span><span class="nv">$YDLFILE</span><span class="s2">&#39; (</span><span class="nv">$YOUTUBEID</span><span class="s2">).&#34;</span>
+<span class="k">fi</span>
+</code></pre></div><h3 id="使ってみる">使ってみる</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp $ youtube-dl.sh QJO3ROT-A4E
+<span class="o">[</span>youtube<span class="o">]</span> QJO3ROT-A4E: Downloading webpage
+<span class="o">[</span>youtube<span class="o">]</span> QJO3ROT-A4E: Downloading video info webpage
+<span class="o">[</span>download<span class="o">]</span> Destination: /home/teruhiro/Music/cmus/One_Direction/One_Direction_-_What_Makes_You_Beautiful_Official_Video.mp4
+<span class="o">[</span>download<span class="o">]</span> 100% of 3.12MiB in 00:00
+Downloaded to <span class="s1">&#39;/home/teruhiro/Music/cmus/One_Direction/One_Direction_-_What_Makes_You_Beautiful_Official_Video.mp4&#39;</span>
+</code></pre></div><h2 id="プレイリストのidを取得する">プレイリストのidを取得する</h2>
 <p>youtube-dlの<code>--get-id</code>オプションで、プレイリストのidを取得できますので、テキストファイルに書き出します。</p>
-<pre><code>(ins) /var/tmp $ youtube-dl --get-id  https://www.youtube.com/playlist?list=PLL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2 &gt;&gt; ydlids.txt
-</code></pre><h2 id="シェルスクリプト2">シェルスクリプト2</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp $ youtube-dl --get-id  https://www.youtube.com/playlist?list<span class="o">=</span>PLL0WmM0pDa_8oUWlErcd1KHhp1UoWe0q2 &gt;&gt; ydlids.txt
+</code></pre></div><h2 id="シェルスクリプト2">シェルスクリプト2</h2>
 <p>先ほど作成した<code>ydlids.txt</code>のidを1行づつ処理するためのシェルスクリプトを作成しました。</p>
 <p>こちらもファイル名はお任せ。</p>
 <p><code>youtube-dl_fromfile.sh</code>など</p>
 <h3 id="gistからダウンロード-1">Gistからダウンロード</h3>
-<pre><code>(cmd) /var/tmp $ curl -o youtube-dl_fromfile.sh &quot;https://gist.githubusercontent.com/teruhirokomaki/2506b0b6e5b345ec0daa6955f69b87ce/raw/571e5a2c8d346e16a14c5f13fd778612dda0c606/youtube-dl_fromfile.sh&quot;
-</code></pre><pre><code>#!/usr/bin/env bash
-set -Ceuo pipefail
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>cmd<span class="o">)</span> /var/tmp $ curl -o youtube-dl_fromfile.sh <span class="s2">&#34;https://gist.githubusercontent.com/teruhirokomaki/2506b0b6e5b345ec0daa6955f69b87ce/raw/571e5a2c8d346e16a14c5f13fd778612dda0c606/youtube-dl_fromfile.sh&#34;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash
+</span><span class="cp"></span><span class="nb">set</span> -Ceuo pipefail
 
-FILEPATH=$1
+<span class="nv">FILEPATH</span><span class="o">=</span><span class="nv">$1</span>
 
-CNT=0
-cat $FILEPATH | while read LINE
-do
-  CNT=$(expr $CNT + 1)
-  youtube-dl.sh $LINE
-done
-</code></pre><h3 id="使ってみる-1">使ってみる</h3>
-<pre><code>(ins) /var/tmp $ cat ydlids.txt
+<span class="nv">CNT</span><span class="o">=</span><span class="m">0</span>
+cat <span class="nv">$FILEPATH</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> LINE
+<span class="k">do</span>
+  <span class="nv">CNT</span><span class="o">=</span><span class="k">$(</span>expr <span class="nv">$CNT</span> + 1<span class="k">)</span>
+  youtube-dl.sh <span class="nv">$LINE</span>
+<span class="k">done</span>
+</code></pre></div><h3 id="使ってみる-1">使ってみる</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp $ cat ydlids.txt
 YqeW9_5kURI
 UA8rcLvS1BY
 CdXesX6mYUE
-(ins) /var/tmp $ youtube-dl_fromfile.sh ydlids.txt
-[youtube] YqeW9_5kURI: Downloading webpage
-[youtube] YqeW9_5kURI: Downloading video info webpage
-[download] Destination: /home/teruhiro/Music/cmus/Major_Lazer_feat._MO_DJ_Snake/Major_Lazer_DJ_Snake_-_Lean_On_feat._MO_Official_Music_Video.mp4
-[download] 100% of 2.95MiB in 00:00
-Downloaded to '/home/teruhiro/Music/cmus/Major_Lazer_feat._MO_DJ_Snake/Major_Lazer_DJ_Snake_-_Lean_On_feat._MO_Official_Music_Video.mp4'
-[youtube] UA8rcLvS1BY: Downloading webpage
-[youtube] UA8rcLvS1BY: Downloading video info webpage
-[download] Destination: /home/teruhiro/Music/cmus/LMFAO/LMFAO_-_Champagne_Showers_ft._Natalia_Kills.mp4
-[download] 100% of 5.86MiB in 00:00
-Downloaded to '/home/teruhiro/Music/cmus/LMFAO/LMFAO_-_Champagne_Showers_ft._Natalia_Kills.mp4'
-[youtube] CdXesX6mYUE: Downloading webpage
-[youtube] CdXesX6mYUE: Downloading video info webpage
-[download] Destination: /home/teruhiro/Music/cmus/Pitbull/Pitbull_-_International_Love_ft._Chris_Brown.mp4
-[download] 100% of 3.76MiB in 00:00
-Downloaded to '/home/teruhiro/Music/cmus/Pitbull/Pitbull_-_International_Love_ft._Chris_Brown.mp4'
-(ins) /var/tmp $
-</code></pre><h2 id="あとがき">あとがき</h2>
+<span class="o">(</span>ins<span class="o">)</span> /var/tmp $ youtube-dl_fromfile.sh ydlids.txt
+<span class="o">[</span>youtube<span class="o">]</span> YqeW9_5kURI: Downloading webpage
+<span class="o">[</span>youtube<span class="o">]</span> YqeW9_5kURI: Downloading video info webpage
+<span class="o">[</span>download<span class="o">]</span> Destination: /home/teruhiro/Music/cmus/Major_Lazer_feat._MO_DJ_Snake/Major_Lazer_DJ_Snake_-_Lean_On_feat._MO_Official_Music_Video.mp4
+<span class="o">[</span>download<span class="o">]</span> 100% of 2.95MiB in 00:00
+Downloaded to <span class="s1">&#39;/home/teruhiro/Music/cmus/Major_Lazer_feat._MO_DJ_Snake/Major_Lazer_DJ_Snake_-_Lean_On_feat._MO_Official_Music_Video.mp4&#39;</span>
+<span class="o">[</span>youtube<span class="o">]</span> UA8rcLvS1BY: Downloading webpage
+<span class="o">[</span>youtube<span class="o">]</span> UA8rcLvS1BY: Downloading video info webpage
+<span class="o">[</span>download<span class="o">]</span> Destination: /home/teruhiro/Music/cmus/LMFAO/LMFAO_-_Champagne_Showers_ft._Natalia_Kills.mp4
+<span class="o">[</span>download<span class="o">]</span> 100% of 5.86MiB in 00:00
+Downloaded to <span class="s1">&#39;/home/teruhiro/Music/cmus/LMFAO/LMFAO_-_Champagne_Showers_ft._Natalia_Kills.mp4&#39;</span>
+<span class="o">[</span>youtube<span class="o">]</span> CdXesX6mYUE: Downloading webpage
+<span class="o">[</span>youtube<span class="o">]</span> CdXesX6mYUE: Downloading video info webpage
+<span class="o">[</span>download<span class="o">]</span> Destination: /home/teruhiro/Music/cmus/Pitbull/Pitbull_-_International_Love_ft._Chris_Brown.mp4
+<span class="o">[</span>download<span class="o">]</span> 100% of 3.76MiB in 00:00
+Downloaded to <span class="s1">&#39;/home/teruhiro/Music/cmus/Pitbull/Pitbull_-_International_Love_ft._Chris_Brown.mp4&#39;</span>
+<span class="o">(</span>ins<span class="o">)</span> /var/tmp $
+</code></pre></div><h2 id="あとがき">あとがき</h2>
 <p><code>ytdl</code>と<code>youtube-dl</code>を使いましたが、<code>youtube-dl</code>のほうがオススメです。</p>
 <p>最初から素直に<code>youtube-dl</code>使ったほうが良かったなと。</p>
 

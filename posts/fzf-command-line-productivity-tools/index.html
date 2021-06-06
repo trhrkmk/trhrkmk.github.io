@@ -31,8 +31,8 @@
 <p>まずは、シンプルにfzfを実行する。</p>
 <p><img src="./fzf-command-line-tools-1.gif" alt="fzf" title="fzf"></p>
 <p>ちなみに、私は以下のデフォルトオプションを設定しています。</p>
-<pre><code>export FZF_DEFAULT_OPTS=&quot;--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'&quot;
-</code></pre><h3 id="ghqとfzfを連携する">ghqとfzfを連携する</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s2">&#34;--height 50% --layout=reverse --border --inline-info --preview &#39;head -100 {}&#39;&#34;</span>
+</code></pre></div><h3 id="ghqとfzfを連携する">ghqとfzfを連携する</h3>
 <p>ghqとfzfを連携して、リポジトリの移動をする。</p>
 <p><img src="./fzf-command-line-tools-2.gif" alt="fzf" title="fzf"></p>
 <h2 id="各種リンク">各種リンク</h2>
@@ -45,93 +45,94 @@
 <p>GitHubを見るのが良いと思いますが…</p>
 <p>一応ね…</p>
 <p>macの場合、brewでインストールできます。</p>
-<pre><code>brew install fzf
-</code></pre><p>Ubuntuでは、リリースからバイナリをダウンロードして、パスを通して使っています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install fzf
+</code></pre></div><p>Ubuntuでは、リリースからバイナリをダウンロードして、パスを通して使っています。</p>
 <h2 id="まずは使ってみる">まずは、使ってみる</h2>
 <p>gifにもあったように、<code>fzf</code>を実行してファイルを選択すると、該当のファイル名を受け取れます。</p>
-<pre><code>~/go/src/github.com/google/skicka [master=] $ fzf
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~/go/src/github.com/google/skicka <span class="o">[</span><span class="nv">master</span><span class="o">=]</span> $ fzf
 README.md
-</code></pre><p>GitHubの引用ですが、以下のような感じで利用できます。</p>
+</code></pre></div><p>GitHubの引用ですが、以下のような感じで利用できます。</p>
 <h3 id="フォルダを選択する">フォルダを選択する</h3>
-<pre><code>find * -type d | fzf
-</code></pre><p><img src="./fzf-command-line-tools-3.gif" alt="fzf" title="fzf"></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">find * -type d <span class="p">|</span> fzf
+</code></pre></div><p><img src="./fzf-command-line-tools-3.gif" alt="fzf" title="fzf"></p>
 <h3 id="vimで開く">Vimで開く</h3>
-<pre><code>vim $(fzf)
-</code></pre><p><img src="./fzf-command-line-tools-4.gif" alt="fzf" title="fzf"></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vim <span class="k">$(</span>fzf<span class="k">)</span>
+</code></pre></div><p><img src="./fzf-command-line-tools-4.gif" alt="fzf" title="fzf"></p>
 <h3 id="--heightオプションをつけて実行する">&ndash;heightオプションをつけて実行する</h3>
-<pre><code>vim $(fzf --height 40%)
-</code></pre><p><img src="./fzf-command-line-tools-5.gif" alt="fzf" title="fzf"></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vim <span class="k">$(</span>fzf --height 40%<span class="k">)</span>
+</code></pre></div><p><img src="./fzf-command-line-tools-5.gif" alt="fzf" title="fzf"></p>
 <h3 id="--reverseオプションをつけて実行する">&ndash;reverseオプションをつけて実行する</h3>
-<pre><code>vim $(fzf --height 40% --reverse)
-</code></pre><p><img src="./fzf-command-line-tools-6.gif" alt="fzf" title="fzf"></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vim <span class="k">$(</span>fzf --height 40% --reverse<span class="k">)</span>
+</code></pre></div><p><img src="./fzf-command-line-tools-6.gif" alt="fzf" title="fzf"></p>
 <h2 id="デフォルトのオプションを設定する">デフォルトのオプションを設定する</h2>
-<pre><code>export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-</code></pre><pre><code>export FZF_DEFAULT_COMMAND='fd --type f'
-</code></pre><h2 id="wikiをみる">Wikiをみる</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vim <span class="k">$(</span>fzf --height 40% --reverse<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 40% --layout=reverse --border&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">&#39;fd --type f&#39;</span>
+</code></pre></div><h2 id="wikiをみる">Wikiをみる</h2>
 <p>やりたいことは、Wikiを見れば分かると思います。</p>
 <ul>
 <li><a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
 </ul>
 <h3 id="ghqとの連携で使っている関数">ghqとの連携で使っている関数</h3>
-<pre><code># fdg - ghq
-fdg() {
-  local selected
-  selected=$(ghq list | fzf)
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fdg - ghq</span>
+fdg<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local</span> selected
+  <span class="nv">selected</span><span class="o">=</span><span class="k">$(</span>ghq list <span class="p">|</span> fzf<span class="k">)</span>
 
-  if [ &quot;x$selected&quot; != &quot;x&quot; ]; then
-    cd $(ghq root)/$selected
-  fi
-}
-</code></pre><h3 id="wikiから引用して私が使っている関数など">Wikiから引用して、私が使っている関数など</h3>
-<pre><code># fh - repeat history
-fh() {
-  eval $( ([ -n &quot;$ZSH_NAME&quot; ] &amp;&amp; fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-</code></pre><pre><code># fkill - kill process
-fkill() {
-  local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;x</span><span class="nv">$selected</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;x&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">cd</span> <span class="k">$(</span>ghq root<span class="k">)</span>/<span class="nv">$selected</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="wikiから引用して私が使っている関数など">Wikiから引用して、私が使っている関数など</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fh - repeat history</span>
+fh<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">eval</span> <span class="k">$(</span> <span class="o">([</span> -n <span class="s2">&#34;</span><span class="nv">$ZSH_NAME</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">fc</span> -l <span class="m">1</span> <span class="o">||</span> <span class="nb">history</span><span class="k">)</span> <span class="p">|</span> fzf +s --tac <span class="p">|</span> sed <span class="s1">&#39;s/ *[0-9]* *//&#39;</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fkill - kill process</span>
+fkill<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local</span> pid
+  <span class="nv">pid</span><span class="o">=</span><span class="k">$(</span>ps -ef <span class="p">|</span> sed 1d <span class="p">|</span> fzf -m <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 
-  if [ &quot;x$pid&quot; != &quot;x&quot; ]
-  then
-    echo $pid | xargs kill -${1:-9}
-  fi
-}
-</code></pre><pre><code># fd - cd to selected directory
-fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2&gt; /dev/null | fzf +m) &amp;&amp;
-  cd &quot;$dir&quot;
-}
-</code></pre><pre><code># fda - including hidden directories
-fda() {
-  local dir
-  dir=$(find ${1:-.} -type d 2&gt; /dev/null | fzf +m) &amp;&amp; cd &quot;$dir&quot;
-}
-</code></pre><pre><code># fshow - git commit browser
-fshow() {
-  git log --graph --color=always \
-      --format=&quot;%C(auto)%h%d %s %C(black)%C(bold)%cr&quot; &quot;$@&quot; |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind &quot;ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R') &lt;&lt; 'FZF-EOF'
-                {}
-FZF-EOF&quot;
-}
-</code></pre><pre><code># tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
-# `tm` will allow you to select your tmux session via fzf.
-# `tm irc` will attach to the irc session (if it exists), else it will create it.
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;x</span><span class="nv">$pid</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;x&#34;</span> <span class="o">]</span>
+  <span class="k">then</span>
+    <span class="nb">echo</span> <span class="nv">$pid</span> <span class="p">|</span> xargs <span class="nb">kill</span> -<span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">9</span><span class="si">}</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fd - cd to selected directory</span>
+fd<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local</span> dir
+  <span class="nv">dir</span><span class="o">=</span><span class="k">$(</span>find <span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="p">.</span><span class="si">}</span> -path <span class="s1">&#39;*/\.*&#39;</span> -prune <span class="se">\
+</span><span class="se"></span>                  -o -type d -print 2&gt; /dev/null <span class="p">|</span> fzf +m<span class="k">)</span> <span class="o">&amp;&amp;</span>
+  <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fda - including hidden directories</span>
+fda<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local</span> dir
+  <span class="nv">dir</span><span class="o">=</span><span class="k">$(</span>find <span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="p">.</span><span class="si">}</span> -type d 2&gt; /dev/null <span class="p">|</span> fzf +m<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fshow - git commit browser</span>
+fshow<span class="o">()</span> <span class="o">{</span>
+  git log --graph --color<span class="o">=</span>always <span class="se">\
+</span><span class="se"></span>      --format<span class="o">=</span><span class="s2">&#34;%C(auto)%h%d %s %C(black)%C(bold)%cr&#34;</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span> <span class="p">|</span>
+  fzf --ansi --no-sort --reverse --tiebreak<span class="o">=</span>index --bind<span class="o">=</span>ctrl-s:toggle-sort <span class="se">\
+</span><span class="se"></span>      --bind <span class="s2">&#34;ctrl-m:execute:
+</span><span class="s2">                (grep -o &#39;[a-f0-9]\{7\}&#39; | head -1 |
+</span><span class="s2">                xargs -I % sh -c &#39;git show --color=always % | less -R&#39;) &lt;&lt; &#39;FZF-EOF&#39;
+</span><span class="s2">                {}
+</span><span class="s2">FZF-EOF&#34;</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)</span>
+<span class="c1"># `tm` will allow you to select your tmux session via fzf.</span>
+<span class="c1"># `tm irc` will attach to the irc session (if it exists), else it will create it.</span>
 
-tm() {
-  [[ -n &quot;$TMUX&quot; ]] &amp;&amp; change=&quot;switch-client&quot; || change=&quot;attach-session&quot;
-  if [ $1 ]; then
-    tmux $change -t &quot;$1&quot; 2&gt;/dev/null || (tmux new-session -d -s $1 &amp;&amp; tmux $change -t &quot;$1&quot;); return
-  fi
-  session=$(tmux list-sessions -F &quot;#{session_name}&quot; 2&gt;/dev/null | fzf --exit-0) &amp;&amp;  tmux $change -t &quot;$session&quot; || echo &quot;No sessions found.&quot;
-}
-</code></pre><h2 id="あとがき">あとがき</h2>
+tm<span class="o">()</span> <span class="o">{</span>
+  <span class="o">[[</span> -n <span class="s2">&#34;</span><span class="nv">$TMUX</span><span class="s2">&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">change</span><span class="o">=</span><span class="s2">&#34;switch-client&#34;</span> <span class="o">||</span> <span class="nv">change</span><span class="o">=</span><span class="s2">&#34;attach-session&#34;</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    tmux <span class="nv">$change</span> -t <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="o">(</span>tmux new-session -d -s <span class="nv">$1</span> <span class="o">&amp;&amp;</span> tmux <span class="nv">$change</span> -t <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="o">)</span><span class="p">;</span> <span class="k">return</span>
+  <span class="k">fi</span>
+  <span class="nv">session</span><span class="o">=</span><span class="k">$(</span>tmux list-sessions -F <span class="s2">&#34;#{session_name}&#34;</span> 2&gt;/dev/null <span class="p">|</span> fzf --exit-0<span class="k">)</span> <span class="o">&amp;&amp;</span>  tmux <span class="nv">$change</span> -t <span class="s2">&#34;</span><span class="nv">$session</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&#34;No sessions found.&#34;</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="あとがき">あとがき</h2>
 <p>pecoもfzfもGo製ってのがいいですね！</p>
 
   </section>

@@ -30,14 +30,14 @@
 <p>まずはドキュメントを確認する。</p>
 <p><a href="https://www.ampproject.org/docs/reference/components/amp-twitter">amp-twitter – AMP</a></p>
 <p>以下のスクリプトを追加して。</p>
-<pre><code>&lt;script async custom-element=&quot;amp-twitter&quot; src=&quot;https://cdn.ampproject.org/v0/amp-twitter-0.1.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>以下のHTLMで表示できます。</p>
-<pre><code>&lt;amp-twitter width=&quot;375&quot;
-  height=&quot;472&quot;
-  layout=&quot;responsive&quot;
-  data-tweetid=&quot;885634330868850689&quot;&gt;
-&lt;/amp-twitter&gt;
-</code></pre><h3 id="placeholders--fallbacksについて">Placeholders &amp; fallbacksについて</h3>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">custom-element</span><span class="o">=</span><span class="s">&#34;amp-twitter&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.ampproject.org/v0/amp-twitter-0.1.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>以下のHTLMで表示できます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">amp-twitter</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;375&#34;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&#34;472&#34;</span>
+  <span class="na">layout</span><span class="o">=</span><span class="s">&#34;responsive&#34;</span>
+  <span class="na">data-tweetid</span><span class="o">=</span><span class="s">&#34;885634330868850689&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">amp-twitter</span><span class="p">&gt;</span>
+</code></pre></div><h3 id="placeholders--fallbacksについて">Placeholders &amp; fallbacksについて</h3>
 <p>一応、英語を翻訳してみました。</p>
 <blockquote>
 <p>An element marked with a placeholder attribute displays while the content for the Tweet or Moment is loading or initializing.
@@ -53,44 +53,44 @@ amp-twitterがブラウザでサポートさ れていない場合、またはTw
 <p>こんな感じで指定できるようです。</p>
 <p>今回作成するshortcodeでは、Placeholdersを考慮してません…</p>
 <h4 id="source">Source</h4>
-<pre><code>&lt;amp-twitter width=&quot;375&quot;
-  height=&quot;472&quot;
-  layout=&quot;responsive&quot;
-  data-tweetid=&quot;638793490521001985&quot;&gt;
-  &lt;blockquote placeholder&gt;
-    &lt;p&gt;I only needed to change some CSS.
-      &lt;a href=&quot;http://t.co/LvjLbjgY9F&quot;&gt;pic.twitter.com/LvjLbjgY9F&lt;/a&gt;
-    &lt;/p&gt;&amp;mdash; Malte Ubl (@cramforce)
-    &lt;a href=&quot;https://twitter.com/cramforce/status/638793490521001985&quot;&gt;September 1, 2015&lt;/a&gt;
-  &lt;/blockquote&gt;
-&lt;/amp-twitter&gt;
-</code></pre><h4 id="previw">Previw</h4>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">amp-twitter</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;375&#34;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&#34;472&#34;</span>
+  <span class="na">layout</span><span class="o">=</span><span class="s">&#34;responsive&#34;</span>
+  <span class="na">data-tweetid</span><span class="o">=</span><span class="s">&#34;638793490521001985&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">placeholder</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I only needed to change some CSS.
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://t.co/LvjLbjgY9F&#34;</span><span class="p">&gt;</span>pic.twitter.com/LvjLbjgY9F<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span> Malte Ubl (@cramforce)
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://twitter.com/cramforce/status/638793490521001985&#34;</span><span class="p">&gt;</span>September 1, 2015<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">amp-twitter</span><span class="p">&gt;</span>
+</code></pre></div><h4 id="previw">Previw</h4>
 <p><img src="./amp-twitter-1.webp" alt="amp" title="amp"></p>
 <h4 id="source-1">Source</h4>
-<pre><code>&lt;amp-twitter width=&quot;390&quot;
-  height=&quot;330&quot;
-  layout=&quot;responsive&quot;
-  data-tweetid=&quot;855178606556856320&quot;&gt;
-  &lt;blockquote placeholder&gt;
-    &lt;p&gt;What are 5 common misconceptions people often have about AMP? Find out on today&amp;#39;s installment of Amplify:
-      &lt;a href=&quot;https://t.co/kaSvV8SQtI&quot;&gt;https://t.co/kaSvV8SQtI&lt;/a&gt;
-      &lt;a href=&quot;https://t.co/Cu9VYOmiKV&quot;&gt;pic.twitter.com/Cu9VYOmiKV&lt;/a&gt;
-    &lt;/p&gt;&amp;mdash; AMP Project (@AMPhtml)
-    &lt;a href=&quot;https://twitter.com/AMPhtml/status/855178606556856320&quot;&gt;April 20, 2017&lt;/a&gt;
-  &lt;/blockquote&gt;
-  &lt;div fallback&gt;
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">amp-twitter</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;390&#34;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&#34;330&#34;</span>
+  <span class="na">layout</span><span class="o">=</span><span class="s">&#34;responsive&#34;</span>
+  <span class="na">data-tweetid</span><span class="o">=</span><span class="s">&#34;855178606556856320&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">placeholder</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>What are 5 common misconceptions people often have about AMP? Find out on today<span class="ni">&amp;#39;</span>s installment of Amplify:
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://t.co/kaSvV8SQtI&#34;</span><span class="p">&gt;</span>https://t.co/kaSvV8SQtI<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://t.co/Cu9VYOmiKV&#34;</span><span class="p">&gt;</span>pic.twitter.com/Cu9VYOmiKV<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span> AMP Project (@AMPhtml)
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://twitter.com/AMPhtml/status/855178606556856320&#34;</span><span class="p">&gt;</span>April 20, 2017<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">fallback</span><span class="p">&gt;</span>
     An error occurred while retrieving the Tweet. It might have been deleted.
-  &lt;/div&gt;
-&lt;/amp-twitter&gt;
-</code></pre><h4 id="previw-1">Previw</h4>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">amp-twitter</span><span class="p">&gt;</span>
+</code></pre></div><h4 id="previw-1">Previw</h4>
 <p><img src="./amp-twitter-2.webp" alt="amp" title="amp"></p>
 <h2 id="scriptを追加する">scriptを追加する</h2>
 <p>早速、scriptを追加します。</p>
 <p>まずは私の環境を…</p>
-<pre><code>(ins) ~/go/src/github.com/hoge/trhrkmk.github.io [master *%=] $ pwd
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> ~/go/src/github.com/hoge/trhrkmk.github.io <span class="o">[</span>master *%<span class="o">=]</span> $ <span class="nb">pwd</span>
 /home/teruhiro/go/src/github.com/hoge/trhrkmk.github.io
 
-(cmd) ~/go/src/github.com/hoge/trhrkmk.github.io [master *%=] $ tree  ./layouts/
+<span class="o">(</span>cmd<span class="o">)</span> ~/go/src/github.com/hoge/trhrkmk.github.io <span class="o">[</span>master *%<span class="o">=]</span> $ tree  ./layouts/
 ./layouts/
 ├── _default
 │   ├── baseof.amp.html
@@ -113,55 +113,55 @@ amp-twitterがブラウザでサポートさ れていない場合、またはTw
     ├── img.html
     └── twitter.amp.html
 
-3 directories, 17 files
-</code></pre><p><code>./layouts/_default/baseof.amp.html</code>に追加する。</p>
+<span class="m">3</span> directories, <span class="m">17</span> files
+</code></pre></div><p><code>./layouts/_default/baseof.amp.html</code>に追加する。</p>
 <p>vimで編集する。</p>
-<pre><code>(ins) ~/go/src/github.com/hoge/trhrkmk.github.io [master *%=] $ vim ./layouts/_default/baseof.amp.html
-</code></pre><p>先程のscriptを追加します。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html ⚡&gt;
-  &lt;head&gt;
-    {{ partial &quot;meta.html&quot; . }}
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> ~/go/src/github.com/hoge/trhrkmk.github.io <span class="o">[</span>master *%<span class="o">=]</span> $ vim ./layouts/_default/baseof.amp.html
+</code></pre></div><p>先程のscriptを追加します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="err">⚡</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    {{ partial &#34;meta.html&#34; . }}
 
-    &lt;style amp-boilerplate&gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&lt;/style&gt;&lt;noscript&gt;&lt;style amp-boilerplate&gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&lt;/style&gt;&lt;/noscript&gt;
-    &lt;script async src=&quot;https://cdn.ampproject.org/v0.js&quot;&gt;&lt;/script&gt;
-    &lt;script async custom-element=&quot;amp-analytics&quot; src=&quot;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script async custom-element=&quot;amp-twitter&quot; src=&quot;https://cdn.ampproject.org/v0/amp-twitter-0.1.js&quot;&gt;&lt;/script&gt;
+    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">amp-boilerplate</span><span class="p">&gt;</span><span class="nt">body</span><span class="p">{</span><span class="kp">-webkit-</span><span class="k">animation</span><span class="p">:</span><span class="o">-</span><span class="n">amp-start</span> <span class="mi">8</span><span class="kt">s</span> <span class="nb">steps</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">end</span><span class="p">)</span> <span class="mi">0</span><span class="kt">s</span> <span class="mi">1</span> <span class="kc">normal</span> <span class="kc">both</span><span class="p">;</span><span class="kp">-moz-</span><span class="k">animation</span><span class="p">:</span><span class="o">-</span><span class="n">amp-start</span> <span class="mi">8</span><span class="kt">s</span> <span class="nb">steps</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">end</span><span class="p">)</span> <span class="mi">0</span><span class="kt">s</span> <span class="mi">1</span> <span class="kc">normal</span> <span class="kc">both</span><span class="p">;</span><span class="kp">-ms-</span><span class="k">animation</span><span class="p">:</span><span class="o">-</span><span class="n">amp-start</span> <span class="mi">8</span><span class="kt">s</span> <span class="nb">steps</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">end</span><span class="p">)</span> <span class="mi">0</span><span class="kt">s</span> <span class="mi">1</span> <span class="kc">normal</span> <span class="kc">both</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="o">-</span><span class="n">amp-start</span> <span class="mi">8</span><span class="kt">s</span> <span class="nb">steps</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">end</span><span class="p">)</span> <span class="mi">0</span><span class="kt">s</span> <span class="mi">1</span> <span class="kc">normal</span> <span class="kc">both</span><span class="p">}@</span><span class="k">-webkit-keyframes</span> <span class="nt">-amp-start</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">hidden</span><span class="p">}</span><span class="nt">to</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">visible</span><span class="p">}}@</span><span class="k">-moz-keyframes</span> <span class="nt">-amp-start</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">hidden</span><span class="p">}</span><span class="nt">to</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">visible</span><span class="p">}}@</span><span class="k">-ms-keyframes</span> <span class="nt">-amp-start</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">hidden</span><span class="p">}</span><span class="nt">to</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">visible</span><span class="p">}}@</span><span class="k">-o-keyframes</span> <span class="nt">-amp-start</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">hidden</span><span class="p">}</span><span class="nt">to</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">visible</span><span class="p">}}@</span><span class="k">keyframes</span> <span class="nt">-amp-start</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">hidden</span><span class="p">}</span><span class="nt">to</span><span class="p">{</span><span class="k">visibility</span><span class="p">:</span><span class="kc">visible</span><span class="p">}}&lt;/</span><span class="nt">style</span><span class="p">&gt;&lt;</span><span class="nt">noscript</span><span class="p">&gt;&lt;</span><span class="nt">style</span> <span class="na">amp-boilerplate</span><span class="p">&gt;</span><span class="nt">body</span><span class="p">{</span><span class="kp">-webkit-</span><span class="k">animation</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="kp">-moz-</span><span class="k">animation</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="kp">-ms-</span><span class="k">animation</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="kc">none</span><span class="p">}&lt;/</span><span class="nt">style</span><span class="p">&gt;&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.ampproject.org/v0.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">custom-element</span><span class="o">=</span><span class="s">&#34;amp-analytics&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">custom-element</span><span class="o">=</span><span class="s">&#34;amp-twitter&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.ampproject.org/v0/amp-twitter-0.1.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
     {{ with .Site.Params.googlefonts }}
-    &lt;link href=&quot;{{ . }}&quot; rel=&quot;stylesheet&quot;&gt;
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ . }}&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span><span class="p">&gt;</span>
     {{ else }}
-    &lt;link href=&quot;https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&quot; rel=&quot;stylesheet&quot;&gt;
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span><span class="p">&gt;</span>
     {{ end }}
-    &lt;link href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;title&gt;{{ block &quot;title&quot; . }}{{ end }}{{ .Site.Title }}&lt;/title&gt;
-    {{ block &quot;meta&quot; . }}{{ end }}
-    &lt;style amp-custom&gt;
-      {{ replaceRE &quot; +&quot; &quot; &quot; (replaceRE &quot;\n&quot; &quot;&quot; (partial &quot;styles.css&quot; .)) | safeCSS }}
-      {{ replaceRE &quot; +&quot; &quot; &quot; (replaceRE &quot;\n&quot; &quot;&quot; (partial &quot;custom.css&quot; .)) | safeCSS }}
-      {{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
-      {{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
-      .l-container { max-width: 40rem; margin: 0 auto; }
-    &lt;/style&gt;
-    {{ partial &quot;adsense.amp.html&quot; . }}
-  &lt;/head&gt;
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ block &#34;title&#34; . }}{{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    {{ block &#34;meta&#34; . }}{{ end }}
+    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">amp-custom</span><span class="p">&gt;</span>
+      <span class="p">{</span><span class="err">{</span> <span class="err">replaceRE</span> <span class="err">&#34;</span> <span class="err">+&#34;</span> <span class="err">&#34;</span> <span class="err">&#34;</span> <span class="err">(replaceRE</span> <span class="err">&#34;\n&#34;</span> <span class="err">&#34;&#34;</span> <span class="err">(partial</span> <span class="err">&#34;styles.css&#34;</span> <span class="err">.))</span> <span class="err">|</span> <span class="err">safeCSS</span> <span class="p">}</span><span class="err">}</span>
+      <span class="p">{</span><span class="err">{</span> <span class="err">replaceRE</span> <span class="err">&#34;</span> <span class="err">+&#34;</span> <span class="err">&#34;</span> <span class="err">&#34;</span> <span class="err">(replaceRE</span> <span class="err">&#34;\n&#34;</span> <span class="err">&#34;&#34;</span> <span class="err">(partial</span> <span class="err">&#34;custom.css&#34;</span> <span class="err">.))</span> <span class="err">|</span> <span class="err">safeCSS</span> <span class="p">}</span><span class="err">}</span>
+      <span class="p">{</span><span class="err">{</span> <span class="err">with</span> <span class="err">.Site.Params.fontfamily</span> <span class="p">}</span><span class="err">}</span> <span class="nt">body</span> <span class="p">{</span> <span class="k">font-family</span><span class="p">:</span> <span class="err">{{</span> <span class="o">.</span> <span class="o">|</span> <span class="n">safeCSS</span> <span class="p">}</span><span class="err">}</span><span class="o">;</span> <span class="err">}</span> <span class="p">{</span><span class="err">{</span> <span class="err">end</span> <span class="p">}</span><span class="err">}</span>
+      <span class="p">{</span><span class="err">{</span> <span class="err">with</span> <span class="err">.Site.Params.logofontfamily</span> <span class="p">}</span><span class="err">}</span> <span class="p">.</span><span class="nc">h-logo</span> <span class="p">{</span> <span class="k">font-family</span><span class="p">:</span> <span class="err">{{</span> <span class="o">.</span> <span class="o">|</span> <span class="n">safeCSS</span> <span class="p">}</span><span class="err">}</span><span class="o">;</span> <span class="err">}</span> <span class="p">{</span><span class="err">{</span> <span class="err">end</span> <span class="p">}</span><span class="err">}</span>
+      <span class="p">.</span><span class="nc">l-container</span> <span class="p">{</span> <span class="k">max-width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">rem</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    {{ partial &#34;adsense.amp.html&#34; . }}
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   .
   .
   .
-</code></pre><h2 id="shortcodeを作る">shortcodeを作る</h2>
+</code></pre></div><h2 id="shortcodeを作る">shortcodeを作る</h2>
 <p>shortcodeを作る。</p>
-<pre><code>(ins) ~/go/src/github.com/hoge/trhrkmk.github.io [master *%=] $ vim ./layouts/shortcodes/twitter.amp.html
-</code></pre><pre><code>twitter.amp.html
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> ~/go/src/github.com/hoge/trhrkmk.github.io <span class="o">[</span>master *%<span class="o">=]</span> $ vim ./layouts/shortcodes/twitter.amp.html
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">twitter.amp.html
 
 {{ $id := .Get 0 }}
 
-&lt;amp-twitter
-	data-tweetid=&quot;{{$id}}&quot;
-	width=&quot;800&quot;
-	height=&quot;600&quot;
-	layout=&quot;responsive&quot;&gt;
-&lt;/amp-twitter&gt;
-</code></pre><h2 id="markdownに書く">markdownに書く</h2>
+<span class="p">&lt;</span><span class="nt">amp-twitter</span>
+	<span class="na">data-tweetid</span><span class="o">=</span><span class="s">&#34;{{$id}}&#34;</span>
+	<span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span>
+	<span class="na">height</span><span class="o">=</span><span class="s">&#34;600&#34;</span>
+	<span class="na">layout</span><span class="o">=</span><span class="s">&#34;responsive&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">amp-twitter</span><span class="p">&gt;</span>
+</code></pre></div><h2 id="markdownに書く">markdownに書く</h2>
 <p>これで設定は終わりなので、markdownにて書いてみます。</p>
 <p>実際の記事の感じです。</p>
 <pre><code>### 更新(2019-01-09)

@@ -27,33 +27,33 @@
 <p>Debianで<code>sudo aptitude install vim-gnome</code>でインストールした場合<code>terminal(:ter)</code>が使えない…</p>
 <p>ということで、ビルドします。</p>
 <h2 id="configure">configure</h2>
-<pre><code>./configure \
-  --with-features=huge \
-  --enable-multibyte \
-  --enable-gui=gnome2 \
-  --enable-gpm \
-  --enable-cscope \
-  --enable-perlinterp \
-  --enable-pythoninterp \
-  --enable-python3interp \
-  --enable-rubyinterp \
-  --enable-luainterp \
-  --enable-acl \
-  --enable-fontset \
-  --enable-xim \
-  --enable-terminal \
-  --enable-fail-if-missing \
-  --with-luajit \
-  --with-x \
-</code></pre><pre><code>make
-</code></pre><pre><code>sudo make install
-</code></pre><pre><code>(ins) /var/tmp/build_vim $ which vim
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">./configure <span class="se">\
+</span><span class="se"></span>  --with-features<span class="o">=</span>huge <span class="se">\
+</span><span class="se"></span>  --enable-multibyte <span class="se">\
+</span><span class="se"></span>  --enable-gui<span class="o">=</span>gnome2 <span class="se">\
+</span><span class="se"></span>  --enable-gpm <span class="se">\
+</span><span class="se"></span>  --enable-cscope <span class="se">\
+</span><span class="se"></span>  --enable-perlinterp <span class="se">\
+</span><span class="se"></span>  --enable-pythoninterp <span class="se">\
+</span><span class="se"></span>  --enable-python3interp <span class="se">\
+</span><span class="se"></span>  --enable-rubyinterp <span class="se">\
+</span><span class="se"></span>  --enable-luainterp <span class="se">\
+</span><span class="se"></span>  --enable-acl <span class="se">\
+</span><span class="se"></span>  --enable-fontset <span class="se">\
+</span><span class="se"></span>  --enable-xim <span class="se">\
+</span><span class="se"></span>  --enable-terminal <span class="se">\
+</span><span class="se"></span>  --enable-fail-if-missing <span class="se">\
+</span><span class="se"></span>  --with-luajit <span class="se">\
+</span><span class="se"></span>  --with-x <span class="se">\
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">make
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo make install
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp/build_vim $ which vim
 /usr/local/bin/vim
-</code></pre><pre><code>(ins) /var/tmp/build_vim $ vim --version
-VIM - Vi IMproved 8.1 (2018 May 18, compiled Dec 29 2018 23:18:33)
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>ins<span class="o">)</span> /var/tmp/build_vim $ vim --version
+VIM - Vi IMproved 8.1 <span class="o">(</span><span class="m">2018</span> May 18, compiled Dec <span class="m">29</span> <span class="m">2018</span> 23:18:33<span class="o">)</span>
 Included patches: 1-657
 Compiled by teruhiro@debian
-Huge version without GUI.  Features included (+) or not (-):
+Huge version without GUI.  Features included <span class="o">(</span>+<span class="o">)</span> or not <span class="o">(</span>-<span class="o">)</span>:
 +acl               +extra_search      +mouse_netterm     +tag_old_static
 +arabic            +farsi             +mouse_sgr         -tag_any_white
 +autocmd           +file_in_path      -mouse_sysmouse    -tcl
@@ -61,7 +61,7 @@ Huge version without GUI.  Features included (+) or not (-):
 -autoservername    +float             +mouse_xterm       +terminal
 -balloon_eval      +folding           +multi_byte        +terminfo
 +balloon_eval_term -footer            +multi_lang        +termresponse
--browse            +fork()            -mzscheme          +textobjects
+-browse            +fork<span class="o">()</span>            -mzscheme          +textobjects
 ++builtin_terms    +gettext           +netbeans_intg     +textprop
 +byte_offset       -hangul_input      +num64             +timers
 +channel           +iconv             +packages          +title
@@ -85,15 +85,15 @@ Huge version without GUI.  Features included (+) or not (-):
 +emacs_tags        +mouse_dec         -sun_workshop      +xsmp_interact
 +eval              +mouse_gpm         +syntax            +xterm_clipboard
 +ex_extra          -mouse_jsbterm     +tag_binary        -xterm_save
-   system vimrc file: &quot;$VIM/vimrc&quot;
-     user vimrc file: &quot;$HOME/.vimrc&quot;
- 2nd user vimrc file: &quot;~/.vim/vimrc&quot;
-      user exrc file: &quot;$HOME/.exrc&quot;
-       defaults file: &quot;$VIMRUNTIME/defaults.vim&quot;
-  fall-back for $VIM: &quot;/usr/local/share/vim&quot;
-Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
+   system vimrc file: <span class="s2">&#34;</span><span class="nv">$VIM</span><span class="s2">/vimrc&#34;</span>
+     user vimrc file: <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.vimrc&#34;</span>
+ 2nd user vimrc file: <span class="s2">&#34;~/.vim/vimrc&#34;</span>
+      user exrc file: <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.exrc&#34;</span>
+       defaults file: <span class="s2">&#34;</span><span class="nv">$VIMRUNTIME</span><span class="s2">/defaults.vim&#34;</span>
+  fall-back <span class="k">for</span> <span class="nv">$VIM</span>: <span class="s2">&#34;/usr/local/share/vim&#34;</span>
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE<span class="o">=</span><span class="m">1</span>
 Linking: gcc   -L. -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,-E   -L/usr/local/lib -Wl,--as-needed -o vim    -lSM -lICE -lXpm -lXt -lX11 -lXdmcp -lSM -lICE  -lm -ltinfo -lnsl    -lacl -lattr -lgpm -ldl  -L/usr/lib/x86_64-linux-gnu -lluajit-5.1 -Wl,-E  -fstack-protector-strong -L/usr/local/lib  -L/usr/lib/x86_64-linux-gnu/perl/5.24/CORE -lperl -ldl -lm -lpthread -lcrypt    -lruby-2.3 -lpthread -lgmp -ldl -lcrypt -lm
-</code></pre><h2 id="あとがき">あとがき</h2>
+</code></pre></div><h2 id="あとがき">あとがき</h2>
 <p>誤りがありましたら、指摘していただけると、嬉しいです。</p>
 
   </section>
