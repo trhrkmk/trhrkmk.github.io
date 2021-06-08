@@ -1,13 +1,43 @@
 <!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.com/css/syntax.css><link rel=stylesheet href=https://www.trhrkmk.com/css/custom.css><title>macOSのodbc.iniの場所 | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/odbc-ini-file-location/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>macOSのodbc.iniの場所</h2><p>自分用のメモ。</p><p>ODBCで設定した情報を <code>取り除く</code> しても、削除することができなかったので、
-<code>odbc.ini</code> を直接編集した。</p><p>パスは以下の通り。</p><pre><code>/Library/ODBC/odbc.ini
-</code></pre><pre><code>(ins) teruhiro@MacBook-Pro-13:~ $ cd /Library/ODBC/
-(ins) teruhiro@MacBook-Pro-13:/Library/ODBC $ cat odbc.ini
-[ODBC Data Sources]
-name = Actual Open Source Databases
+<code>odbc.ini</code> を直接編集した。</p><p>パスは以下の通り。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>/Library/ODBC/odbc.ini
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> teruhiro@MacBook-Pro-13:~ $ <span class=nb>cd</span> /Library/ODBC/
+<span class=o>(</span>ins<span class=o>)</span> teruhiro@MacBook-Pro-13:/Library/ODBC $ cat odbc.ini
+<span class=o>[</span>ODBC Data Sources<span class=o>]</span>
+<span class=nv>name</span> <span class=o>=</span> Actual Open Source Databases
 
-[name]
-Driver   = /Library/ODBC/Actual Open Source Databases.bundle/Contents/MacOS/atopnsrc.so
-Server   = test.com
-Database = database
+<span class=o>[</span>name<span class=o>]</span>
+<span class=nv>Driver</span>   <span class=o>=</span> /Library/ODBC/Actual Open Source Databases.bundle/Contents/MacOS/atopnsrc.so
+<span class=nv>Server</span>   <span class=o>=</span> test.com
+<span class=nv>Database</span> <span class=o>=</span> database
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=o>(</span>ins<span class=o>)</span> teruhiro@MacBook-Pro-13:/Library/ODBC $ cat odbcinst.ini
+<span class=o>[</span>ODBC Drivers<span class=o>]</span>
+Actual <span class=nv>Access</span>                 <span class=o>=</span> Installed
+Actual Open Source <span class=nv>Databases</span>  <span class=o>=</span> Installed
+Actual <span class=nv>Oracle</span>                 <span class=o>=</span> Installed
+Actual SQL <span class=nv>Server</span>             <span class=o>=</span> Installed
+MySQL ODBC 8.0 Unicode <span class=nv>Driver</span> <span class=o>=</span> Installed
+MySQL ODBC 8.0 ANSI <span class=nv>Driver</span>    <span class=o>=</span> Installed
 
-</code></pre></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
+<span class=o>[</span>Actual Access<span class=o>]</span>
+<span class=nv>Driver</span> <span class=o>=</span> /Library/ODBC/Actual Access.bundle/Contents/MacOS/ataccess.so
+<span class=nv>Setup</span>  <span class=o>=</span>
+
+<span class=o>[</span>Actual Open Source Databases<span class=o>]</span>
+<span class=nv>Driver</span>     <span class=o>=</span> /Library/ODBC/Actual Open Source Databases.bundle/Contents/MacOS/atopnsrc.so
+<span class=nv>Setup</span>      <span class=o>=</span>
+<span class=nv>LicenseKey</span> <span class=o>=</span> hogehoge
+
+<span class=o>[</span>Actual Oracle<span class=o>]</span>
+<span class=nv>Driver</span> <span class=o>=</span> /Library/ODBC/Actual Oracle.bundle/Contents/MacOS/atoradb.so
+<span class=nv>Setup</span>  <span class=o>=</span>
+
+<span class=o>[</span>Actual SQL Server<span class=o>]</span>
+<span class=nv>Driver</span> <span class=o>=</span> /Library/ODBC/Actual SQL Server.bundle/Contents/MacOS/atsqlsrv.so
+<span class=nv>Setup</span>  <span class=o>=</span>
+
+<span class=o>[</span>MySQL ODBC 8.0 Unicode Driver<span class=o>]</span>
+<span class=nv>Driver</span> <span class=o>=</span> /usr/local/mysql-connector-odbc-8.0.25-macos11-x86-64bit/lib/libmyodbc8w.so
+
+<span class=o>[</span>MySQL ODBC 8.0 ANSI Driver<span class=o>]</span>
+<span class=nv>Driver</span> <span class=o>=</span> /usr/local/mysql-connector-odbc-8.0.25-macos11-x86-64bit/lib/libmyodbc8a.so
+</code></pre></div></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
