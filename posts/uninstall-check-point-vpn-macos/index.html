@@ -1,0 +1,21 @@
+<!doctype html><html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.83.1"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reseter.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.3/new.min.css><link rel=stylesheet href=https://www.trhrkmk.com/css/syntax.css><link rel=stylesheet href=https://www.trhrkmk.com/css/custom.css><title>Check Point Endpoint Security VPNのアンインストール | trhrkmk.com</title><link rel=canonical href=https://www.trhrkmk.com/posts/uninstall-check-point-vpn-macos/><meta name=description content="  "><body><div id=wrapper><header><div class=head__inner><h1><a href=https://www.trhrkmk.com>trhrkmk.com</a></h1></div></header><div id=content><main><section class=entry><h2>Check Point Endpoint Security VPNのアンインストール</h2><p>以前、Check Point Endpoint Security VPNというアプリをインストールしていました。</p><p>しかし、しばらく使わないので、一旦アンインストールすることにしました。</p><p>以下のディレクトリにアンインストーラーがあります。</p><p>Finderからダブルクリックするか、ターミナルから実行してください。</p><div class=highlight><pre class=chroma><code class=language-txt data-lang=txt>/Library/Application\ Support/Checkpoint/Endpoint\ Connect/Uninstaller
+
+</code></pre></div><p>今回は、試しにダブルクリックしました。</p><p>その際のログになります。</p><div class=highlight><pre class=chroma><code class=language-txt data-lang=txt>/Library/Application\ Support/Checkpoint/Endpoint\ Connect/Uninstaller ; exit;
+(ins) teruhiro@MacBook-Pro-13:~ $ /Library/Application\ Support/Checkpoint/Endpoint\ Connect/Uninstaller ; exit;
+UninstallAuth::main - Passing following arguments: [/bin/sh	/Library/Application Support/Checkpoint/Endpoint Connect/uninstall	--uninstall].
+ 
+ 
+Checking preconditions...
+ 
+Uninstalling Endpoint Security VPN...
+No matching processes were found
+No matching processes were found
+rmdir: /Library/Application Support/Checkpoint/*: No such file or directory
+Executing: /usr/bin/kmutil unload -p /Library/Extensions/cpfw.kext
+rm: /tmp/trlogs_*: No such file or directory
+Forgot package &#39;com.checkpoint.pkg.epc&#39; on &#39;/&#39;.
+logout
+Saving session...completed.
+
+[プロセスが完了しました]
+</code></pre></div><p><img src=./uninstall-check-point-vpn-macos-1.webp alt=uninstall title=uninstall></p><p>無事、アンインストールされました。</p><h3 id=参考url>参考URL</h3><p><a href=https://discussions.apple.com/thread/7730246>https://discussions.apple.com/thread/7730246</a></p></section></main></div><footer><div class=foot__inner><p class=copyright>Copyright © 2019-2021 Teruhiro Komaki <a href=https://twitter.com/trhrkmk>@trhrkmk</a></p></div></footer></div></body></html>
